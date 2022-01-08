@@ -1,0 +1,7 @@
+__pycache__/
+*.qm
+
+#setup.py
+build/
+dist/
+jdAppdataEdit.egg-info/

@@ -1,0 +1,4 @@
+include jdAppdataEdit/*.ui
+include jdAppdataEdit/data/*
+include jdAppdataEdit/i18n/*.qm
+include jdAppdataEdit/Icon.svg
