@@ -119,14 +119,14 @@ class MainWindow(QMainWindow):
             return
         elif self._env.settings.get("windowTitleType") == "filename":
             if self._edited and self._env.settings.get("showEditedTitle"):
-                self.setWindowTitle(os.path.basename(self._current_path) + "* -jdAppdataEdit")
+                self.setWindowTitle(os.path.basename(self._current_path) + "* - jdAppdataEdit")
             else:
-                self.setWindowTitle(os.path.basename(self._current_path) + " -jdAppdataEdit")
+                self.setWindowTitle(os.path.basename(self._current_path) + " - jdAppdataEdit")
         elif self._env.settings.get("windowTitleType") == "filename":
             if self._edited and self._env.settings.get("showEditedTitle"):
-                self.setWindowTitle(self._current_path + "* -jdAppdataEdit")
+                self.setWindowTitle(self._current_path + "* - jdAppdataEdit")
             else:
-                self.setWindowTitle(self._current_path + " -jdAppdataEdit")
+                self.setWindowTitle(self._current_path + " - jdAppdataEdit")
 
     def _update_recent_files_menu(self):
         self.recent_files_menu.clear()
