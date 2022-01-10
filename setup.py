@@ -7,7 +7,7 @@ with open("README.md", "r", encoding="utf-8") as f:
 
 
 setup(name="jddAppdataEdit",
-    version="1.0",
+    version="1.1",
     description="A graphical Program to create and edit Appdata files",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
