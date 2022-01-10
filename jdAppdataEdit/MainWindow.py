@@ -221,7 +221,7 @@ class MainWindow(QMainWindow):
 
     def _exit_menu_action_clicked(self):
         if self._ask_for_save():
-            self.reset_data()
+            sys.exit(0)
 
     def _clear_recent_files(self):
         self._env.recent_files.clear()
