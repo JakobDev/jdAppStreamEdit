@@ -69,10 +69,12 @@ class ScreenshotWindow(QDialog):
         if len(self._main_window.screenshot_list) == 0:
             new_dict["default"] = True
         else:
-            new_dict["default"] = False
+            new_dict["default"] =  self._main_window.screenshot_list[self._position]["default"]
 
         if self._position is None:
             self._main_window.screenshot_list.append(new_dict)
+        else:
+            self._main_window.screenshot_list[self._position] = new_dict
 
         self._main_window.update_sceenshot_table()
         self._main_window.set_file_edited()
@@ -97,10 +99,16 @@ class ScreenshotWindow(QDialog):
             self.url_edit.setText(current_entry["url"])
             if "width" in current_entry:
                 self.width_edit.setText(str(current_entry["width"]))
+            else:
+                self.width_edit.setText("")
             if "height" in current_entry:
                 self.height_edit.setText(str(current_entry["height"]))
+            else:
+                 self.height_edit.setText("")
             if "caption" in current_entry:
                 self.caption_edit.setText(current_entry["caption"])
+            else:
+                self.caption_edit.setText("")
             self.setWindowTitle(QCoreApplication.translate("ScreenshotWindow", "Edit Screenshot"))
 
         self.image_label.clear()
