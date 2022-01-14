@@ -1,5 +1,5 @@
 from PyQt6.QtWidgets import QTableWidget, QHeaderView, QListWidget, QComboBox
-from typing import Any
+from typing import List, Any
 import urllib.parse
 import requests
 
@@ -43,10 +43,19 @@ def is_url_reachable(url: str) -> bool:
         return False
 
 
-def select_combo_box_data(box: QComboBox, data: Any):
+def select_combo_box_data(box: QComboBox, data: Any, default_index: int = 0):
     """Set the index to the item with the given data"""
     index = box.findData(data)
     if index == -1:
-        box.setCurrentIndex(0)
+        box.setCurrentIndex(default_index)
     else:
         box.setCurrentIndex(index)
+
+
+def get_logical_table_row_list(table: QTableWidget) -> List[int]:
+    """Returns a List of the row indexes in the order they appear in the table"""
+    index_list = []
+    header = table.verticalHeader()
+    for i in range(table.rowCount()):
+        index_list.append(header.logicalIndex(i))
+    return index_list

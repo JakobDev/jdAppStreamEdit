@@ -5,6 +5,7 @@ from .Functions import is_url_valid
 from typing import Union
 from PyQt6 import uic
 import requests
+import copy
 import os
 
 
@@ -21,6 +22,7 @@ class ScreenshotWindow(QDialog):
         self.height_edit.setValidator(QIntValidator())
         self.width_edit.setValidator(QIntValidator())
 
+        self.translate_caption_button.clicked.connect(lambda: env.translate_window.open_window(self._caption_translations))
         self.preview_button.clicked.connect(self._preview_button_clicked)
         self.ok_button.clicked.connect(self._ok_button_clicked)
         self.cancel_button.clicked.connect(self.close)
@@ -65,6 +67,7 @@ class ScreenshotWindow(QDialog):
             new_dict["height"] = int(self.height_edit.text())
         if self.caption_edit.text() != "":
             new_dict["caption"] = self.caption_edit.text()
+        new_dict["caption_translations"] = copy.copy(self._caption_translations)
 
         if len(self._main_window.screenshot_list) == 0:
             new_dict["default"] = True
@@ -89,6 +92,7 @@ class ScreenshotWindow(QDialog):
             self.width_edit.setText("")
             self.height_edit.setText("")
             self.caption_edit.setText("")
+            self._caption_translations = {}
             self.setWindowTitle(QCoreApplication.translate("ScreenshotWindow", "Add Screenshot"))
         else:
             current_entry = self._main_window.screenshot_list[position]
@@ -109,6 +113,7 @@ class ScreenshotWindow(QDialog):
                 self.caption_edit.setText(current_entry["caption"])
             else:
                 self.caption_edit.setText("")
+            self._caption_translations = copy.copy(current_entry["caption_translations"])
             self.setWindowTitle(QCoreApplication.translate("ScreenshotWindow", "Edit Screenshot"))
 
         self.image_label.clear()

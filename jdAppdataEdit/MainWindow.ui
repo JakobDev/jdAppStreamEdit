@@ -33,7 +33,7 @@
     <item>
      <widget class="QTabWidget" name="main_tab_widget">
       <property name="currentIndex">
-       <number>6</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -62,14 +62,28 @@
          </widget>
         </item>
         <item row="1" column="1">
-         <widget class="QLineEdit" name="name_edit">
-          <property name="text">
-           <string/>
+         <layout class="QHBoxLayout" name="horizontalLayout_6">
+          <property name="spacing">
+           <number>0</number>
           </property>
-          <property name="placeholderText">
-           <string>A human-readable name for your Software</string>
-          </property>
-         </widget>
+          <item>
+           <widget class="QLineEdit" name="name_edit">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="placeholderText">
+             <string>A human-readable name for your Software</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="translate_name_button">
+            <property name="text">
+             <string>Translate</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
         <item row="2" column="0">
          <widget class="QLabel" name="label_7">
@@ -79,91 +93,121 @@
          </widget>
         </item>
         <item row="2" column="1">
-         <widget class="QLineEdit" name="summary_edit">
-          <property name="placeholderText">
-           <string>A short summary of your Software</string>
+         <layout class="QHBoxLayout" name="horizontalLayout_7">
+          <property name="spacing">
+           <number>0</number>
           </property>
-         </widget>
+          <item>
+           <widget class="QLineEdit" name="summary_edit">
+            <property name="placeholderText">
+             <string>A short summary of your Software</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="translate_summary_button">
+            <property name="text">
+             <string>Translate</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
-        <item row="3" column="0">
+        <item row="4" column="0">
          <widget class="QLabel" name="label_8">
           <property name="text">
            <string>Developer Name:</string>
           </property>
          </widget>
         </item>
-        <item row="3" column="1">
+        <item row="4" column="1">
          <widget class="QLineEdit" name="developer_name_edit">
           <property name="placeholderText">
            <string>The Name of the Developer</string>
           </property>
          </widget>
         </item>
-        <item row="5" column="0">
-         <widget class="QLabel" name="label_3">
-          <property name="text">
-           <string>Metaddata License:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="5" column="1">
-         <widget class="QComboBox" name="metadata_license_box"/>
-        </item>
         <item row="6" column="0">
-         <widget class="QLabel" name="label_4">
-          <property name="text">
-           <string>Project License:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="6" column="1">
-         <widget class="QComboBox" name="project_license_box"/>
-        </item>
-        <item row="8" column="0">
-         <widget class="QLabel" name="label_5">
-          <property name="text">
-           <string>Description:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="9" column="0" colspan="2">
-         <widget class="QPlainTextEdit" name="description_edit">
-          <property name="placeholderText">
-           <string>Write a long Description for you Software here. You can use the &lt;p&gt;, &lt;ol&gt;, &lt;li&gt; , &lt;ul&gt;, &lt;em&gt; and &lt;code&gt; HTML tags to format your description.</string>
-          </property>
-         </widget>
-        </item>
-        <item row="11" column="0">
-         <widget class="QLabel" name="label_6">
-          <property name="text">
-           <string>Description Preview:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="12" column="0" colspan="2">
-         <widget class="QTextEdit" name="description_preview">
-          <property name="readOnly">
-           <bool>true</bool>
-          </property>
-          <property name="placeholderText">
-           <string>When you write your Description, a formated Preview will appear here</string>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="0">
          <widget class="QLabel" name="label_19">
           <property name="text">
            <string>Desktop File:</string>
           </property>
          </widget>
         </item>
-        <item row="4" column="1">
+        <item row="6" column="1">
          <widget class="QLineEdit" name="desktop_file_edit">
           <property name="placeholderText">
            <string>The Name of the .desktop file of your Software</string>
           </property>
          </widget>
         </item>
+        <item row="8" column="0">
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>Metaddata License:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="1">
+         <widget class="QComboBox" name="metadata_license_box"/>
+        </item>
+        <item row="9" column="0">
+         <widget class="QLabel" name="label_4">
+          <property name="text">
+           <string>Project License:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="9" column="1">
+         <widget class="QComboBox" name="project_license_box"/>
+        </item>
+        <item row="10" column="0">
+         <widget class="QLabel" name="label_5">
+          <property name="text">
+           <string>Update Contact:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="10" column="1">
+         <widget class="QLineEdit" name="update_contact_edit">
+          <property name="placeholderText">
+           <string>You can provide a email address for contacting you here</string>
+          </property>
+         </widget>
+        </item>
+        <item row="11" column="0">
+         <widget class="QLabel" name="label_6">
+          <property name="text">
+           <string>Project Group:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="11" column="1">
+         <widget class="QLineEdit" name="project_group_edit">
+          <property name="placeholderText">
+           <string>If the software is part of a bigger group e.g. GNOME or KDE, you can provide it here</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="description_tab">
+       <attribute name="title">
+        <string>Description</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="description_layout">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
        </layout>
       </widget>
       <widget class="QWidget" name="tab_2">
@@ -408,7 +452,11 @@
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_4">
         <item>
-         <widget class="QListWidget" name="categorie_list"/>
+         <widget class="QListWidget" name="categorie_list">
+          <property name="dragDropMode">
+           <enum>QAbstractItemView::InternalMove</enum>
+          </property>
+         </widget>
         </item>
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_4">
@@ -624,6 +672,28 @@
         </item>
        </layout>
       </widget>
+      <widget class="QWidget" name="oras_tab">
+       <attribute name="title">
+        <string>OARS</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="oras_layout">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+       </layout>
+      </widget>
       <widget class="QWidget" name="tab_7">
        <attribute name="title">
         <string>Provides</string>
@@ -667,6 +737,55 @@
            <string>Add</string>
           </property>
          </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_8">
+       <attribute name="title">
+        <string>Keywords</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_7">
+        <item>
+         <widget class="QLabel" name="label_21">
+          <property name="text">
+           <string>You can manage the Keywords for the Software here</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QListWidget" name="keyword_list">
+          <property name="dragDropMode">
+           <enum>QAbstractItemView::InternalMove</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_8">
+          <item>
+           <widget class="QPushButton" name="keyword_add_button">
+            <property name="text">
+             <string>Add</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="keyword_edit_button">
+            <property name="text">
+             <string>Edit</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="keyword_remove_button">
+            <property name="text">
+             <string>Remove</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
        </layout>
       </widget>

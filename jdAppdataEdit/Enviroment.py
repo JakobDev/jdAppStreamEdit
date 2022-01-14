@@ -16,7 +16,7 @@ class Enviroment():
         except Exception:
             pass
 
-        self.version = "1.1"
+        self.version = "2.0"
 
         self.icon = QIcon(os.path.join(self.program_dir, "Icon.svg"))
 
@@ -35,6 +35,9 @@ class Enviroment():
 
         with open(os.path.join(self.program_dir, "data", "categories.txt"), "r", encoding="utf-8") as f:
             self.categories = f.read().splitlines()
+
+        with open(os.path.join(self.program_dir, "data", "langcodes.txt"), "r", encoding="utf-8") as f:
+            self.language_codes = f.read().splitlines()
 
     def _get_data_path(self) -> str:
         if platform.system() == "Windows":

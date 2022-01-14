@@ -1,0 +1,705 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>OarsWidget</class>
+ <widget class="QWidget" name="OarsWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>633</width>
+    <height>460</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string notr="true">OARS</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QTabWidget" name="tab_widget">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="currentIndex">
+      <number>6</number>
+     </property>
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
+       <string>Violence</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QLabel" name="label_title_1">
+         <property name="text">
+          <string>Cartoon Violence</string>
+         </property>
+         <property name="textFormat">
+          <enum>Qt::PlainText</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_description_1">
+         <property name="text">
+          <string>Defined as fictional characters depicted in an animated film or a comic strip which do not look human.</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_example_1">
+         <property name="text">
+          <string>For example, this would include an animated worm fighting with a bird.</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="oars_box_violence_cartoon"/>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_title_2">
+         <property name="text">
+          <string>Fantasy Violence</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_description_2">
+         <property name="text">
+          <string>Defined as characters easily distinguishable from reality.</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_example_2">
+         <property name="text">
+          <string>For example, this would include human units in a turn-taking isometric game.</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="oars_box_violence_fantasy"/>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_title_3">
+         <property name="text">
+          <string>Realistic Violence</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_description_3">
+         <property name="text">
+          <string>Defined as characters not easily distinguishable from reality.</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_example_3">
+         <property name="text">
+          <string>For example, this would include a user shooting a gun at a human characters.</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="oars_box_violence_realistic"/>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_title_4">
+         <property name="text">
+          <string>Bloodshed</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_description_4">
+         <property name="text">
+          <string>Defined as the killing or wounding of people.</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_example_4">
+         <property name="text">
+          <string>For example, this would include a user shooting a gun at a human head, causing it to explode.</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="oars_box_violence_bloodshed"/>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_title_5">
+         <property name="text">
+          <string>Sexual Violence</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_description_5">
+         <property name="text">
+          <string>Defined as any unwanted sexual act or activity.</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_example_5">
+         <property name="text">
+          <string>For example, this would include non-consensual sex or grabbing the crotch of another user.</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="oars_box_violence_sexual"/>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_2">
+      <attribute name="title">
+       <string>Violence II</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QLabel" name="label_title_6">
+         <property name="text">
+          <string>Desecration</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_description_6">
+         <property name="text">
+          <string>Defined as the action of desecrating something, typically a human body.</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_example_6">
+         <property name="text">
+          <string>This is an cultural sensitivity question.</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="oars_box_violence_desecration"/>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_title_7">
+         <property name="text">
+          <string>Human Slavery</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_description_7">
+         <property name="text">
+          <string>Defined as working without proper remuneration or appreciation.</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_example_7">
+         <property name="text">
+          <string>This is an cultural sensitivity question.</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="oars_box_violence_slavery"/>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_3">
+      <attribute name="title">
+       <string>Drugs</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QLabel" name="label_title_8">
+         <property name="text">
+          <string>Alcohol</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_example_8">
+         <property name="text">
+          <string>For example, this would include seeing a character drink a beer.</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="oars_box_drugs_alcohol"/>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_title_9">
+         <property name="text">
+          <string>Narcotics</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_description_9">
+         <property name="text">
+          <string>Defined as an addictive drug affecting mood or behaviour that is specifically illegal in at least one country.</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_example_9">
+         <property name="text">
+          <string>For example, this would include references to &quot;getting high&quot;</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="oars_box_drugs_narcotics"/>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_title_10">
+         <property name="text">
+          <string>Tobacco</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_description_10">
+         <property name="text">
+          <string>Defined as any nicotine-rich product.</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_example_10">
+         <property name="text">
+          <string>For example, this would include references to chewing tobacco.</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="oars_box_drugs_tobacco"/>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_4">
+      <attribute name="title">
+       <string>Sex and Nudity</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <widget class="QLabel" name="label_title_11">
+         <property name="text">
+          <string>Nudity</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_description_11">
+         <property name="text">
+          <string>Defined as a state of undress, and in this case specifically specifically nudity likely to cause offense.</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_example_11">
+         <property name="text">
+          <string>For example, this would include topless cheerleaders.</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="oars_box_sex_nudity"/>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_title_12">
+         <property name="text">
+          <string>Sexual Themes</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_description_12">
+         <property name="text">
+          <string>Defined as in reference to a sexual act.</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_example_12">
+         <property name="text">
+          <string>For example, this would include blowing a kiss to another character.</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="oars_box_sex_themes"/>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_4">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_5">
+      <attribute name="title">
+       <string>Language</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_5">
+       <item>
+        <widget class="QLabel" name="label_title_13">
+         <property name="text">
+          <string>Profanity</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_description_13">
+         <property name="text">
+          <string>Defined as blasphemous or obscene language.</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_example_13">
+         <property name="text">
+          <string>For example, this would include most curse words.</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="oars_box_language_profanity"/>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_title_14">
+         <property name="text">
+          <string>Humor</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_description_14">
+         <property name="text">
+          <string>Defined as the quality of being amusing.</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_example_14">
+         <property name="text">
+          <string>For example, this would include in-app jokes.</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="oars_box_language_humor"/>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_title_15">
+         <property name="text">
+          <string>Discrimination</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_description_15">
+         <property name="text">
+          <string>Defined as the unjust or prejudicial treatment of different categories of people, especially on the grounds of race, age, or sex.</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="oars_box_language_discrimination"/>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_5">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_6">
+      <attribute name="title">
+       <string>Money</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_6">
+       <item>
+        <widget class="QLabel" name="label_title_16">
+         <property name="text">
+          <string>Advertising</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_description_16">
+         <property name="text">
+          <string>Defined as the activity of producing advertisements for commercial products or services.</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_example_16">
+         <property name="text">
+          <string>For example, this would include banners showing the Coca-Cola logo shown in a Soccer game.</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="oars_box_money_advertising"/>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_title_17">
+         <property name="text">
+          <string>Gambling</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_description_17">
+         <property name="text">
+          <string>Defined as taking a risky action in the hope of a desired result.</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_example_18">
+         <property name="text">
+          <string>For example, this would include spinning a wheel to get in-app credits.</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="oars_box_money_gambling"/>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_title_18">
+         <property name="text">
+          <string>In-App Purchases</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_description_18">
+         <property name="text">
+          <string>Defined as items or points that a user can buy for use within a virtual world to improve a character or enhance the playing experience.</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="oars_box_money_purchasing"/>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_6">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_7">
+      <attribute name="title">
+       <string>Social</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_7">
+       <item>
+        <widget class="QLabel" name="label_title_19">
+         <property name="text">
+          <string>Online Text-only Messaging</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_description_19">
+         <property name="text">
+          <string>Defined as any messaging system connected to the Internet.</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="oars_box_social_chat"/>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_title_20">
+         <property name="text">
+          <string>Online Audio and Video Messaging</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_description_20">
+         <property name="text">
+          <string>Defined as any multimedia messaging system connected to the Internet.</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="oars_box_social_audio"/>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_title_21">
+         <property name="text">
+          <string>Contact Details</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_description_21">
+         <property name="text">
+          <string>Defined as sharing identifiable details with other users to allow out-of-band communication.</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="oars_box_social_contacts"/>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_title_22">
+         <property name="text">
+          <string>Information Sharing</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_description_22">
+         <property name="text">
+          <string>Defined as sharing information with a legal entity typically used for advertising or for sending back diagnostic data.</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_example_22">
+         <property name="text">
+          <string>For example, this would include sending your purchasing history to Amazon.</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="oars_box_social_info"/>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_title_23">
+         <property name="text">
+          <string>Location Sharing</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_description_23">
+         <property name="text">
+          <string>Defined as sharing your physical real-time location.</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_example_23">
+         <property name="text">
+          <string>For example, this would include uploading the GPS co-ordinates of your current location. NOTE: This does not include heuristic based location services, e.g. GeoIP and others.</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="oars_box_social_location"/>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_7">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

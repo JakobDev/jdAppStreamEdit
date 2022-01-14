@@ -35,7 +35,7 @@ class ValidateWindow(QDialog):
 
     def open_window(self):
         if shutil.which("appstream-util") is None:
-            QMessageBox.critical(self, QCoreApplication.translate("ValidateWindow", "Can't find appstream-util"), QCoreApplication.translate("ValidateWindow", "Can't find appstream-util. Make sure it installed and in PATH."))
+            QMessageBox.critical(self, QCoreApplication.translate("ValidateWindow", "Can't find appstream-util"), QCoreApplication.translate("ValidateWindow", "Can't find appstream-util. Make sure it is installed and in PATH."))
             return
 
         if self._main_window.get_id() == "":

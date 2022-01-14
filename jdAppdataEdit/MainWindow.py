@@ -1,10 +1,13 @@
+from tkinter.messagebox import NO
 from PyQt6.QtWidgets import QApplication, QCheckBox, QComboBox, QLineEdit, QListWidget, QMainWindow, QMessageBox, QDateEdit, QInputDialog, QPlainTextEdit, QPushButton, QTableWidget, QTableWidgetItem, QRadioButton, QFileDialog
-from .Functions import clear_table_widget, stretch_table_widget_colums_size, list_widget_contains_item, is_url_reachable
+from .Functions import clear_table_widget, stretch_table_widget_colums_size, list_widget_contains_item, is_url_reachable, get_logical_table_row_list
 from PyQt6.QtCore import Qt, QCoreApplication, QDate
+from .DescriptionWidget import DescriptionWidget
 from .ScreenshotWindow import ScreenshotWindow
 from .SettingsWindow import SettingsWindow
 from .ValidateWindow import ValidateWindow
 from .AboutWindow import AboutWindow
+from .OarsWidget import OarsWidget
 from PyQt6.QtGui import QAction
 from typing import Optional
 from lxml import etree
@@ -23,14 +26,20 @@ class MainWindow(QMainWindow):
 
         self._env = env
 
+        self._current_path = None
+
         self._settings_window = SettingsWindow(env, self)
         self._validate_window = ValidateWindow(env, self)
         self._screenshot_window = ScreenshotWindow(env, self)
         self._about_window = AboutWindow(env)
 
-        self.screenshot_list = []
+        self._description_widget = DescriptionWidget(env, self)
+        self.description_layout.addWidget(self._description_widget)
 
-        self._current_path = None
+        self._oars_widget = OarsWidget(env, self)
+        self.oras_layout.addWidget(self._oars_widget)
+
+        self.screenshot_list = []
 
         self._url_list = []
         self._control_type_list = []
@@ -50,6 +59,10 @@ class MainWindow(QMainWindow):
                 value.currentIndexChanged.connect(self.set_file_edited)
             elif isinstance(value, QPlainTextEdit):
                 value.modificationChanged.connect(self.set_file_edited)
+            elif isinstance(value, QTableWidget):
+                value.verticalHeader().sectionMoved.connect(self.set_file_edited)
+            elif isinstance(value, QListWidget):
+                value.model().rowsMoved.connect(self.set_file_edited)
 
         self._update_recent_files_menu()
 
@@ -71,12 +84,22 @@ class MainWindow(QMainWindow):
         stretch_table_widget_colums_size(self.releases_table)
         stretch_table_widget_colums_size(self.provides_table)
 
+        self.screenshot_table.verticalHeader().setSectionsMovable(True)
+        self.releases_table.verticalHeader().setSectionsMovable(True)
+        self.provides_table.verticalHeader().setSectionsMovable(True)
+
         self._update_categorie_remove_button_enabled()
+        self._update_keyword_edit_remove_button()
 
         self._edited = False
 
-        self.description_edit.textChanged.connect(self._update_description_preview)
+        self._name_translations = {}
+        self._summary_translations = {}
 
+        self.translate_name_button.clicked.connect(lambda: env.translate_window.open_window(self._name_translations))
+        self.translate_summary_button.clicked.connect(lambda: env.translate_window.open_window(self._summary_translations))
+
+        self.screenshot_table.verticalHeader().sectionMoved.connect(self._screenshot_table_row_moved)
         self.screenshot_add_button.clicked.connect(lambda: self._screenshot_window.open_window(None))
         self.check_screenshot_url_button.clicked.connect(self._check_screenshot_urls)
 
@@ -92,6 +115,12 @@ class MainWindow(QMainWindow):
         self.categorie_remove_button.clicked.connect(self._remove_categorie_button_clicked)
 
         self.provides_add_button.clicked.connect(self._add_provides_row)
+
+        self.keyword_list.itemDoubleClicked.connect(self._edit_keyword)
+        self.keyword_list.itemSelectionChanged.connect(self._update_keyword_edit_remove_button)
+        self.keyword_add_button.clicked.connect(self._add_keyword)
+        self.keyword_edit_button.clicked.connect(self._edit_keyword)
+        self.keyword_remove_button.clicked.connect(self._remove_keyword)
 
         self.new_action.triggered.connect(self._new_menu_action_clicked)
         self.open_action.triggered.connect(self._open_menu_action_clicked)
@@ -228,10 +257,7 @@ class MainWindow(QMainWindow):
         self._update_recent_files_menu()
         self._env.save_recent_files()
 
-    def _update_description_preview(self):
-        text = self.description_edit.toPlainText()
-        self.description_preview.setHtml(text)
-
+    # Screenshots
     def update_sceenshot_table(self):
         clear_table_widget(self.screenshot_table)
         for row, i in enumerate(self.screenshot_list):
@@ -286,6 +312,24 @@ class MainWindow(QMainWindow):
                 self.update_sceenshot_table()
                 self.set_file_edited()
                 return
+
+    def _screenshot_table_row_moved(self, logical_index: int, old_visual_index: int, new_visual_index: int):
+        item = self.screenshot_list[old_visual_index]
+        if new_visual_index == len(self.screenshot_list) - 1:
+            self.screenshot_list.append(item)
+        else:
+            if new_visual_index > old_visual_index:
+                self.screenshot_list.insert(new_visual_index + 1, item)
+            else:
+                self.screenshot_list.insert(new_visual_index, item)
+        if new_visual_index > old_visual_index:
+            del self.screenshot_list[old_visual_index]
+        else:
+            del self.screenshot_list[old_visual_index + 1]
+        print(new_visual_index)
+        self.update_sceenshot_table()
+
+    # Releases
 
     def _set_release_row(self, row: int, version: Optional[str] = "", date: Optional[QDate] = None, development: bool = False):
         self.releases_table.setItem(row, 0, QTableWidgetItem(version))
@@ -377,6 +421,8 @@ class MainWindow(QMainWindow):
                 return
         QMessageBox.information(self, QCoreApplication.translate("MainWindow", "Everything OK"), QCoreApplication.translate("MainWindow", "All URLs are working"))
 
+    # Categories
+
     def _update_categorie_remove_button_enabled(self):
         if self.categorie_list.currentRow() == -1:
             self.categorie_remove_button.setEnabled(False)
@@ -402,6 +448,8 @@ class MainWindow(QMainWindow):
         self._update_categorie_remove_button_enabled()
         self.set_file_edited()
 
+    # Provides
+
     def _add_provides_row(self, value_type: Optional[str] = None, value: str = ""):
         row = self.provides_table.rowCount()
         self.provides_table.insertRow(row)
@@ -415,6 +463,8 @@ class MainWindow(QMainWindow):
         type_box.addItem("firmware", "firmware")
         type_box.addItem("python2", "python2")
         type_box.addItem("python3", "python3")
+        type_box.addItem("dbus-user", "dbus-user")
+        type_box.addItem("dbus-system", "dbus-system")
         type_box.addItem("id", "id")
         if value_type:
             index = type_box.findData(value_type)
@@ -430,11 +480,57 @@ class MainWindow(QMainWindow):
         remove_button.clicked.connect(self._remove_provides_button_clicked)
         self.provides_table.setCellWidget(row, 2, remove_button)
 
+        self.set_file_edited()
+
     def _remove_provides_button_clicked(self):
         for i in range(self.provides_table.rowCount()):
             if self.provides_table.cellWidget(i, 2) == self.sender():
                 self.provides_table.removeRow(i)
+                self.set_file_edited()
                 return
+
+    # Keywords
+
+    def _add_keyword(self):
+        text, ok = QInputDialog.getText(self, QCoreApplication.translate("MainWindow", "New Keyword"), QCoreApplication.translate("MainWindow", "Please enter a new Keyword"))
+        if not ok:
+            return
+        if list_widget_contains_item(self.keyword_list, text):
+            QMessageBox.critical(self, QCoreApplication.translate("MainWindow", "Keyword in List"), QCoreApplication.translate("MainWindow", "This Keyword is already in the List"))
+            return
+        self.keyword_list.addItem(text)
+        self._update_keyword_edit_remove_button()
+        self.set_file_edited()
+
+    def _edit_keyword(self):
+        if self.keyword_list.currentRow() == -1:
+            return
+        old_text = self.keyword_list.currentItem().text()
+        new_text, ok = QInputDialog.getText(self, QCoreApplication.translate("MainWindow", "Edit Keyword"), QCoreApplication.translate("MainWindow", "Please edit the Keyword"), text=old_text)
+        if not ok or old_text == new_text:
+            return
+        if list_widget_contains_item(self.keyword_list, new_text):
+            QMessageBox.critical(self, QCoreApplication.translate("MainWindow", "Keyword in List"), QCoreApplication.translate("MainWindow", "This Keyword is already in the List"))
+            return
+        self.keyword_list.currentItem().setText(new_text)
+        self.set_file_edited()
+
+    def _remove_keyword(self):
+        index = self.keyword_list.currentRow()
+        if index != -1:
+            self.keyword_list.takeItem(index)
+            self._update_keyword_edit_remove_button()
+            self.set_file_edited()
+
+    def _update_keyword_edit_remove_button(self):
+        if self.keyword_list.currentRow() == -1:
+            self.keyword_edit_button.setEnabled(False)
+            self.keyword_remove_button.setEnabled(False)
+        else:
+            self.keyword_edit_button.setEnabled(True)
+            self.keyword_remove_button.setEnabled(True)
+
+    # Other Functions
 
     def get_id(self) -> str:
         return self.id_edit.text()
@@ -453,12 +549,18 @@ class MainWindow(QMainWindow):
                 value.setChecked(False)
             elif isinstance(value, QListWidget):
                 value.clear()
+        self._description_widget.reset_data()
         self.screenshot_list.clear()
+        self._oars_widget.reset_data()
+        self._name_translations.clear()
+        self._summary_translations.clear()
         self._update_categorie_remove_button_enabled()
+        self._update_keyword_edit_remove_button()
 
     def _parse_screenshots_tag(self, screenshots_tag: etree._Element):
         for i in screenshots_tag.getchildren():
             new_dict = {}
+            new_dict["caption_translations"] = {}
 
             if i.get("type") == "default":
                 new_dict["default"] = True
@@ -472,7 +574,7 @@ class MainWindow(QMainWindow):
                 continue
 
             image_tag = i.find("image")
-            new_dict["type"] = image_tag.get("type")
+            new_dict["type"] = image_tag.get("type", "source")
             new_dict["url"] = image_tag.text
 
             width = image_tag.get("width")
@@ -482,9 +584,11 @@ class MainWindow(QMainWindow):
             if height is not None:
                 new_dict["height"] = int(height)
 
-            caption_tag = i.find("caption")
-            if caption_tag is not None:
-                new_dict["caption"] = caption_tag.text
+            for caption in i.findall("caption"):
+                if caption.get("{http://www.w3.org/XML/1998/namespace}lang") is None:
+                    new_dict["caption"] = caption.text
+                else:
+                    new_dict["caption_translations"][caption.get("{http://www.w3.org/XML/1998/namespace}lang")] = caption.text
 
             self.screenshot_list.append(new_dict)
 
@@ -507,13 +611,17 @@ class MainWindow(QMainWindow):
         if id_tag is not None:
             self.id_edit.setText(id_tag.text)
 
-        name_tag = root.find("name")
-        if name_tag is not None:
-            self.name_edit.setText(name_tag.text)
+        for i in root.findall("name"):
+            if i.get("{http://www.w3.org/XML/1998/namespace}lang") is None:
+                self.name_edit.setText(i.text)
+            else:
+                self._name_translations[i.get("{http://www.w3.org/XML/1998/namespace}lang")] = i.text
 
-        summary_tag = root.find("summary")
-        if summary_tag is not None:
-            self.summary_edit.setText(summary_tag.text)
+        for i in root.findall("summary"):
+            if i.get("{http://www.w3.org/XML/1998/namespace}lang") is None:
+                self.summary_edit.setText(i.text)
+            else:
+                self._summary_translations[i.get("{http://www.w3.org/XML/1998/namespace}lang")] = i.text
 
         developer_name_tag = root.find("developer_name")
         if developer_name_tag is not None:
@@ -535,12 +643,17 @@ class MainWindow(QMainWindow):
             if index != -1:
                 self.project_license_box.setCurrentIndex(index)
 
+        update_contact_tag = root.find("update_contact")
+        if update_contact_tag is not None:
+            self.update_contact_edit.setText(update_contact_tag.text)
+
+        project_group_tag = root.find("project_group")
+        if project_group_tag is not None:
+            self.project_group_edit.setText(project_group_tag.text)
+
         description_tag = root.find("description")
         if description_tag is not None:
-            description = ""
-            for i in description_tag.getchildren():
-                description += etree.tostring(i).decode("utf-8")
-            self.description_edit.setPlainText(description)
+            self._description_widget.load_tags(description_tag)
 
         screenshots_tag = root.find("screenshots")
         if screenshots_tag is not None:
@@ -576,10 +689,27 @@ class MainWindow(QMainWindow):
                 except AttributeError:
                     print(f"Unknown value {i.text} for control tag")
 
+        content_rating_tag = root.find("content_rating")
+        if content_rating_tag is not None:
+            self._oars_widget.open_file(content_rating_tag)
+
         provides_tag = root.find("provides")
         if provides_tag is not None:
             for i in provides_tag.getchildren():
-                self._add_provides_row(value_type=i.tag, value=i.text)
+                if i.tag == "dbus":
+                    if i.get("type") == "user":
+                        self._add_provides_row(value_type="dbus-user", value=i.text)
+                    elif i.get("type") == "system":
+                        self._add_provides_row(value_type="dbus-system", value=i.text)
+                    else:
+                        print(f"Invalid dbus type " + i.get("type"), file=sys.stderr)
+                else:
+                    self._add_provides_row(value_type=i.tag, value=i.text)
+
+        keywords_tag = root.find("keywords")
+        if keywords_tag is not None:
+            for i in keywords_tag.findall("keyword"):
+                self.keyword_list.addItem(i.text)
 
         self._edited = False
 
@@ -604,9 +734,17 @@ class MainWindow(QMainWindow):
 
         name_tag = etree.SubElement(root, "name")
         name_tag.text = self.name_edit.text()
+        for key, value in self._name_translations.items():
+            name_translation_tag = etree.SubElement(root, "name")
+            name_translation_tag.set("{http://www.w3.org/XML/1998/namespace}lang", key)
+            name_translation_tag.text = value
 
         summary_tag = etree.SubElement(root, "summary")
         summary_tag.text = self.summary_edit.text()
+        for key, value in self._summary_translations.items():
+            summary_translation_tag = etree.SubElement(root, "summary")
+            summary_translation_tag.set("{http://www.w3.org/XML/1998/namespace}lang", key)
+            summary_translation_tag.text = value
 
         developer_name_tag = etree.SubElement(root, "developer_name")
         developer_name_tag.text = self.developer_name_edit.text()
@@ -624,15 +762,16 @@ class MainWindow(QMainWindow):
             project_license_tag = etree.SubElement(root, "project_license")
             project_license_tag.text = self.project_license_box.currentData()
 
-        description_tag = etree.SubElement(root, "description")
-        description = self.description_edit.toPlainText()
-        if description.find("<p>") == -1:
-            description_tag.text = "<p>" + description + "</p>"
-        else:
-            description_tag.text = description
+        if self.update_contact_edit.text() != "":
+            update_contact_tag = etree.SubElement(root, "update_contact")
+            update_contact_tag.text = self.update_contact_edit.text()
 
-        content_rating_tag =  etree.SubElement(root, "content_rating")
-        content_rating_tag.set("type", "oars-1.1" )
+        if self.project_group_edit.text() != "":
+            project_group_tag = etree.SubElement(root, "project_group")
+            project_group_tag.text = self.project_group_edit.text()
+
+        description_tag = etree.SubElement(root, "description")
+        self._description_widget.get_tags(description_tag)
 
         if len(self.screenshot_list) > 0:
             screenshots_tag = etree.SubElement(root, "screenshots")
@@ -643,6 +782,10 @@ class MainWindow(QMainWindow):
                 if "caption" in i:
                     caption_tag = etree.SubElement(single_screenshot_tag, "caption")
                     caption_tag.text = i["caption"]
+                for key, value in i["caption_translations"].items():
+                    caption_trans_tag = etree.SubElement(single_screenshot_tag, "caption")
+                    caption_trans_tag.set("{http://www.w3.org/XML/1998/namespace}lang", key)
+                    caption_trans_tag.text = value
                 image_tag = etree.SubElement(single_screenshot_tag, "image")
                 image_tag.text = i["url"]
                 image_tag.set("type", i["type"])
@@ -653,7 +796,7 @@ class MainWindow(QMainWindow):
 
         if self.releases_table.rowCount() > 0:
             releases_tag = etree.SubElement(root, "releases")
-            for i in range(self.releases_table.rowCount()):
+            for i in get_logical_table_row_list(self.releases_table):
                 version = self.releases_table.item(i, 0).text()
                 date = self.releases_table.cellWidget(i, 1).date().toString(Qt.DateFormat.ISODate)
                 release_type = self.releases_table.cellWidget(i, 2).currentData()
@@ -680,12 +823,29 @@ class MainWindow(QMainWindow):
         self._write_requires_recommends_supports_tags(root, "recommends")
         self._write_requires_recommends_supports_tags(root, "supports")
 
+        content_rating_tag =  etree.SubElement(root, "content_rating")
+        content_rating_tag.set("type", "oars-1.1" )
+        self._oars_widget.save_file(content_rating_tag)
+
         if self.provides_table.rowCount() > 0:
             provides_tag = etree.SubElement(root, "provides")
-            for i in range(self.provides_table.rowCount()):
+            for i in get_logical_table_row_list(self.provides_table):
                 provides_type = self.provides_table.cellWidget(i, 0).currentData()
-                single_provides_tag = etree.SubElement(provides_tag, provides_type)
+                if provides_type == "dbus-user":
+                    single_provides_tag = etree.SubElement(provides_tag, "dbus")
+                    single_provides_tag.set("type", "user")
+                elif provides_type == "dbus-system":
+                    single_provides_tag = etree.SubElement(provides_tag, "dbus")
+                    single_provides_tag.set("type", "system")
+                else:
+                    single_provides_tag = etree.SubElement(provides_tag, provides_type)
                 single_provides_tag.text = self.provides_table.item(i, 1).text()
+
+        if self.keyword_list.count() > 0:
+            keywords_tag = etree.SubElement(root, "keywords")
+            for i in range(self.keyword_list.count()):
+                single_keyword_tag = etree.SubElement(keywords_tag, "keyword")
+                single_keyword_tag.text = self.keyword_list.item(i).text()
 
         xml = etree.tostring(root, pretty_print=True, xml_declaration=True, encoding="utf-8").decode("utf-8")
 
@@ -693,7 +853,7 @@ class MainWindow(QMainWindow):
         xml = xml.replace("&lt;", "<")
         xml = xml.replace("&gt;", ">")
 
-        with open(path, "w", encoding="utf-8") as f:
+        with open(path, "w", encoding="utf-8", newline='\n') as f:
             f.write(xml)
 
     def closeEvent(self, event):

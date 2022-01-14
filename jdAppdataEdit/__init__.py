@@ -1,5 +1,6 @@
 from PyQt6.QtWidgets import QApplication
 from PyQt6.QtCore import QTranslator, QLocale
+from .TranslateWindow import TranslateWindow
 from .MainWindow import MainWindow
 from .Enviroment import Enviroment
 import sys
@@ -22,6 +23,8 @@ def main():
     else:
         translator.load(os.path.join(env.program_dir, "i18n", "jdAppdataEdit_" + language + ".qm"))
     app.installTranslator(translator)
+
+    env.translate_window = TranslateWindow(env)
 
     w = MainWindow(env)
     w.show()
