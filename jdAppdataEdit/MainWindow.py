@@ -358,9 +358,8 @@ class MainWindow(QMainWindow):
                 return
 
     def _release_add_button_clicked(self):
-        current_row = self.releases_table.rowCount()
-        self.releases_table.insertRow(current_row)
-        self._set_release_row(current_row)
+        self.releases_table.insertRow(0)
+        self._set_release_row(0)
         self.set_file_edited()
 
     def _release_import_github(self):
