@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf-8") as f:
     readme = f.read()
 
 
-setup(name="jddAppdataEdit",
+setup(name="jdAppdataEdit",
     version="2.0",
     description="A graphical Program to create and edit Appdata files",
     long_description=open("README.md").read(),
