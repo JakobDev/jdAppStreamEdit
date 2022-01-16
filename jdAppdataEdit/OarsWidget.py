@@ -31,7 +31,7 @@ class OarsWidget(QWidget):
 
         self.oars_box_violence_cartoon.addItem(QCoreApplication.translate("OarsWidget", "None"), "none")
         self.oars_box_violence_cartoon.addItem(QCoreApplication.translate("OarsWidget", "Mild: Cartoon characters in unsafe situations"), "mild")
-        self.oars_box_violence_cartoon.addItem(QCoreApplication.translate("OarsWidget", "Moderate: Cartoon characters in aggressive conflic"), "moderate")
+        self.oars_box_violence_cartoon.addItem(QCoreApplication.translate("OarsWidget", "Moderate: Cartoon characters in aggressive conflict"), "moderate")
         self.oars_box_violence_cartoon.addItem(QCoreApplication.translate("OarsWidget", "Intense: Cartoon characters showing graphic violence"), "intense")
 
         self.oars_box_violence_fantasy.addItem(QCoreApplication.translate("OarsWidget", "None"), "none")
