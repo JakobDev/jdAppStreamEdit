@@ -16,7 +16,7 @@ class Enviroment():
         except Exception:
             pass
 
-        self.version = "2.1"
+        self.version = "3.0"
 
         self.icon = QIcon(os.path.join(self.program_dir, "Icon.svg"))
 
@@ -29,15 +29,27 @@ class Enviroment():
         except Exception:
             self.recent_files = []
 
+        with open(os.path.join(self.program_dir, "data", "metadata_licenses.json"), "r", encoding="utf-8") as f:
+            self.metadata_license_list = json.load(f)
+
         # Source: https://github.com/spdx/license-list-data/blob/master/json/licenses.json
-        with open(os.path.join(self.program_dir, "data", "licenses.json"), "r", encoding="utf-8") as f:
-            self.license_list = json.load(f)
+        with open(os.path.join(self.program_dir, "data", "project_licenses.json"), "r", encoding="utf-8") as f:
+            self.project_license_list = json.load(f)
 
         with open(os.path.join(self.program_dir, "data", "categories.txt"), "r", encoding="utf-8") as f:
             self.categories = f.read().splitlines()
 
         with open(os.path.join(self.program_dir, "data", "langcodes.txt"), "r", encoding="utf-8") as f:
             self.language_codes = f.read().splitlines()
+
+        # Source: https://github.com/ximion/appstream/blob/master/data/platforms.yml
+        self.platform_list = []
+        with open(os.path.join(self.program_dir, "data", "platform.json"), "r", encoding="utf-8") as f:
+            platform_data = json.load(f)
+            for architecture in platform_data["architectures"]:
+                for kernel in platform_data["os_kernels"]:
+                    for environment in platform_data["os_environments"]:
+                        self.platform_list.append(architecture + "-" + kernel + "-" + environment)
 
     def _get_data_path(self) -> str:
         if platform.system() == "Windows":

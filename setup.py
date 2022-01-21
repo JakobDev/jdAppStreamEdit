@@ -1,5 +1,20 @@
 #!/usr/bin/env python
+from setuptools.command.build_py import build_py
 from setuptools import setup
+import subprocess
+import os
+
+
+class BuildTranslations(build_py):
+    def run(self):
+        translation_source_dir = os.path.join("jdAppdataEdit", "i18n")
+        translation_bin_dir = os.path.join(self.build_lib, "jdAppdataEdit", "i18n")
+        if not os.path.isdir(translation_bin_dir):
+            os.makedirs(translation_bin_dir)
+        for i in os.listdir(translation_source_dir):
+            if i.endswith(".ts"):
+                subprocess.run(["lrelease", os.path.join(translation_source_dir, i), "-qm", os.path.join(translation_bin_dir, i[:-3] + ".qm")])
+        super().run()
 
 
 with open("README.md", "r", encoding="utf-8") as f:
@@ -7,7 +22,7 @@ with open("README.md", "r", encoding="utf-8") as f:
 
 
 setup(name="jdAppdataEdit",
-    version="2.1",
+    version="3.0",
     description="A graphical Program to create and edit Appdata files",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
@@ -25,6 +40,9 @@ setup(name="jdAppdataEdit",
     packages=["jdAppdataEdit"],
     entry_points={
         "console_scripts": ["jdappdataedit = jdAppdataEdit:main"]
+    },
+    cmdclass={
+        "build_py": BuildTranslations,
     },
     license="GPL v3",
     keywords=["JakobDev", "PyQt6"],

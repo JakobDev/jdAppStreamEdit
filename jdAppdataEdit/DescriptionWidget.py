@@ -264,7 +264,6 @@ class DescriptionWidget(QWidget):
 
         self.update_preview()
 
-
     def get_tags(self, parent_tag: etree._Element, preview: bool = False):
         for i in get_logical_table_row_list(self.description_table):
             self.description_table.cellWidget(i, 1).get_tag(parent_tag, preview=preview)

@@ -16,9 +16,6 @@ class ScreenshotWindow(QDialog):
 
         self._main_window = main_window
 
-        self.type_box.addItem(QCoreApplication.translate("ScreenshotWindow", "Source"), "source")
-        self.type_box.addItem(QCoreApplication.translate("ScreenshotWindow", "Thumbnail"), "thumbnail")
-
         self.height_edit.setValidator(QIntValidator())
         self.width_edit.setValidator(QIntValidator())
 
@@ -27,12 +24,15 @@ class ScreenshotWindow(QDialog):
         self.ok_button.clicked.connect(self._ok_button_clicked)
         self.cancel_button.clicked.connect(self.close)
 
-    def _check_url(self):
-        if is_url_valid(self.url_edit.text()):
-            return True
-        else:
+    def _check_url(self) -> bool:
+        url = self.url_edit.text()
+        if len(url) == 0:
+            QMessageBox.critical(self, QCoreApplication.translate("ScreenshotWindow", "No URL"), QCoreApplication.translate("ScreenshotWindow", "Please enter a URL"))
+            return False
+        if not is_url_valid(self.url_edit.text()):
             QMessageBox.critical(self, QCoreApplication.translate("ScreenshotWindow", "Invalid URL"), QCoreApplication.translate("ScreenshotWindow", "Please enter a valid URL"))
             return False
+        return True
 
     def _preview_button_clicked(self):
         if not self._check_url():
@@ -54,12 +54,7 @@ class ScreenshotWindow(QDialog):
         if not self._check_url():
             return
 
-        if self.type_box.currentData() == "thumbnail" and (self.width_edit.text() == "" or self.height_edit.text() == ""):
-            QMessageBox.critical(self, QCoreApplication.translate("ScreenshotWindow", "Requires Width and Height"), QCoreApplication.translate("ScreenshotWindow", "The Thumbnail type requires setting Width and Height"))
-            return
-
         new_dict = {}
-        new_dict["type"] = self.type_box.currentData()
         new_dict["url"] = self.url_edit.text()
         if self.width_edit.text() != "":
             new_dict["width"] = int(self.width_edit.text())
@@ -89,7 +84,6 @@ class ScreenshotWindow(QDialog):
         self._position = position
 
         if position is None:
-            self.type_box.setCurrentIndex(0)
             self.url_edit.setText("")
             self.width_edit.setText("")
             self.height_edit.setText("")
@@ -98,10 +92,6 @@ class ScreenshotWindow(QDialog):
             self.setWindowTitle(QCoreApplication.translate("ScreenshotWindow", "Add Screenshot"))
         else:
             current_entry = self._main_window.screenshot_list[position]
-            if current_entry["type"] == "source":
-                self.type_box.setCurrentIndex(0)
-            elif current_entry["type"] == "thumbnail":
-                self.type_box.setCurrentIndex(1)
             self.url_edit.setText(current_entry["url"])
             if "width" in current_entry:
                 self.width_edit.setText(str(current_entry["width"]))

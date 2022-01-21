@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <component type="desktop">
-  <!--Created with jdAppdataEdit 2.0-->
+  <!--Created with jdAppdataEdit 3.0-->
   <id>com.gitlab.JakobDev.jdAppdataEdit</id>
   <name>jdAppdataEdit</name>
   <summary>A graphical Program to create and edit AppStream files</summary>
@@ -21,6 +21,8 @@
       <li xml:lang="de">Vollständiger Support für das Open Age Rating System (OARS)</li>
       <li>The AppStream files are fully translatable</li>
       <li xml:lang="de">Die AppStream Dateien sind vollständig übersetzbar</li>
+      <li>Releases can be imported from GitHub and GitLab</li>
+      <li xml:lang="de">Releases können von GitHub und GitLab importiert werden</li>
     </ul>
   </description>
   <screenshots>
@@ -38,6 +40,7 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="3.0" date="2022-01-22" type="stable"/>
     <release version="2.1" date="2022-01-16" type="stable"/>
     <release version="2.0" date="2022-01-15" type="stable"/>
     <release version="1.1" date="2022-01-11" type="stable"/>
@@ -52,6 +55,7 @@
   <recommends>
     <control>pointing</control>
     <control>keyboard</control>
+    <display_length compare="ge">medium</display_length>
   </recommends>
   <content_rating type="oars-1.1"/>
   <provides>
@@ -62,5 +66,7 @@
     <keyword>appstream</keyword>
     <keyword>appdata</keyword>
     <keyword>metainfo</keyword>
+    <keyword>python</keyword>
+    <keyword>pyqt</keyword>
   </keywords>
 </component>

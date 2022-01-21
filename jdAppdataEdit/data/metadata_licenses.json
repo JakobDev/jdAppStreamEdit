@@ -1,0 +1,16 @@
+{
+    "FSFAP": "FSF All Permissive License",
+    "MIT": "MIT License",
+    "0BSD": "BSD Zero Clause License",
+    "CC0-1.0": "Creative Commons Zero v1.0 Universal",
+    "CC-BY-3.0": "Creative Commons Attribution 3.0 Unported",
+    "CC-BY-4.0": "Creative Commons Attribution 4.0 International",
+    "CC-BY-SA-3.0": "Creative Commons Attribution Share Alike 3.0 Unported",
+    "CC-BY-SA-4.0": "Creative Commons Attribution Share Alike 4.0 International",
+    "GFDL-1.1": "GNU Free Documentation License v1.1",
+    "GFDL-1.2": "GNU Free Documentation License v1.2",
+    "GFDL-1.3": "GNU Free Documentation License v1.3",
+    "BSL-1.0": "Boost Software License 1.0",
+    "FTL": "Freetype Project License",
+    "FSFUL": "FSF Unlimited License"
+}

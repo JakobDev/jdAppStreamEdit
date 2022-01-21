@@ -35,7 +35,7 @@
       <string notr="true"/>
      </property>
      <property name="currentIndex">
-      <number>6</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tab">
       <attribute name="title">
@@ -57,12 +57,18 @@
          <property name="text">
           <string>Defined as fictional characters depicted in an animated film or a comic strip which do not look human.</string>
          </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
         </widget>
        </item>
        <item>
         <widget class="QLabel" name="label_example_1">
          <property name="text">
           <string>For example, this would include an animated worm fighting with a bird.</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -81,12 +87,18 @@
          <property name="text">
           <string>Defined as characters easily distinguishable from reality.</string>
          </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
         </widget>
        </item>
        <item>
         <widget class="QLabel" name="label_example_2">
          <property name="text">
           <string>For example, this would include human units in a turn-taking isometric game.</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -105,12 +117,18 @@
          <property name="text">
           <string>Defined as characters not easily distinguishable from reality.</string>
          </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
         </widget>
        </item>
        <item>
         <widget class="QLabel" name="label_example_3">
          <property name="text">
           <string>For example, this would include a user shooting a gun at a human characters.</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -129,12 +147,18 @@
          <property name="text">
           <string>Defined as the killing or wounding of people.</string>
          </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
         </widget>
        </item>
        <item>
         <widget class="QLabel" name="label_example_4">
          <property name="text">
           <string>For example, this would include a user shooting a gun at a human head, causing it to explode.</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -153,12 +177,18 @@
          <property name="text">
           <string>Defined as any unwanted sexual act or activity.</string>
          </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
         </widget>
        </item>
        <item>
         <widget class="QLabel" name="label_example_5">
          <property name="text">
           <string>For example, this would include non-consensual sex or grabbing the crotch of another user.</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -197,12 +227,18 @@
          <property name="text">
           <string>Defined as the action of desecrating something, typically a human body.</string>
          </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
         </widget>
        </item>
        <item>
         <widget class="QLabel" name="label_example_6">
          <property name="text">
           <string>This is an cultural sensitivity question.</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -221,12 +257,18 @@
          <property name="text">
           <string>Defined as working without proper remuneration or appreciation.</string>
          </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
         </widget>
        </item>
        <item>
         <widget class="QLabel" name="label_example_7">
          <property name="text">
           <string>This is an cultural sensitivity question.</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -265,6 +307,9 @@
          <property name="text">
           <string>For example, this would include seeing a character drink a beer.</string>
          </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
         </widget>
        </item>
        <item>
@@ -282,12 +327,18 @@
          <property name="text">
           <string>Defined as an addictive drug affecting mood or behaviour that is specifically illegal in at least one country.</string>
          </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
         </widget>
        </item>
        <item>
         <widget class="QLabel" name="label_example_9">
          <property name="text">
           <string>For example, this would include references to &quot;getting high&quot;</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -306,12 +357,18 @@
          <property name="text">
           <string>Defined as any nicotine-rich product.</string>
          </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
         </widget>
        </item>
        <item>
         <widget class="QLabel" name="label_example_10">
          <property name="text">
           <string>For example, this would include references to chewing tobacco.</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -350,12 +407,18 @@
          <property name="text">
           <string>Defined as a state of undress, and in this case specifically specifically nudity likely to cause offense.</string>
          </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
         </widget>
        </item>
        <item>
         <widget class="QLabel" name="label_example_11">
          <property name="text">
           <string>For example, this would include topless cheerleaders.</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -374,12 +437,18 @@
          <property name="text">
           <string>Defined as in reference to a sexual act.</string>
          </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
         </widget>
        </item>
        <item>
         <widget class="QLabel" name="label_example_12">
          <property name="text">
           <string>For example, this would include blowing a kiss to another character.</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -418,12 +487,18 @@
          <property name="text">
           <string>Defined as blasphemous or obscene language.</string>
          </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
         </widget>
        </item>
        <item>
         <widget class="QLabel" name="label_example_13">
          <property name="text">
           <string>For example, this would include most curse words.</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -442,12 +517,18 @@
          <property name="text">
           <string>Defined as the quality of being amusing.</string>
          </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
         </widget>
        </item>
        <item>
         <widget class="QLabel" name="label_example_14">
          <property name="text">
           <string>For example, this would include in-app jokes.</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -465,6 +546,9 @@
         <widget class="QLabel" name="label_description_15">
          <property name="text">
           <string>Defined as the unjust or prejudicial treatment of different categories of people, especially on the grounds of race, age, or sex.</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -503,12 +587,18 @@
          <property name="text">
           <string>Defined as the activity of producing advertisements for commercial products or services.</string>
          </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
         </widget>
        </item>
        <item>
         <widget class="QLabel" name="label_example_16">
          <property name="text">
           <string>For example, this would include banners showing the Coca-Cola logo shown in a Soccer game.</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -527,12 +617,18 @@
          <property name="text">
           <string>Defined as taking a risky action in the hope of a desired result.</string>
          </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
         </widget>
        </item>
        <item>
         <widget class="QLabel" name="label_example_18">
          <property name="text">
           <string>For example, this would include spinning a wheel to get in-app credits.</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -591,6 +687,9 @@
          <property name="text">
           <string>Defined as any messaging system connected to the Internet.</string>
          </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
         </widget>
        </item>
        <item>
@@ -607,6 +706,9 @@
         <widget class="QLabel" name="label_description_20">
          <property name="text">
           <string>Defined as any multimedia messaging system connected to the Internet.</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -625,6 +727,9 @@
          <property name="text">
           <string>Defined as sharing identifiable details with other users to allow out-of-band communication.</string>
          </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
         </widget>
        </item>
        <item>
@@ -642,12 +747,18 @@
          <property name="text">
           <string>Defined as sharing information with a legal entity typically used for advertising or for sending back diagnostic data.</string>
          </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
         </widget>
        </item>
        <item>
         <widget class="QLabel" name="label_example_22">
          <property name="text">
           <string>For example, this would include sending your purchasing history to Amazon.</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -665,6 +776,9 @@
         <widget class="QLabel" name="label_description_23">
          <property name="text">
           <string>Defined as sharing your physical real-time location.</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
          </property>
         </widget>
        </item>

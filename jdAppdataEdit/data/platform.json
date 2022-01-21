@@ -1,0 +1,52 @@
+{
+   "architectures": [
+      "arm",
+      "armeb",
+      "aarch64",
+      "aarch64_be",
+      "aarch64_32",
+      "alpha",
+      "hppa",
+      "m68k",
+      "mips",
+      "mipsel",
+      "mips64",
+      "mips64el",
+      "msp430",
+      "powerpc",
+      "powerpc64",
+      "powerpc64le",
+      "riscv32",
+      "riscv64",
+      "sparc",
+      "sparc64",
+      "i386",
+      "x86_64",
+      "wasm32",
+      "wasm64"
+   ],
+   "os_kernels": [
+      "linux",
+      "darwin",
+      "macos",
+      "dragonfly",
+      "freebsd",
+      "kfreebsd",
+      "netbsd",
+      "openbsd",
+      "windows",
+      "haiku"
+   ],
+   "os_environments": [
+      "gnu",
+      "gnu_ilp32",
+      "gnueabi",
+      "gnueabihf",
+      "gnuabin32",
+      "gnuabi64",
+      "android",
+      "musl",
+      "msvc",
+      "cygwin"
+   ]
+}

@@ -1,7 +1,10 @@
+from operator import truediv
 from PyQt6.QtWidgets import QTableWidget, QHeaderView, QListWidget, QComboBox
-from typing import List, Any
+from typing import Optional, List, Any
+from lxml import etree
 import urllib.parse
 import requests
+import hashlib
 
 
 def clear_table_widget(table: QTableWidget):
@@ -37,7 +40,7 @@ def is_url_valid(url: str) -> bool:
 def is_url_reachable(url: str) -> bool:
     """Checks if a URL exists"""
     try:
-        r = requests.get(url, stream=True)
+        r = requests.head(url, stream=True)
         return r.status_code == 200
     except Exception:
         return False
@@ -59,3 +62,37 @@ def get_logical_table_row_list(table: QTableWidget) -> List[int]:
     for i in range(table.rowCount()):
         index_list.append(header.logicalIndex(i))
     return index_list
+
+
+def calculate_checksum_from_url(url: str, hashtype: str) -> Optional[str]:
+    """Returns the checksum of the given hashtype of the given URL. returns None, if the status code is not 200."""
+    BUF_SIZE = 65536
+    r = requests.get(url, stream=True)
+    if r.status_code != 200:
+        return None
+    hash = sha1 = getattr(hashlib, hashtype)()
+    for chunk in r.iter_content(chunk_size=65536):
+        hash.update(chunk)
+    return hash.hexdigest()
+
+
+def create_artifact_source_tag(url: str) -> etree.Element:
+    """Creates a artifact tag for the given source URL"""
+    atrtifact_tag =  etree.Element("artifact")
+    atrtifact_tag.set("type", "source")
+    location_tag = etree.SubElement(atrtifact_tag, "location")
+    location_tag.text = url
+    for i in ("sha1", "sha256", "blake2b", "blake2s"):
+        checksum_tag = etree.SubElement(atrtifact_tag, "checksum")
+        checksum_tag.set("type", i)
+        checksum_tag.text = calculate_checksum_from_url(url, i)
+    return atrtifact_tag
+
+
+def is_string_number(text: str) -> bool:
+    """Checks if the given string is a number"""
+    try:
+        int(text)
+        return True
+    except ValueError:
+        return False

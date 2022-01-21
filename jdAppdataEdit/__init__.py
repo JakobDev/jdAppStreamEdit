@@ -3,6 +3,7 @@ from PyQt6.QtCore import QTranslator, QLocale
 from .TranslateWindow import TranslateWindow
 from .MainWindow import MainWindow
 from .Enviroment import Enviroment
+import argparse
 import sys
 import os
 
@@ -26,6 +27,13 @@ def main():
 
     env.translate_window = TranslateWindow(env)
 
-    w = MainWindow(env)
-    w.show()
+    main_window = MainWindow(env)
+    main_window.show()
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("file", nargs='?')
+    args = parser.parse_known_args()
+    if args[0].file is not None:
+        main_window.open_file(os.path.abspath(args[0].file))
+
     sys.exit(app.exec())
