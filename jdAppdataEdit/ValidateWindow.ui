@@ -27,17 +27,22 @@
       <widget class="QComboBox" name="mode_box">
        <item>
         <property name="text">
-         <string>Normal</string>
+         <string>Appstreamcli</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>Relax</string>
+         <string>Appstream-Util Normal</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>Strict</string>
+         <string>Appstream-Util Relax</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Appstream-Util Strict</string>
         </property>
        </item>
       </widget>

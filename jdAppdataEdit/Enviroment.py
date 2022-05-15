@@ -16,7 +16,7 @@ class Enviroment():
         except Exception:
             pass
 
-        self.version = "3.0"
+        self.version = "3.1"
 
         self.icon = QIcon(os.path.join(self.program_dir, "Icon.svg"))
 

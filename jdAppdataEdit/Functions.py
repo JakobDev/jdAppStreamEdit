@@ -1,4 +1,3 @@
-from operator import truediv
 from PyQt6.QtWidgets import QTableWidget, QHeaderView, QListWidget, QComboBox
 from typing import Optional, List, Any
 from lxml import etree
@@ -70,8 +69,8 @@ def calculate_checksum_from_url(url: str, hashtype: str) -> Optional[str]:
     r = requests.get(url, stream=True)
     if r.status_code != 200:
         return None
-    hash = sha1 = getattr(hashlib, hashtype)()
-    for chunk in r.iter_content(chunk_size=65536):
+    hash = getattr(hashlib, hashtype)()
+    for chunk in r.iter_content(chunk_size=BUF_SIZE):
         hash.update(chunk)
     return hash.hexdigest()
 

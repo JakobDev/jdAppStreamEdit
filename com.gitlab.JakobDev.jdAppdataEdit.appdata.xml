@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <component type="desktop">
-  <!--Created with jdAppdataEdit 3.0-->
+  <!--Created with jdAppdataEdit 3.1-->
   <id>com.gitlab.JakobDev.jdAppdataEdit</id>
   <name>jdAppdataEdit</name>
   <summary>A graphical Program to create and edit AppStream files</summary>
@@ -40,14 +40,25 @@
     </screenshot>
   </screenshots>
   <releases>
-    <release version="3.0" date="2022-01-22" type="stable"/>
-    <release version="2.1" date="2022-01-16" type="stable"/>
-    <release version="2.0" date="2022-01-15" type="stable"/>
-    <release version="1.1" date="2022-01-11" type="stable"/>
-    <release version="1.0" date="2022-01-08" type="stable"/>
+    <release version="3.1" date="2022-05-15" type="stable">
+      <description>
+        <ul>
+          <li>Add vcs-browser and contribute URL types</li>
+          <li>Allow selecting a type</li>
+          <li>Allow validating with appstreamcli</li>
+          <li>Add Preview Dialog</li>
+        </ul>
+      </description>
+    </release>
+    <release version="3.0" date="2022-01-21" type="stable"/>
+    <release version="2.1" date="2022-01-15" type="stable"/>
+    <release version="2.0" date="2022-01-14" type="stable"/>
+    <release version="1.1" date="2022-01-10" type="stable"/>
+    <release version="1.0" date="2022-01-07" type="stable"/>
   </releases>
   <url type="homepage">https://gitlab.com/JakobDev/jdAppdataEdit</url>
   <url type="bugtracker">https://gitlab.com/JakobDev/jdAppdataEdit/-/issues</url>
+  <url type="vcs-browser">https://gitlab.com/JakobDev/jdAppdataEdit</url>
   <categories>
     <category>Development</category>
     <category>Qt</category>

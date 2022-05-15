@@ -1,5 +1,5 @@
 from PyQt6.QtWidgets import QApplication, QCheckBox, QComboBox, QLineEdit, QListWidget, QMainWindow, QMessageBox, QDateEdit, QInputDialog, QPlainTextEdit, QPushButton, QTableWidget, QTableWidgetItem, QRadioButton, QFileDialog
-from .Functions import clear_table_widget, stretch_table_widget_colums_size, list_widget_contains_item, is_url_reachable, get_logical_table_row_list, create_artifact_source_tag
+from .Functions import clear_table_widget, stretch_table_widget_colums_size, list_widget_contains_item, is_url_reachable, get_logical_table_row_list, create_artifact_source_tag, select_combo_box_data
 from PyQt6.QtCore import Qt, QCoreApplication, QDate
 from .DescriptionWidget import DescriptionWidget
 from .ScreenshotWindow import ScreenshotWindow
@@ -7,6 +7,7 @@ from .RelationsWidget import RelationsWidget
 from .ReleasesWindow import ReleasesWindow
 from .SettingsWindow import SettingsWindow
 from .ValidateWindow import ValidateWindow
+from .ViewXMLWindow import ViewXMLWindow
 from .AboutWindow import AboutWindow
 from .OarsWidget import OarsWidget
 from PyQt6.QtGui import QAction
@@ -31,6 +32,7 @@ class MainWindow(QMainWindow):
 
         self._settings_window = SettingsWindow(env, self)
         self._validate_window = ValidateWindow(env, self)
+        self._xml_window = ViewXMLWindow(env, self)
         self._screenshot_window = ScreenshotWindow(env, self)
         self._releases_window = ReleasesWindow(env, self)
         self._about_window = AboutWindow(env)
@@ -70,6 +72,17 @@ class MainWindow(QMainWindow):
                 value.model().rowsMoved.connect(self.set_file_edited)
 
         self._update_recent_files_menu()
+
+        self.component_type_box.addItem(QCoreApplication.translate("MainWindow", "Desktop"), "desktop")
+        self.component_type_box.addItem(QCoreApplication.translate("MainWindow", "Console"), "console-application")
+        self.component_type_box.addItem(QCoreApplication.translate("MainWindow", "Web Application"), "web-application")
+        self.component_type_box.addItem(QCoreApplication.translate("MainWindow", "Service"), "service")
+        self.component_type_box.addItem(QCoreApplication.translate("MainWindow", "Addon"), "addon")
+        self.component_type_box.addItem(QCoreApplication.translate("MainWindow", "Font"), "font")
+        self.component_type_box.addItem(QCoreApplication.translate("MainWindow", "Icon Theme"), "icon-theme")
+        self.component_type_box.addItem(QCoreApplication.translate("MainWindow", "Codecs"), "codec")
+        self.component_type_box.addItem(QCoreApplication.translate("MainWindow", "Input Method"), "inputmethod")
+        self.component_type_box.addItem(QCoreApplication.translate("MainWindow", "Firmware"), "firmware")
 
         for key, value in env.metadata_license_list.items():
             self.metadata_license_box.addItem(value, key)
@@ -136,7 +149,9 @@ class MainWindow(QMainWindow):
         self.exit_action.triggered.connect(self._exit_menu_action_clicked)
 
         self.settings_action.triggered.connect(self._settings_window.open_window)
+
         self.validate_action.triggered.connect(self._validate_window.open_window)
+        self.view_xml_action.triggered.connect(self._xml_window.exec)
 
         self.documentation_action.triggered.connect(lambda: webbrowser.open("https://www.freedesktop.org/software/appstream/docs"))
         self.about_action.triggered.connect(self._about_window.exec)
@@ -223,7 +238,6 @@ class MainWindow(QMainWindow):
             return
         self.open_file(path[0])
         self._add_to_recent_files(path[0])
-        self._current_path = path[0]
         self.update_window_title()
 
     def _open_recent_file(self):
@@ -234,7 +248,6 @@ class MainWindow(QMainWindow):
             return
         self.open_file(action.data())
         self._add_to_recent_files(action.data())
-        self._current_path = action.data()
         self.update_window_title()
 
     def _save_file_clicked(self):
@@ -648,6 +661,15 @@ class MainWindow(QMainWindow):
 
         self.reset_data()
 
+        if len(root.xpath("/component")) == 0:
+            QMessageBox.critical(self, QCoreApplication.translate("MainWindow", "No component tag"), QCoreApplication.translate("MainWindow", "This XML file has no component tag"))
+            return
+        elif len(root.xpath("/component")) > 2:
+            QMessageBox.critical(self, QCoreApplication.translate("MainWindow", "Too many component tag"), QCoreApplication.translate("MainWindow", "Only files with one component tag are supported"))
+            return
+
+        select_combo_box_data(self.component_type_box, root.xpath("/component")[0].get("type"))
+
         id_tag = root.find("id")
         if id_tag is not None:
             self.id_edit.setText(id_tag.text)
@@ -726,7 +748,7 @@ class MainWindow(QMainWindow):
 
         for i in root.findall("url"):
             try:
-                getattr(self, i.get("type") + "_url_edit").setText(i.text)
+                getattr(self, i.get("type").replace("-", "_") + "_url_edit").setText(i.text)
             except AttributeError:
                 print(f"Unknown URL type {i.get('type')}", file=sys.stderr)
 
@@ -767,6 +789,8 @@ class MainWindow(QMainWindow):
 
         self._edited = False
 
+        self._current_path = path
+
     # Write
 
     def _write_releases(self, root_tag: etree.Element):
@@ -805,9 +829,9 @@ class MainWindow(QMainWindow):
         if len(current_tag.getchildren()) == 0:
             root_tag.remove(current_tag)
 
-    def save_file(self, path: str):
+    def get_xml_text(self) -> str:
         root = etree.Element("component")
-        root.set("type", "desktop")
+        root.set("type", self.component_type_box.currentData())
 
         if self._env.settings.get("addCommentSave"):
             root.append(etree.Comment("Created with jdAppdataEdit " + self._env.version))
@@ -885,7 +909,7 @@ class MainWindow(QMainWindow):
             if url == "":
                 continue
             url_tag = etree.SubElement(root, "url")
-            url_tag.set("type", i)
+            url_tag.set("type", i.replace("_", "-"))
             url_tag.text = url
 
         if self.categorie_list.count() > 0:
@@ -928,8 +952,11 @@ class MainWindow(QMainWindow):
         xml = xml.replace("&lt;", "<")
         xml = xml.replace("&gt;", ">")
 
+        return xml
+
+    def save_file(self, path: str):
         with open(path, "w", encoding="utf-8", newline='\n') as f:
-            f.write(xml)
+            f.write(self.get_xml_text())
 
     def closeEvent(self, event):
         if self._ask_for_save():

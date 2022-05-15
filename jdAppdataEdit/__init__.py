@@ -35,5 +35,6 @@ def main():
     args = parser.parse_known_args()
     if args[0].file is not None:
         main_window.open_file(os.path.abspath(args[0].file))
+        main_window.update_window_title()
 
     sys.exit(app.exec())

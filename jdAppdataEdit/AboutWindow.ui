@@ -49,7 +49,7 @@
    <item>
     <widget class="QLabel" name="label">
      <property name="text">
-      <string>A graphical Program to create and edit Appdata files</string>
+      <string>A graphical Program to create and edit Appstream files</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>

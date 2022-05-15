@@ -10,8 +10,8 @@
     </message>
     <message>
         <location filename="../AboutWindow.ui" line="0"/>
-        <source>A graphical Program to create and edit Appdata files</source>
-        <translation>Ein grafisches Programm zum erstellen und bearbeiten von Appdata Dateien</translation>
+        <source>A graphical Program to create and edit Appstream files</source>
+        <translation>A grafisches Programm zum erstellen und bearbeiten von Appstream Dateien</translation>
     </message>
     <message>
         <location filename="../AboutWindow.ui" line="0"/>
@@ -266,47 +266,97 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../MainWindow.py" line="56"/>
+        <location filename="../MainWindow.py" line="58"/>
         <source>Not specified</source>
         <translation>Nicht angegeben</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="57"/>
+        <location filename="../MainWindow.py" line="59"/>
         <source>Required</source>
         <translation>Benötigt</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="58"/>
+        <location filename="../MainWindow.py" line="60"/>
         <source>Recommend</source>
         <translation>Empfohlen</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="59"/>
+        <location filename="../MainWindow.py" line="61"/>
         <source>Supported</source>
         <translation>Unterstützt</translation>
     </message>
     <message>
+        <location filename="../MainWindow.py" line="76"/>
+        <source>Desktop</source>
+        <translation>Desktop</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="77"/>
+        <source>Console</source>
+        <translation>Kommandzeile</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="78"/>
+        <source>Web Application</source>
+        <translation>Webanwendung</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="79"/>
+        <source>Service</source>
+        <translation>Service</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="80"/>
+        <source>Addon</source>
+        <translation>Addon</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="81"/>
+        <source>Font</source>
+        <translation>Schriftart</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="82"/>
+        <source>Icon Theme</source>
+        <translation>Icontheme</translation>
+    </message>
+    <message>
         <location filename="../MainWindow.py" line="83"/>
+        <source>Codecs</source>
+        <translation>Codec</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="84"/>
+        <source>Input Method</source>
+        <translation>Eingabemethode</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="85"/>
+        <source>Firmware</source>
+        <translation>Firmware</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="96"/>
         <source>Unknown</source>
         <translation>Unbekannt</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="171"/>
+        <location filename="../MainWindow.py" line="186"/>
         <source>No recent files</source>
         <translation>Keine zuletzt geöffneten Dateien</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="184"/>
+        <location filename="../MainWindow.py" line="199"/>
         <source>Clear</source>
         <translation>Löschen</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="201"/>
+        <location filename="../MainWindow.py" line="216"/>
         <source>Unsaved changes</source>
         <translation>Nicht gespeicherte Änderungen</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="201"/>
+        <location filename="../MainWindow.py" line="216"/>
         <source>You have unsaved changes. Do you want to save now?</source>
         <translation>Du hast nicht gespeicherte Änderungen. Möchtest du sie jetzt speichern?</translation>
     </message>
@@ -314,8 +364,8 @@
         <location filename="../MainWindow.ui" line="0"/>
         <location filename="../MainWindow.ui" line="0"/>
         <location filename="../MainWindow.ui" line="0"/>
-        <location filename="../MainWindow.py" line="362"/>
-        <location filename="../MainWindow.py" line="284"/>
+        <location filename="../MainWindow.py" line="375"/>
+        <location filename="../MainWindow.py" line="297"/>
         <source>Edit</source>
         <translation>Bearbeiten</translation>
     </message>
@@ -325,166 +375,186 @@
         <location filename="../MainWindow.ui" line="0"/>
         <location filename="../MainWindow.ui" line="0"/>
         <location filename="../MainWindow.ui" line="0"/>
-        <location filename="../MainWindow.py" line="518"/>
-        <location filename="../MainWindow.py" line="366"/>
-        <location filename="../MainWindow.py" line="288"/>
+        <location filename="../MainWindow.py" line="531"/>
+        <location filename="../MainWindow.py" line="379"/>
+        <location filename="../MainWindow.py" line="301"/>
         <source>Remove</source>
         <translation>Löschen</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="459"/>
-        <location filename="../MainWindow.py" line="397"/>
-        <location filename="../MainWindow.py" line="295"/>
+        <location filename="../MainWindow.py" line="472"/>
+        <location filename="../MainWindow.py" line="410"/>
+        <location filename="../MainWindow.py" line="308"/>
         <source>Invalid URL</source>
         <translation>Ungültige URL</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="459"/>
-        <location filename="../MainWindow.py" line="295"/>
+        <location filename="../MainWindow.py" line="472"/>
+        <location filename="../MainWindow.py" line="308"/>
         <source>The URL {url} does not work</source>
         <translation>Die URL {url} funktioniert nicht</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="461"/>
-        <location filename="../MainWindow.py" line="297"/>
+        <location filename="../MainWindow.py" line="474"/>
+        <location filename="../MainWindow.py" line="310"/>
         <source>Everything OK</source>
         <translation>Alles in Ordnung</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="461"/>
-        <location filename="../MainWindow.py" line="297"/>
+        <location filename="../MainWindow.py" line="474"/>
+        <location filename="../MainWindow.py" line="310"/>
         <source>All URLs are working</source>
         <translation>Alle URLs funktionieren</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="356"/>
+        <location filename="../MainWindow.py" line="369"/>
         <source>Stable</source>
         <translation>Stabil</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="357"/>
+        <location filename="../MainWindow.py" line="370"/>
         <source>Development</source>
         <translation>Entwicklung</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="422"/>
-        <location filename="../MainWindow.py" line="388"/>
+        <location filename="../MainWindow.py" line="435"/>
+        <location filename="../MainWindow.py" line="401"/>
         <source>Enter Repo URL</source>
         <translation>Repo URl eingeben</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="388"/>
+        <location filename="../MainWindow.py" line="401"/>
         <source>Please Enter the URL to the GitHub Repo</source>
         <translation>Bitte gib die URL zu einem GitHub Repo ein</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="397"/>
+        <location filename="../MainWindow.py" line="410"/>
         <source>Could not get the Repo and Owner from the URL</source>
         <translation>Konnte Besitzer und Name nicht aus der URL extrahieren</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="401"/>
+        <location filename="../MainWindow.py" line="414"/>
         <source>Nothing found</source>
         <translation>Nichts gefunden</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="401"/>
+        <location filename="../MainWindow.py" line="414"/>
         <source>It looks like this Repo doesn&apos;t  have any releases</source>
         <translation>Dieses Repo hat keine Releases</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="434"/>
-        <location filename="../MainWindow.py" line="404"/>
+        <location filename="../MainWindow.py" line="447"/>
+        <location filename="../MainWindow.py" line="417"/>
         <source>Overwrite evrything</source>
         <translation>Alles überschreiben</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="434"/>
-        <location filename="../MainWindow.py" line="404"/>
+        <location filename="../MainWindow.py" line="447"/>
+        <location filename="../MainWindow.py" line="417"/>
         <source>If you proceed, all your chnages in the release tab will be overwritten. Continue?</source>
         <translation>Wenn du forfährst wird der Release Tab überschrieben. Fortfahren?</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="422"/>
+        <location filename="../MainWindow.py" line="435"/>
         <source>Please Enter the URL to the GitLab Repo</source>
         <translation>Bitte gib die URL zu einem GitLab Repo ein</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="431"/>
+        <location filename="../MainWindow.py" line="444"/>
         <source>Could not get Data</source>
         <translation>Konnte keine Daten bekommen</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="431"/>
+        <location filename="../MainWindow.py" line="444"/>
         <source>Could not get release Data for that Repo. Make sure you have the right URL.</source>
         <translation>Konnte keine Daten erhalten. Stelle sicher, dass die URL stimmt.</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="472"/>
+        <location filename="../MainWindow.py" line="485"/>
         <source>Add a Categorie</source>
         <translation>Kategorie hinzufügen</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="472"/>
+        <location filename="../MainWindow.py" line="485"/>
         <source>Please select a Categorie from the list below</source>
         <translation>Bitte wähle eine Kategorie aus</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="476"/>
+        <location filename="../MainWindow.py" line="489"/>
         <source>Categorie already added</source>
         <translation>Kategorie bereits vorhanden</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="476"/>
+        <location filename="../MainWindow.py" line="489"/>
         <source>You can&apos;t add the same Categorie twice</source>
         <translation>Du kannst dieselbe Kategorie nicht ein zweites Mal hinzufügen</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="534"/>
+        <location filename="../MainWindow.py" line="547"/>
         <source>New Keyword</source>
         <translation>Neues Schlüsselwort</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="534"/>
+        <location filename="../MainWindow.py" line="547"/>
         <source>Please enter a new Keyword</source>
         <translation>Bitte gib ein neues Schlüsselwort ein</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="552"/>
-        <location filename="../MainWindow.py" line="538"/>
+        <location filename="../MainWindow.py" line="565"/>
+        <location filename="../MainWindow.py" line="551"/>
         <source>Keyword in List</source>
         <translation>Schlüsselwort in Liste</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="552"/>
-        <location filename="../MainWindow.py" line="538"/>
+        <location filename="../MainWindow.py" line="565"/>
+        <location filename="../MainWindow.py" line="551"/>
         <source>This Keyword is already in the List</source>
         <translation>ADs Schlüsselwort befindet sich bereits in der Liste</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="548"/>
+        <location filename="../MainWindow.py" line="561"/>
         <source>Edit Keyword</source>
         <translation>Schlüsselwort bearbeiten</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="548"/>
+        <location filename="../MainWindow.py" line="561"/>
         <source>Please edit the Keyword</source>
         <translation>Bitte bearbeite das Schlüsselwort</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="640"/>
+        <location filename="../MainWindow.py" line="653"/>
         <source>File not found</source>
         <translation>datei nicht gefunden</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="640"/>
+        <location filename="../MainWindow.py" line="653"/>
         <source>The file you are trying to open does not exists</source>
         <translation>Die Datei, du du versuchst zu öffnen existiert nicht</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="646"/>
+        <location filename="../MainWindow.py" line="659"/>
         <source>XML parsing failed</source>
         <translation>XML parsen fehlgeschlagen</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="665"/>
+        <source>No component tag</source>
+        <translation>Kein component Tag</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="665"/>
+        <source>This XML file has no component tag</source>
+        <translation>Die XML Datei hat keinen component Tag</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="668"/>
+        <source>Too many component tag</source>
+        <translation>Zu viele component Tags</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="668"/>
+        <source>Only files with one component tag are supported</source>
+        <translation>Nur ein component Tag ist erlaubt</translation>
     </message>
     <message>
         <location filename="../MainWindow.ui" line="0"/>
@@ -576,6 +646,11 @@
         <location filename="../MainWindow.ui" line="0"/>
         <source>If the software is part of a bigger group e.g. GNOME or KDE, you can provide it here</source>
         <translation>Wenn die Software teil einer größeren Gruppe z.B. GNOME oder KDE ist, kannst du das hier angeben</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.ui" line="0"/>
+        <source>Type:</source>
+        <translation>Typ:</translation>
     </message>
     <message>
         <location filename="../MainWindow.ui" line="0"/>
@@ -681,6 +756,16 @@
         <location filename="../MainWindow.ui" line="0"/>
         <source>Contact:</source>
         <translation>Kontakt:</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.ui" line="0"/>
+        <source>Sourcecode:</source>
+        <translation>Quelltext:</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.ui" line="0"/>
+        <source>Contribute:</source>
+        <translation>Beitragen:</translation>
     </message>
     <message>
         <location filename="../MainWindow.ui" line="0"/>
@@ -852,6 +937,11 @@
         <location filename="../MainWindow.ui" line="0"/>
         <source>Appstream documentation</source>
         <translation>Appstream Dokumentation</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.ui" line="0"/>
+        <source>View XML</source>
+        <translation>XML anzeigen</translation>
     </message>
 </context>
 <context>
@@ -2073,22 +2163,22 @@
 <context>
     <name>ValidateWindow</name>
     <message>
-        <location filename="../ValidateWindow.py" line="38"/>
-        <source>Can&apos;t find appstream-util</source>
-        <translation>Kann appstream-util nicht finden</translation>
-    </message>
-    <message>
-        <location filename="../ValidateWindow.py" line="38"/>
-        <source>Can&apos;t find appstream-util. Make sure it is installed and in PATH.</source>
-        <translation>appstream-util wurde nicht gefunden. Stelle sicher, dass es im PATH ist.</translation>
+        <location filename="../ValidateWindow.py" line="29"/>
+        <source>appstreamcli was not found</source>
+        <translation>appstreamcli wurde nicht gefunden</translation>
     </message>
     <message>
         <location filename="../ValidateWindow.py" line="42"/>
+        <source>appstream-util was not found</source>
+        <translation>appstream-util wurde nicht gefunden</translation>
+    </message>
+    <message>
+        <location filename="../ValidateWindow.py" line="51"/>
         <source>No ID</source>
         <translation>Keine ID</translation>
     </message>
     <message>
-        <location filename="../ValidateWindow.py" line="42"/>
+        <location filename="../ValidateWindow.py" line="51"/>
         <source>You need to set a ID to use this feature</source>
         <translation>Du benötigst eine ID, um dieses Feature nutzen zu können</translation>
     </message>
@@ -2104,23 +2194,41 @@
     </message>
     <message>
         <location filename="../ValidateWindow.ui" line="0"/>
-        <source>Normal</source>
-        <translation>Normal</translation>
+        <source>Appstreamcli</source>
+        <translation>Appstreamcli</translation>
     </message>
     <message>
         <location filename="../ValidateWindow.ui" line="0"/>
-        <source>Relax</source>
-        <translation>Streng</translation>
+        <source>Appstream-Util Normal</source>
+        <translation>Appstream-Util Normal</translation>
     </message>
     <message>
         <location filename="../ValidateWindow.ui" line="0"/>
-        <source>Strict</source>
-        <translation>Lasch</translation>
+        <source>Appstream-Util Relax</source>
+        <translation>Appstream-Util Lasch</translation>
+    </message>
+    <message>
+        <location filename="../ValidateWindow.ui" line="0"/>
+        <source>Appstream-Util Strict</source>
+        <translation>Appstream-Util Streng</translation>
     </message>
     <message>
         <location filename="../ValidateWindow.ui" line="0"/>
         <source>OK</source>
         <translation>OK</translation>
+    </message>
+</context>
+<context>
+    <name>ViewXMLWindow</name>
+    <message>
+        <location filename="../ViewXMLWindow.ui" line="0"/>
+        <source>View XML</source>
+        <translation>XML ansehen</translation>
+    </message>
+    <message>
+        <location filename="../ViewXMLWindow.ui" line="0"/>
+        <source>Preview of the Appstream file</source>
+        <translation>Vorschau der Appstream Datei</translation>
     </message>
 </context>
 </TS>
