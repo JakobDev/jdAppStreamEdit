@@ -3,7 +3,6 @@ from PyQt6.QtCore import QCoreApplication
 from PyQt6 import uic
 import subprocess
 import tempfile
-import shutil
 import os
 
 
