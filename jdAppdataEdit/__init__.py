@@ -12,6 +12,7 @@ def main():
     app = QApplication(sys.argv)
     env = Enviroment()
 
+    app.setDesktopFileName("com.gitlab.JakobDev.jdAppdataEdit")
     app.setApplicationName("jdAppdataEdit")
     app.setWindowIcon(env.icon)
 
