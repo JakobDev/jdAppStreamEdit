@@ -23,7 +23,7 @@ class ValidateWindow(QDialog):
         self._main_window.save_file(temp_path)
         if self.mode_box.currentIndex() == 0:
             try:
-                result = subprocess.run(["appstreamcli", "validate", temp_path], capture_output=True, text=True)
+                result = subprocess.run(["appstreamcli", "validate", "--explain", temp_path], capture_output=True, text=True)
             except FileNotFoundError:
                 self.output_field.setPlainText(QCoreApplication.translate("ValidateWindow", "appstreamcli was not found"))
                 os.remove(temp_path)
