@@ -15,41 +15,44 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QTableWidget" name="description_table">
-     <property name="selectionMode">
-      <enum>QAbstractItemView::ExtendedSelection</enum>
+    <widget class="QSplitter" name="splitter">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
      </property>
-     <property name="selectionBehavior">
-      <enum>QAbstractItemView::SelectRows</enum>
-     </property>
-     <attribute name="horizontalHeaderStretchLastSection">
-      <bool>false</bool>
-     </attribute>
-     <column>
-      <property name="text">
-       <string>Type</string>
+     <widget class="QTableWidget" name="description_table">
+      <property name="selectionMode">
+       <enum>QAbstractItemView::ExtendedSelection</enum>
       </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Content</string>
+      <property name="selectionBehavior">
+       <enum>QAbstractItemView::SelectRows</enum>
       </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Remove</string>
+      <attribute name="horizontalHeaderStretchLastSection">
+       <bool>false</bool>
+      </attribute>
+      <column>
+       <property name="text">
+        <string>Type</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Content</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Remove</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QTextEdit" name="description_preview">
+      <property name="readOnly">
+       <bool>true</bool>
       </property>
-     </column>
-    </widget>
-   </item>
-   <item>
-    <widget class="QTextEdit" name="description_preview">
-     <property name="readOnly">
-      <bool>true</bool>
-     </property>
-     <property name="placeholderText">
-      <string>This Textbox shows a Preview of the Description</string>
-     </property>
+      <property name="placeholderText">
+       <string>This Textbox shows a Preview of the Description</string>
+      </property>
+     </widget>
     </widget>
    </item>
    <item>
