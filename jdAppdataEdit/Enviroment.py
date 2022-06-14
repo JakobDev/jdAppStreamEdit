@@ -16,7 +16,8 @@ class Enviroment():
         except Exception:
             pass
 
-        self.version = "3.1"
+        with open(os.path.join(self.program_dir, "version.txt"), "r", encoding="utf-8") as  f:
+            self.version = f.read().strip()
 
         self.icon = QIcon(os.path.join(self.program_dir, "Icon.svg"))
 

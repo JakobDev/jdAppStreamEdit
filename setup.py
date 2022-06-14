@@ -17,12 +17,15 @@ class BuildTranslations(build_py):
         super().run()
 
 
+with open(os.path.join(os.path.dirname(__file__), "jdAppdataEdit", "version.txt"), "r", encoding="utf-8") as f:
+    version = f.read().strip()
+
 with open("README.md", "r", encoding="utf-8") as f:
     readme = f.read()
 
 
 setup(name="jdAppdataEdit",
-    version="3.1",
+    version=version,
     description="A graphical Program to create and edit Appdata files",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",

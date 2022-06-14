@@ -2,3 +2,4 @@ include jdAppdataEdit/*.ui
 include jdAppdataEdit/data/*
 include jdAppdataEdit/i18n/*.qm
 include jdAppdataEdit/Icon.svg
+include jdAppdataEdit/version.txt
