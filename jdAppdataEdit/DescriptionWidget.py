@@ -120,7 +120,7 @@ class ListWidget(QListWidget):
         text, ok = QInputDialog.getText(self, QCoreApplication.translate("DescriptionWidget", "Add Item"), QCoreApplication.translate("DescriptionWidget", "Please enter a new list item"))
         if not ok:
             return
-        item = QListWidgetItem(text)
+        item = QListWidgetItem(text.strip())
         item.setData(42, {})
         self._list_widget.addItem(item)
         self._description_widget.update_preview()
