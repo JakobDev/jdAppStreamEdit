@@ -118,4 +118,6 @@ class ReleasesWindow(QDialog):
 
         self.main_tab_widget.setCurrentIndex(0)
 
+        self.setWindowTitle(QCoreApplication.translate("ReleasesWindow", "Edit release {{release}}").replace("{{release}}", self._main_window.releases_table.item(self._position, 0).text()))
+
         self.exec()
