@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <component type="desktop">
-  <!--Created with jdAppdataEdit 3.1-->
+  <!--Created with jdAppdataEdit 3.2-->
   <id>com.gitlab.JakobDev.jdAppdataEdit</id>
   <name>jdAppdataEdit</name>
   <summary>A graphical Program to create and edit AppStream files</summary>
@@ -40,9 +40,16 @@
     </screenshot>
   </screenshots>
   <releases>
-    <release version="3.1" date="2022-05-15" type="stable">
-      <url>https://gitlab.com/JakobDev/jdAppdataEdit/-/releases/3.1</url>
+    <release version="3.2" date="2022-06-14" type="stable">
       <description>
+        <ul>
+          <li>You can now resize the contents of the Description tab</li>
+          <li>The current version is shown in the edit version window</li>
+          <li>The text of lists in descriptions is now striped</li>
+        </ul>
+      </description>
+    </release>
+    <release version="3.1" date="2022-05-14" type="stable"><url>https://gitlab.com/JakobDev/jdAppdataEdit/-/releases/3.1</url><description>
         <ul>
           <li>Add vcs-browser and contribute URL types</li>
           <li>Allow selecting a type</li>
@@ -51,9 +58,7 @@
         </ul>
       </description>
     </release>
-    <release version="3.0" date="2022-01-21" type="stable">
-      <url>https://gitlab.com/JakobDev/jdAppdataEdit/-/releases/3.0</url>
-      <description>
+    <release version="3.0" date="2022-01-20" type="stable"><url>https://gitlab.com/JakobDev/jdAppdataEdit/-/releases/3.0</url><description>
         <ul>
           <li>Add support for relations</li>
           <li>Add support for more description information</li>
@@ -61,17 +66,13 @@
         </ul>
       </description>
     </release>
-    <release version="2.1" date="2022-01-15" type="stable">
-      <url>https://gitlab.com/JakobDev/jdAppdataEdit/-/releases/2.1</url>
-      <description>
+    <release version="2.1" date="2022-01-14" type="stable"><url>https://gitlab.com/JakobDev/jdAppdataEdit/-/releases/2.1</url><description>
         <ul>
           <li>Remove auto generated tkinter import</li>
         </ul>
       </description>
     </release>
-    <release version="2.0" date="2022-01-14" type="stable">
-      <url>https://gitlab.com/JakobDev/jdAppdataEdit/-/releases/2.0</url>
-      <description>
+    <release version="2.0" date="2022-01-13" type="stable"><url>https://gitlab.com/JakobDev/jdAppdataEdit/-/releases/2.0</url><description>
         <ul>
           <li>Add option to translate files</li>
           <li>Add new Description Widget</li>
@@ -80,17 +81,13 @@
         </ul>
       </description>
     </release>
-    <release version="1.1" date="2022-01-10" type="stable">
-      <url>https://gitlab.com/JakobDev/jdAppdataEdit/-/releases/1.1</url>
-      <description>
+    <release version="1.1" date="2022-01-09" type="stable"><url>https://gitlab.com/JakobDev/jdAppdataEdit/-/releases/1.1</url><description>
         <ul>
           <li>Fix Bugs</li>
         </ul>
       </description>
     </release>
-    <release version="1.0" date="2022-01-07" type="stable">
-      <url>https://gitlab.com/JakobDev/jdAppdataEdit/-/releases/1.0</url>
-      <description>
+    <release version="1.0" date="2022-01-06" type="stable"><url>https://gitlab.com/JakobDev/jdAppdataEdit/-/releases/1.0</url><description>
         <ul>
           <li>First Release</li>
         </ul>
