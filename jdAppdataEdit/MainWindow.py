@@ -1,5 +1,5 @@
 from PyQt6.QtWidgets import QApplication, QCheckBox, QComboBox, QLineEdit, QListWidget, QMainWindow, QMessageBox, QDateEdit, QInputDialog, QPlainTextEdit, QPushButton, QTableWidget, QTableWidgetItem, QRadioButton, QFileDialog
-from .Functions import clear_table_widget, stretch_table_widget_colums_size, list_widget_contains_item, is_url_reachable, get_logical_table_row_list, create_artifact_source_tag, select_combo_box_data
+from .Functions import clear_table_widget, stretch_table_widget_colums_size, list_widget_contains_item, is_url_reachable, get_logical_table_row_list, create_artifact_source_tag, select_combo_box_data, is_flatpak, get_shared_temp_dir
 from PyQt6.QtCore import Qt, QCoreApplication, QDate
 from .DescriptionWidget import DescriptionWidget
 from .ScreenshotWindow import ScreenshotWindow
@@ -11,11 +11,12 @@ from .ViewXMLWindow import ViewXMLWindow
 from .AboutWindow import AboutWindow
 from .OarsWidget import OarsWidget
 from PyQt6.QtGui import QAction
-from typing import Optional
+from typing import List, Optional
 from lxml import etree
 from PyQt6 import uic
 import urllib.parse
 import webbrowser
+import subprocess
 import requests
 import sys
 import os
@@ -152,6 +153,7 @@ class MainWindow(QMainWindow):
 
         self.validate_action.triggered.connect(self._validate_window.open_window)
         self.view_xml_action.triggered.connect(self._xml_window.exec)
+        self.preview_gnome_software.triggered.connect(lambda: self._previev_appstream_file(["gnome-software", "--show-metainfo"]))
 
         self.documentation_action.triggered.connect(lambda: webbrowser.open("https://www.freedesktop.org/software/appstream/docs"))
         self.about_action.triggered.connect(self._about_window.exec)
@@ -361,7 +363,7 @@ class MainWindow(QMainWindow):
         self.releases_table.setItem(row, 0, version_item)
 
         if date is None:
-            self.releases_table.setCellWidget(row, 1, QDateEdit())
+            self.releases_table.setCellWidget(row, 1, QDateEdit(QDate.currentDate()))
         else:
             self.releases_table.setCellWidget(row, 1, QDateEdit(date))
 
@@ -957,6 +959,29 @@ class MainWindow(QMainWindow):
     def save_file(self, path: str):
         with open(path, "w", encoding="utf-8", newline='\n') as f:
             f.write(self.get_xml_text())
+
+    def _previev_appstream_file(self, command: List[str]) -> None:
+        if self.get_id() == "":
+            QMessageBox.critical(self, QCoreApplication.translate("MainWindow", "No ID"), QCoreApplication.translate("MainWindow", "You need to set a ID to use this feature"))
+            return
+
+        preview_dir = os.path.join(get_shared_temp_dir(), "preview")
+        try:
+            os.makedirs(preview_dir)
+        except Exception:
+            pass
+
+        file_path = os.path.join(preview_dir, self.get_id() + ".metainfo.xml")
+        with open(file_path, "w", encoding="utf-8") as f:
+            f.write(self.get_xml_text())
+
+        try:
+            if is_flatpak():
+                subprocess.check_call(["flatpak-spawn", "--host"] + command + [file_path])
+            else:
+                subprocess.Popen(command + [file_path])
+        except Exception:
+            QMessageBox.critical(self, QCoreApplication.translate("MainWindow", "{{binary}} not found").replace("{{binary}}", command[0]), QCoreApplication.translate("MainWindow", "{{binary}} was not found. Make sure it is installed and in PATH.").replace("{{binary}}", command[0]))
 
     def closeEvent(self, event):
         if self._ask_for_save():

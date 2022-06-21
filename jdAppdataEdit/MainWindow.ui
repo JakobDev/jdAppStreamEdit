@@ -857,7 +857,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>21</height>
+     <height>30</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -901,6 +901,7 @@
     </property>
     <addaction name="validate_action"/>
     <addaction name="view_xml_action"/>
+    <addaction name="preview_gnome_software"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuSettings"/>
@@ -977,6 +978,11 @@
   <action name="view_xml_action">
    <property name="text">
     <string>View XML</string>
+   </property>
+  </action>
+  <action name="preview_gnome_software">
+   <property name="text">
+    <string>Preview in Gnome Software</string>
    </property>
   </action>
  </widget>

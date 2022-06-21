@@ -3,7 +3,9 @@ from typing import Optional, List, Any
 from lxml import etree
 import urllib.parse
 import requests
+import tempfile
 import hashlib
+import os
 
 
 def clear_table_widget(table: QTableWidget):
@@ -95,3 +97,14 @@ def is_string_number(text: str) -> bool:
         return True
     except ValueError:
         return False
+
+
+def is_flatpak() -> bool:
+    return os.path.isfile("/.flatpak-info")
+
+
+def get_shared_temp_dir() -> str:
+    if is_flatpak():
+        return os.path.join( os.getenv("XDG_CACHE_HOME"), "jdAppdataEdit")
+    else:
+        return os.path.join(tempfile.gettempdir(), "jdAppdataEdit")
