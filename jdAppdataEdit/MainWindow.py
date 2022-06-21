@@ -18,6 +18,7 @@ import urllib.parse
 import webbrowser
 import subprocess
 import requests
+import shutil
 import sys
 import os
 
@@ -985,6 +986,10 @@ class MainWindow(QMainWindow):
 
     def closeEvent(self, event):
         if self._ask_for_save():
+            try:
+                shutil.rmtree(get_shared_temp_dir())
+            except Exception:
+                pass
             event.accept()
         else:
             event.ignore()
