@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 from setuptools.command.build_py import build_py
 from setuptools import setup
+from typing import Optional
 import subprocess
 import shutil
 import sys
