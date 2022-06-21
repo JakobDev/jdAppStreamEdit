@@ -5,8 +5,8 @@ pip_deploy:
     image: "python:latest"
     stage: deploy
     script:
-        - pip install twine wheel pyside6
-        - python setup.py sdist bdist_wheel
+        - pip install twine build pyside6
+        - python -m build --sdist --wheel
         - twine upload -u "$PYPI_USERNAME" -p "$PYPI_PASSWORD" dist/*
     only:
         - tags

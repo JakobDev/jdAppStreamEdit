@@ -2,18 +2,31 @@
 from setuptools.command.build_py import build_py
 from setuptools import setup
 import subprocess
+import shutil
+import sys
 import os
+
+
+def get_lrelease_command() -> Optional[str]:
+    for i in ("lrelease", "pyside6-lrelease", "pyside5-lrelease"):
+        if shutil.which(i) is not None:
+            return i
+    return None
 
 
 class BuildTranslations(build_py):
     def run(self):
+        command = get_lrelease_command()
+        if command is None:
+            print("lrelease not found", file=sys.stderr)
+            sys.exit(1)
         translation_source_dir = os.path.join("jdAppdataEdit", "i18n")
         translation_bin_dir = os.path.join(self.build_lib, "jdAppdataEdit", "i18n")
         if not os.path.isdir(translation_bin_dir):
             os.makedirs(translation_bin_dir)
         for i in os.listdir(translation_source_dir):
             if i.endswith(".ts"):
-                subprocess.run(["lrelease", os.path.join(translation_source_dir, i), "-qm", os.path.join(translation_bin_dir, i[:-3] + ".qm")])
+                subprocess.run([command, os.path.join(translation_source_dir, i), "-qm", os.path.join(translation_bin_dir, i[:-3] + ".qm")])
         super().run()
 
 
