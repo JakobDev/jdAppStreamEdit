@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <component type="desktop">
-  <!--Created with jdAppdataEdit 3.3-->
+  <!--Created with jdAppdataEdit 4.0-->
   <id>com.gitlab.JakobDev.jdAppdataEdit</id>
   <name>jdAppdataEdit</name>
   <summary>A graphical Program to create and edit AppStream files</summary>
@@ -42,8 +42,16 @@
     </screenshot>
   </screenshots>
   <releases>
-    <release version="3.3" date="2022-06-21" type="stable">
+    <release version="4.0" date="2022-07-08" type="stable">
       <description>
+        <ul>
+          <li>Add Advanced section</li>
+          <li>Add Welcome dialog</li>
+          <li>Add Mimetype</li>
+        </ul>
+      </description>
+    </release>
+    <release version="3.3" date="2022-06-21" type="stable"><description>
         <ul>
           <li>Add preview in Gnome Software</li>
         </ul>
@@ -104,7 +112,9 @@
   </releases>
   <url type="homepage">https://gitlab.com/JakobDev/jdAppdataEdit</url>
   <url type="bugtracker">https://gitlab.com/JakobDev/jdAppdataEdit/-/issues</url>
+  <url type="translate">https://gitlab.com/JakobDev/jdAppdataEdit/-/blob/main/TRANSLATE.md</url>
   <url type="vcs-browser">https://gitlab.com/JakobDev/jdAppdataEdit</url>
+  <url type="contribute">https://gitlab.com/JakobDev/jdAppdataEdit/-/blob/main/CONTRIBUTING.md</url>
   <categories>
     <category>Development</category>
     <category>Qt</category>
@@ -118,6 +128,7 @@
   <provides>
     <binary>jdappdataedit</binary>
     <python3>jdAppdataEdit</python3>
+    <mediatype>application/x-freedesktop-appstream</mediatype>
   </provides>
   <keywords>
     <keyword>appstream</keyword>
