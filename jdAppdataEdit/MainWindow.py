@@ -1,5 +1,6 @@
+from .Functions import clear_table_widget, stretch_table_widget_colums_size, list_widget_contains_item, is_url_reachable, get_logical_table_row_list, create_artifact_source_tag, select_combo_box_data, is_flatpak, get_shared_temp_dir, is_url_valid
 from PyQt6.QtWidgets import QApplication, QCheckBox, QComboBox, QLineEdit, QListWidget, QMainWindow, QMessageBox, QDateEdit, QInputDialog, QPlainTextEdit, QPushButton, QTableWidget, QTableWidgetItem, QRadioButton, QFileDialog
-from .Functions import clear_table_widget, stretch_table_widget_colums_size, list_widget_contains_item, is_url_reachable, get_logical_table_row_list, create_artifact_source_tag, select_combo_box_data, is_flatpak, get_shared_temp_dir
+from PyQt6.QtGui import QAction,  QDragEnterEvent, QDropEvent, QCloseEvent
 from PyQt6.QtCore import Qt, QCoreApplication, QDate
 from .DescriptionWidget import DescriptionWidget
 from .ScreenshotWindow import ScreenshotWindow
@@ -7,10 +8,10 @@ from .RelationsWidget import RelationsWidget
 from .ReleasesWindow import ReleasesWindow
 from .SettingsWindow import SettingsWindow
 from .ValidateWindow import ValidateWindow
+from .AdvancedWidget import AdvancedWidget
 from .ViewXMLWindow import ViewXMLWindow
 from .AboutWindow import AboutWindow
 from .OarsWidget import OarsWidget
-from PyQt6.QtGui import QAction
 from typing import List, Optional
 from lxml import etree
 from PyQt6 import uic
@@ -21,6 +22,7 @@ import requests
 import shutil
 import sys
 import os
+import io
 
 
 class MainWindow(QMainWindow):
@@ -47,6 +49,9 @@ class MainWindow(QMainWindow):
 
         self._oars_widget = OarsWidget(env, self)
         self.oras_layout.addWidget(self._oars_widget)
+
+        self._advanced_widget = AdvancedWidget(env, self)
+        self.advanced_layout.addWidget(self._advanced_widget)
 
         self.screenshot_list = []
 
@@ -117,9 +122,11 @@ class MainWindow(QMainWindow):
 
         self._name_translations = {}
         self._summary_translations = {}
+        self._developer_name_translations = {}
 
         self.translate_name_button.clicked.connect(lambda: env.translate_window.open_window(self._name_translations))
         self.translate_summary_button.clicked.connect(lambda: env.translate_window.open_window(self._summary_translations))
+        self.translate_developer_name_button.clicked.connect(lambda: env.translate_window.open_window(self._developer_name_translations))
 
         self.screenshot_table.verticalHeader().sectionMoved.connect(self._screenshot_table_row_moved)
         self.screenshot_add_button.clicked.connect(lambda: self._screenshot_window.open_window(None))
@@ -146,6 +153,7 @@ class MainWindow(QMainWindow):
 
         self.new_action.triggered.connect(self._new_menu_action_clicked)
         self.open_action.triggered.connect(self._open_menu_action_clicked)
+        self.open_url_action.triggered.connect(self._open_url_clicked)
         self.save_action.triggered.connect(self._save_file_clicked)
         self.save_as_action.triggered.connect(self._save_as_clicked)
         self.exit_action.triggered.connect(self._exit_menu_action_clicked)
@@ -156,9 +164,12 @@ class MainWindow(QMainWindow):
         self.view_xml_action.triggered.connect(self._xml_window.exec)
         self.preview_gnome_software.triggered.connect(lambda: self._previev_appstream_file(["gnome-software", "--show-metainfo"]))
 
+        self.welcome_dialog_action.triggered.connect(self.show_welcome_dialog)
         self.documentation_action.triggered.connect(lambda: webbrowser.open("https://www.freedesktop.org/software/appstream/docs"))
         self.about_action.triggered.connect(self._about_window.exec)
         self.about_qt_action.triggered.connect(QApplication.instance().aboutQt)
+
+        self.setAcceptDrops(True)
 
         self.main_tab_widget.setCurrentIndex(0)
         self.update_window_title()
@@ -203,7 +214,7 @@ class MainWindow(QMainWindow):
         clear_action.triggered.connect(self._clear_recent_files)
         self.recent_files_menu.addAction(clear_action)
 
-    def _add_to_recent_files(self, path: str):
+    def add_to_recent_files(self, path: str):
         while path in self._env.recent_files:
             self._env.recent_files.remove(path)
         self._env.recent_files.insert(0, path)
@@ -215,7 +226,7 @@ class MainWindow(QMainWindow):
         if not self._edited:
             return True
         if not self._env.settings.get("checkSaveBeforeClosing"):
-            return
+            return True
         answer = QMessageBox.warning(self, QCoreApplication.translate("MainWindow", "Unsaved changes"), QCoreApplication.translate("MainWindow", "You have unsaved changes. Do you want to save now?"), QMessageBox.StandardButton.Save | QMessageBox.StandardButton.Discard | QMessageBox.StandardButton.Cancel)
         if answer == QMessageBox.StandardButton.Save:
             self._save_file_clicked()
@@ -224,6 +235,27 @@ class MainWindow(QMainWindow):
             return True
         elif answer == QMessageBox.StandardButton.Cancel:
             return False
+
+    def show_welcome_dialog(self) -> None:
+        text = "<center>"
+        text += QCoreApplication.translate("MainWindow", "Welcome to jdAppdataEdit!") + "<br><br>"
+        text += QCoreApplication.translate("MainWindow", "With jdAppdataEdit you can create and edit AppStream files (*.metainfo.xml or .appdata.xml). This files are to provide data for your Application (Description, Screenshots etc.) to Software Centers.") + "<br><br>"
+        text += QCoreApplication.translate("MainWindow", "It is highly recommend to read the the AppStream Documentation before using this Program. You can open it under ?>AppStream documentation.") + "<br><br>"
+        text += QCoreApplication.translate("MainWindow", "You can check if your AppStream is valid under Tools>Validate.")
+        text += "</center>"
+
+        check_box = QCheckBox(QCoreApplication.translate("MainWindow", "Show this dialog at startup"))
+        check_box.setChecked(self._env.settings.get("showWelcomeDialog"))
+
+        message_box = QMessageBox()
+        message_box.setWindowTitle(QCoreApplication.translate("MainWindow", "Welcome"))
+        message_box.setText(text)
+        message_box.setCheckBox(check_box)
+
+        message_box.exec()
+
+        self._env.settings.set("showWelcomeDialog", check_box.isChecked())
+        self._env.settings.save(os.path.join(self._env.data_dir, "settings.json"))
 
     def _new_menu_action_clicked(self):
         if not self._ask_for_save():
@@ -236,12 +268,12 @@ class MainWindow(QMainWindow):
     def _open_menu_action_clicked(self):
         if not self._ask_for_save():
             return
-        path = QFileDialog.getOpenFileName(self)
+        filter = QCoreApplication.translate("MainWindow", "AppStream Files") + " (*.metainfo.xml *.appdata.xml);;" +   QCoreApplication.translate("MainWindow", "All Files") + " (*)"
+        path = QFileDialog.getOpenFileName(self, filter=filter)
         if path[0] == "":
             return
         self.open_file(path[0])
-        self._add_to_recent_files(path[0])
-        self.update_window_title()
+        self.add_to_recent_files(path[0])
 
     def _open_recent_file(self):
         if not self._ask_for_save():
@@ -250,25 +282,34 @@ class MainWindow(QMainWindow):
         if not action:
             return
         self.open_file(action.data())
-        self._add_to_recent_files(action.data())
-        self.update_window_title()
+        self.add_to_recent_files(action.data())
+
+    def _open_url_clicked(self):
+        if not self._ask_for_save():
+            return
+
+        url = QInputDialog.getText(self, QCoreApplication.translate("MainWindow", "Enter URL"),  QCoreApplication.translate("MainWindow", "Please enter a URL"))[0]
+
+        if url != "":
+            self.open_url(url)
 
     def _save_file_clicked(self):
         if self._current_path is None:
             self._save_as_clicked()
             return
         self.save_file(self._current_path)
-        self._add_to_recent_files(self._current_path)
+        self.add_to_recent_files(self._current_path)
         self._edited = False
         self.update_window_title()
 
     def _save_as_clicked(self):
-        path = QFileDialog.getSaveFileName(self)
+        filter = QCoreApplication.translate("MainWindow", "AppStream Files") + " (*.metainfo.xml *.appdata.xml);;" +   QCoreApplication.translate("MainWindow", "All Files") + " (*)"
+        path = QFileDialog.getSaveFileName(self, filter=filter)
         if path[0] == "":
             return
         self.save_file(path[0])
         self._current_path = path[0]
-        self._add_to_recent_files(path[0])
+        self.add_to_recent_files(path[0])
         self._edited = False
         self.update_window_title()
 
@@ -308,7 +349,7 @@ class MainWindow(QMainWindow):
     def _check_screenshot_urls(self):
         for i in self.screenshot_list:
             if not is_url_reachable(i["url"]):
-                QMessageBox.critical(self, QCoreApplication.translate("MainWindow", "Invalid URL"), QCoreApplication.translate("MainWindow", "The URL {url} does not work").format(url=i["url"]))
+                QMessageBox.critical(self, QCoreApplication.translate("MainWindow", "Invalid URL"), QCoreApplication.translate("MainWindow", "The URL {{url}} does not work").replace("{{url}}", i["url"]))
                 return
         QMessageBox.information(self, QCoreApplication.translate("MainWindow", "Everything OK"), QCoreApplication.translate("MainWindow", "All URLs are working"))
 
@@ -610,10 +651,47 @@ class MainWindow(QMainWindow):
         self._oars_widget.reset_data()
         self._name_translations.clear()
         self._summary_translations.clear()
+        self._advanced_widget.reset_data()
         self._update_categorie_remove_button_enabled()
         self._update_keyword_edit_remove_button()
 
     # Read
+
+    def open_file(self, path: str) -> bool:
+        try:
+            with open(path, "rb") as f:
+                text = f.read()
+        except FileNotFoundError:
+            QMessageBox.critical(self, QCoreApplication.translate("MainWindow", "File not found"), QCoreApplication.translate("MainWindow", "{{path}} does not exists").replace("{{path}}", path))
+            return
+        except Exception:
+            QMessageBox.critical(self, QCoreApplication.translate("MainWindow", "Error"), QCoreApplication.translate("MainWindow", "An error occurred while trying to open {{path}}").replace("{{path}}", path))
+            return
+
+        if self.load_xml(text):
+            self._current_path = path
+            self.update_window_title()
+            return True
+        else:
+            return False
+
+    def open_url(self, url: str) -> None:
+        if not is_url_valid(url):
+            QMessageBox.critical(self, QCoreApplication.translate("MainWindow", "Invalid URL"), QCoreApplication.translate("MainWindow", "{{url}} is not a valid http/https URL").replace("{{url}}", url))
+            return
+
+        try:
+            r = requests.get(url, timeout=10)
+        except (requests.exceptions.ConnectionError, requests.exceptions.ConnectTimeout):
+            QMessageBox.critical(self, QCoreApplication.translate("MainWindow", "Could not connect"), QCoreApplication.translate("MainWindow", "Could not connect to {{url}}").replace("{{url}}", url))
+            return
+        except Exception:
+            QMessageBox.critical(self, QCoreApplication.translate("MainWindow", "Error"), QCoreApplication.translate("MainWindow", "An error occurred while trying to connect to {{url}}").replace("{{url}}", url))
+            return
+
+        if self.load_xml(r.content):
+            self._current_path = None
+            self.update_window_title()
 
     def _parse_screenshots_tag(self, screenshots_tag: etree._Element):
         for i in screenshots_tag.getchildren():
@@ -651,25 +729,21 @@ class MainWindow(QMainWindow):
 
         self.update_sceenshot_table()
 
-    def open_file(self, path: str):
-        if not os.path.isfile(path):
-            QMessageBox.critical(self, QCoreApplication.translate("MainWindow", "File not found"), QCoreApplication.translate("MainWindow", "The file you are trying to open does not exists"))
-            return
-
+    def load_xml(self, xml_data: bytes) -> bool:
         try:
-            root = etree.parse(path)
+            root = etree.parse(io.BytesIO(xml_data))
         except etree.XMLSyntaxError as ex:
             QMessageBox.critical(self, QCoreApplication.translate("MainWindow", "XML parsing failed"), ex.msg)
-            return
-
-        self.reset_data()
+            return False
 
         if len(root.xpath("/component")) == 0:
             QMessageBox.critical(self, QCoreApplication.translate("MainWindow", "No component tag"), QCoreApplication.translate("MainWindow", "This XML file has no component tag"))
-            return
+            return False
         elif len(root.xpath("/component")) > 2:
-            QMessageBox.critical(self, QCoreApplication.translate("MainWindow", "Too many component tag"), QCoreApplication.translate("MainWindow", "Only files with one component tag are supported"))
-            return
+            QMessageBox.critical(self, QCoreApplication.translate("MainWindow", "Too many component tags"), QCoreApplication.translate("MainWindow", "Only files with one component tag are supported"))
+            return False
+
+        self.reset_data()
 
         select_combo_box_data(self.component_type_box, root.xpath("/component")[0].get("type"))
 
@@ -689,9 +763,11 @@ class MainWindow(QMainWindow):
             else:
                 self._summary_translations[i.get("{http://www.w3.org/XML/1998/namespace}lang")] = i.text
 
-        developer_name_tag = root.find("developer_name")
-        if developer_name_tag is not None:
-            self.developer_name_edit.setText(developer_name_tag.text)
+        for i in root.findall("developer_name"):
+            if i.get("{http://www.w3.org/XML/1998/namespace}lang") is None:
+                self.developer_name_edit.setText(i.text)
+            else:
+                self._developer_name_translations[i.get("{http://www.w3.org/XML/1998/namespace}lang")] = i.text
 
         launchable_tag = root.find("launchable")
         if launchable_tag is not None:
@@ -790,9 +866,11 @@ class MainWindow(QMainWindow):
             for i in keywords_tag.findall("keyword"):
                 self.keyword_list.addItem(i.text)
 
+        self._advanced_widget.load_data(root)
+
         self._edited = False
 
-        self._current_path = path
+        return True
 
     # Write
 
@@ -858,6 +936,10 @@ class MainWindow(QMainWindow):
 
         developer_name_tag = etree.SubElement(root, "developer_name")
         developer_name_tag.text = self.developer_name_edit.text()
+        for key, value in self._developer_name_translations.items():
+            developer_name_tag = etree.SubElement(root, "developer_name")
+            developer_name_tag.set("{http://www.w3.org/XML/1998/namespace}lang", key)
+            developer_name_tag.text = value
 
         if self.desktop_file_edit.text() != "":
             launchable_tag = etree.SubElement(root, "launchable")
@@ -949,6 +1031,8 @@ class MainWindow(QMainWindow):
                 single_keyword_tag = etree.SubElement(keywords_tag, "keyword")
                 single_keyword_tag.text = self.keyword_list.item(i).text()
 
+        self._advanced_widget.save_data(root)
+
         xml = etree.tostring(root, pretty_print=True, xml_declaration=True, encoding="utf-8").decode("utf-8")
 
         # lxml filters the tags from the description text, so we need to convert them back
@@ -984,7 +1068,29 @@ class MainWindow(QMainWindow):
         except Exception:
             QMessageBox.critical(self, QCoreApplication.translate("MainWindow", "{{binary}} not found").replace("{{binary}}", command[0]), QCoreApplication.translate("MainWindow", "{{binary}} was not found. Make sure it is installed and in PATH.").replace("{{binary}}", command[0]))
 
-    def closeEvent(self, event):
+    def dragEnterEvent(self, event: QDragEnterEvent):
+        if event.mimeData().hasUrls():
+            event.accept()
+        else:
+            event.ignore()
+
+    def dropEvent(self, event: QDropEvent):
+        try:
+            url = event.mimeData().urls()[0]
+        except IndexError:
+            return
+
+        if not self._ask_for_save():
+            return
+
+        if url.isLocalFile():
+            path = url.toLocalFile()
+            if self.open_file(path):
+                self.add_to_recent_files(path)
+        else:
+            self.open_url(url.toString())
+
+    def closeEvent(self, event: QCloseEvent):
         if self._ask_for_save():
             try:
                 shutil.rmtree(get_shared_temp_dir())

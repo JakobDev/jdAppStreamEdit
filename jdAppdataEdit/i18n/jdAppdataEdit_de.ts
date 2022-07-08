@@ -30,6 +30,129 @@
     </message>
 </context>
 <context>
+    <name>AdvancedWidget</name>
+    <message>
+        <location filename="../AdvancedWidget.py" line="65"/>
+        <source>New Suggestion</source>
+        <translation>Neuer Vorschlag</translation>
+    </message>
+    <message>
+        <location filename="../AdvancedWidget.py" line="65"/>
+        <source>Please enter a new ID</source>
+        <translation>Bitte gib eine ID ein</translation>
+    </message>
+    <message>
+        <location filename="../AdvancedWidget.py" line="83"/>
+        <location filename="../AdvancedWidget.py" line="69"/>
+        <source>ID in List</source>
+        <translation>ID in der Liste</translation>
+    </message>
+    <message>
+        <location filename="../AdvancedWidget.py" line="83"/>
+        <location filename="../AdvancedWidget.py" line="69"/>
+        <source>This ID is already in the List</source>
+        <translation>Diese ID ist bereits in der Liste</translation>
+    </message>
+    <message>
+        <location filename="../AdvancedWidget.py" line="79"/>
+        <source>Edit Suggestion</source>
+        <translation>Vorschlag bearbeiten</translation>
+    </message>
+    <message>
+        <location filename="../AdvancedWidget.py" line="79"/>
+        <source>Please edit the ID</source>
+        <translation>Bitte bearbeite die ID</translation>
+    </message>
+    <message>
+        <location filename="../AdvancedWidget.ui" line="0"/>
+        <location filename="../AdvancedWidget.ui" line="0"/>
+        <location filename="../AdvancedWidget.ui" line="0"/>
+        <location filename="../AdvancedWidget.py" line="146"/>
+        <location filename="../AdvancedWidget.py" line="119"/>
+        <source>Remove</source>
+        <translation>Löschen</translation>
+    </message>
+    <message>
+        <location filename="../AdvancedWidget.ui" line="0"/>
+        <source>Translation</source>
+        <translation>Übersetzung</translation>
+    </message>
+    <message>
+        <location filename="../AdvancedWidget.ui" line="0"/>
+        <source>You can manage the translations here. For more information take a look at the documentation.</source>
+        <translation>Die kannst hier die Übersetzungen verwalten. Für mehr Informationen wirf einen Blick in die Dokumentation.</translation>
+    </message>
+    <message>
+        <location filename="../AdvancedWidget.ui" line="0"/>
+        <source>Type</source>
+        <translation>Typ</translation>
+    </message>
+    <message>
+        <location filename="../AdvancedWidget.ui" line="0"/>
+        <source>Domain</source>
+        <translation>Domain</translation>
+    </message>
+    <message>
+        <location filename="../AdvancedWidget.ui" line="0"/>
+        <location filename="../AdvancedWidget.ui" line="0"/>
+        <location filename="../AdvancedWidget.ui" line="0"/>
+        <location filename="../AdvancedWidget.ui" line="0"/>
+        <source>Add</source>
+        <translation>Hinzufügen</translation>
+    </message>
+    <message>
+        <location filename="../AdvancedWidget.ui" line="0"/>
+        <source>Suggests</source>
+        <translation>Vorschläge</translation>
+    </message>
+    <message>
+        <location filename="../AdvancedWidget.ui" line="0"/>
+        <source>If your Sofware suggests other Software, you can add the IDs here</source>
+        <translation>Wenn deine Software eine andere vorschlägt, kannst du hier die ID einfügen</translation>
+    </message>
+    <message>
+        <location filename="../AdvancedWidget.ui" line="0"/>
+        <source>Edit</source>
+        <translation>Bearbeiten</translation>
+    </message>
+    <message>
+        <location filename="../AdvancedWidget.ui" line="0"/>
+        <source>Tags</source>
+        <translation>Tags</translation>
+    </message>
+    <message>
+        <location filename="../AdvancedWidget.ui" line="0"/>
+        <source>You can edit the tags here. For more information take a look at the documentation.</source>
+        <translation>Du kannst hier die Tags bearbeiten.  Für mehr Informationen wirf einen Blick in die Dokumentation.</translation>
+    </message>
+    <message>
+        <location filename="../AdvancedWidget.ui" line="0"/>
+        <source>Namespace</source>
+        <translation>Namensraum</translation>
+    </message>
+    <message>
+        <location filename="../AdvancedWidget.ui" line="0"/>
+        <location filename="../AdvancedWidget.ui" line="0"/>
+        <source>Value</source>
+        <translation>Wert</translation>
+    </message>
+    <message>
+        <location filename="../AdvancedWidget.ui" line="0"/>
+        <source>Custom</source>
+        <translation>Eigen</translation>
+    </message>
+    <message>
+        <location filename="../AdvancedWidget.ui" line="0"/>
+        <source>You can add custom values here. For more information take a look at the documentation.</source>
+        <translation>DU kannst hier eigene Werte eintragen. Für mehr Informationen wirf einen Blick in die Dokumentation.</translation>
+    </message>
+    <message>
+        <location filename="../AdvancedWidget.ui" line="0"/>
+        <source>Key</source>
+        <translation>Schlüssel</translation>
+    </message>
+</context>
+<context>
     <name>ArtifactWindow</name>
     <message>
         <location filename="../ArtifactWindow.py" line="24"/>
@@ -174,44 +297,6 @@
 <context>
     <name>DescriptionWidget</name>
     <message>
-        <location filename="../DescriptionWidget.ui" line="0"/>
-        <source>Type</source>
-        <translation>Typ</translation>
-    </message>
-    <message>
-        <location filename="../DescriptionWidget.ui" line="0"/>
-        <source>Content</source>
-        <translation>Inhalt</translation>
-    </message>
-    <message>
-        <location filename="../DescriptionWidget.py" line="218"/>
-        <location filename="../DescriptionWidget.py" line="196"/>
-        <location filename="../DescriptionWidget.py" line="66"/>
-        <location filename="../DescriptionWidget.ui" line="0"/>
-        <source>Remove</source>
-        <translation>Löschen</translation>
-    </message>
-    <message>
-        <location filename="../DescriptionWidget.ui" line="0"/>
-        <source>This Textbox shows a Preview of the Description</source>
-        <translation>Diese Textbox zeigt eine Vorschau der Beschreibung</translation>
-    </message>
-    <message>
-        <location filename="../DescriptionWidget.ui" line="0"/>
-        <source>Add Paragraph</source>
-        <translation>Paragraph hinzufügen</translation>
-    </message>
-    <message>
-        <location filename="../DescriptionWidget.ui" line="0"/>
-        <source>Add Ordered List</source>
-        <translation>Geordnete Liste hinzufügen</translation>
-    </message>
-    <message>
-        <location filename="../DescriptionWidget.ui" line="0"/>
-        <source>Add Unordered List</source>
-        <translation>Ungeordnete Liste hinzufügen</translation>
-    </message>
-    <message>
         <location filename="../DescriptionWidget.py" line="67"/>
         <location filename="../DescriptionWidget.py" line="24"/>
         <source>Translate</source>
@@ -226,6 +311,14 @@
         <location filename="../DescriptionWidget.py" line="65"/>
         <source>Edit</source>
         <translation>Bearbeiten</translation>
+    </message>
+    <message>
+        <location filename="../DescriptionWidget.ui" line="0"/>
+        <location filename="../DescriptionWidget.py" line="218"/>
+        <location filename="../DescriptionWidget.py" line="196"/>
+        <location filename="../DescriptionWidget.py" line="66"/>
+        <source>Remove</source>
+        <translation>Löschen</translation>
     </message>
     <message>
         <location filename="../DescriptionWidget.py" line="120"/>
@@ -262,13 +355,447 @@
         <source>Unordered List</source>
         <translation>Ungeordnete Liste</translation>
     </message>
+    <message>
+        <location filename="../DescriptionWidget.ui" line="0"/>
+        <source>Type</source>
+        <translation>Typ</translation>
+    </message>
+    <message>
+        <location filename="../DescriptionWidget.ui" line="0"/>
+        <source>Content</source>
+        <translation>Inhalt</translation>
+    </message>
+    <message>
+        <location filename="../DescriptionWidget.ui" line="0"/>
+        <source>This Textbox shows a Preview of the Description</source>
+        <translation>Diese Textbox zeigt eine Vorschau der Beschreibung</translation>
+    </message>
+    <message>
+        <location filename="../DescriptionWidget.ui" line="0"/>
+        <source>Add Paragraph</source>
+        <translation>Paragraph hinzufügen</translation>
+    </message>
+    <message>
+        <location filename="../DescriptionWidget.ui" line="0"/>
+        <source>Add Ordered List</source>
+        <translation>Geordnete Liste hinzufügen</translation>
+    </message>
+    <message>
+        <location filename="../DescriptionWidget.ui" line="0"/>
+        <source>Add Unordered List</source>
+        <translation>Ungeordnete Liste hinzufügen</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
     <message>
+        <location filename="../MainWindow.py" line="65"/>
+        <source>Not specified</source>
+        <translation>Nicht angegeben</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="66"/>
+        <source>Required</source>
+        <translation>Benötigt</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="67"/>
+        <source>Recommend</source>
+        <translation>Empfohlen</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="68"/>
+        <source>Supported</source>
+        <translation>Unterstützt</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="83"/>
+        <source>Desktop</source>
+        <translation>Desktop</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="84"/>
+        <source>Console</source>
+        <translation>Kommandzeile</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="85"/>
+        <source>Web Application</source>
+        <translation>Webanwendung</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="86"/>
+        <source>Service</source>
+        <translation>Service</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="87"/>
+        <source>Addon</source>
+        <translation>Addon</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="88"/>
+        <source>Font</source>
+        <translation>Schriftart</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="89"/>
+        <source>Icon Theme</source>
+        <translation>Icontheme</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="90"/>
+        <source>Codecs</source>
+        <translation>Codec</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="91"/>
+        <source>Input Method</source>
+        <translation>Eingabemethode</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="92"/>
+        <source>Firmware</source>
+        <translation>Firmware</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="103"/>
+        <source>Unknown</source>
+        <translation>Unbekannt</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="200"/>
+        <source>No recent files</source>
+        <translation>Keine zuletzt geöffneten Dateien</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="213"/>
+        <source>Clear</source>
+        <translation>Löschen</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="230"/>
+        <source>Unsaved changes</source>
+        <translation>Nicht gespeicherte Änderungen</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="230"/>
+        <source>You have unsaved changes. Do you want to save now?</source>
+        <translation>Du hast nicht gespeicherte Änderungen. Möchtest du sie jetzt speichern?</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="241"/>
+        <source>Welcome to jdAppdataEdit!</source>
+        <translation>Willkommen bei jdAppdataEdit!</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="242"/>
+        <source>With jdAppdataEdit you can create and edit AppStream files (*.metainfo.xml or .appdata.xml). This files are to provide data for your Application (Description, Screenshots etc.) to Software Centers.</source>
+        <translation>Mit jdAppdataEdit kannst du AppStream Dateien (*.metainfo.xml oder *.appdata.xml) erstellen und bearbeiten. Diese Dateien stellen Informationen (z.B. Beschreibung, Screeenshots usw.) für Software Center zur Verfügung.</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="243"/>
+        <source>It is highly recommend to read the the AppStream Documentation before using this Program. You can open it under ?&gt;AppStream documentation.</source>
+        <translation>Es wird empfohlen vor der benutzung die AppStream Dokumentation zu lesen. Du findest sie unter ?&gt;AppStream Dokumentation.</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="244"/>
+        <source>You can check if your AppStream is valid under Tools&gt;Validate.</source>
+        <translation>Du kannst deine AppStream Datei unter Werkzeuge&gt;Validieren auf Gültigkeit überprüfen.</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="247"/>
+        <source>Show this dialog at startup</source>
+        <translation>Diesen Dialog beim Programmstart anzeigen</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="251"/>
+        <source>Welcome</source>
+        <translation>Willkommen</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="306"/>
+        <location filename="../MainWindow.py" line="271"/>
+        <source>AppStream Files</source>
+        <translation>AppStream Dateien</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="306"/>
+        <location filename="../MainWindow.py" line="271"/>
+        <source>All Files</source>
+        <translation>Alle Dateien</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="291"/>
+        <source>Enter URL</source>
+        <translation>URL eingeben</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="291"/>
+        <source>Please enter a URL</source>
+        <translation>Bitte gib eine URL ein</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.ui" line="0"/>
+        <location filename="../MainWindow.ui" line="0"/>
+        <location filename="../MainWindow.ui" line="0"/>
+        <location filename="../MainWindow.py" line="419"/>
+        <location filename="../MainWindow.py" line="341"/>
+        <source>Edit</source>
+        <translation>Bearbeiten</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.ui" line="0"/>
+        <location filename="../MainWindow.ui" line="0"/>
+        <location filename="../MainWindow.ui" line="0"/>
+        <location filename="../MainWindow.ui" line="0"/>
+        <location filename="../MainWindow.ui" line="0"/>
+        <location filename="../MainWindow.py" line="575"/>
+        <location filename="../MainWindow.py" line="423"/>
+        <location filename="../MainWindow.py" line="345"/>
+        <source>Remove</source>
+        <translation>Löschen</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="680"/>
+        <location filename="../MainWindow.py" line="516"/>
+        <location filename="../MainWindow.py" line="454"/>
+        <location filename="../MainWindow.py" line="352"/>
+        <source>Invalid URL</source>
+        <translation>Ungültige URL</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="352"/>
+        <source>The URL {{url}} does not work</source>
+        <translation>Die URL {{url}} funktioniert nicht</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="518"/>
+        <location filename="../MainWindow.py" line="354"/>
+        <source>Everything OK</source>
+        <translation>Alles in Ordnung</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="518"/>
+        <location filename="../MainWindow.py" line="354"/>
+        <source>All URLs are working</source>
+        <translation>Alle URLs funktionieren</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="413"/>
+        <source>Stable</source>
+        <translation>Stabil</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="414"/>
+        <source>Development</source>
+        <translation>Entwicklung</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="479"/>
+        <location filename="../MainWindow.py" line="445"/>
+        <source>Enter Repo URL</source>
+        <translation>Repo URl eingeben</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="445"/>
+        <source>Please Enter the URL to the GitHub Repo</source>
+        <translation>Bitte gib die URL zu einem GitHub Repo ein</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="454"/>
+        <source>Could not get the Repo and Owner from the URL</source>
+        <translation>Konnte Besitzer und Name nicht aus der URL extrahieren</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="458"/>
+        <source>Nothing found</source>
+        <translation>Nichts gefunden</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="458"/>
+        <source>It looks like this Repo doesn&apos;t  have any releases</source>
+        <translation>Dieses Repo hat keine Releases</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="491"/>
+        <location filename="../MainWindow.py" line="461"/>
+        <source>Overwrite evrything</source>
+        <translation>Alles überschreiben</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="491"/>
+        <location filename="../MainWindow.py" line="461"/>
+        <source>If you proceed, all your chnages in the release tab will be overwritten. Continue?</source>
+        <translation>Wenn du forfährst wird der Release Tab überschrieben. Fortfahren?</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="479"/>
+        <source>Please Enter the URL to the GitLab Repo</source>
+        <translation>Bitte gib die URL zu einem GitLab Repo ein</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="488"/>
+        <source>Could not get Data</source>
+        <translation>Konnte keine Daten bekommen</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="488"/>
+        <source>Could not get release Data for that Repo. Make sure you have the right URL.</source>
+        <translation>Konnte keine Daten erhalten. Stelle sicher, dass die URL stimmt.</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="516"/>
+        <source>The URL {url} does not work</source>
+        <translation>Die URL {url} funktioniert nicht</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="529"/>
+        <source>Add a Categorie</source>
+        <translation>Kategorie hinzufügen</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="529"/>
+        <source>Please select a Categorie from the list below</source>
+        <translation>Bitte wähle eine Kategorie aus</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="533"/>
+        <source>Categorie already added</source>
+        <translation>Kategorie bereits vorhanden</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="533"/>
+        <source>You can&apos;t add the same Categorie twice</source>
+        <translation>Du kannst dieselbe Kategorie nicht ein zweites Mal hinzufügen</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="591"/>
+        <source>New Keyword</source>
+        <translation>Neues Schlüsselwort</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="591"/>
+        <source>Please enter a new Keyword</source>
+        <translation>Bitte gib ein neues Schlüsselwort ein</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="609"/>
+        <location filename="../MainWindow.py" line="595"/>
+        <source>Keyword in List</source>
+        <translation>Schlüsselwort in Liste</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="609"/>
+        <location filename="../MainWindow.py" line="595"/>
+        <source>This Keyword is already in the List</source>
+        <translation>ADs Schlüsselwort befindet sich bereits in der Liste</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="605"/>
+        <source>Edit Keyword</source>
+        <translation>Schlüsselwort bearbeiten</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="605"/>
+        <source>Please edit the Keyword</source>
+        <translation>Bitte bearbeite das Schlüsselwort</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="665"/>
+        <source>File not found</source>
+        <translation>datei nicht gefunden</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="665"/>
+        <source>{{path}} does not exists</source>
+        <translation>{{path}} existiert nicht</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="689"/>
+        <location filename="../MainWindow.py" line="668"/>
+        <source>Error</source>
+        <translation>Fehler</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="668"/>
+        <source>An error occurred while trying to open {{path}}</source>
+        <translation>Während des öffnens von {{path}} ist ein Fehler aufgetreten</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="680"/>
+        <source>{{url}} is not a valid http/https URL</source>
+        <translation>{{url}} ist keine gültige http/https URL</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="686"/>
+        <source>Could not connect</source>
+        <translation>Kann nicht verbinden</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="686"/>
+        <source>Could not connect to {{url}}</source>
+        <translation>Es kann keine Verbindung zu {{url}} aufgebaut werden</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="689"/>
+        <source>An error occurred while trying to connect to {{url}}</source>
+        <translation>Während des verbindens zu {{url}} ist ein fehler aufgetreten</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="736"/>
+        <source>XML parsing failed</source>
+        <translation>XML parsen fehlgeschlagen</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="740"/>
+        <source>No component tag</source>
+        <translation>Kein component Tag</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="740"/>
+        <source>This XML file has no component tag</source>
+        <translation>Die XML Datei hat keinen component Tag</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="743"/>
+        <source>Too many component tags</source>
+        <translation>Zu viele components Tags</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="743"/>
+        <source>Only files with one component tag are supported</source>
+        <translation>Nur ein component Tag ist erlaubt</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="1050"/>
+        <source>No ID</source>
+        <translation>Keine ID</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="1050"/>
+        <source>You need to set a ID to use this feature</source>
+        <translation>Du benötigst eine ID, um dieses Feature nutzen zu können</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="1069"/>
+        <source>{{binary}} not found</source>
+        <translation>{{binary}} nicht gefunden</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="1069"/>
+        <source>{{binary}} was not found. Make sure it is installed and in PATH.</source>
+        <translation>{{binary}} wurde nicht gefunden. Stelle sicher, dass es installiert und im PATH ist.</translation>
+    </message>
+    <message>
         <location filename="../MainWindow.ui" line="0"/>
         <source>General</source>
         <translation>Allgemein</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.ui" line="0"/>
+        <source>Type:</source>
+        <translation>Typ:</translation>
     </message>
     <message>
         <location filename="../MainWindow.ui" line="0"/>
@@ -291,6 +818,7 @@
         <translation>Der Name der Software</translation>
     </message>
     <message>
+        <location filename="../MainWindow.ui" line="0"/>
         <location filename="../MainWindow.ui" line="0"/>
         <location filename="../MainWindow.ui" line="0"/>
         <source>Translate</source>
@@ -358,11 +886,6 @@
     </message>
     <message>
         <location filename="../MainWindow.ui" line="0"/>
-        <source>Type:</source>
-        <translation>Typ:</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.ui" line="0"/>
         <source>Description</source>
         <translation>Beschreibung</translation>
     </message>
@@ -380,27 +903,6 @@
         <location filename="../MainWindow.ui" line="0"/>
         <source>Default</source>
         <translation>Standard</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="377"/>
-        <location filename="../MainWindow.py" line="299"/>
-        <location filename="../MainWindow.ui" line="0"/>
-        <location filename="../MainWindow.ui" line="0"/>
-        <location filename="../MainWindow.ui" line="0"/>
-        <source>Edit</source>
-        <translation>Bearbeiten</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="533"/>
-        <location filename="../MainWindow.py" line="381"/>
-        <location filename="../MainWindow.py" line="303"/>
-        <location filename="../MainWindow.ui" line="0"/>
-        <location filename="../MainWindow.ui" line="0"/>
-        <location filename="../MainWindow.ui" line="0"/>
-        <location filename="../MainWindow.ui" line="0"/>
-        <location filename="../MainWindow.ui" line="0"/>
-        <source>Remove</source>
-        <translation>Löschen</translation>
     </message>
     <message>
         <location filename="../MainWindow.ui" line="0"/>
@@ -599,6 +1101,11 @@
     </message>
     <message>
         <location filename="../MainWindow.ui" line="0"/>
+        <source>Advanced</source>
+        <translation>Erweitert</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.ui" line="0"/>
         <source>File</source>
         <translation>Datei</translation>
     </message>
@@ -665,8 +1172,8 @@
     </message>
     <message>
         <location filename="../MainWindow.ui" line="0"/>
-        <source>Appstream documentation</source>
-        <translation>Appstream Dokumentation</translation>
+        <source>AppStream documentation</source>
+        <translation>AppStream Dokumentation</translation>
     </message>
     <message>
         <location filename="../MainWindow.ui" line="0"/>
@@ -679,298 +1186,323 @@
         <translation>Vorschau in Gnome Software</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="59"/>
-        <source>Not specified</source>
-        <translation>Nicht angegeben</translation>
+        <location filename="../MainWindow.ui" line="0"/>
+        <source>Show welcome dialog</source>
+        <translation>Willkommensdialog anzeigen</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="60"/>
-        <source>Required</source>
-        <translation>Benötigt</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="61"/>
-        <source>Recommend</source>
-        <translation>Empfohlen</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="62"/>
-        <source>Supported</source>
-        <translation>Unterstützt</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="77"/>
-        <source>Desktop</source>
-        <translation>Desktop</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="78"/>
-        <source>Console</source>
-        <translation>Kommandzeile</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="79"/>
-        <source>Web Application</source>
-        <translation>Webanwendung</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="80"/>
-        <source>Service</source>
-        <translation>Service</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="81"/>
-        <source>Addon</source>
-        <translation>Addon</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="82"/>
-        <source>Font</source>
-        <translation>Schriftart</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="83"/>
-        <source>Icon Theme</source>
-        <translation>Icontheme</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="84"/>
-        <source>Codecs</source>
-        <translation>Codec</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="85"/>
-        <source>Input Method</source>
-        <translation>Eingabemethode</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="86"/>
-        <source>Firmware</source>
-        <translation>Firmware</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="97"/>
-        <source>Unknown</source>
-        <translation>Unbekannt</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="188"/>
-        <source>No recent files</source>
-        <translation>Keine zuletzt geöffneten Dateien</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="201"/>
-        <source>Clear</source>
-        <translation>Löschen</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="218"/>
-        <source>Unsaved changes</source>
-        <translation>Nicht gespeicherte Änderungen</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="218"/>
-        <source>You have unsaved changes. Do you want to save now?</source>
-        <translation>Du hast nicht gespeicherte Änderungen. Möchtest du sie jetzt speichern?</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="474"/>
-        <location filename="../MainWindow.py" line="412"/>
-        <location filename="../MainWindow.py" line="310"/>
-        <source>Invalid URL</source>
-        <translation>Ungültige URL</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="474"/>
-        <location filename="../MainWindow.py" line="310"/>
-        <source>The URL {url} does not work</source>
-        <translation>Die URL {url} funktioniert nicht</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="476"/>
-        <location filename="../MainWindow.py" line="312"/>
-        <source>Everything OK</source>
-        <translation>Alles in Ordnung</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="476"/>
-        <location filename="../MainWindow.py" line="312"/>
-        <source>All URLs are working</source>
-        <translation>Alle URLs funktionieren</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="371"/>
-        <source>Stable</source>
-        <translation>Stabil</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="372"/>
-        <source>Development</source>
-        <translation>Entwicklung</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="437"/>
-        <location filename="../MainWindow.py" line="403"/>
-        <source>Enter Repo URL</source>
-        <translation>Repo URl eingeben</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="403"/>
-        <source>Please Enter the URL to the GitHub Repo</source>
-        <translation>Bitte gib die URL zu einem GitHub Repo ein</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="412"/>
-        <source>Could not get the Repo and Owner from the URL</source>
-        <translation>Konnte Besitzer und Name nicht aus der URL extrahieren</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="416"/>
-        <source>Nothing found</source>
-        <translation>Nichts gefunden</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="416"/>
-        <source>It looks like this Repo doesn&apos;t  have any releases</source>
-        <translation>Dieses Repo hat keine Releases</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="449"/>
-        <location filename="../MainWindow.py" line="419"/>
-        <source>Overwrite evrything</source>
-        <translation>Alles überschreiben</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="449"/>
-        <location filename="../MainWindow.py" line="419"/>
-        <source>If you proceed, all your chnages in the release tab will be overwritten. Continue?</source>
-        <translation>Wenn du forfährst wird der Release Tab überschrieben. Fortfahren?</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="437"/>
-        <source>Please Enter the URL to the GitLab Repo</source>
-        <translation>Bitte gib die URL zu einem GitLab Repo ein</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="446"/>
-        <source>Could not get Data</source>
-        <translation>Konnte keine Daten bekommen</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="446"/>
-        <source>Could not get release Data for that Repo. Make sure you have the right URL.</source>
-        <translation>Konnte keine Daten erhalten. Stelle sicher, dass die URL stimmt.</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="487"/>
-        <source>Add a Categorie</source>
-        <translation>Kategorie hinzufügen</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="487"/>
-        <source>Please select a Categorie from the list below</source>
-        <translation>Bitte wähle eine Kategorie aus</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="491"/>
-        <source>Categorie already added</source>
-        <translation>Kategorie bereits vorhanden</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="491"/>
-        <source>You can&apos;t add the same Categorie twice</source>
-        <translation>Du kannst dieselbe Kategorie nicht ein zweites Mal hinzufügen</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="549"/>
-        <source>New Keyword</source>
-        <translation>Neues Schlüsselwort</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="549"/>
-        <source>Please enter a new Keyword</source>
-        <translation>Bitte gib ein neues Schlüsselwort ein</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="567"/>
-        <location filename="../MainWindow.py" line="553"/>
-        <source>Keyword in List</source>
-        <translation>Schlüsselwort in Liste</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="567"/>
-        <location filename="../MainWindow.py" line="553"/>
-        <source>This Keyword is already in the List</source>
-        <translation>ADs Schlüsselwort befindet sich bereits in der Liste</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="563"/>
-        <source>Edit Keyword</source>
-        <translation>Schlüsselwort bearbeiten</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="563"/>
-        <source>Please edit the Keyword</source>
-        <translation>Bitte bearbeite das Schlüsselwort</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="655"/>
-        <source>File not found</source>
-        <translation>datei nicht gefunden</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="655"/>
-        <source>The file you are trying to open does not exists</source>
-        <translation>Die Datei, du du versuchst zu öffnen existiert nicht</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="661"/>
-        <source>XML parsing failed</source>
-        <translation>XML parsen fehlgeschlagen</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="667"/>
-        <source>No component tag</source>
-        <translation>Kein component Tag</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="667"/>
-        <source>This XML file has no component tag</source>
-        <translation>Die XML Datei hat keinen component Tag</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="670"/>
-        <source>Too many component tag</source>
-        <translation>Zu viele component Tags</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="670"/>
-        <source>Only files with one component tag are supported</source>
-        <translation>Nur ein component Tag ist erlaubt</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="965"/>
-        <source>No ID</source>
-        <translation>Keine ID</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="965"/>
-        <source>You need to set a ID to use this feature</source>
-        <translation>Du benötigst eine ID, um dieses Feature nutzen zu können</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="984"/>
-        <source>{{binary}} not found</source>
-        <translation>{{binary}} nicht gefunden</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="984"/>
-        <source>{{binary}} was not found. Make sure it is installed and in PATH.</source>
-        <translation>{{binary}} wurde nicht gefunden. Stelle sicher, dass es installiert und im PATH ist.</translation>
+        <location filename="../MainWindow.ui" line="0"/>
+        <source>Open from URL</source>
+        <translation>Von URL öffnen</translation>
     </message>
 </context>
 <context>
     <name>OarsWidget</name>
+    <message>
+        <location filename="../OarsWidget.py" line="145"/>
+        <location filename="../OarsWidget.py" line="140"/>
+        <location filename="../OarsWidget.py" line="137"/>
+        <location filename="../OarsWidget.py" line="133"/>
+        <location filename="../OarsWidget.py" line="128"/>
+        <location filename="../OarsWidget.py" line="122"/>
+        <location filename="../OarsWidget.py" line="117"/>
+        <location filename="../OarsWidget.py" line="112"/>
+        <location filename="../OarsWidget.py" line="105"/>
+        <location filename="../OarsWidget.py" line="100"/>
+        <location filename="../OarsWidget.py" line="95"/>
+        <location filename="../OarsWidget.py" line="88"/>
+        <location filename="../OarsWidget.py" line="83"/>
+        <location filename="../OarsWidget.py" line="77"/>
+        <location filename="../OarsWidget.py" line="73"/>
+        <location filename="../OarsWidget.py" line="69"/>
+        <location filename="../OarsWidget.py" line="62"/>
+        <location filename="../OarsWidget.py" line="57"/>
+        <location filename="../OarsWidget.py" line="52"/>
+        <location filename="../OarsWidget.py" line="47"/>
+        <location filename="../OarsWidget.py" line="42"/>
+        <location filename="../OarsWidget.py" line="37"/>
+        <location filename="../OarsWidget.py" line="32"/>
+        <source>None</source>
+        <translation>Keine</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="33"/>
+        <source>Mild: Cartoon characters in unsafe situations</source>
+        <translation>Milde: Zeichentrickfiguren in unsicheren Situationen</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="34"/>
+        <source>Moderate: Cartoon characters in aggressive conflict</source>
+        <translation>Moderat: Zeichentrickfiguren in aggressivem Konflikt</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="35"/>
+        <source>Intense: Cartoon characters showing graphic violence</source>
+        <translation>Intensiv: Zeichentrickfiguren mit grafischer Gewaltdarstellung</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="38"/>
+        <source>Mild: Fantasy characters in unsafe situations</source>
+        <translation>Milde: Fantasy-Figuren in unsicheren Situationen</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="39"/>
+        <source>Moderate: Fantasy characters in aggressive conflict</source>
+        <translation>Moderat: Fantasy-Figuren in aggressivem Konflikt</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="40"/>
+        <source>Intense: Fantasy characters with graphic violence</source>
+        <translation>Intensiv: Fantasy-Figuren mit grafischer Gewaltdarstellung</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="43"/>
+        <source>Mild: Realistic characters in unsafe situations</source>
+        <translation>Milde: Realistische Charakter in unsicheren Situationen</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="44"/>
+        <source>Moderate: Realistic characters in depictions of aggressive conflict</source>
+        <translation>Moderat: Realistische Charaktere  in aggressivem Konflikt</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="45"/>
+        <source>Intense: Realistic characters with graphic violence</source>
+        <translation>Intensiv: Realistische Charaktere mit grafischer Gewaltdarstellung</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="48"/>
+        <source>Mild: Unrealistic bloodshed</source>
+        <translation>Milde: Unrealistisches Blutvergießen</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="49"/>
+        <source>Moderate: Realistic bloodshed</source>
+        <translation>Moderat: Realistische Blutspritzer</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="50"/>
+        <source>Intense: Depictions of bloodshed and the mutilation of body parts</source>
+        <translation>Intensiv: Darstellungen von Blutvergießen und Verstümmelung von Körperteilen</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="53"/>
+        <source>Intense: Rape or other violent sexual behavior</source>
+        <translation>Intensiv: Vergewaltigung oder andres gewalttätiges sexuelles Verhalten</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="58"/>
+        <source>Mild: Visible dead human remains</source>
+        <translation>Milde: Menschlishce Leichen bleiben sichtbar liegen</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="59"/>
+        <source>Moderate: Dead human remains that are exposed to the elements</source>
+        <translation>Moderat: Menschliche Überreste sind den Elementen ausgesetzt</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="60"/>
+        <source>Intense: Graphic depictions of desecration of human bodies, for example being eaten by wild animals</source>
+        <translation>Intensi: Grafische Darstellungen der Schändung menschlicher Körper z. B.von Tieren gefressen werden</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="63"/>
+        <source>Mild: Depictions or references to historical slavery</source>
+        <translation>Milde: Darstellungen oder Verweise auf die historische Sklaverei</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="64"/>
+        <source>Moderate: Depictions of modern-day slavery</source>
+        <translation>Moderat: Darstellungen der modernen Sklaverei</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="65"/>
+        <source>Intense: Graphic depictions of modern-day slavery</source>
+        <translation>Intensiv: Grafische Darstellungen der modernen Sklaverei</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="70"/>
+        <source>Mild: References to alcoholic beverages</source>
+        <translation>Milde: Hinweise auf alkoholische Getränke</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="71"/>
+        <source>Moderate: Use of alcoholic beverages</source>
+        <translation>Moderat: Benutzung von alkoholischen Getränken</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="74"/>
+        <source>Mild: References to illicit drugs</source>
+        <translation>Milde: Hinweise auf illegale Drogen</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="75"/>
+        <source>Moderate: Use of illicit drugs</source>
+        <translation>Moderat: Benutzung von illegalen Drogen</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="78"/>
+        <source>Mild: References to tobacco products</source>
+        <translation>Milde: Anspielungen auf Tabakprodukte</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="79"/>
+        <source>Moderate: Use of tobacco products</source>
+        <translation>Moderat: Benutzung von Tabakprodukten</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="84"/>
+        <source>Mild: Brief artistic nudity</source>
+        <translation>Milde: Kurze künstlerische Nacktheit</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="85"/>
+        <source>Moderate: Prolonged nudity</source>
+        <translation>Moderat: Ausgedehnte Nacktheit</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="86"/>
+        <source>Intense: Explicit nudity showing nipples or sexual organs</source>
+        <translation>Intensiv: Explizite Nacktheit, die Brustwarzen oder Geschlechtsorgane zeigt</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="89"/>
+        <source>Mild: Provocative references or depictions</source>
+        <translation>Milde: Provokative Hinweise oder Darstellungen</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="90"/>
+        <source>Moderate: Sexual references or depictions</source>
+        <translation>Moderat: Sexuelle Anspielungen oder Darstellungen</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="91"/>
+        <source>Intense: Graphic sexual behavior</source>
+        <translation>Intensiv:Graphisches Sexualverhalten</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="101"/>
+        <location filename="../OarsWidget.py" line="96"/>
+        <source>Mild: Mild or infrequent use of profanity e.g. &apos;Dufus&apos;</source>
+        <translation>Milde: Leichte oder seltene Verwendung von Schimpfwörtern, z. B.&quot;Idiot&quot;</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="102"/>
+        <location filename="../OarsWidget.py" line="97"/>
+        <source>Moderate: Moderate use of profanity e.g. &apos;Shit&apos;</source>
+        <translation>Moderat: Mäßige Verwendung von Schimpfwörtern, z. B. &quot;Scheiße&quot;</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="103"/>
+        <location filename="../OarsWidget.py" line="98"/>
+        <source>Intense: Strong or frequent use of profanity e.g. &apos;Fuck&apos;</source>
+        <translation>Intensiv: Starke oder häufige Verwendung von Schimpfwörtern z.B. &quot;Fuck&quot;</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="106"/>
+        <source>Mild: Negativity towards a specific group of people, e.g. ethnic jokes</source>
+        <translation>Milde: Negativität gegenüber einer bestimmten Gruppe von Menschen, z. B. Witze über ethnische Gruppen</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="107"/>
+        <source>Moderate: Discrimation designed to cause emotional harm, e.g. racism, or homophobia</source>
+        <translation>Moderat: Diskriminierung mit dem Ziel, emotionalen Schaden anzurichten, z. B. Rassismus oder Homophobie</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="108"/>
+        <source>Intense: Explicit discrimination based on gender, sexuality, race or religion, e.g. genocide</source>
+        <translation>Intensiv: Explizite Diskriminierung aufgrund von Geschlecht, Sexualität, Rasse oder Religion, z. B. Völkermord</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="113"/>
+        <source>Mild: Product placement, e.g. billboards in a football game</source>
+        <translation>Milde: Produktplatzierungen z.B. Anzeigetaffeln in einem Fußballspiel</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="114"/>
+        <source>Moderate: Explicit references to specific brands or trademarked products</source>
+        <translation>Moderat: Explizite Verweise auf bestimmte Marken oder geschützte Produkte</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="115"/>
+        <source>Intense: Users are encouraged to purchase specific real-world items</source>
+        <translation>Intensiv: Die Nutzer werden ermutigt, bestimmte Gegenstände aus der echten Welt zu kaufen</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="118"/>
+        <source>Mild: Gambling on random events using tokens or credits</source>
+        <translation>Milde: Glücksspiel bei Zufallsereignissen</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="119"/>
+        <source>Moderate: Gambling using fictional money</source>
+        <translation>Moderrat: Glücksspiel mit Spielgeld</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="120"/>
+        <source>Intense: Gambling using real money</source>
+        <translation>Intensiv: Glücksspiel mit Echtgeld</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="123"/>
+        <source>Mild: Users are encouraged to donate real money, e.g. using Patreon</source>
+        <translation>Milde: Nutzer werden ermutigt, Echtgeld zu spenden z.B. über Patreon</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="124"/>
+        <source>Intense: Ability to spend real money in-app, e.g. buying new content or new levels</source>
+        <translation>Intensiv: Die Möglichkeit, innerhalb der Software echtes Geld auszugeben z.B. der Kauf von neuen Inhalten oder Leveln</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="129"/>
+        <source>Mild: User-to-user game interactions without chat functionality e.g. playing chess</source>
+        <translation>Milde: Benutzerinteraktion ohne Chatmöglichkeit innerhalb des Spiels z.B. Schach spielen</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="130"/>
+        <source>Moderate: Moderated messaging between users</source>
+        <translation>Moderat: Moderierter Nachrichtenaustauch zwischen Benutzern</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="131"/>
+        <source>Intense: Uncontrolled chat functionality between users</source>
+        <translation>Intensiv: Unkontrollierter Nachrichtenaustauch zwischen Benutzern</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="134"/>
+        <source>Moderate: Moderated audio or video chat between users</source>
+        <translation>Moderat: Moderierter Audio oder Video Chat zwischen Nutzern</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="135"/>
+        <source>Intense: Uncontrolled audio or video chat between users</source>
+        <translation>Intensiv: Unkontrollierter Audio und Video Chat zwischen Nutzern</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="138"/>
+        <source>Intense: Sharing Twitter, Facebook or email addresses</source>
+        <translation>Intensiv: Teilen von Twitter, Facebook oder der E-Mail Adresse</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="141"/>
+        <source>Mild: Using any online API, e.g. a user-counter</source>
+        <translation>Milde: Die Benutzung einer Online API z.B. ein Nutzerzähler</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="142"/>
+        <source>Moderate: Sharing diagnostic data not identifiable to the user, e.g. profiling data</source>
+        <translation>Moderat: Teilen von anonymen Diagnosedaten</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="143"/>
+        <source>Intense: Sharing information identifiable to the user, e.g. crash dumps</source>
+        <translation>Intensiv: Teilen von Informationen, die persönliche Daten enthalten</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="146"/>
+        <source>Intense: Sharing physical location to other users e.g. a postal address</source>
+        <translation>Intensiv: Weitergabe des physischen Standorts an andere Nutzer, z. B. eine Postadresse</translation>
+    </message>
     <message>
         <location filename="../OarsWidget.ui" line="0"/>
         <source>Violence</source>
@@ -1317,314 +1849,65 @@
         <source>For example, this would include uploading the GPS co-ordinates of your current location. NOTE: This does not include heuristic based location services, e.g. GeoIP and others.</source>
         <translation>Dazu gehört zum Beispiel das Hochladen der GPS-Koordinaten des  aktuellen Standorts. HINWEIS: Dies gilt nicht für heuristisch basierte Standortdienste wie z. B. GeoIP.</translation>
     </message>
-    <message>
-        <location filename="../OarsWidget.py" line="145"/>
-        <location filename="../OarsWidget.py" line="140"/>
-        <location filename="../OarsWidget.py" line="137"/>
-        <location filename="../OarsWidget.py" line="133"/>
-        <location filename="../OarsWidget.py" line="128"/>
-        <location filename="../OarsWidget.py" line="122"/>
-        <location filename="../OarsWidget.py" line="117"/>
-        <location filename="../OarsWidget.py" line="112"/>
-        <location filename="../OarsWidget.py" line="105"/>
-        <location filename="../OarsWidget.py" line="100"/>
-        <location filename="../OarsWidget.py" line="95"/>
-        <location filename="../OarsWidget.py" line="88"/>
-        <location filename="../OarsWidget.py" line="83"/>
-        <location filename="../OarsWidget.py" line="77"/>
-        <location filename="../OarsWidget.py" line="73"/>
-        <location filename="../OarsWidget.py" line="69"/>
-        <location filename="../OarsWidget.py" line="62"/>
-        <location filename="../OarsWidget.py" line="57"/>
-        <location filename="../OarsWidget.py" line="52"/>
-        <location filename="../OarsWidget.py" line="47"/>
-        <location filename="../OarsWidget.py" line="42"/>
-        <location filename="../OarsWidget.py" line="37"/>
-        <location filename="../OarsWidget.py" line="32"/>
-        <source>None</source>
-        <translation>Keine</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="33"/>
-        <source>Mild: Cartoon characters in unsafe situations</source>
-        <translation>Milde: Zeichentrickfiguren in unsicheren Situationen</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="34"/>
-        <source>Moderate: Cartoon characters in aggressive conflict</source>
-        <translation>Moderat: Zeichentrickfiguren in aggressivem Konflikt</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="35"/>
-        <source>Intense: Cartoon characters showing graphic violence</source>
-        <translation>Intensiv: Zeichentrickfiguren mit grafischer Gewaltdarstellung</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="38"/>
-        <source>Mild: Fantasy characters in unsafe situations</source>
-        <translation>Milde: Fantasy-Figuren in unsicheren Situationen</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="39"/>
-        <source>Moderate: Fantasy characters in aggressive conflict</source>
-        <translation>Moderat: Fantasy-Figuren in aggressivem Konflikt</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="40"/>
-        <source>Intense: Fantasy characters with graphic violence</source>
-        <translation>Intensiv: Fantasy-Figuren mit grafischer Gewaltdarstellung</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="43"/>
-        <source>Mild: Realistic characters in unsafe situations</source>
-        <translation>Milde: Realistische Charakter in unsicheren Situationen</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="44"/>
-        <source>Moderate: Realistic characters in depictions of aggressive conflict</source>
-        <translation>Moderat: Realistische Charaktere  in aggressivem Konflikt</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="45"/>
-        <source>Intense: Realistic characters with graphic violence</source>
-        <translation>Intensiv: Realistische Charaktere mit grafischer Gewaltdarstellung</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="48"/>
-        <source>Mild: Unrealistic bloodshed</source>
-        <translation>Milde: Unrealistisches Blutvergießen</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="49"/>
-        <source>Moderate: Realistic bloodshed</source>
-        <translation>Moderat: Realistische Blutspritzer</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="50"/>
-        <source>Intense: Depictions of bloodshed and the mutilation of body parts</source>
-        <translation>Intensiv: Darstellungen von Blutvergießen und Verstümmelung von Körperteilen</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="53"/>
-        <source>Intense: Rape or other violent sexual behavior</source>
-        <translation>Intensiv: Vergewaltigung oder andres gewalttätiges sexuelles Verhalten</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="58"/>
-        <source>Mild: Visible dead human remains</source>
-        <translation>Milde: Menschlishce Leichen bleiben sichtbar liegen</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="59"/>
-        <source>Moderate: Dead human remains that are exposed to the elements</source>
-        <translation>Moderat: Menschliche Überreste sind den Elementen ausgesetzt</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="60"/>
-        <source>Intense: Graphic depictions of desecration of human bodies, for example being eaten by wild animals</source>
-        <translation>Intensi: Grafische Darstellungen der Schändung menschlicher Körper z. B.von Tieren gefressen werden</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="63"/>
-        <source>Mild: Depictions or references to historical slavery</source>
-        <translation>Milde: Darstellungen oder Verweise auf die historische Sklaverei</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="64"/>
-        <source>Moderate: Depictions of modern-day slavery</source>
-        <translation>Moderat: Darstellungen der modernen Sklaverei</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="65"/>
-        <source>Intense: Graphic depictions of modern-day slavery</source>
-        <translation>Intensiv: Grafische Darstellungen der modernen Sklaverei</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="70"/>
-        <source>Mild: References to alcoholic beverages</source>
-        <translation>Milde: Hinweise auf alkoholische Getränke</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="71"/>
-        <source>Moderate: Use of alcoholic beverages</source>
-        <translation>Moderat: Benutzung von alkoholischen Getränken</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="74"/>
-        <source>Mild: References to illicit drugs</source>
-        <translation>Milde: Hinweise auf illegale Drogen</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="75"/>
-        <source>Moderate: Use of illicit drugs</source>
-        <translation>Moderat: Benutzung von illegalen Drogen</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="78"/>
-        <source>Mild: References to tobacco products</source>
-        <translation>Milde: Anspielungen auf Tabakprodukte</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="79"/>
-        <source>Moderate: Use of tobacco products</source>
-        <translation>Moderat: Benutzung von Tabakprodukten</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="84"/>
-        <source>Mild: Brief artistic nudity</source>
-        <translation>Milde: Kurze künstlerische Nacktheit</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="85"/>
-        <source>Moderate: Prolonged nudity</source>
-        <translation>Moderat: Ausgedehnte Nacktheit</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="86"/>
-        <source>Intense: Explicit nudity showing nipples or sexual organs</source>
-        <translation>Intensiv: Explizite Nacktheit, die Brustwarzen oder Geschlechtsorgane zeigt</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="89"/>
-        <source>Mild: Provocative references or depictions</source>
-        <translation>Milde: Provokative Hinweise oder Darstellungen</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="90"/>
-        <source>Moderate: Sexual references or depictions</source>
-        <translation>Moderat: Sexuelle Anspielungen oder Darstellungen</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="91"/>
-        <source>Intense: Graphic sexual behavior</source>
-        <translation>Intensiv:Graphisches Sexualverhalten</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="101"/>
-        <location filename="../OarsWidget.py" line="96"/>
-        <source>Mild: Mild or infrequent use of profanity e.g. &apos;Dufus&apos;</source>
-        <translation>Milde: Leichte oder seltene Verwendung von Schimpfwörtern, z. B.&quot;Idiot&quot;</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="102"/>
-        <location filename="../OarsWidget.py" line="97"/>
-        <source>Moderate: Moderate use of profanity e.g. &apos;Shit&apos;</source>
-        <translation>Moderat: Mäßige Verwendung von Schimpfwörtern, z. B. &quot;Scheiße&quot;</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="103"/>
-        <location filename="../OarsWidget.py" line="98"/>
-        <source>Intense: Strong or frequent use of profanity e.g. &apos;Fuck&apos;</source>
-        <translation>Intensiv: Starke oder häufige Verwendung von Schimpfwörtern z.B. &quot;Fuck&quot;</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="106"/>
-        <source>Mild: Negativity towards a specific group of people, e.g. ethnic jokes</source>
-        <translation>Milde: Negativität gegenüber einer bestimmten Gruppe von Menschen, z. B. Witze über ethnische Gruppen</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="107"/>
-        <source>Moderate: Discrimation designed to cause emotional harm, e.g. racism, or homophobia</source>
-        <translation>Moderat: Diskriminierung mit dem Ziel, emotionalen Schaden anzurichten, z. B. Rassismus oder Homophobie</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="108"/>
-        <source>Intense: Explicit discrimination based on gender, sexuality, race or religion, e.g. genocide</source>
-        <translation>Intensiv: Explizite Diskriminierung aufgrund von Geschlecht, Sexualität, Rasse oder Religion, z. B. Völkermord</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="113"/>
-        <source>Mild: Product placement, e.g. billboards in a football game</source>
-        <translation>Milde: Produktplatzierungen z.B. Anzeigetaffeln in einem Fußballspiel</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="114"/>
-        <source>Moderate: Explicit references to specific brands or trademarked products</source>
-        <translation>Moderat: Explizite Verweise auf bestimmte Marken oder geschützte Produkte</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="115"/>
-        <source>Intense: Users are encouraged to purchase specific real-world items</source>
-        <translation>Intensiv: Die Nutzer werden ermutigt, bestimmte Gegenstände aus der echten Welt zu kaufen</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="118"/>
-        <source>Mild: Gambling on random events using tokens or credits</source>
-        <translation>Milde: Glücksspiel bei Zufallsereignissen</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="119"/>
-        <source>Moderate: Gambling using fictional money</source>
-        <translation>Moderrat: Glücksspiel mit Spielgeld</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="120"/>
-        <source>Intense: Gambling using real money</source>
-        <translation>Intensiv: Glücksspiel mit Echtgeld</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="123"/>
-        <source>Mild: Users are encouraged to donate real money, e.g. using Patreon</source>
-        <translation>Milde: Nutzer werden ermutigt, Echtgeld zu spenden z.B. über Patreon</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="124"/>
-        <source>Intense: Ability to spend real money in-app, e.g. buying new content or new levels</source>
-        <translation>Intensiv: Die Möglichkeit, innerhalb der Software echtes Geld auszugeben z.B. der Kauf von neuen Inhalten oder Leveln</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="129"/>
-        <source>Mild: User-to-user game interactions without chat functionality e.g. playing chess</source>
-        <translation>Milde: Benutzerinteraktion ohne Chatmöglichkeit innerhalb des Spiels z.B. Schach spielen</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="130"/>
-        <source>Moderate: Moderated messaging between users</source>
-        <translation>Moderat: Moderierter Nachrichtenaustauch zwischen Benutzern</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="131"/>
-        <source>Intense: Uncontrolled chat functionality between users</source>
-        <translation>Intensiv: Unkontrollierter Nachrichtenaustauch zwischen Benutzern</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="134"/>
-        <source>Moderate: Moderated audio or video chat between users</source>
-        <translation>Moderat: Moderierter Audio oder Video Chat zwischen Nutzern</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="135"/>
-        <source>Intense: Uncontrolled audio or video chat between users</source>
-        <translation>Intensiv: Unkontrollierter Audio und Video Chat zwischen Nutzern</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="138"/>
-        <source>Intense: Sharing Twitter, Facebook or email addresses</source>
-        <translation>Intensiv: Teilen von Twitter, Facebook oder der E-Mail Adresse</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="141"/>
-        <source>Mild: Using any online API, e.g. a user-counter</source>
-        <translation>Milde: Die Benutzung einer Online API z.B. ein Nutzerzähler</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="142"/>
-        <source>Moderate: Sharing diagnostic data not identifiable to the user, e.g. profiling data</source>
-        <translation>Moderat: Teilen von anonymen Diagnosedaten</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="143"/>
-        <source>Intense: Sharing information identifiable to the user, e.g. crash dumps</source>
-        <translation>Intensiv: Teilen von Informationen, die persönliche Daten enthalten</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="146"/>
-        <source>Intense: Sharing physical location to other users e.g. a postal address</source>
-        <translation>Intensiv: Weitergabe des physischen Standorts an andere Nutzer, z. B. eine Postadresse</translation>
-    </message>
 </context>
 <context>
     <name>RelationsWidget</name>
+    <message>
+        <location filename="../RelationsWidget.py" line="24"/>
+        <source>Not specified</source>
+        <translation>Nicht angegeben</translation>
+    </message>
+    <message>
+        <location filename="../RelationsWidget.py" line="25"/>
+        <source>Very small screens e.g. wearables</source>
+        <translation>Sehr kleine Bildschirme z.B.  Wearables</translation>
+    </message>
+    <message>
+        <location filename="../RelationsWidget.py" line="26"/>
+        <source>Small screens e.g. phones</source>
+        <translation>Kleine Bildschirme z.B. Smartphones</translation>
+    </message>
+    <message>
+        <location filename="../RelationsWidget.py" line="27"/>
+        <source>Screens in laptops, tablets</source>
+        <translation>Bildschirme in Laptops, Tablets</translation>
+    </message>
+    <message>
+        <location filename="../RelationsWidget.py" line="28"/>
+        <source>Bigger computer monitors</source>
+        <translation>Größere Computermonitore</translation>
+    </message>
+    <message>
+        <location filename="../RelationsWidget.py" line="29"/>
+        <source>Television screens, large projected images</source>
+        <translation>Fernseher, Beamer</translation>
+    </message>
+    <message>
+        <location filename="../RelationsWidget.py" line="137"/>
+        <location filename="../RelationsWidget.py" line="104"/>
+        <source>Supported</source>
+        <translation>Unterstützt</translation>
+    </message>
+    <message>
+        <location filename="../RelationsWidget.py" line="138"/>
+        <location filename="../RelationsWidget.py" line="105"/>
+        <source>Recommend</source>
+        <translation>Empfohlen</translation>
+    </message>
+    <message>
+        <location filename="../RelationsWidget.py" line="139"/>
+        <location filename="../RelationsWidget.py" line="106"/>
+        <source>Required</source>
+        <translation>Benötigt</translation>
+    </message>
+    <message>
+        <location filename="../RelationsWidget.ui" line="0"/>
+        <location filename="../RelationsWidget.ui" line="0"/>
+        <location filename="../RelationsWidget.py" line="150"/>
+        <location filename="../RelationsWidget.py" line="117"/>
+        <source>Remove</source>
+        <translation>Löschen</translation>
+    </message>
     <message>
         <location filename="../RelationsWidget.ui" line="0"/>
         <source>Screen</source>
@@ -1738,14 +2021,6 @@
         <translation>Typ</translation>
     </message>
     <message>
-        <location filename="../RelationsWidget.py" line="150"/>
-        <location filename="../RelationsWidget.py" line="117"/>
-        <location filename="../RelationsWidget.ui" line="0"/>
-        <location filename="../RelationsWidget.ui" line="0"/>
-        <source>Remove</source>
-        <translation>Löschen</translation>
-    </message>
-    <message>
         <location filename="../RelationsWidget.ui" line="0"/>
         <location filename="../RelationsWidget.ui" line="0"/>
         <source>Add</source>
@@ -1766,57 +2041,51 @@
         <source>CHID</source>
         <translation>CHID</translation>
     </message>
+</context>
+<context>
+    <name>ReleasesWindow</name>
     <message>
-        <location filename="../RelationsWidget.py" line="24"/>
+        <location filename="../ReleasesWindow.py" line="24"/>
         <source>Not specified</source>
         <translation>Nicht angegeben</translation>
     </message>
     <message>
-        <location filename="../RelationsWidget.py" line="25"/>
-        <source>Very small screens e.g. wearables</source>
-        <translation>Seht keline Bildschirme z.B.  Wearables</translation>
+        <location filename="../ReleasesWindow.py" line="25"/>
+        <source>Low</source>
+        <translation>Gering</translation>
     </message>
     <message>
-        <location filename="../RelationsWidget.py" line="26"/>
-        <source>Small screens e.g. phones</source>
-        <translation>Kleine Bildschirme z.B. Smartphones</translation>
+        <location filename="../ReleasesWindow.py" line="26"/>
+        <source>Medium</source>
+        <translation>Mittel</translation>
     </message>
     <message>
-        <location filename="../RelationsWidget.py" line="27"/>
-        <source>Screens in laptops, tablets</source>
-        <translation>Bildschirme in Laptops, Tablets</translation>
+        <location filename="../ReleasesWindow.py" line="27"/>
+        <source>High</source>
+        <translation>Hoch</translation>
     </message>
     <message>
-        <location filename="../RelationsWidget.py" line="28"/>
-        <source>Bigger computer monitors</source>
-        <translation>Größere Computermonitore</translation>
+        <location filename="../ReleasesWindow.py" line="28"/>
+        <source>Critical</source>
+        <translation>Kritisch</translation>
     </message>
     <message>
-        <location filename="../RelationsWidget.py" line="29"/>
-        <source>Television screens, large projected images</source>
-        <translation>Fernseher, Beamer</translation>
+        <location filename="../ReleasesWindow.ui" line="0"/>
+        <location filename="../ReleasesWindow.py" line="76"/>
+        <source>Edit</source>
+        <translation>Bearbeiten</translation>
     </message>
     <message>
-        <location filename="../RelationsWidget.py" line="137"/>
-        <location filename="../RelationsWidget.py" line="104"/>
-        <source>Supported</source>
-        <translation>Unterstützt</translation>
+        <location filename="../ReleasesWindow.ui" line="0"/>
+        <location filename="../ReleasesWindow.py" line="80"/>
+        <source>Remove</source>
+        <translation>Löschen</translation>
     </message>
     <message>
-        <location filename="../RelationsWidget.py" line="138"/>
-        <location filename="../RelationsWidget.py" line="105"/>
-        <source>Recommend</source>
-        <translation>Empfohlen</translation>
+        <location filename="../ReleasesWindow.py" line="121"/>
+        <source>Edit release {{release}}</source>
+        <translation>Veröffentlichung {{release}} bearbeiten</translation>
     </message>
-    <message>
-        <location filename="../RelationsWidget.py" line="139"/>
-        <location filename="../RelationsWidget.py" line="106"/>
-        <source>Required</source>
-        <translation>Benötigt</translation>
-    </message>
-</context>
-<context>
-    <name>ReleasesWindow</name>
     <message>
         <location filename="../ReleasesWindow.ui" line="0"/>
         <source>General</source>
@@ -1853,18 +2122,6 @@
         <translation>URL</translation>
     </message>
     <message>
-        <location filename="../ReleasesWindow.py" line="76"/>
-        <location filename="../ReleasesWindow.ui" line="0"/>
-        <source>Edit</source>
-        <translation>Bearbeiten</translation>
-    </message>
-    <message>
-        <location filename="../ReleasesWindow.py" line="80"/>
-        <location filename="../ReleasesWindow.ui" line="0"/>
-        <source>Remove</source>
-        <translation>Löschen</translation>
-    </message>
-    <message>
         <location filename="../ReleasesWindow.ui" line="0"/>
         <source>Add</source>
         <translation>Hinzufügen</translation>
@@ -1878,36 +2135,6 @@
         <location filename="../ReleasesWindow.ui" line="0"/>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
-    </message>
-    <message>
-        <location filename="../ReleasesWindow.py" line="24"/>
-        <source>Not specified</source>
-        <translation>Nicht angegeben</translation>
-    </message>
-    <message>
-        <location filename="../ReleasesWindow.py" line="25"/>
-        <source>Low</source>
-        <translation>Gering</translation>
-    </message>
-    <message>
-        <location filename="../ReleasesWindow.py" line="26"/>
-        <source>Medium</source>
-        <translation>Mittel</translation>
-    </message>
-    <message>
-        <location filename="../ReleasesWindow.py" line="27"/>
-        <source>High</source>
-        <translation>Hoch</translation>
-    </message>
-    <message>
-        <location filename="../ReleasesWindow.py" line="28"/>
-        <source>Critical</source>
-        <translation>Kritisch</translation>
-    </message>
-    <message>
-        <location filename="../ReleasesWindow.py" line="121"/>
-        <source>Edit release {{release}}</source>
-        <translation>Veröffentlichung {{release}} bearbeiten</translation>
     </message>
 </context>
 <context>
@@ -2188,6 +2415,26 @@
 <context>
     <name>ValidateWindow</name>
     <message>
+        <location filename="../ValidateWindow.py" line="28"/>
+        <source>appstreamcli was not found</source>
+        <translation>appstreamcli wurde nicht gefunden</translation>
+    </message>
+    <message>
+        <location filename="../ValidateWindow.py" line="41"/>
+        <source>appstream-util was not found</source>
+        <translation>appstream-util wurde nicht gefunden</translation>
+    </message>
+    <message>
+        <location filename="../ValidateWindow.py" line="50"/>
+        <source>No ID</source>
+        <translation>Keine ID</translation>
+    </message>
+    <message>
+        <location filename="../ValidateWindow.py" line="50"/>
+        <source>You need to set a ID to use this feature</source>
+        <translation>Du benötigst eine ID, um dieses Feature nutzen zu können</translation>
+    </message>
+    <message>
         <location filename="../ValidateWindow.ui" line="0"/>
         <source>Validate</source>
         <translation>Überprüfen</translation>
@@ -2222,26 +2469,6 @@
         <source>OK</source>
         <translation>OK</translation>
     </message>
-    <message>
-        <location filename="../ValidateWindow.py" line="28"/>
-        <source>appstreamcli was not found</source>
-        <translation>appstreamcli wurde nicht gefunden</translation>
-    </message>
-    <message>
-        <location filename="../ValidateWindow.py" line="41"/>
-        <source>appstream-util was not found</source>
-        <translation>appstream-util wurde nicht gefunden</translation>
-    </message>
-    <message>
-        <location filename="../ValidateWindow.py" line="50"/>
-        <source>No ID</source>
-        <translation>Keine ID</translation>
-    </message>
-    <message>
-        <location filename="../ValidateWindow.py" line="50"/>
-        <source>You need to set a ID to use this feature</source>
-        <translation>Du benötigst eine ID, um dieses Feature nutzen zu können</translation>
-    </message>
 </context>
 <context>
     <name>ViewXMLWindow</name>
@@ -2252,8 +2479,8 @@
     </message>
     <message>
         <location filename="../ViewXMLWindow.ui" line="0"/>
-        <source>Preview of the Appstream file</source>
-        <translation>Vorschau der Appstream Datei</translation>
+        <source>Preview of the AppStream file</source>
+        <translation>Vorschau der AppStream datei</translation>
     </message>
 </context>
 </TS>

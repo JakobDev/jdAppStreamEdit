@@ -1,5 +1,6 @@
 from PyQt6.QtWidgets import QTableWidget, QHeaderView, QListWidget, QComboBox
 from typing import Optional, List, Any
+from PyQt6.QtCore import QObject
 from lxml import etree
 import urllib.parse
 import requests
@@ -108,3 +109,10 @@ def get_shared_temp_dir() -> str:
         return os.path.join( os.getenv("XDG_CACHE_HOME"), "jdAppdataEdit")
     else:
         return os.path.join(tempfile.gettempdir(), "jdAppdataEdit")
+
+
+def get_sender_table_row(table: QTableWidget, column: int, sender: QObject) -> int:
+    """Get the Row in a QTableWidget that contains the Button that was clicked"""
+    for i in range(table.rowCount()):
+        if table.cellWidget(i, column) == sender:
+            return i

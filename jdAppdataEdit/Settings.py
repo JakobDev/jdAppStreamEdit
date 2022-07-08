@@ -11,7 +11,8 @@ class Settings():
             "windowTitleType": "filename",
             "checkSaveBeforeClosing": True,
             "showEditedTitle": True,
-            "addCommentSave": True
+            "addCommentSave": True,
+            "showWelcomeDialog": True
         }
 
         self._user_settings = {}

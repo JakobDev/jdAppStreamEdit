@@ -1,6 +1,7 @@
 from PyQt6.QtCore import QTranslator, QLocale, QLibraryInfo
 from .TranslateWindow import TranslateWindow
 from PyQt6.QtWidgets import QApplication
+from .Functions import is_url_valid
 from .MainWindow import MainWindow
 from .Enviroment import Enviroment
 import argparse
@@ -41,9 +42,16 @@ def main():
 
     parser = argparse.ArgumentParser()
     parser.add_argument("file", nargs='?')
-    args = parser.parse_known_args()
-    if args[0].file is not None:
-        main_window.open_file(os.path.abspath(args[0].file))
-        main_window.update_window_title()
+    args = parser.parse_known_args()[0]
+    if args.file is not None:
+        if is_url_valid(args.file):
+             main_window.open_url(args.file)
+        else:
+            path = os.path.abspath(args.file)
+            if main_window.open_file(path):
+                 main_window.add_to_recent_files(path)
+
+    if env.settings.get("showWelcomeDialog"):
+        main_window.show_welcome_dialog()
 
     sys.exit(app.exec())
