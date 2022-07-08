@@ -11,7 +11,7 @@
     <message>
         <location filename="../AboutWindow.ui" line="0"/>
         <source>A graphical Program to create and edit Appstream files</source>
-        <translation>A grafisches Programm zum erstellen und bearbeiten von Appstream Dateien</translation>
+        <translation>Ein grafisches Programm zum erstellen und bearbeiten von AppStream Dateien</translation>
     </message>
     <message>
         <location filename="../AboutWindow.ui" line="0"/>
