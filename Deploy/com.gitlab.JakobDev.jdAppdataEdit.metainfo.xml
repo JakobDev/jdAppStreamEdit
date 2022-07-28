@@ -5,6 +5,7 @@
   <name>jdAppdataEdit</name>
   <summary>A graphical Program to create and edit AppStream files</summary>
   <summary xml:lang="de">Ein grafisches Programm zum erstellen und bearbeiten von AppStream Dateien</summary>
+  <summary xml:lang="nl">Een grafisch programma voor het aanmaken en bewerken van AppStream-bestanden</summary>
   <developer_name>JakobDev</developer_name>
   <launchable type="desktop-id">com.gitlab.JakobDev.jdAppdataEdit.desktop</launchable>
   <metadata_license>CC0-1.0</metadata_license>
@@ -12,19 +13,27 @@
   <description>
     <p>jdAppdataEdit allows you to easily create and edit AppStream (.appdata.xml or .metainfo.xml) files for your Application.</p>
     <p xml:lang="de">jdAppdataEdit bietet eine einfache Möglichkeit zum erstellen und bearbeiten von AppStream (.appdata.xml oder .metainfo.xml) Dateien.</p>
+    <p xml:lang="nl">Met jdAppdataEdit kunt op eenvoudige wijze AppStream-bestanden (.appdata.xml of .metainfo.xml) aanmaken en bewerken.</p>
+    <p xml:lang="nl">Eenvoudig in het gebruik</p>
     <p>Features:</p>
     <p xml:lang="de">Features</p>
+    <p xml:lang="nl">Kenmerken</p>
     <ul>
       <li>Easy to use</li>
       <li xml:lang="de">Einfach zu benutzen</li>
+      <li xml:lang="nl">Eenvoudig in het gebruik</li>
       <li>Full support for the Open Age Rating System (OARS)</li>
       <li xml:lang="de">Vollständiger Support für das Open Age Rating System (OARS)</li>
+      <li xml:lang="nl">Volledige ondersteuning voor het Open Age Rating System (OARS)</li>
       <li>The AppStream files are fully translatable</li>
       <li xml:lang="de">Die AppStream Dateien sind vollständig übersetzbar</li>
+      <li xml:lang="nl">De Appstream-bestanden zijn volledig vertaalbaar</li>
       <li>Releases can be imported from GitHub and GitLab</li>
       <li xml:lang="de">Releases können von GitHub und GitLab importiert werden</li>
+      <li xml:lang="nl">Uitgaven kunnen van GitHub en GitLab worden geïmporteerd</li>
       <li>You can view a preview in Gnome Software</li>
       <li xml:lang="de">Du kannst dir eine Vorschau in Gnome Software anzeigen lassen</li>
+      <li xml:lang="nl">Het resultaat kan worden voorvertoond in Gnome Software</li>
     </ul>
   </description>
   <screenshots>
