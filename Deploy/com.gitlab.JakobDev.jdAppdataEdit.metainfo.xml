@@ -5,6 +5,7 @@
   <name>jdAppdataEdit</name>
   <summary>A graphical Program to create and edit AppStream files</summary>
   <summary xml:lang="de">Ein grafisches Programm zum erstellen und bearbeiten von AppStream Dateien</summary>
+  <summary xml:lang="nl">Een grafisch programma voor het aanmaken en bewerken van AppStream-bestanden</summary>
   <developer_name>JakobDev</developer_name>
   <launchable type="desktop-id">com.gitlab.JakobDev.jdAppdataEdit.desktop</launchable>
   <metadata_license>CC0-1.0</metadata_license>
