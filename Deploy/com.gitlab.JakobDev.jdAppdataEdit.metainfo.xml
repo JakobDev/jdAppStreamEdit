@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <component type="desktop">
-  <!--Created with jdAppdataEdit 4.1-->
+  <!--Created with jdAppdataEdit 4.2-->
   <id>com.gitlab.JakobDev.jdAppdataEdit</id>
   <name>jdAppdataEdit</name>
   <summary>A graphical Program to create and edit AppStream files</summary>
@@ -33,6 +33,8 @@
       <li>You can view a preview in Gnome Software</li>
       <li xml:lang="de">Du kannst dir eine Vorschau in Gnome Software anzeigen lassen</li>
       <li xml:lang="nl">Het resultaat kan worden voorvertoond in Gnome Software</li>
+      <li>You can use a existing .desktop file as template</li>
+      <li xml:lang="de">Du kannst eine existierende .desktop Datei als Vorlage benutzen</li>
     </ul>
   </description>
   <screenshots>
@@ -50,14 +52,13 @@
     </screenshot>
   </screenshots>
   <releases>
-    <release version="4.1" date="2022-07-28" type="stable">
-      <description>
+    <release version="4.1" date="2022-07-27" type="stable"><description>
         <ul>
           <li>Added Dutch translation</li>
         </ul>
       </description>
     </release>
-    <release version="4.0" date="2022-07-08" type="stable"><description>
+    <release version="4.0" date="2022-07-07" type="stable"><description>
         <ul>
           <li>Add Advanced section</li>
           <li>Add Welcome dialog</li>
@@ -65,13 +66,13 @@
         </ul>
       </description>
     </release>
-    <release version="3.3" date="2022-06-21" type="stable"><description>
+    <release version="3.3" date="2022-06-20" type="stable"><description>
         <ul>
           <li>Add preview in Gnome Software</li>
         </ul>
       </description>
     </release>
-    <release version="3.2" date="2022-06-12" type="stable"><description>
+    <release version="3.2" date="2022-06-11" type="stable"><description>
         <ul>
           <li>You can now resize the contents of the Description tab</li>
           <li>The current version is shown in the edit version window</li>
@@ -79,7 +80,7 @@
         </ul>
       </description>
     </release>
-    <release version="3.1" date="2022-05-12" type="stable"><url>https://gitlab.com/JakobDev/jdAppdataEdit/-/releases/3.1</url><description>
+    <release version="3.1" date="2022-05-11" type="stable"><url>https://gitlab.com/JakobDev/jdAppdataEdit/-/releases/3.1</url><description>
         <ul>
           <li>Add vcs-browser and contribute URL types</li>
           <li>Allow selecting a type</li>
@@ -88,7 +89,7 @@
         </ul>
       </description>
     </release>
-    <release version="3.0" date="2022-01-18" type="stable"><url>https://gitlab.com/JakobDev/jdAppdataEdit/-/releases/3.0</url><description>
+    <release version="3.0" date="2022-01-17" type="stable"><url>https://gitlab.com/JakobDev/jdAppdataEdit/-/releases/3.0</url><description>
         <ul>
           <li>Add support for relations</li>
           <li>Add support for more description information</li>
@@ -96,13 +97,13 @@
         </ul>
       </description>
     </release>
-    <release version="2.1" date="2022-01-12" type="stable"><url>https://gitlab.com/JakobDev/jdAppdataEdit/-/releases/2.1</url><description>
+    <release version="2.1" date="2022-01-11" type="stable"><url>https://gitlab.com/JakobDev/jdAppdataEdit/-/releases/2.1</url><description>
         <ul>
           <li>Remove auto generated tkinter import</li>
         </ul>
       </description>
     </release>
-    <release version="2.0" date="2022-01-11" type="stable"><url>https://gitlab.com/JakobDev/jdAppdataEdit/-/releases/2.0</url><description>
+    <release version="2.0" date="2022-01-10" type="stable"><url>https://gitlab.com/JakobDev/jdAppdataEdit/-/releases/2.0</url><description>
         <ul>
           <li>Add option to translate files</li>
           <li>Add new Description Widget</li>
@@ -111,13 +112,13 @@
         </ul>
       </description>
     </release>
-    <release version="1.1" date="2022-01-07" type="stable"><url>https://gitlab.com/JakobDev/jdAppdataEdit/-/releases/1.1</url><description>
+    <release version="1.1" date="2022-01-06" type="stable"><url>https://gitlab.com/JakobDev/jdAppdataEdit/-/releases/1.1</url><description>
         <ul>
           <li>Fix Bugs</li>
         </ul>
       </description>
     </release>
-    <release version="1.0" date="2022-01-04" type="stable"><url>https://gitlab.com/JakobDev/jdAppdataEdit/-/releases/1.0</url><description>
+    <release version="1.0" date="2022-01-03" type="stable"><url>https://gitlab.com/JakobDev/jdAppdataEdit/-/releases/1.0</url><description>
         <ul>
           <li>First Release</li>
         </ul>
