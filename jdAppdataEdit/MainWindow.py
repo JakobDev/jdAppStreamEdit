@@ -1,4 +1,3 @@
-from platform import release
 from .Functions import clear_table_widget, stretch_table_widget_colums_size, list_widget_contains_item, is_url_reachable, get_logical_table_row_list, create_artifact_source_tag, select_combo_box_data, is_flatpak, get_shared_temp_dir, is_url_valid
 from PyQt6.QtWidgets import QApplication, QCheckBox, QComboBox, QLineEdit, QListWidget, QMainWindow, QMessageBox, QDateEdit, QInputDialog, QPlainTextEdit, QPushButton, QTableWidget, QTableWidgetItem, QRadioButton, QFileDialog, QMenu
 from PyQt6.QtGui import QAction,  QDragEnterEvent, QDropEvent, QCloseEvent
