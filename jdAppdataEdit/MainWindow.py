@@ -97,7 +97,7 @@ class MainWindow(QMainWindow):
             self.metadata_license_box.addItem(f"{value} ({key})", key)
 
         for i in env.project_license_list["licenses"]:
-            self.project_license_box.addItem(f'i["name"] (i["licenseId"])', i["licenseId"])
+            self.project_license_box.addItem(f'{i["name"]} ({i["licenseId"]})', i["licenseId"])
 
         self.metadata_license_box.model().sort(0, Qt.SortOrder.AscendingOrder)
         self.project_license_box.model().sort(0, Qt.SortOrder.AscendingOrder)
