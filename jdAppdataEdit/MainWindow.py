@@ -1,7 +1,9 @@
+from platform import release
 from .Functions import clear_table_widget, stretch_table_widget_colums_size, list_widget_contains_item, is_url_reachable, get_logical_table_row_list, create_artifact_source_tag, select_combo_box_data, is_flatpak, get_shared_temp_dir, is_url_valid
-from PyQt6.QtWidgets import QApplication, QCheckBox, QComboBox, QLineEdit, QListWidget, QMainWindow, QMessageBox, QDateEdit, QInputDialog, QPlainTextEdit, QPushButton, QTableWidget, QTableWidgetItem, QRadioButton, QFileDialog
+from PyQt6.QtWidgets import QApplication, QCheckBox, QComboBox, QLineEdit, QListWidget, QMainWindow, QMessageBox, QDateEdit, QInputDialog, QPlainTextEdit, QPushButton, QTableWidget, QTableWidgetItem, QRadioButton, QFileDialog, QMenu
 from PyQt6.QtGui import QAction,  QDragEnterEvent, QDropEvent, QCloseEvent
 from PyQt6.QtCore import Qt, QCoreApplication, QDate
+from .ReleaseImporter import get_release_importer
 from .DescriptionWidget import DescriptionWidget
 from .ScreenshotWindow import ScreenshotWindow
 from .RelationsWidget import RelationsWidget
@@ -92,10 +94,10 @@ class MainWindow(QMainWindow):
         self.component_type_box.addItem(QCoreApplication.translate("MainWindow", "Firmware"), "firmware")
 
         for key, value in env.metadata_license_list.items():
-            self.metadata_license_box.addItem(value, key)
+            self.metadata_license_box.addItem(f"{value} ({key})", key)
 
         for i in env.project_license_list["licenses"]:
-            self.project_license_box.addItem(i["name"], i["licenseId"])
+            self.project_license_box.addItem(f'i["name"] (i["licenseId"])', i["licenseId"])
 
         self.metadata_license_box.model().sort(0, Qt.SortOrder.AscendingOrder)
         self.project_license_box.model().sort(0, Qt.SortOrder.AscendingOrder)
@@ -106,6 +108,15 @@ class MainWindow(QMainWindow):
 
         self.metadata_license_box.setCurrentIndex(0)
         self.project_license_box.setCurrentIndex(0)
+
+        release_importer_menu = QMenu("HHH")
+        for i in get_release_importer():
+            importer_action = QAction(i[0], self)
+            importer_action.setData(i[1])
+            importer_action.triggered.connect(self._release_import_function)
+            release_importer_menu.addAction(importer_action)
+        release_importer_menu.setFixedWidth(self.release_import_button.width())
+        self.release_import_button.setMenu(release_importer_menu)
 
         stretch_table_widget_colums_size(self.screenshot_table)
         stretch_table_widget_colums_size(self.releases_table)
@@ -133,8 +144,6 @@ class MainWindow(QMainWindow):
         self.check_screenshot_url_button.clicked.connect(self._check_screenshot_urls)
 
         self.release_add_button.clicked.connect(self._release_add_button_clicked)
-        self.release_import_github_button.clicked.connect(self._release_import_github)
-        self.release_import_gitlab_button.clicked.connect(self._release_import_gitlab)
 
         self.check_links_url_button.clicked.connect(self._check_links_url_button_clicked)
 
@@ -152,6 +161,7 @@ class MainWindow(QMainWindow):
         self.keyword_remove_button.clicked.connect(self._remove_keyword)
 
         self.new_action.triggered.connect(self._new_menu_action_clicked)
+        self.new_desktop_file_action.triggered.connect(self._new_from_desktop_action_clicked)
         self.open_action.triggered.connect(self._open_menu_action_clicked)
         self.open_url_action.triggered.connect(self._open_url_clicked)
         self.save_action.triggered.connect(self._save_file_clicked)
@@ -265,6 +275,59 @@ class MainWindow(QMainWindow):
         self._current_path = None
         self.update_window_title()
 
+    def _new_from_desktop_action_clicked(self):
+        try:
+            import desktop_entry_lib
+        except ModuleNotFoundError:
+            QMessageBox.critical(self, QCoreApplication.translate("MainWindow", "desktop-entry-lib not found"), QCoreApplication.translate("MainWindow", "This function needs the desktop-entry-lib python module to work"))
+            return
+
+        if not self._ask_for_save():
+            return
+
+        self.reset_data()
+
+        filter = QCoreApplication.translate("MainWindow", "Desktop Entry Files") + " (*.desktop);;" +   QCoreApplication.translate("MainWindow", "All Files") + " (*)"
+        path = QFileDialog.getOpenFileName(self, filter=filter)[0]
+        if path == "":
+            return
+
+        app_id = os.path.basename(path).removesuffix(".desktop")
+
+        entry = desktop_entry_lib.DesktopEntry.from_file(path)
+
+        self.id_edit.setText(app_id)
+
+        self.name_edit.setText(entry.Name.default_text)
+        for key, value in entry.Name.translations.items():
+            self._name_translations[key] = value
+
+        self.summary_edit.setText(entry.Comment.default_text)
+        for key, value in entry.Comment.translations.items():
+            self._summary_translations[key] = value
+
+        self.desktop_file_edit.setText(app_id + ".desktop")
+
+        for i in entry.Categories:
+            self.categorie_list.addItem(i)
+
+        try:
+            prog = entry.Exec.split(" ")[0]
+            assert prog == os.path.basename(prog)
+            self._add_provides_row("binary", prog)
+        except Exception:
+            pass
+
+        for i in entry.MimeType:
+            self._add_provides_row("mediatype", i)
+
+        for i in entry.Keywords.default_list:
+            self.keyword_list.addItem(i)
+
+        self._edited = False
+        self._current_path = None
+        self.update_window_title()
+
     def _open_menu_action_clicked(self):
         if not self._ask_for_save():
             return
@@ -323,6 +386,7 @@ class MainWindow(QMainWindow):
         self._env.save_recent_files()
 
     # Screenshots
+
     def update_sceenshot_table(self):
         clear_table_widget(self.screenshot_table)
         for row, i in enumerate(self.screenshot_list):
@@ -441,70 +505,25 @@ class MainWindow(QMainWindow):
         self._set_release_row(0)
         self.set_file_edited()
 
-    def _release_import_github(self):
-        repo_url, ok = QInputDialog.getText(self, QCoreApplication.translate("MainWindow", "Enter Repo URL"), QCoreApplication.translate("MainWindow", "Please Enter the URL to the GitHub Repo"))
-        if not ok:
+    def _release_import_function(self):
+        action = self.sender()
+
+        if not action:
             return
-        try:
-            parsed = urllib.parse.urlparse(repo_url)
-            if parsed.netloc != "github.com":
-                raise Exception()
-            _, owner, repo = parsed.path.split("/")
-        except Exception:
-            QMessageBox.critical(self, QCoreApplication.translate("MainWindow", "Invalid URL"), QCoreApplication.translate("MainWindow", "Could not get the Repo and Owner from the URL"))
+
+        release_data = action.data()(self)
+        if release_data is None or len(release_data) == 0:
             return
-        api_data = requests.get(f"https://api.github.com/repos/{owner}/{repo}/releases").json()
-        if len(api_data) == 0:
-            QMessageBox.critical(self, QCoreApplication.translate("MainWindow", "Nothing found"), QCoreApplication.translate("MainWindow", "It looks like this Repo doesn't  have any releases"))
-            return
+
         if self.releases_table.rowCount() > 0:
             ans = QMessageBox.question(self, QCoreApplication.translate("MainWindow", "Overwrite evrything"), QCoreApplication.translate("MainWindow", "If you proceed, all your chnages in the release tab will be overwritten. Continue?"), QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No)
             if ans != QMessageBox.StandardButton.Yes:
                 return
-            clear_table_widget(self.releases_table)
-        for count, i in enumerate(api_data):
-            data = {}
-            data["url"] = i["html_url"]
-            # description_tag = etree.Element("description")
-            # paragraph_tag = etree.SubElement(description_tag, "p")
-            # paragraph_tag.text = i["body"]
-            # data["description"] = description_tag
 
-            #tarball_url =
+        for count, i in enumerate(release_data):
             self.releases_table.insertRow(count)
-            self._set_release_row(count, version = i["tag_name"], date=QDate.fromString(i["published_at"], Qt.DateFormat.ISODate), development=i["prerelease"], data=data)
-        self.set_file_edited()
+            self._set_release_row(count, version=i["version"], date=i["date"], development=i.get("development", False), data=i.get("data", {}))
 
-    def _release_import_gitlab(self):
-        repo_url, ok = QInputDialog.getText(self, QCoreApplication.translate("MainWindow", "Enter Repo URL"), QCoreApplication.translate("MainWindow", "Please Enter the URL to the GitLab Repo"))
-        if not ok:
-            return
-        parsed = urllib.parse.urlparse(repo_url)
-        host = parsed.scheme + "://" + parsed.netloc
-        try:
-            r = requests.get(f"{host}/api/v4/projects/{urllib.parse.quote_plus(parsed.path[1:])}/releases")
-            assert r.status_code == 200
-        except Exception:
-            QMessageBox.critical(self, QCoreApplication.translate("MainWindow", "Could not get Data"), QCoreApplication.translate("MainWindow", "Could not get release Data for that Repo. Make sure you have the right URL."))
-            return
-        if self.releases_table.rowCount() > 0:
-            ans = QMessageBox.question(self, QCoreApplication.translate("MainWindow", "Overwrite evrything"), QCoreApplication.translate("MainWindow", "If you proceed, all your chnages in the release tab will be overwritten. Continue?"), QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No)
-            if ans != QMessageBox.StandardButton.Yes:
-                return
-            clear_table_widget(self.releases_table)
-        for count, i in enumerate(r.json()):
-            data = {}
-            data["url"] = i["_links"]["self"]
-
-            for source in i["assets"]["sources"]:
-                if source["format"] == "tar.gz":
-                    artifacts_tag = etree.Element("artifacts")
-                    artifacts_tag.append(create_artifact_source_tag(source["url"]))
-                    data["artifacts"] = artifacts_tag
-                    break
-
-            self.releases_table.insertRow(count)
-            self._set_release_row(count, version = i["name"], date=QDate.fromString(i["released_at"], Qt.DateFormat.ISODate), data=data)
         self.set_file_edited()
 
     def _check_links_url_button_clicked(self):

@@ -33,7 +33,7 @@
     <item>
      <widget class="QTabWidget" name="main_tab_widget">
       <property name="currentIndex">
-       <number>0</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -355,16 +355,9 @@
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="release_import_github_button">
+           <widget class="QPushButton" name="release_import_button">
             <property name="text">
-             <string>Import from GitHub</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="release_import_gitlab_button">
-            <property name="text">
-             <string>Import from GitLab</string>
+             <string>Import</string>
             </property>
            </widget>
           </item>
@@ -907,6 +900,7 @@
      <addaction name="actionPlaceholder"/>
     </widget>
     <addaction name="new_action"/>
+    <addaction name="new_desktop_file_action"/>
     <addaction name="separator"/>
     <addaction name="open_action"/>
     <addaction name="recent_files_menu"/>
@@ -1031,6 +1025,11 @@
   <action name="open_url_action">
    <property name="text">
     <string>Open from URL</string>
+   </property>
+  </action>
+  <action name="new_desktop_file_action">
+   <property name="text">
+    <string>New from .desktop file</string>
    </property>
   </action>
  </widget>
