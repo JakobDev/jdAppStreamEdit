@@ -467,10 +467,12 @@ class MainWindow(QMainWindow):
             version_item.setData(42, {})
         self.releases_table.setItem(row, 0, version_item)
 
+        date_edit = QDateEdit()
         if date is None:
-            self.releases_table.setCellWidget(row, 1, QDateEdit(QDate.currentDate()))
+            date_edit.setDate(QDate.currentDate())
         else:
-            self.releases_table.setCellWidget(row, 1, QDateEdit(date))
+           date_edit.setDate(date)
+        self.releases_table.setCellWidget(row, 1, date_edit)
 
         type_box = QComboBox()
         type_box.addItem(QCoreApplication.translate("MainWindow", "Stable"), "stable")
