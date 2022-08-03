@@ -53,6 +53,14 @@
     </screenshot>
   </screenshots>
   <releases>
+     <release version="4.2" date="2022-08-03" type="stable">
+      <description>
+        <ul>
+          <li>Allow using a .desktop file as template</li>
+          <li>You can now import from more sources</li>
+        </ul>
+      </description>
+    </release>
     <release version="4.1" date="2022-07-28" type="stable"><description>
         <ul>
           <li>Added Dutch translation</li>
