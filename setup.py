@@ -54,6 +54,9 @@ setup(name="jdAppdataEdit",
         "requests",
         "lxml"
     ],
+    extras_require = {
+        "Import .desktop files":  ["desktop-entry-lib"]
+    },
     packages=["jdAppdataEdit"],
     entry_points={
         "console_scripts": ["jdappdataedit = jdAppdataEdit:main"]
