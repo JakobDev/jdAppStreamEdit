@@ -35,6 +35,7 @@
       <li xml:lang="nl">Het resultaat kan worden voorvertoond in Gnome Software</li>
       <li>You can use a existing .desktop file as template</li>
       <li xml:lang="de">Du kannst eine existierende .desktop Datei als Vorlage benutzen</li>
+      <li xml:lang="nl">U kunt een bestaand .desktopbestand gebruiken als sjabloon</li>
     </ul>
   </description>
   <screenshots>
