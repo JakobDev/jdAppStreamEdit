@@ -33,49 +33,6 @@
     <name>AdvancedWidget</name>
     <message>
         <location filename="../AdvancedWidget.ui" line="0"/>
-        <location filename="../AdvancedWidget.ui" line="0"/>
-        <location filename="../AdvancedWidget.ui" line="0"/>
-        <location filename="../AdvancedWidget.ui" line="0"/>
-        <location filename="../AdvancedWidget.py" line="157"/>
-        <location filename="../AdvancedWidget.py" line="130"/>
-        <location filename="../AdvancedWidget.py" line="62"/>
-        <source>Remove</source>
-        <translation>Verwijderen</translation>
-    </message>
-    <message>
-        <location filename="../AdvancedWidget.py" line="76"/>
-        <source>New Suggestion</source>
-        <translation>Nieuwe suggestie</translation>
-    </message>
-    <message>
-        <location filename="../AdvancedWidget.py" line="76"/>
-        <source>Please enter a new ID</source>
-        <translation>Voer een nieuwe id in</translation>
-    </message>
-    <message>
-        <location filename="../AdvancedWidget.py" line="94"/>
-        <location filename="../AdvancedWidget.py" line="80"/>
-        <source>ID in List</source>
-        <translation>ID bestaat al</translation>
-    </message>
-    <message>
-        <location filename="../AdvancedWidget.py" line="94"/>
-        <location filename="../AdvancedWidget.py" line="80"/>
-        <source>This ID is already in the List</source>
-        <translation>Deze id staat al op de lijst</translation>
-    </message>
-    <message>
-        <location filename="../AdvancedWidget.py" line="90"/>
-        <source>Edit Suggestion</source>
-        <translation>Suggestie bewerken</translation>
-    </message>
-    <message>
-        <location filename="../AdvancedWidget.py" line="90"/>
-        <source>Please edit the ID</source>
-        <translation>Bewerk de id</translation>
-    </message>
-    <message>
-        <location filename="../AdvancedWidget.ui" line="0"/>
         <source>Translation</source>
         <translation>Vertalingen</translation>
     </message>
@@ -93,6 +50,17 @@
         <location filename="../AdvancedWidget.ui" line="0"/>
         <source>Domain</source>
         <translation>Domein</translation>
+    </message>
+    <message>
+        <location filename="../AdvancedWidget.py" line="157"/>
+        <location filename="../AdvancedWidget.py" line="130"/>
+        <location filename="../AdvancedWidget.py" line="62"/>
+        <location filename="../AdvancedWidget.ui" line="0"/>
+        <location filename="../AdvancedWidget.ui" line="0"/>
+        <location filename="../AdvancedWidget.ui" line="0"/>
+        <location filename="../AdvancedWidget.ui" line="0"/>
+        <source>Remove</source>
+        <translation>Verwijderen</translation>
     </message>
     <message>
         <location filename="../AdvancedWidget.ui" line="0"/>
@@ -152,6 +120,38 @@
         <location filename="../AdvancedWidget.ui" line="0"/>
         <source>Key</source>
         <translation>Sleutel</translation>
+    </message>
+    <message>
+        <location filename="../AdvancedWidget.py" line="76"/>
+        <source>New Suggestion</source>
+        <translation>Nieuwe suggestie</translation>
+    </message>
+    <message>
+        <location filename="../AdvancedWidget.py" line="76"/>
+        <source>Please enter a new ID</source>
+        <translation>Voer een nieuwe id in</translation>
+    </message>
+    <message>
+        <location filename="../AdvancedWidget.py" line="94"/>
+        <location filename="../AdvancedWidget.py" line="80"/>
+        <source>ID in List</source>
+        <translation>ID bestaat al</translation>
+    </message>
+    <message>
+        <location filename="../AdvancedWidget.py" line="94"/>
+        <location filename="../AdvancedWidget.py" line="80"/>
+        <source>This ID is already in the List</source>
+        <translation>Deze id staat al op de lijst</translation>
+    </message>
+    <message>
+        <location filename="../AdvancedWidget.py" line="90"/>
+        <source>Edit Suggestion</source>
+        <translation>Suggestie bewerken</translation>
+    </message>
+    <message>
+        <location filename="../AdvancedWidget.py" line="90"/>
+        <source>Please edit the ID</source>
+        <translation>Bewerk de id</translation>
     </message>
 </context>
 <context>
@@ -299,6 +299,44 @@
 <context>
     <name>DescriptionWidget</name>
     <message>
+        <location filename="../DescriptionWidget.ui" line="0"/>
+        <source>Type</source>
+        <translation>Type</translation>
+    </message>
+    <message>
+        <location filename="../DescriptionWidget.ui" line="0"/>
+        <source>Content</source>
+        <translation>Inhoud</translation>
+    </message>
+    <message>
+        <location filename="../DescriptionWidget.py" line="218"/>
+        <location filename="../DescriptionWidget.py" line="196"/>
+        <location filename="../DescriptionWidget.py" line="66"/>
+        <location filename="../DescriptionWidget.ui" line="0"/>
+        <source>Remove</source>
+        <translation>Verwijderen</translation>
+    </message>
+    <message>
+        <location filename="../DescriptionWidget.ui" line="0"/>
+        <source>This Textbox shows a Preview of the Description</source>
+        <translation>In dit tekstvak wordt een voorvertoning van de beschrijving getoond.</translation>
+    </message>
+    <message>
+        <location filename="../DescriptionWidget.ui" line="0"/>
+        <source>Add Paragraph</source>
+        <translation>Paragraaf toevoegen</translation>
+    </message>
+    <message>
+        <location filename="../DescriptionWidget.ui" line="0"/>
+        <source>Add Ordered List</source>
+        <translation>Gerangschikte lijst toevoegen</translation>
+    </message>
+    <message>
+        <location filename="../DescriptionWidget.ui" line="0"/>
+        <source>Add Unordered List</source>
+        <translation>Ongerangschikte lijst toevoegen</translation>
+    </message>
+    <message>
         <location filename="../DescriptionWidget.py" line="67"/>
         <location filename="../DescriptionWidget.py" line="24"/>
         <source>Translate</source>
@@ -313,14 +351,6 @@
         <location filename="../DescriptionWidget.py" line="65"/>
         <source>Edit</source>
         <translation>Bewerken</translation>
-    </message>
-    <message>
-        <location filename="../DescriptionWidget.ui" line="0"/>
-        <location filename="../DescriptionWidget.py" line="218"/>
-        <location filename="../DescriptionWidget.py" line="196"/>
-        <location filename="../DescriptionWidget.py" line="66"/>
-        <source>Remove</source>
-        <translation>Verwijderen</translation>
     </message>
     <message>
         <location filename="../DescriptionWidget.py" line="120"/>
@@ -357,410 +387,9 @@
         <source>Unordered List</source>
         <translation>Ongerangschikte lijst</translation>
     </message>
-    <message>
-        <location filename="../DescriptionWidget.ui" line="0"/>
-        <source>Type</source>
-        <translation>Type</translation>
-    </message>
-    <message>
-        <location filename="../DescriptionWidget.ui" line="0"/>
-        <source>Content</source>
-        <translation>Inhoud</translation>
-    </message>
-    <message>
-        <location filename="../DescriptionWidget.ui" line="0"/>
-        <source>This Textbox shows a Preview of the Description</source>
-        <translation>In dit tekstvak wordt een voorvertoning van de beschrijving getoond.</translation>
-    </message>
-    <message>
-        <location filename="../DescriptionWidget.ui" line="0"/>
-        <source>Add Paragraph</source>
-        <translation>Paragraaf toevoegen</translation>
-    </message>
-    <message>
-        <location filename="../DescriptionWidget.ui" line="0"/>
-        <source>Add Ordered List</source>
-        <translation>Gerangschikte lijst toevoegen</translation>
-    </message>
-    <message>
-        <location filename="../DescriptionWidget.ui" line="0"/>
-        <source>Add Unordered List</source>
-        <translation>Ongerangschikte lijst toevoegen</translation>
-    </message>
 </context>
 <context>
     <name>MainWindow</name>
-    <message>
-        <location filename="../MainWindow.py" line="67"/>
-        <source>Not specified</source>
-        <translation>Niet opgegeven</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="68"/>
-        <source>Required</source>
-        <translation>Vereist</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="69"/>
-        <source>Recommend</source>
-        <translation>Aanbevolen</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="70"/>
-        <source>Supported</source>
-        <translation>Ondersteund</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="85"/>
-        <source>Desktop</source>
-        <translation>Computer</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="86"/>
-        <source>Console</source>
-        <translation>Console</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="87"/>
-        <source>Web Application</source>
-        <translation>Webapp</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="88"/>
-        <source>Service</source>
-        <translation>Dienst</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="89"/>
-        <source>Addon</source>
-        <translation>Uitbreiding</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="90"/>
-        <source>Font</source>
-        <translation>Lettertype</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="91"/>
-        <source>Icon Theme</source>
-        <translation>Pictogramthema</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="92"/>
-        <source>Codecs</source>
-        <translation>Codecs</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="93"/>
-        <source>Input Method</source>
-        <translation>Invoermethode</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="94"/>
-        <source>Firmware</source>
-        <translation>Firmware</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="105"/>
-        <source>Unknown</source>
-        <translation>Onbekend</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="210"/>
-        <source>No recent files</source>
-        <translation>Geen onlangs geopende bestanden</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="223"/>
-        <source>Clear</source>
-        <translation>Wissen</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="240"/>
-        <source>Unsaved changes</source>
-        <translation>Niet-opgeslagen wijzigingen</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="240"/>
-        <source>You have unsaved changes. Do you want to save now?</source>
-        <translation>U heeft niet-opgeslagen wijzigingen. Wilt u deze nu opslaan?</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="251"/>
-        <source>Welcome to jdAppdataEdit!</source>
-        <translation>Welkom in jdAppdataEdit!</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="252"/>
-        <source>With jdAppdataEdit you can create and edit AppStream files (*.metainfo.xml or .appdata.xml). This files are to provide data for your Application (Description, Screenshots etc.) to Software Centers.</source>
-        <translation>Met jdAppdataEdit kunt u AppStream-bestanden (*.metainfo.xml of .appdata.xml) aanmaken en bewerken. Deze bestanden leveren informatie over uw programma (omschrijving, schermfoto&apos;s, etc.) aan softwarewinkels.</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="253"/>
-        <source>It is highly recommend to read the the AppStream Documentation before using this Program. You can open it under ?&gt;AppStream documentation.</source>
-        <translation>Wij raden ten zeerste aan de AppStream-documentatie door te nemen alvorens dit programma te gebruiken, te openen via ? → AppStream-documentatie.</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="254"/>
-        <source>You can check if your AppStream is valid under Tools&gt;Validate.</source>
-        <translation>U kunt uw AppStream-bestand valideren via Hulpmiddelen → Valideren.</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="257"/>
-        <source>Show this dialog at startup</source>
-        <translation>Venster tonen na elke opstart</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="261"/>
-        <source>Welcome</source>
-        <translation>Welkom</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="282"/>
-        <source>desktop-entry-lib not found</source>
-        <translation>desktop-entry-lib niet aangetroffen</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="282"/>
-        <source>This function needs the desktop-entry-lib python module to work</source>
-        <translation>Deze functie vereist de desktop-entry-lib Python-module</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="290"/>
-        <source>Desktop Entry Files</source>
-        <translation>Desktopitembestanden</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="369"/>
-        <location filename="../MainWindow.py" line="334"/>
-        <location filename="../MainWindow.py" line="290"/>
-        <source>All Files</source>
-        <translation>Alle bestanden</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="369"/>
-        <location filename="../MainWindow.py" line="334"/>
-        <source>AppStream Files</source>
-        <translation>AppStream-bestanden</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="354"/>
-        <source>Enter URL</source>
-        <translation>Voer een url in</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="354"/>
-        <source>Please enter a URL</source>
-        <translation>Voer een url in</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.ui" line="0"/>
-        <location filename="../MainWindow.ui" line="0"/>
-        <location filename="../MainWindow.ui" line="0"/>
-        <location filename="../MainWindow.py" line="483"/>
-        <location filename="../MainWindow.py" line="405"/>
-        <source>Edit</source>
-        <translation>Bewerken</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.ui" line="0"/>
-        <location filename="../MainWindow.ui" line="0"/>
-        <location filename="../MainWindow.ui" line="0"/>
-        <location filename="../MainWindow.ui" line="0"/>
-        <location filename="../MainWindow.ui" line="0"/>
-        <location filename="../MainWindow.py" line="594"/>
-        <location filename="../MainWindow.py" line="487"/>
-        <location filename="../MainWindow.py" line="409"/>
-        <source>Remove</source>
-        <translation>Verwijderen</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="699"/>
-        <location filename="../MainWindow.py" line="535"/>
-        <location filename="../MainWindow.py" line="416"/>
-        <source>Invalid URL</source>
-        <translation>Ongeldige url</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="416"/>
-        <source>The URL {{url}} does not work</source>
-        <translation>{{url}} werkt niet</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="537"/>
-        <location filename="../MainWindow.py" line="418"/>
-        <source>Everything OK</source>
-        <translation>Alles werkt</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="537"/>
-        <location filename="../MainWindow.py" line="418"/>
-        <source>All URLs are working</source>
-        <translation>Alle url&apos;s werken</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="477"/>
-        <source>Stable</source>
-        <translation>Stabiel</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="478"/>
-        <source>Development</source>
-        <translation>In ontwikkeling</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="519"/>
-        <source>Overwrite evrything</source>
-        <translation>Alles overschrijven</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="519"/>
-        <source>If you proceed, all your chnages in the release tab will be overwritten. Continue?</source>
-        <translation>Als u doorgaat, dan worden alle wijzigingen op dit tabblad verworpen. Weet u het zeker?</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="535"/>
-        <source>The URL {url} does not work</source>
-        <translation>De url, {url}, werkt niet</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="548"/>
-        <source>Add a Categorie</source>
-        <translation>Categorie toevoegen</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="548"/>
-        <source>Please select a Categorie from the list below</source>
-        <translation>Kies een categorie van onderstaande lijst</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="552"/>
-        <source>Categorie already added</source>
-        <translation>Categorie is al toegevoegd</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="552"/>
-        <source>You can&apos;t add the same Categorie twice</source>
-        <translation>U kunt niet tweemaal dezelfde categorie kiezen</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="610"/>
-        <source>New Keyword</source>
-        <translation>Nieuw trefwoord</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="610"/>
-        <source>Please enter a new Keyword</source>
-        <translation>Voer een nieuw trefwoord in</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="628"/>
-        <location filename="../MainWindow.py" line="614"/>
-        <source>Keyword in List</source>
-        <translation>Bestaand trefwoord</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="628"/>
-        <location filename="../MainWindow.py" line="614"/>
-        <source>This Keyword is already in the List</source>
-        <translation>Dit trefwoord is al toegevoegd</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="624"/>
-        <source>Edit Keyword</source>
-        <translation>Trefwoord bewerken</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="624"/>
-        <source>Please edit the Keyword</source>
-        <translation>Bewerk het trefwoord</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="684"/>
-        <source>File not found</source>
-        <translation>Bestand niet aangetroffen</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="684"/>
-        <source>{{path}} does not exists</source>
-        <translation>{{path}} bestaat niet</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="708"/>
-        <location filename="../MainWindow.py" line="687"/>
-        <source>Error</source>
-        <translation>Foutmelding</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="687"/>
-        <source>An error occurred while trying to open {{path}}</source>
-        <translation>Er is een fout opgetreden tijdens het openen van {{path}}</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="699"/>
-        <source>{{url}} is not a valid http/https URL</source>
-        <translation>{{url}} is geen geldige http-/https-url</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="705"/>
-        <source>Could not connect</source>
-        <translation>Kan geen verbinding maken</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="705"/>
-        <source>Could not connect to {{url}}</source>
-        <translation>Er kan geen verbinding worden gemaakt met {{url}}</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="708"/>
-        <source>An error occurred while trying to connect to {{url}}</source>
-        <translation>Er is een fout opgetreden tijdens het openen van {{url}}</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="755"/>
-        <source>XML parsing failed</source>
-        <translation>Xml-verwerking mislukt</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="759"/>
-        <source>No component tag</source>
-        <translation>Geen onderdeeltag</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="759"/>
-        <source>This XML file has no component tag</source>
-        <translation>Het xml-bestand bevat geen onderdeeltag</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="762"/>
-        <source>Too many component tags</source>
-        <translation>Teveel onderdeeltags</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="762"/>
-        <source>Only files with one component tag are supported</source>
-        <translation>Er is alleen ondersteuning voor bestanden met één onderdeeltag</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="1069"/>
-        <source>No ID</source>
-        <translation>Geen id</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="1069"/>
-        <source>You need to set a ID to use this feature</source>
-        <translation>Ken een id toe om deze functie te gebruiken</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="1088"/>
-        <source>{{binary}} not found</source>
-        <translation>{{binary}} niet aangetroffen</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.py" line="1088"/>
-        <source>{{binary}} was not found. Make sure it is installed and in PATH.</source>
-        <translation>{{binary}} is niet aangetroffen. Zorg er voor dat het bestand bestaat en toegevoegd is aan uw PATH.</translation>
-    </message>
     <message>
         <location filename="../MainWindow.ui" line="0"/>
         <source>General</source>
@@ -877,6 +506,27 @@
         <location filename="../MainWindow.ui" line="0"/>
         <source>Default</source>
         <translation>Standaard</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="484"/>
+        <location filename="../MainWindow.py" line="404"/>
+        <location filename="../MainWindow.ui" line="0"/>
+        <location filename="../MainWindow.ui" line="0"/>
+        <location filename="../MainWindow.ui" line="0"/>
+        <source>Edit</source>
+        <translation>Bewerken</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="595"/>
+        <location filename="../MainWindow.py" line="488"/>
+        <location filename="../MainWindow.py" line="408"/>
+        <location filename="../MainWindow.ui" line="0"/>
+        <location filename="../MainWindow.ui" line="0"/>
+        <location filename="../MainWindow.ui" line="0"/>
+        <location filename="../MainWindow.ui" line="0"/>
+        <location filename="../MainWindow.ui" line="0"/>
+        <source>Remove</source>
+        <translation>Verwijderen</translation>
     </message>
     <message>
         <location filename="../MainWindow.ui" line="0"/>
@@ -1169,314 +819,359 @@
         <source>New from .desktop file</source>
         <translation>Nieuw uit .desktopbestand</translation>
     </message>
+    <message>
+        <location filename="../MainWindow.py" line="66"/>
+        <source>Not specified</source>
+        <translation>Niet opgegeven</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="67"/>
+        <source>Required</source>
+        <translation>Vereist</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="68"/>
+        <source>Recommend</source>
+        <translation>Aanbevolen</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="69"/>
+        <source>Supported</source>
+        <translation>Ondersteund</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="84"/>
+        <source>Desktop</source>
+        <translation>Computer</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="85"/>
+        <source>Console</source>
+        <translation>Console</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="86"/>
+        <source>Web Application</source>
+        <translation>Webapp</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="87"/>
+        <source>Service</source>
+        <translation>Dienst</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="88"/>
+        <source>Addon</source>
+        <translation>Uitbreiding</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="89"/>
+        <source>Font</source>
+        <translation>Lettertype</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="90"/>
+        <source>Icon Theme</source>
+        <translation>Pictogramthema</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="91"/>
+        <source>Codecs</source>
+        <translation>Codecs</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="92"/>
+        <source>Input Method</source>
+        <translation>Invoermethode</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="93"/>
+        <source>Firmware</source>
+        <translation>Firmware</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="104"/>
+        <source>Unknown</source>
+        <translation>Onbekend</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="209"/>
+        <source>No recent files</source>
+        <translation>Geen onlangs geopende bestanden</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="222"/>
+        <source>Clear</source>
+        <translation>Wissen</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="239"/>
+        <source>Unsaved changes</source>
+        <translation>Niet-opgeslagen wijzigingen</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="239"/>
+        <source>You have unsaved changes. Do you want to save now?</source>
+        <translation>U heeft niet-opgeslagen wijzigingen. Wilt u deze nu opslaan?</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="250"/>
+        <source>Welcome to jdAppdataEdit!</source>
+        <translation>Welkom in jdAppdataEdit!</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="251"/>
+        <source>With jdAppdataEdit you can create and edit AppStream files (*.metainfo.xml or .appdata.xml). This files are to provide data for your Application (Description, Screenshots etc.) to Software Centers.</source>
+        <translation>Met jdAppdataEdit kunt u AppStream-bestanden (*.metainfo.xml of .appdata.xml) aanmaken en bewerken. Deze bestanden leveren informatie over uw programma (omschrijving, schermfoto&apos;s, etc.) aan softwarewinkels.</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="252"/>
+        <source>It is highly recommend to read the the AppStream Documentation before using this Program. You can open it under ?&gt;AppStream documentation.</source>
+        <translation>Wij raden ten zeerste aan de AppStream-documentatie door te nemen alvorens dit programma te gebruiken, te openen via ? → AppStream-documentatie.</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="253"/>
+        <source>You can check if your AppStream is valid under Tools&gt;Validate.</source>
+        <translation>U kunt uw AppStream-bestand valideren via Hulpmiddelen → Valideren.</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="256"/>
+        <source>Show this dialog at startup</source>
+        <translation>Venster tonen na elke opstart</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="260"/>
+        <source>Welcome</source>
+        <translation>Welkom</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="281"/>
+        <source>desktop-entry-lib not found</source>
+        <translation>desktop-entry-lib niet aangetroffen</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="281"/>
+        <source>This function needs the desktop-entry-lib python module to work</source>
+        <translation>Deze functie vereist de desktop-entry-lib Python-module</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="289"/>
+        <source>Desktop Entry Files</source>
+        <translation>Desktopitembestanden</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="368"/>
+        <location filename="../MainWindow.py" line="333"/>
+        <location filename="../MainWindow.py" line="289"/>
+        <source>All Files</source>
+        <translation>Alle bestanden</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="368"/>
+        <location filename="../MainWindow.py" line="333"/>
+        <source>AppStream Files</source>
+        <translation>AppStream-bestanden</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="353"/>
+        <source>Enter URL</source>
+        <translation>Voer een url in</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="353"/>
+        <source>Please enter a URL</source>
+        <translation>Voer een url in</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="700"/>
+        <location filename="../MainWindow.py" line="536"/>
+        <location filename="../MainWindow.py" line="415"/>
+        <source>Invalid URL</source>
+        <translation>Ongeldige url</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="415"/>
+        <source>The URL {{url}} does not work</source>
+        <translation>{{url}} werkt niet</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="538"/>
+        <location filename="../MainWindow.py" line="417"/>
+        <source>Everything OK</source>
+        <translation>Alles werkt</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="538"/>
+        <location filename="../MainWindow.py" line="417"/>
+        <source>All URLs are working</source>
+        <translation>Alle url&apos;s werken</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="478"/>
+        <source>Stable</source>
+        <translation>Stabiel</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="479"/>
+        <source>Development</source>
+        <translation>In ontwikkeling</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="520"/>
+        <source>Overwrite evrything</source>
+        <translation>Alles overschrijven</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="520"/>
+        <source>If you proceed, all your chnages in the release tab will be overwritten. Continue?</source>
+        <translation>Als u doorgaat, dan worden alle wijzigingen op dit tabblad verworpen. Weet u het zeker?</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="536"/>
+        <source>The URL {url} does not work</source>
+        <translation>De url, {url}, werkt niet</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="549"/>
+        <source>Add a Categorie</source>
+        <translation>Categorie toevoegen</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="549"/>
+        <source>Please select a Categorie from the list below</source>
+        <translation>Kies een categorie van onderstaande lijst</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="553"/>
+        <source>Categorie already added</source>
+        <translation>Categorie is al toegevoegd</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="553"/>
+        <source>You can&apos;t add the same Categorie twice</source>
+        <translation>U kunt niet tweemaal dezelfde categorie kiezen</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="611"/>
+        <source>New Keyword</source>
+        <translation>Nieuw trefwoord</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="611"/>
+        <source>Please enter a new Keyword</source>
+        <translation>Voer een nieuw trefwoord in</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="629"/>
+        <location filename="../MainWindow.py" line="615"/>
+        <source>Keyword in List</source>
+        <translation>Bestaand trefwoord</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="629"/>
+        <location filename="../MainWindow.py" line="615"/>
+        <source>This Keyword is already in the List</source>
+        <translation>Dit trefwoord is al toegevoegd</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="625"/>
+        <source>Edit Keyword</source>
+        <translation>Trefwoord bewerken</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="625"/>
+        <source>Please edit the Keyword</source>
+        <translation>Bewerk het trefwoord</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="685"/>
+        <source>File not found</source>
+        <translation>Bestand niet aangetroffen</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="685"/>
+        <source>{{path}} does not exists</source>
+        <translation>{{path}} bestaat niet</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="709"/>
+        <location filename="../MainWindow.py" line="688"/>
+        <source>Error</source>
+        <translation>Foutmelding</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="688"/>
+        <source>An error occurred while trying to open {{path}}</source>
+        <translation>Er is een fout opgetreden tijdens het openen van {{path}}</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="700"/>
+        <source>{{url}} is not a valid http/https URL</source>
+        <translation>{{url}} is geen geldige http-/https-url</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="706"/>
+        <source>Could not connect</source>
+        <translation>Kan geen verbinding maken</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="706"/>
+        <source>Could not connect to {{url}}</source>
+        <translation>Er kan geen verbinding worden gemaakt met {{url}}</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="709"/>
+        <source>An error occurred while trying to connect to {{url}}</source>
+        <translation>Er is een fout opgetreden tijdens het openen van {{url}}</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="756"/>
+        <source>XML parsing failed</source>
+        <translation>Xml-verwerking mislukt</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="760"/>
+        <source>No component tag</source>
+        <translation>Geen onderdeeltag</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="760"/>
+        <source>This XML file has no component tag</source>
+        <translation>Het xml-bestand bevat geen onderdeeltag</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="763"/>
+        <source>Too many component tags</source>
+        <translation>Teveel onderdeeltags</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="763"/>
+        <source>Only files with one component tag are supported</source>
+        <translation>Er is alleen ondersteuning voor bestanden met één onderdeeltag</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="1070"/>
+        <source>No ID</source>
+        <translation>Geen id</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="1070"/>
+        <source>You need to set a ID to use this feature</source>
+        <translation>Ken een id toe om deze functie te gebruiken</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="1089"/>
+        <source>{{binary}} not found</source>
+        <translation>{{binary}} niet aangetroffen</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.py" line="1089"/>
+        <source>{{binary}} was not found. Make sure it is installed and in PATH.</source>
+        <translation>{{binary}} is niet aangetroffen. Zorg er voor dat het bestand bestaat en toegevoegd is aan uw PATH.</translation>
+    </message>
 </context>
 <context>
     <name>OarsWidget</name>
-    <message>
-        <location filename="../OarsWidget.py" line="145"/>
-        <location filename="../OarsWidget.py" line="140"/>
-        <location filename="../OarsWidget.py" line="137"/>
-        <location filename="../OarsWidget.py" line="133"/>
-        <location filename="../OarsWidget.py" line="128"/>
-        <location filename="../OarsWidget.py" line="122"/>
-        <location filename="../OarsWidget.py" line="117"/>
-        <location filename="../OarsWidget.py" line="112"/>
-        <location filename="../OarsWidget.py" line="105"/>
-        <location filename="../OarsWidget.py" line="100"/>
-        <location filename="../OarsWidget.py" line="95"/>
-        <location filename="../OarsWidget.py" line="88"/>
-        <location filename="../OarsWidget.py" line="83"/>
-        <location filename="../OarsWidget.py" line="77"/>
-        <location filename="../OarsWidget.py" line="73"/>
-        <location filename="../OarsWidget.py" line="69"/>
-        <location filename="../OarsWidget.py" line="62"/>
-        <location filename="../OarsWidget.py" line="57"/>
-        <location filename="../OarsWidget.py" line="52"/>
-        <location filename="../OarsWidget.py" line="47"/>
-        <location filename="../OarsWidget.py" line="42"/>
-        <location filename="../OarsWidget.py" line="37"/>
-        <location filename="../OarsWidget.py" line="32"/>
-        <source>None</source>
-        <translation>Geen</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="33"/>
-        <source>Mild: Cartoon characters in unsafe situations</source>
-        <translation>Matig: stripfiguren in onveilige situaties</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="34"/>
-        <source>Moderate: Cartoon characters in aggressive conflict</source>
-        <translation>Gemiddeld: stripfiguren in heftige ruzies</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="35"/>
-        <source>Intense: Cartoon characters showing graphic violence</source>
-        <translation>Intens: stripfiguren in slaande ruzies</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="38"/>
-        <source>Mild: Fantasy characters in unsafe situations</source>
-        <translation>Matig: fantasiefiguren in onveilige situaties</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="39"/>
-        <source>Moderate: Fantasy characters in aggressive conflict</source>
-        <translation>Gemiddeld: fantasiefiguren in heftige ruzies</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="40"/>
-        <source>Intense: Fantasy characters with graphic violence</source>
-        <translation>Intens: fantasiefiguren in slaande ruzies</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="43"/>
-        <source>Mild: Realistic characters in unsafe situations</source>
-        <translation>Matig: realistische figuren in onveilige situaties</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="44"/>
-        <source>Moderate: Realistic characters in depictions of aggressive conflict</source>
-        <translation>Gemiddeld: realistische figuren in heftige ruzies</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="45"/>
-        <source>Intense: Realistic characters with graphic violence</source>
-        <translation>Intens: realistische figuren in slaande ruzies</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="48"/>
-        <source>Mild: Unrealistic bloodshed</source>
-        <translation>Matig: onrealistische bloedvergieten</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="49"/>
-        <source>Moderate: Realistic bloodshed</source>
-        <translation>Gemiddeld: realistische bloedvergieten</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="50"/>
-        <source>Intense: Depictions of bloodshed and the mutilation of body parts</source>
-        <translation>Intens: realistische bloedvergieten en afgehakte ledematen</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="53"/>
-        <source>Intense: Rape or other violent sexual behavior</source>
-        <translation>Intens: verkrachting of gewelddadige seksuele handelingen</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="58"/>
-        <source>Mild: Visible dead human remains</source>
-        <translation>Matig: zichtbare lichaamsresten</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="59"/>
-        <source>Moderate: Dead human remains that are exposed to the elements</source>
-        <translation>Gemiddeld: lichaamsresten blootgesteld aan de elementen</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="60"/>
-        <source>Intense: Graphic depictions of desecration of human bodies, for example being eaten by wild animals</source>
-        <translation>Intens: grafische voorstellingen van rottende lijken, bijv. opetingen door wilde dieren</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="63"/>
-        <source>Mild: Depictions or references to historical slavery</source>
-        <translation>Matig: vertoningen van of verwijzingen naar historische slavernij</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="64"/>
-        <source>Moderate: Depictions of modern-day slavery</source>
-        <translation>Matig: vertoningen van of verwijzingen naar moderne slavernij</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="65"/>
-        <source>Intense: Graphic depictions of modern-day slavery</source>
-        <translation>Intens: grafische vertoningen van moderne slavernij</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="70"/>
-        <source>Mild: References to alcoholic beverages</source>
-        <translation>Matig: verwijzingen naar alcohol</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="71"/>
-        <source>Moderate: Use of alcoholic beverages</source>
-        <translation>Matig: gebruik van alcohol</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="74"/>
-        <source>Mild: References to illicit drugs</source>
-        <translation>Matig: verwijzingen naar illegale drugs</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="75"/>
-        <source>Moderate: Use of illicit drugs</source>
-        <translation>Gemiddeld: gebruik van illegale drugs</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="78"/>
-        <source>Mild: References to tobacco products</source>
-        <translation>Matig: verwijzingen naar tabaksproducten</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="79"/>
-        <source>Moderate: Use of tobacco products</source>
-        <translation>Gemiddeld: gebruik van tabaksproducten</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="84"/>
-        <source>Mild: Brief artistic nudity</source>
-        <translation>Matig: enige artistieke naaktheid</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="85"/>
-        <source>Moderate: Prolonged nudity</source>
-        <translation>Gemiddeld: langdurige artistieke naaktheid</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="86"/>
-        <source>Intense: Explicit nudity showing nipples or sexual organs</source>
-        <translation>Intens: zeer grafische naaktheid met vertoon van tepels en/of geslachtsorganen</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="89"/>
-        <source>Mild: Provocative references or depictions</source>
-        <translation>Matig: uitdagende verwijzingen of voorstellingen</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="90"/>
-        <source>Moderate: Sexual references or depictions</source>
-        <translation>Gemiddeld: seksuele verwijzingen of voorstellingen</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="91"/>
-        <source>Intense: Graphic sexual behavior</source>
-        <translation>Intens: grafisch seksueel gedrag</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="101"/>
-        <location filename="../OarsWidget.py" line="96"/>
-        <source>Mild: Mild or infrequent use of profanity e.g. &apos;Dufus&apos;</source>
-        <translation>Matig: matig of schaars gebruik van beledigingen, bijv. ‘sukkel’</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="102"/>
-        <location filename="../OarsWidget.py" line="97"/>
-        <source>Moderate: Moderate use of profanity e.g. &apos;Shit&apos;</source>
-        <translation>Gemiddeld: enig gebruik van scheldwoorden, bijv. ‘kut’</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="103"/>
-        <location filename="../OarsWidget.py" line="98"/>
-        <source>Intense: Strong or frequent use of profanity e.g. &apos;Fuck&apos;</source>
-        <translation>Intens: sterk of regelmatig gebruik van vloeken, bijv. ‘verdomme’</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="106"/>
-        <source>Mild: Negativity towards a specific group of people, e.g. ethnic jokes</source>
-        <translation>Matig: negativiteit ten opzichte van een bevolkingsgroep, bijv. ethnische grappen</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="107"/>
-        <source>Moderate: Discrimation designed to cause emotional harm, e.g. racism, or homophobia</source>
-        <translation>Gemiddeld: discriminatie met het doel om emotioneel trauma te veroorzaken, bijv. racisme of homofobie</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="108"/>
-        <source>Intense: Explicit discrimination based on gender, sexuality, race or religion, e.g. genocide</source>
-        <translation>Intens: expliciete discriminatie op basis van geslacht, seksualiteit, ras of religie, bijv. genocide</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="113"/>
-        <source>Mild: Product placement, e.g. billboards in a football game</source>
-        <translation>Matig: productplaatsing, bijv. reclameborden tijdens een voetbalwedstrijd</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="114"/>
-        <source>Moderate: Explicit references to specific brands or trademarked products</source>
-        <translation>Gemiddeld: expliciete verwijzingen naar specifieke merknamen of auteursrechtelijk bescherme producten</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="115"/>
-        <source>Intense: Users are encouraged to purchase specific real-world items</source>
-        <translation>Intens: aansporing om bepaalde producten te kopen</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="118"/>
-        <source>Mild: Gambling on random events using tokens or credits</source>
-        <translation>Matig: gokken op willekeurige evenementen met behulp van fiches of krediet</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="119"/>
-        <source>Moderate: Gambling using fictional money</source>
-        <translation>Gemiddeld: gokken met nepgeld</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="120"/>
-        <source>Intense: Gambling using real money</source>
-        <translation>Intens: gokken met echt geld</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="123"/>
-        <source>Mild: Users are encouraged to donate real money, e.g. using Patreon</source>
-        <translation>Matig: aansporing om geld te doneren, bijv. via Patreon</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="124"/>
-        <source>Intense: Ability to spend real money in-app, e.g. buying new content or new levels</source>
-        <translation>Intens: mogelijkheid om echt geld uit te geven in het programma, bijv. om inhoud of levels aan te schaffen</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="129"/>
-        <source>Mild: User-to-user game interactions without chat functionality e.g. playing chess</source>
-        <translation>Matig: onderlinge gebruikersinteracties zonder chatfunctionaliteit, bijv. schaken</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="130"/>
-        <source>Moderate: Moderated messaging between users</source>
-        <translation>Gemiddeld: chatten met andere gebruikers in het bijzijn van een of meerdere moderators</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="131"/>
-        <source>Intense: Uncontrolled chat functionality between users</source>
-        <translation>Intens: chatten met andere gebruikers zonder een of meerdere moderators</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="134"/>
-        <source>Moderate: Moderated audio or video chat between users</source>
-        <translation>Gemiddeld: audio-/videogesprekken met andere gebruikers</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="135"/>
-        <source>Intense: Uncontrolled audio or video chat between users</source>
-        <translation>Intens: audio-/videogesprekken met andere gebruikers zonder toezicht</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="138"/>
-        <source>Intense: Sharing Twitter, Facebook or email addresses</source>
-        <translation>Intens: delen op Twitter, Facebook of via e-mail</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="141"/>
-        <source>Mild: Using any online API, e.g. a user-counter</source>
-        <translation>Gemiddeld: gebruik van een online-api, bijv. een gebruikersteller</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="142"/>
-        <source>Moderate: Sharing diagnostic data not identifiable to the user, e.g. profiling data</source>
-        <translation>Gemiddeld: delen van niet-inzichtelijke diagnostische gegevens, bijv. om te profileren</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="143"/>
-        <source>Intense: Sharing information identifiable to the user, e.g. crash dumps</source>
-        <translation>Intens: delen van inzichtelijke informatie, bijv. crashlogboeken</translation>
-    </message>
-    <message>
-        <location filename="../OarsWidget.py" line="146"/>
-        <source>Intense: Sharing physical location to other users e.g. a postal address</source>
-        <translation>Intens: delen van de huidige locatie met anderen, bijv. een thuisadres</translation>
-    </message>
     <message>
         <location filename="../OarsWidget.ui" line="0"/>
         <source>Violence</source>
@@ -1823,65 +1518,314 @@
         <source>For example, this would include uploading the GPS co-ordinates of your current location. NOTE: This does not include heuristic based location services, e.g. GeoIP and others.</source>
         <translation>Voorbeeld: het delen van gps-coördinaten van de huidige locatie. LET OP: heuristieke locatiediensten, zoals GeoIP, vallen hier niet onder.</translation>
     </message>
+    <message>
+        <location filename="../OarsWidget.py" line="145"/>
+        <location filename="../OarsWidget.py" line="140"/>
+        <location filename="../OarsWidget.py" line="137"/>
+        <location filename="../OarsWidget.py" line="133"/>
+        <location filename="../OarsWidget.py" line="128"/>
+        <location filename="../OarsWidget.py" line="122"/>
+        <location filename="../OarsWidget.py" line="117"/>
+        <location filename="../OarsWidget.py" line="112"/>
+        <location filename="../OarsWidget.py" line="105"/>
+        <location filename="../OarsWidget.py" line="100"/>
+        <location filename="../OarsWidget.py" line="95"/>
+        <location filename="../OarsWidget.py" line="88"/>
+        <location filename="../OarsWidget.py" line="83"/>
+        <location filename="../OarsWidget.py" line="77"/>
+        <location filename="../OarsWidget.py" line="73"/>
+        <location filename="../OarsWidget.py" line="69"/>
+        <location filename="../OarsWidget.py" line="62"/>
+        <location filename="../OarsWidget.py" line="57"/>
+        <location filename="../OarsWidget.py" line="52"/>
+        <location filename="../OarsWidget.py" line="47"/>
+        <location filename="../OarsWidget.py" line="42"/>
+        <location filename="../OarsWidget.py" line="37"/>
+        <location filename="../OarsWidget.py" line="32"/>
+        <source>None</source>
+        <translation>Geen</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="33"/>
+        <source>Mild: Cartoon characters in unsafe situations</source>
+        <translation>Matig: stripfiguren in onveilige situaties</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="34"/>
+        <source>Moderate: Cartoon characters in aggressive conflict</source>
+        <translation>Gemiddeld: stripfiguren in heftige ruzies</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="35"/>
+        <source>Intense: Cartoon characters showing graphic violence</source>
+        <translation>Intens: stripfiguren in slaande ruzies</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="38"/>
+        <source>Mild: Fantasy characters in unsafe situations</source>
+        <translation>Matig: fantasiefiguren in onveilige situaties</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="39"/>
+        <source>Moderate: Fantasy characters in aggressive conflict</source>
+        <translation>Gemiddeld: fantasiefiguren in heftige ruzies</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="40"/>
+        <source>Intense: Fantasy characters with graphic violence</source>
+        <translation>Intens: fantasiefiguren in slaande ruzies</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="43"/>
+        <source>Mild: Realistic characters in unsafe situations</source>
+        <translation>Matig: realistische figuren in onveilige situaties</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="44"/>
+        <source>Moderate: Realistic characters in depictions of aggressive conflict</source>
+        <translation>Gemiddeld: realistische figuren in heftige ruzies</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="45"/>
+        <source>Intense: Realistic characters with graphic violence</source>
+        <translation>Intens: realistische figuren in slaande ruzies</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="48"/>
+        <source>Mild: Unrealistic bloodshed</source>
+        <translation>Matig: onrealistische bloedvergieten</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="49"/>
+        <source>Moderate: Realistic bloodshed</source>
+        <translation>Gemiddeld: realistische bloedvergieten</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="50"/>
+        <source>Intense: Depictions of bloodshed and the mutilation of body parts</source>
+        <translation>Intens: realistische bloedvergieten en afgehakte ledematen</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="53"/>
+        <source>Intense: Rape or other violent sexual behavior</source>
+        <translation>Intens: verkrachting of gewelddadige seksuele handelingen</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="58"/>
+        <source>Mild: Visible dead human remains</source>
+        <translation>Matig: zichtbare lichaamsresten</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="59"/>
+        <source>Moderate: Dead human remains that are exposed to the elements</source>
+        <translation>Gemiddeld: lichaamsresten blootgesteld aan de elementen</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="60"/>
+        <source>Intense: Graphic depictions of desecration of human bodies, for example being eaten by wild animals</source>
+        <translation>Intens: grafische voorstellingen van rottende lijken, bijv. opetingen door wilde dieren</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="63"/>
+        <source>Mild: Depictions or references to historical slavery</source>
+        <translation>Matig: vertoningen van of verwijzingen naar historische slavernij</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="64"/>
+        <source>Moderate: Depictions of modern-day slavery</source>
+        <translation>Matig: vertoningen van of verwijzingen naar moderne slavernij</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="65"/>
+        <source>Intense: Graphic depictions of modern-day slavery</source>
+        <translation>Intens: grafische vertoningen van moderne slavernij</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="70"/>
+        <source>Mild: References to alcoholic beverages</source>
+        <translation>Matig: verwijzingen naar alcohol</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="71"/>
+        <source>Moderate: Use of alcoholic beverages</source>
+        <translation>Matig: gebruik van alcohol</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="74"/>
+        <source>Mild: References to illicit drugs</source>
+        <translation>Matig: verwijzingen naar illegale drugs</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="75"/>
+        <source>Moderate: Use of illicit drugs</source>
+        <translation>Gemiddeld: gebruik van illegale drugs</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="78"/>
+        <source>Mild: References to tobacco products</source>
+        <translation>Matig: verwijzingen naar tabaksproducten</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="79"/>
+        <source>Moderate: Use of tobacco products</source>
+        <translation>Gemiddeld: gebruik van tabaksproducten</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="84"/>
+        <source>Mild: Brief artistic nudity</source>
+        <translation>Matig: enige artistieke naaktheid</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="85"/>
+        <source>Moderate: Prolonged nudity</source>
+        <translation>Gemiddeld: langdurige artistieke naaktheid</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="86"/>
+        <source>Intense: Explicit nudity showing nipples or sexual organs</source>
+        <translation>Intens: zeer grafische naaktheid met vertoon van tepels en/of geslachtsorganen</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="89"/>
+        <source>Mild: Provocative references or depictions</source>
+        <translation>Matig: uitdagende verwijzingen of voorstellingen</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="90"/>
+        <source>Moderate: Sexual references or depictions</source>
+        <translation>Gemiddeld: seksuele verwijzingen of voorstellingen</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="91"/>
+        <source>Intense: Graphic sexual behavior</source>
+        <translation>Intens: grafisch seksueel gedrag</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="101"/>
+        <location filename="../OarsWidget.py" line="96"/>
+        <source>Mild: Mild or infrequent use of profanity e.g. &apos;Dufus&apos;</source>
+        <translation>Matig: matig of schaars gebruik van beledigingen, bijv. ‘sukkel’</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="102"/>
+        <location filename="../OarsWidget.py" line="97"/>
+        <source>Moderate: Moderate use of profanity e.g. &apos;Shit&apos;</source>
+        <translation>Gemiddeld: enig gebruik van scheldwoorden, bijv. ‘kut’</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="103"/>
+        <location filename="../OarsWidget.py" line="98"/>
+        <source>Intense: Strong or frequent use of profanity e.g. &apos;Fuck&apos;</source>
+        <translation>Intens: sterk of regelmatig gebruik van vloeken, bijv. ‘verdomme’</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="106"/>
+        <source>Mild: Negativity towards a specific group of people, e.g. ethnic jokes</source>
+        <translation>Matig: negativiteit ten opzichte van een bevolkingsgroep, bijv. ethnische grappen</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="107"/>
+        <source>Moderate: Discrimation designed to cause emotional harm, e.g. racism, or homophobia</source>
+        <translation>Gemiddeld: discriminatie met het doel om emotioneel trauma te veroorzaken, bijv. racisme of homofobie</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="108"/>
+        <source>Intense: Explicit discrimination based on gender, sexuality, race or religion, e.g. genocide</source>
+        <translation>Intens: expliciete discriminatie op basis van geslacht, seksualiteit, ras of religie, bijv. genocide</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="113"/>
+        <source>Mild: Product placement, e.g. billboards in a football game</source>
+        <translation>Matig: productplaatsing, bijv. reclameborden tijdens een voetbalwedstrijd</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="114"/>
+        <source>Moderate: Explicit references to specific brands or trademarked products</source>
+        <translation>Gemiddeld: expliciete verwijzingen naar specifieke merknamen of auteursrechtelijk bescherme producten</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="115"/>
+        <source>Intense: Users are encouraged to purchase specific real-world items</source>
+        <translation>Intens: aansporing om bepaalde producten te kopen</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="118"/>
+        <source>Mild: Gambling on random events using tokens or credits</source>
+        <translation>Matig: gokken op willekeurige evenementen met behulp van fiches of krediet</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="119"/>
+        <source>Moderate: Gambling using fictional money</source>
+        <translation>Gemiddeld: gokken met nepgeld</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="120"/>
+        <source>Intense: Gambling using real money</source>
+        <translation>Intens: gokken met echt geld</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="123"/>
+        <source>Mild: Users are encouraged to donate real money, e.g. using Patreon</source>
+        <translation>Matig: aansporing om geld te doneren, bijv. via Patreon</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="124"/>
+        <source>Intense: Ability to spend real money in-app, e.g. buying new content or new levels</source>
+        <translation>Intens: mogelijkheid om echt geld uit te geven in het programma, bijv. om inhoud of levels aan te schaffen</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="129"/>
+        <source>Mild: User-to-user game interactions without chat functionality e.g. playing chess</source>
+        <translation>Matig: onderlinge gebruikersinteracties zonder chatfunctionaliteit, bijv. schaken</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="130"/>
+        <source>Moderate: Moderated messaging between users</source>
+        <translation>Gemiddeld: chatten met andere gebruikers in het bijzijn van een of meerdere moderators</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="131"/>
+        <source>Intense: Uncontrolled chat functionality between users</source>
+        <translation>Intens: chatten met andere gebruikers zonder een of meerdere moderators</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="134"/>
+        <source>Moderate: Moderated audio or video chat between users</source>
+        <translation>Gemiddeld: audio-/videogesprekken met andere gebruikers</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="135"/>
+        <source>Intense: Uncontrolled audio or video chat between users</source>
+        <translation>Intens: audio-/videogesprekken met andere gebruikers zonder toezicht</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="138"/>
+        <source>Intense: Sharing Twitter, Facebook or email addresses</source>
+        <translation>Intens: delen op Twitter, Facebook of via e-mail</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="141"/>
+        <source>Mild: Using any online API, e.g. a user-counter</source>
+        <translation>Gemiddeld: gebruik van een online-api, bijv. een gebruikersteller</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="142"/>
+        <source>Moderate: Sharing diagnostic data not identifiable to the user, e.g. profiling data</source>
+        <translation>Gemiddeld: delen van niet-inzichtelijke diagnostische gegevens, bijv. om te profileren</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="143"/>
+        <source>Intense: Sharing information identifiable to the user, e.g. crash dumps</source>
+        <translation>Intens: delen van inzichtelijke informatie, bijv. crashlogboeken</translation>
+    </message>
+    <message>
+        <location filename="../OarsWidget.py" line="146"/>
+        <source>Intense: Sharing physical location to other users e.g. a postal address</source>
+        <translation>Intens: delen van de huidige locatie met anderen, bijv. een thuisadres</translation>
+    </message>
 </context>
 <context>
     <name>RelationsWidget</name>
-    <message>
-        <location filename="../RelationsWidget.py" line="24"/>
-        <source>Not specified</source>
-        <translation>Niet opgegeven</translation>
-    </message>
-    <message>
-        <location filename="../RelationsWidget.py" line="25"/>
-        <source>Very small screens e.g. wearables</source>
-        <translation>Zeer kleine schermen, zoals smartwatches</translation>
-    </message>
-    <message>
-        <location filename="../RelationsWidget.py" line="26"/>
-        <source>Small screens e.g. phones</source>
-        <translation>Kleine schermen, zoals smartphones</translation>
-    </message>
-    <message>
-        <location filename="../RelationsWidget.py" line="27"/>
-        <source>Screens in laptops, tablets</source>
-        <translation>Laptop- en tabletschermen</translation>
-    </message>
-    <message>
-        <location filename="../RelationsWidget.py" line="28"/>
-        <source>Bigger computer monitors</source>
-        <translation>Grotere desktopbeeldschermen</translation>
-    </message>
-    <message>
-        <location filename="../RelationsWidget.py" line="29"/>
-        <source>Television screens, large projected images</source>
-        <translation>Televisieschermen en grote projecties</translation>
-    </message>
-    <message>
-        <location filename="../RelationsWidget.py" line="137"/>
-        <location filename="../RelationsWidget.py" line="104"/>
-        <source>Supported</source>
-        <translation>Ondersteund</translation>
-    </message>
-    <message>
-        <location filename="../RelationsWidget.py" line="138"/>
-        <location filename="../RelationsWidget.py" line="105"/>
-        <source>Recommend</source>
-        <translation>Aanbevolen</translation>
-    </message>
-    <message>
-        <location filename="../RelationsWidget.py" line="139"/>
-        <location filename="../RelationsWidget.py" line="106"/>
-        <source>Required</source>
-        <translation>Vereist</translation>
-    </message>
-    <message>
-        <location filename="../RelationsWidget.ui" line="0"/>
-        <location filename="../RelationsWidget.ui" line="0"/>
-        <location filename="../RelationsWidget.py" line="150"/>
-        <location filename="../RelationsWidget.py" line="117"/>
-        <source>Remove</source>
-        <translation>Verwijderen</translation>
-    </message>
     <message>
         <location filename="../RelationsWidget.ui" line="0"/>
         <source>Screen</source>
@@ -1995,6 +1939,14 @@
         <translation>Type</translation>
     </message>
     <message>
+        <location filename="../RelationsWidget.py" line="150"/>
+        <location filename="../RelationsWidget.py" line="117"/>
+        <location filename="../RelationsWidget.ui" line="0"/>
+        <location filename="../RelationsWidget.ui" line="0"/>
+        <source>Remove</source>
+        <translation>Verwijderen</translation>
+    </message>
+    <message>
         <location filename="../RelationsWidget.ui" line="0"/>
         <location filename="../RelationsWidget.ui" line="0"/>
         <source>Add</source>
@@ -2014,6 +1966,54 @@
         <location filename="../RelationsWidget.ui" line="0"/>
         <source>CHID</source>
         <translation>CHID</translation>
+    </message>
+    <message>
+        <location filename="../RelationsWidget.py" line="24"/>
+        <source>Not specified</source>
+        <translation>Niet opgegeven</translation>
+    </message>
+    <message>
+        <location filename="../RelationsWidget.py" line="25"/>
+        <source>Very small screens e.g. wearables</source>
+        <translation>Zeer kleine schermen, zoals smartwatches</translation>
+    </message>
+    <message>
+        <location filename="../RelationsWidget.py" line="26"/>
+        <source>Small screens e.g. phones</source>
+        <translation>Kleine schermen, zoals smartphones</translation>
+    </message>
+    <message>
+        <location filename="../RelationsWidget.py" line="27"/>
+        <source>Screens in laptops, tablets</source>
+        <translation>Laptop- en tabletschermen</translation>
+    </message>
+    <message>
+        <location filename="../RelationsWidget.py" line="28"/>
+        <source>Bigger computer monitors</source>
+        <translation>Grotere desktopbeeldschermen</translation>
+    </message>
+    <message>
+        <location filename="../RelationsWidget.py" line="29"/>
+        <source>Television screens, large projected images</source>
+        <translation>Televisieschermen en grote projecties</translation>
+    </message>
+    <message>
+        <location filename="../RelationsWidget.py" line="137"/>
+        <location filename="../RelationsWidget.py" line="104"/>
+        <source>Supported</source>
+        <translation>Ondersteund</translation>
+    </message>
+    <message>
+        <location filename="../RelationsWidget.py" line="138"/>
+        <location filename="../RelationsWidget.py" line="105"/>
+        <source>Recommend</source>
+        <translation>Aanbevolen</translation>
+    </message>
+    <message>
+        <location filename="../RelationsWidget.py" line="139"/>
+        <location filename="../RelationsWidget.py" line="106"/>
+        <source>Required</source>
+        <translation>Vereist</translation>
     </message>
 </context>
 <context>
@@ -2070,8 +2070,8 @@
     </message>
     <message>
         <location filename="../ReleaseImporter.py" line="84"/>
-        <source>Please Enter the URL to the Gittea Repo</source>
-        <translation>Voer de url van de Gittea-repo in</translation>
+        <source>Please Enter the URL to the Gitea Repo</source>
+        <translation>Voer de url van de Gitea-repo in</translation>
     </message>
     <message>
         <location filename="../ReleaseImporter.py" line="110"/>
@@ -2130,7 +2130,7 @@
     </message>
     <message>
         <location filename="../ReleaseImporter.py" line="172"/>
-        <source>From Gittea</source>
+        <source>From Gitea</source>
         <translation>Van Gittea</translation>
     </message>
     <message>
@@ -2146,48 +2146,6 @@
 </context>
 <context>
     <name>ReleasesWindow</name>
-    <message>
-        <location filename="../ReleasesWindow.py" line="24"/>
-        <source>Not specified</source>
-        <translation>Niet opgegeven</translation>
-    </message>
-    <message>
-        <location filename="../ReleasesWindow.py" line="25"/>
-        <source>Low</source>
-        <translation>Laag</translation>
-    </message>
-    <message>
-        <location filename="../ReleasesWindow.py" line="26"/>
-        <source>Medium</source>
-        <translation>Gemiddeld</translation>
-    </message>
-    <message>
-        <location filename="../ReleasesWindow.py" line="27"/>
-        <source>High</source>
-        <translation>Hoog</translation>
-    </message>
-    <message>
-        <location filename="../ReleasesWindow.py" line="28"/>
-        <source>Critical</source>
-        <translation>Kritiek</translation>
-    </message>
-    <message>
-        <location filename="../ReleasesWindow.ui" line="0"/>
-        <location filename="../ReleasesWindow.py" line="76"/>
-        <source>Edit</source>
-        <translation>Bewerken</translation>
-    </message>
-    <message>
-        <location filename="../ReleasesWindow.ui" line="0"/>
-        <location filename="../ReleasesWindow.py" line="80"/>
-        <source>Remove</source>
-        <translation>Verwijderen</translation>
-    </message>
-    <message>
-        <location filename="../ReleasesWindow.py" line="121"/>
-        <source>Edit release {{release}}</source>
-        <translation>Uitgave “{{release}}” bewerken</translation>
-    </message>
     <message>
         <location filename="../ReleasesWindow.ui" line="0"/>
         <source>General</source>
@@ -2224,6 +2182,18 @@
         <translation>Url</translation>
     </message>
     <message>
+        <location filename="../ReleasesWindow.py" line="76"/>
+        <location filename="../ReleasesWindow.ui" line="0"/>
+        <source>Edit</source>
+        <translation>Bewerken</translation>
+    </message>
+    <message>
+        <location filename="../ReleasesWindow.py" line="80"/>
+        <location filename="../ReleasesWindow.ui" line="0"/>
+        <source>Remove</source>
+        <translation>Verwijderen</translation>
+    </message>
+    <message>
         <location filename="../ReleasesWindow.ui" line="0"/>
         <source>Add</source>
         <translation>Toevoegen</translation>
@@ -2237,6 +2207,36 @@
         <location filename="../ReleasesWindow.ui" line="0"/>
         <source>Cancel</source>
         <translation>Annuleren</translation>
+    </message>
+    <message>
+        <location filename="../ReleasesWindow.py" line="24"/>
+        <source>Not specified</source>
+        <translation>Niet opgegeven</translation>
+    </message>
+    <message>
+        <location filename="../ReleasesWindow.py" line="25"/>
+        <source>Low</source>
+        <translation>Laag</translation>
+    </message>
+    <message>
+        <location filename="../ReleasesWindow.py" line="26"/>
+        <source>Medium</source>
+        <translation>Gemiddeld</translation>
+    </message>
+    <message>
+        <location filename="../ReleasesWindow.py" line="27"/>
+        <source>High</source>
+        <translation>Hoog</translation>
+    </message>
+    <message>
+        <location filename="../ReleasesWindow.py" line="28"/>
+        <source>Critical</source>
+        <translation>Kritiek</translation>
+    </message>
+    <message>
+        <location filename="../ReleasesWindow.py" line="121"/>
+        <source>Edit release {{release}}</source>
+        <translation>Uitgave “{{release}}” bewerken</translation>
     </message>
 </context>
 <context>
@@ -2517,26 +2517,6 @@
 <context>
     <name>ValidateWindow</name>
     <message>
-        <location filename="../ValidateWindow.py" line="28"/>
-        <source>appstreamcli was not found</source>
-        <translation>appstreamcli is niet aangetroffen</translation>
-    </message>
-    <message>
-        <location filename="../ValidateWindow.py" line="41"/>
-        <source>appstream-util was not found</source>
-        <translation>appstream-util is niet aangetroffen</translation>
-    </message>
-    <message>
-        <location filename="../ValidateWindow.py" line="50"/>
-        <source>No ID</source>
-        <translation>Geen id</translation>
-    </message>
-    <message>
-        <location filename="../ValidateWindow.py" line="50"/>
-        <source>You need to set a ID to use this feature</source>
-        <translation>Ken een id toe om deze functie te gebruiken</translation>
-    </message>
-    <message>
         <location filename="../ValidateWindow.ui" line="0"/>
         <source>Validate</source>
         <translation>Valideren</translation>
@@ -2570,6 +2550,26 @@
         <location filename="../ValidateWindow.ui" line="0"/>
         <source>OK</source>
         <translation>Oké</translation>
+    </message>
+    <message>
+        <location filename="../ValidateWindow.py" line="28"/>
+        <source>appstreamcli was not found</source>
+        <translation>appstreamcli is niet aangetroffen</translation>
+    </message>
+    <message>
+        <location filename="../ValidateWindow.py" line="41"/>
+        <source>appstream-util was not found</source>
+        <translation>appstream-util is niet aangetroffen</translation>
+    </message>
+    <message>
+        <location filename="../ValidateWindow.py" line="50"/>
+        <source>No ID</source>
+        <translation>Geen id</translation>
+    </message>
+    <message>
+        <location filename="../ValidateWindow.py" line="50"/>
+        <source>You need to set a ID to use this feature</source>
+        <translation>Ken een id toe om deze functie te gebruiken</translation>
     </message>
 </context>
 <context>

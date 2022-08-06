@@ -80,8 +80,8 @@ def _gitlab_importer(parent_widget: QWidget):
     return release_list
 
 
-def _gittea_importer(parent_widget: QWidget):
-    repo_url, ok = QInputDialog.getText(parent_widget, QCoreApplication.translate("ReleaseImporter", "Enter Repo URL"), QCoreApplication.translate("ReleaseImporter", "Please Enter the URL to the Gittea Repo"))
+def _gitea_importer(parent_widget: QWidget):
+    repo_url, ok = QInputDialog.getText(parent_widget, QCoreApplication.translate("ReleaseImporter", "Enter Repo URL"), QCoreApplication.translate("ReleaseImporter", "Please Enter the URL to the Gitea Repo"))
     if not ok:
         return
 
@@ -169,7 +169,7 @@ def get_release_importer() -> List[Tuple[str, Callable]]:
 
     importer_list.append((QCoreApplication.translate("ReleaseImporter", "From GitHub"), _github_importer))
     importer_list.append((QCoreApplication.translate("ReleaseImporter", "From GitLab"), _gitlab_importer))
-    importer_list.append((QCoreApplication.translate("ReleaseImporter", "From Gittea"), _gittea_importer))
+    importer_list.append((QCoreApplication.translate("ReleaseImporter", "From Gitea"), _gitea_importer))
     importer_list.append((QCoreApplication.translate("ReleaseImporter", "From Git Repo"), _git_importer))
     importer_list.append((QCoreApplication.translate("ReleaseImporter", "From NEWS file"), _news_file_importer))
 
