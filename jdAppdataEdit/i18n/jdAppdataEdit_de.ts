@@ -566,7 +566,7 @@
     <message>
         <location filename="../MainWindow.ui" line="0"/>
         <source>Import</source>
-        <translation>Impotieren</translation>
+        <translation>Importieren</translation>
     </message>
     <message>
         <location filename="../MainWindow.ui" line="0"/>
