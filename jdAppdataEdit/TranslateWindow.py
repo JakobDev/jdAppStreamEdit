@@ -76,7 +76,7 @@ class TranslateWindow(QDialog):
         for i in get_logical_table_row_list(self.table_widget):
             language = self.table_widget.cellWidget(i, 0).currentData()
             text = self.table_widget.item(i, 1).text()
-            self._current_dict[language] = text
+            self._current_dict[language] = text.strip()
 
         if self._main_window:
             self._main_window.set_file_edited()

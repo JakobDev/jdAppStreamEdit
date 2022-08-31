@@ -1,5 +1,5 @@
-from .Functions import select_combo_box_data, is_string_number, get_logical_table_row_list, clear_table_widget
 from PyQt6.QtWidgets import QWidget, QComboBox, QLineEdit, QTableWidget, QTableWidgetItem, QPushButton, QHeaderView
+from .Functions import select_combo_box_data, is_string_number, get_logical_table_row_list, clear_table_widget
 from PyQt6.QtCore import QCoreApplication
 from PyQt6.QtGui import QIntValidator
 from typing import Optional, List
@@ -29,6 +29,14 @@ class RelationsWidget(QWidget):
                 value.addItem(QCoreApplication.translate("RelationsWidget", "Television screens, large projected images"), "xlarge")
             elif key.startswith("edit_screen_custom_"):
                 value.setValidator(QIntValidator())
+            elif key.startswith("box_internet_"):
+                value.addItem(QCoreApplication.translate("RelationsWidget", "Not specified"), "none")
+                value.addItem(QCoreApplication.translate("RelationsWidget", "Never uses the internet, even if it’s available"), "offline-only")
+                value.addItem(QCoreApplication.translate("RelationsWidget", "Uses the internet only the first time the application is run"), "first-run")
+                value.addItem(QCoreApplication.translate("RelationsWidget", "Needs internet connectivity to work"), "always")
+                value.currentIndexChanged.connect(self._update_internet_bandwith_enabled)
+            elif key.startswith("edit_internet_bandwidth_"):
+                value.setValidator(QIntValidator())
 
             if isinstance(value, QComboBox):
                 value.currentIndexChanged.connect(main_window.set_file_edited)
@@ -48,6 +56,7 @@ class RelationsWidget(QWidget):
         self.button_hardware_add.clicked.connect(self._add_hardware_row)
 
         self._update_screen_widgets_enabled()
+        self._update_internet_bandwith_enabled()
 
         self.main_tab_widget.setCurrentIndex(0)
 
@@ -93,6 +102,16 @@ class RelationsWidget(QWidget):
                 display_tag = etree.SubElement(parent_tag, "display_length")
                 display_tag.set("compare", size)
                 display_tag.text = getattr(self, "edit_screen_custom_" + append_string).text()
+
+    # Internet
+
+    def _update_internet_bandwith_enabled(self):
+        for relation in ("supports", "requires", "recommends"):
+            value = getattr(self, f"box_internet_{relation}").currentData()
+            enabled = value in ("first-run", "always")
+            getattr(self, f"label_internet_bandwidth_{relation}").setEnabled(enabled)
+            getattr(self, f"edit_internet_bandwidth_{relation}").setEnabled(enabled)
+            getattr(self, f"label_internet_mbit_{relation}").setEnabled(enabled)
 
     # Modalias
 
@@ -183,6 +202,12 @@ class RelationsWidget(QWidget):
             else:
                 print("memory tag is only allowd in requires and recommends", file=sys.stderr)
 
+        internet_tag = relation_tag.find("internet")
+        if internet_tag is not None:
+            select_combo_box_data(getattr(self, f"box_internet_{relation_tag.tag}"), internet_tag.text)
+            if "bandwidth_mbitps" in internet_tag.attrib and internet_tag.text in ("first-run", "always"):
+                getattr(self, f"edit_internet_bandwidth_{relation_tag.tag}").setText(internet_tag.get("bandwidth_mbitps"))
+
         for i in relation_tag.findall("modalias"):
             self._add_modalias_row(relation=relation_tag.tag, chid=i.text)
 
@@ -200,12 +225,21 @@ class RelationsWidget(QWidget):
             memory_tag = etree.SubElement(parent_tag, "memory")
             memory_tag.text = self.edit_memory_recommends.text()
 
+        internet_value = getattr(self, f"box_internet_{relation}").currentData()
+        if internet_value != "none":
+            internet_tag = etree.SubElement(parent_tag, "internet")
+            internet_tag.text = internet_value
+            if internet_value in ("first-run", "always"):
+                bandwidth = getattr(self, f"edit_internet_bandwidth_{relation}").text()
+                if bandwidth != "":
+                    internet_tag.set("bandwidth_mbitps", bandwidth)
+
         for i in get_logical_table_row_list(self.modalias_table):
             if self.modalias_table.cellWidget(i, 0).currentData() == relation:
                 modalias_tag = etree.SubElement(parent_tag, "modalias")
-                modalias_tag.text =  self.modalias_table.item(i, 1).text()
+                modalias_tag.text =  self.modalias_table.item(i, 1).text().strip()
 
         for i in get_logical_table_row_list(self.hardware_table):
             if self.hardware_table.cellWidget(i, 0).currentData() == relation:
                 hardware_tag = etree.SubElement(parent_tag, "hardware")
-                hardware_tag.text =  self.hardware_table.item(i, 1).text()
+                hardware_tag.text =  self.hardware_table.item(i, 1).text().strip()

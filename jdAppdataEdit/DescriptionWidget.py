@@ -43,7 +43,7 @@ class ParagraphWidget(QWidget):
 
     def get_tag(self, parent_tag:  etree._Element, preview: bool = False):
         tag = etree.SubElement(parent_tag, "p")
-        tag.text = self._edit_widget.toPlainText()
+        tag.text = self._edit_widget.toPlainText().strip()
         if preview:
             return
         for key, value in self._translations.items():
@@ -257,7 +257,7 @@ class DescriptionWidget(QWidget):
             elif i.tag == "ul":
                 self._add_list("ul", i)
             else:
-                print("Unknwon tag " + i.tag, file=sys.stderr)
+                print(f"Unknown tag {i.tag}", file=sys.stderr)
 
         if current_paragraph is not None:
             self._add_paragraph(text=current_paragraph, translations=current_paragraph_translations)

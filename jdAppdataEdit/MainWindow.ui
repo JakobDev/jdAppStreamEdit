@@ -33,7 +33,7 @@
     <item>
      <widget class="QTabWidget" name="main_tab_widget">
       <property name="currentIndex">
-       <number>3</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -355,6 +355,13 @@
            </widget>
           </item>
           <item>
+           <widget class="QPushButton" name="release_sort_button">
+            <property name="text">
+             <string>Sort</string>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QPushButton" name="release_import_button">
             <property name="text">
              <string>Import</string>
@@ -380,7 +387,11 @@
            </widget>
           </item>
           <item row="0" column="1">
-           <widget class="QLineEdit" name="homepage_url_edit"/>
+           <widget class="QLineEdit" name="homepage_url_edit">
+            <property name="placeholderText">
+             <string>Should be a link to the upstream homepage for the component</string>
+            </property>
+           </widget>
           </item>
           <item row="1" column="0">
            <widget class="QLabel" name="bugtracker_url_label">
@@ -390,7 +401,11 @@
            </widget>
           </item>
           <item row="1" column="1">
-           <widget class="QLineEdit" name="bugtracker_url_edit"/>
+           <widget class="QLineEdit" name="bugtracker_url_edit">
+            <property name="placeholderText">
+             <string>Should point to the software's bug tracking system, for users to report new bugs</string>
+            </property>
+           </widget>
           </item>
           <item row="2" column="0">
            <widget class="QLabel" name="faq_url_label">
@@ -400,7 +415,11 @@
            </widget>
           </item>
           <item row="2" column="1">
-           <widget class="QLineEdit" name="faq_url_edit"/>
+           <widget class="QLineEdit" name="faq_url_edit">
+            <property name="placeholderText">
+             <string>Should link a FAQ page for this software, to answer some of the most-asked questions in detail</string>
+            </property>
+           </widget>
           </item>
           <item row="3" column="0">
            <widget class="QLabel" name="help_url_label">
@@ -410,7 +429,11 @@
            </widget>
           </item>
           <item row="3" column="1">
-           <widget class="QLineEdit" name="help_url_edit"/>
+           <widget class="QLineEdit" name="help_url_edit">
+            <property name="placeholderText">
+             <string>Should provide a web link to an online user's reference, a software manual or help page</string>
+            </property>
+           </widget>
           </item>
           <item row="4" column="0">
            <widget class="QLabel" name="donation_url_label">
@@ -420,7 +443,11 @@
            </widget>
           </item>
           <item row="4" column="1">
-           <widget class="QLineEdit" name="donation_url_edit"/>
+           <widget class="QLineEdit" name="donation_url_edit">
+            <property name="placeholderText">
+             <string>URLs of this type should point to a webpage showing information on how to donate to the described software project</string>
+            </property>
+           </widget>
           </item>
           <item row="5" column="0">
            <widget class="QLabel" name="translate_url_label">
@@ -430,7 +457,11 @@
            </widget>
           </item>
           <item row="5" column="1">
-           <widget class="QLineEdit" name="translate_url_edit"/>
+           <widget class="QLineEdit" name="translate_url_edit">
+            <property name="placeholderText">
+             <string>URLs of this type should point to a webpage where users can submit or modify translations of the upstream project</string>
+            </property>
+           </widget>
           </item>
           <item row="6" column="0">
            <widget class="QLabel" name="contact_url_label">
@@ -440,7 +471,11 @@
            </widget>
           </item>
           <item row="6" column="1">
-           <widget class="QLineEdit" name="contact_url_edit"/>
+           <widget class="QLineEdit" name="contact_url_edit">
+            <property name="placeholderText">
+             <string>URLs of this type should allow the user to contact the developer</string>
+            </property>
+           </widget>
           </item>
           <item row="7" column="0">
            <widget class="QLabel" name="vcs_browser_url_label">
@@ -450,7 +485,11 @@
            </widget>
           </item>
           <item row="7" column="1">
-           <widget class="QLineEdit" name="vcs_browser_url_edit"/>
+           <widget class="QLineEdit" name="vcs_browser_url_edit">
+            <property name="placeholderText">
+             <string>URLs of this type should point to a webpage on which the user can browse the sourcecode</string>
+            </property>
+           </widget>
           </item>
           <item row="8" column="0">
            <widget class="QLabel" name="contribute_url_label">
@@ -460,7 +499,11 @@
            </widget>
           </item>
           <item row="8" column="1">
-           <widget class="QLineEdit" name="contribute_url_edit"/>
+           <widget class="QLineEdit" name="contribute_url_edit">
+            <property name="placeholderText">
+             <string>URLs of this type should point to a webpage showing information on how to contribute to the described software project</string>
+            </property>
+           </widget>
           </item>
          </layout>
         </item>
@@ -899,8 +942,15 @@
      </property>
      <addaction name="actionPlaceholder"/>
     </widget>
+    <widget class="QMenu" name="new_template_file_menu">
+     <property name="title">
+      <string>New (from Template)</string>
+     </property>
+     <addaction name="actionPlaceholder_2"/>
+    </widget>
     <addaction name="new_action"/>
     <addaction name="new_desktop_file_action"/>
+    <addaction name="new_template_file_menu"/>
     <addaction name="separator"/>
     <addaction name="open_action"/>
     <addaction name="recent_files_menu"/>
@@ -926,6 +976,7 @@
      <string>Settings</string>
     </property>
     <addaction name="settings_action"/>
+    <addaction name="manage_templates_action"/>
    </widget>
    <widget class="QMenu" name="menuTools">
     <property name="title">
@@ -1029,7 +1080,17 @@
   </action>
   <action name="new_desktop_file_action">
    <property name="text">
-    <string>New from .desktop file</string>
+    <string>New (from .desktop file)</string>
+   </property>
+  </action>
+  <action name="manage_templates_action">
+   <property name="text">
+    <string>Manage templates</string>
+   </property>
+  </action>
+  <action name="actionPlaceholder_2">
+   <property name="text">
+    <string notr="true">Placeholder</string>
    </property>
   </action>
  </widget>

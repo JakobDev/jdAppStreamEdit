@@ -2,7 +2,7 @@ from PyQt6.QtWidgets import QDialog, QMessageBox
 from PyQt6.QtGui import QIntValidator, QPixmap
 from PyQt6.QtCore import QCoreApplication
 from .Functions import is_url_valid
-from typing import Union
+from typing import Optional
 from PyQt6 import uic
 import requests
 import copy
@@ -55,19 +55,22 @@ class ScreenshotWindow(QDialog):
             return
 
         new_dict = {}
-        new_dict["url"] = self.url_edit.text()
+        new_dict["url"] = self.url_edit.text().strip()
         if self.width_edit.text() != "":
             new_dict["width"] = int(self.width_edit.text())
         if self.height_edit.text() != "":
             new_dict["height"] = int(self.height_edit.text())
-        if self.caption_edit.text() != "":
-            new_dict["caption"] = self.caption_edit.text()
+        if self.caption_edit.text().strip() != "":
+            new_dict["caption"] = self.caption_edit.text().strip()
         new_dict["caption_translations"] = copy.copy(self._caption_translations)
 
         if len(self._main_window.screenshot_list) == 0:
             new_dict["default"] = True
         else:
-            new_dict["default"] =  self._main_window.screenshot_list[self._position]["default"]
+            if self._position:
+                new_dict["default"] =  self._main_window.screenshot_list[self._position]["default"]
+            else:
+                new_dict["default"] = False
 
         if self._position is None:
             self._main_window.screenshot_list.append(new_dict)
@@ -80,7 +83,7 @@ class ScreenshotWindow(QDialog):
         self._main_window.set_file_edited()
         self.close()
 
-    def open_window(self, position: Union[int, None]):
+    def open_window(self, position: Optional[int]):
         self._position = position
 
         if position is None:

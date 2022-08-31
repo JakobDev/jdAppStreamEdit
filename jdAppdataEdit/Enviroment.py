@@ -30,6 +30,9 @@ class Enviroment():
         except Exception:
             self.recent_files = []
 
+        self.template_list = []
+        self.update_template_list()
+
         with open(os.path.join(self.program_dir, "data", "metadata_licenses.json"), "r", encoding="utf-8") as f:
             self.metadata_license_list = json.load(f)
 
@@ -71,3 +74,15 @@ class Enviroment():
             return
         with open(save_path, "w", encoding="utf-8") as f:
             json.dump(self.recent_files, f, ensure_ascii=False, indent=4)
+
+    def update_template_list(self):
+        self.template_list.clear()
+
+        try:
+            file_list = os.listdir(os.path.join(self.data_dir, "templates"))
+        except Exception:
+            return
+
+        for i in file_list:
+            if i.endswith(".metainfo.xml"):
+                self.template_list.append(i.removesuffix(".metainfo.xml"))

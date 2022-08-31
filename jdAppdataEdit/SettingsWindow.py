@@ -15,9 +15,14 @@ class SettingsWindow(QDialog):
 
         self.language_box.addItem(QCoreApplication.translate("SettingsWindow", "System language"), "default")
         self.language_box.addItem("Englisch", "en")
+        translations_found = False
         for i in os.listdir(os.path.join(env.program_dir, "i18n")):
             if i.endswith(".qm"):
                 self.language_box.addItem(QLocale.languageToString(QLocale(i[14:-3]).language()), i[14:-3])
+                translations_found = True
+
+        if not translations_found:
+            print("No translations where found. make sure you run the BuildTranslations script")
 
         self.window_title_box.addItem(QCoreApplication.translate("SettingsWindow", "Nothing"), "none")
         self.window_title_box.addItem(QCoreApplication.translate("SettingsWindow", "Filename"), "filename")

@@ -33,7 +33,7 @@ class XMLHighlighter(QSyntaxHighlighter):
 
         self._value_format = QTextCharFormat()
         self._value_format.setForeground(QColor("#e35e00")) #orange
-        self._value_regex = re.compile(r"[\"\'](.*?)[\"\']")
+        self._value_regex = re.compile(r"(?<=\S=)[\"\'](.*?)[\"\']")
 
     def highlightBlock(self, text):
         for pattern, format in self._highlighting_rules:

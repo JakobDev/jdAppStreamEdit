@@ -1,6 +1,7 @@
-from .Functions import clear_table_widget, stretch_table_widget_colums_size, list_widget_contains_item, is_url_reachable, get_logical_table_row_list, create_artifact_source_tag, select_combo_box_data, is_flatpak, get_shared_temp_dir, is_url_valid
 from PyQt6.QtWidgets import QApplication, QCheckBox, QComboBox, QLineEdit, QListWidget, QMainWindow, QMessageBox, QDateEdit, QInputDialog, QPlainTextEdit, QPushButton, QTableWidget, QTableWidgetItem, QRadioButton, QFileDialog, QMenu
+from .Functions import clear_table_widget, stretch_table_widget_colums_size, list_widget_contains_item, is_url_reachable, get_logical_table_row_list, create_artifact_source_tag, select_combo_box_data, is_flatpak, get_shared_temp_dir, is_url_valid
 from PyQt6.QtGui import QAction,  QDragEnterEvent, QDropEvent, QCloseEvent
+from .ManageTemplatesWindow import ManageTemplatesWindow
 from PyQt6.QtCore import Qt, QCoreApplication, QDate
 from .ReleaseImporter import get_release_importer
 from .DescriptionWidget import DescriptionWidget
@@ -36,6 +37,7 @@ class MainWindow(QMainWindow):
         self._current_path = None
 
         self._settings_window = SettingsWindow(env, self)
+        self._manage_templates_window = ManageTemplatesWindow(env, self)
         self._validate_window = ValidateWindow(env, self)
         self._xml_window = ViewXMLWindow(env, self)
         self._screenshot_window = ScreenshotWindow(env, self)
@@ -79,6 +81,7 @@ class MainWindow(QMainWindow):
             elif isinstance(value, QListWidget):
                 value.model().rowsMoved.connect(self.set_file_edited)
 
+        self._update_new_template_file_menu()
         self._update_recent_files_menu()
 
         self.component_type_box.addItem(QCoreApplication.translate("MainWindow", "Desktop"), "desktop")
@@ -143,6 +146,7 @@ class MainWindow(QMainWindow):
         self.check_screenshot_url_button.clicked.connect(self._check_screenshot_urls)
 
         self.release_add_button.clicked.connect(self._release_add_button_clicked)
+        self.release_sort_button.clicked.connect(self._release_sort_button_clicked)
 
         self.check_links_url_button.clicked.connect(self._check_links_url_button_clicked)
 
@@ -168,6 +172,7 @@ class MainWindow(QMainWindow):
         self.exit_action.triggered.connect(self._exit_menu_action_clicked)
 
         self.settings_action.triggered.connect(self._settings_window.open_window)
+        self.manage_templates_action.triggered.connect( self._manage_templates_window.exec)
 
         self.validate_action.triggered.connect(self._validate_window.open_window)
         self.view_xml_action.triggered.connect(self._xml_window.exec)
@@ -188,19 +193,35 @@ class MainWindow(QMainWindow):
         self.update_window_title()
 
     def update_window_title(self):
-        if self._current_path is None or self._env.settings.get("windowTitleType") == "none":
-            self.setWindowTitle("jdAppdataEdit")
-            return
+        if self._env.settings.get("windowTitleType") == "none":
+            title = "jdAppdataEdit"
+        elif self._current_path is None:
+            title = QCoreApplication.translate("MainWindow", "Untitled") + " - jdAppdataEdit"
         elif self._env.settings.get("windowTitleType") == "filename":
-            if self._edited and self._env.settings.get("showEditedTitle"):
-                self.setWindowTitle(os.path.basename(self._current_path) + "* - jdAppdataEdit")
-            else:
-                self.setWindowTitle(os.path.basename(self._current_path) + " - jdAppdataEdit")
+            title= os.path.basename(self._current_path) + " - jdAppdataEdit"
         elif self._env.settings.get("windowTitleType") == "filename":
-            if self._edited and self._env.settings.get("showEditedTitle"):
-                self.setWindowTitle(self._current_path + "* - jdAppdataEdit")
-            else:
-                self.setWindowTitle(self._current_path + " - jdAppdataEdit")
+            title = self._current_path + " - jdAppdataEdit"
+        else:
+            title = QCoreApplication.translate("MainWindow", "Error")
+
+        if self._edited and self._env.settings.get("showEditedTitle"):
+            self.setWindowTitle("*" + title)
+        else:
+            self.setWindowTitle(title)
+
+    def _update_new_template_file_menu(self):
+        self.new_template_file_menu.clear()
+
+        if len(self._env.template_list) == 0:
+            empty_action = QAction(QCoreApplication.translate("MainWindow", "No templates found"), self)
+            empty_action.setEnabled(False)
+            self.new_template_file_menu.addAction(empty_action)
+        else:
+            for i in self._env.template_list:
+                template_action = QAction(i, self)
+                template_action.setData(i)
+                template_action.triggered.connect(self._new_template_file_clicked)
+                self.new_template_file_menu.addAction(template_action)
 
     def _update_recent_files_menu(self):
         self.recent_files_menu.clear()
@@ -326,6 +347,17 @@ class MainWindow(QMainWindow):
         self._edited = False
         self._current_path = None
         self.update_window_title()
+
+    def _new_template_file_clicked(self):
+        if not self._ask_for_save():
+            return
+
+        action = self.sender()
+
+        if not action:
+            return
+
+        self.open_file(os.path.join(self._env.data_dir, "templates", action.data() + ".metainfo.xml"), template=True)
 
     def _open_menu_action_clicked(self):
         if not self._ask_for_save():
@@ -506,6 +538,41 @@ class MainWindow(QMainWindow):
         self._set_release_row(0)
         self.set_file_edited()
 
+    def _release_sort_button_clicked(self):
+        try:
+            import packaging.version
+        except ModuleNotFoundError:
+            QMessageBox.critical(self, QCoreApplication.translate("MainWindow", "packaging not found"), QCoreApplication.translate("MainWindow", "This function needs the packaging python module to work"))
+            return
+
+        version_list = []
+        row_dict = {}
+
+        for row in range(self.releases_table.rowCount()):
+            version_string = self.releases_table.item(row, 0).text().strip()
+
+            if version_string == "":
+                continue
+
+            try:
+                version = packaging.version.Version(version_string)
+            except packaging.version.InvalidVersion:
+                QMessageBox.critical(self, QCoreApplication.translate("MainWindow", "Could not parse version"), QCoreApplication.translate("MainWindow", "Coul not parse version {{version}}").replace("{{version}}", version_string))
+                return
+
+            row_dict[version] = {"date": self.releases_table.cellWidget(row, 1).date(), "development": self.releases_table.cellWidget(row, 2).currentData() == "development", "data": self.releases_table.item(row, 0).data(42)}
+            version_list.append(version)
+
+        clear_table_widget(self.releases_table)
+
+        version_list.sort(reverse=True)
+
+        for row, version in enumerate(version_list):
+            self.releases_table.insertRow(row)
+            self._set_release_row(row, version=str(version), date=row_dict[version]["date"], development=row_dict[version]["development"], data=row_dict[version]["data"])
+
+        self.set_file_edited()
+
     def _release_import_function(self):
         action = self.sender()
 
@@ -677,7 +744,7 @@ class MainWindow(QMainWindow):
 
     # Read
 
-    def open_file(self, path: str) -> bool:
+    def open_file(self, path: str, template: bool = False) -> bool:
         try:
             with open(path, "rb") as f:
                 text = f.read()
@@ -689,7 +756,10 @@ class MainWindow(QMainWindow):
             return
 
         if self.load_xml(text):
-            self._current_path = path
+            if template:
+                self._current_path = None
+            else:
+                self._current_path = path
             self.update_window_title()
             return True
         else:
@@ -750,6 +820,11 @@ class MainWindow(QMainWindow):
         self.update_sceenshot_table()
 
     def load_xml(self, xml_data: bytes) -> bool:
+        xml_data = xml_data.replace(b"<code>", b"&lt;code&gt;")
+        xml_data = xml_data.replace(b"</code>", b"&lt;/code&gt;")
+        xml_data = xml_data.replace(b"<em>", b"&lt;em&gt;")
+        xml_data = xml_data.replace(b"</em>", b"&lt;/em&gt;")
+
         try:
             root = etree.parse(io.BytesIO(xml_data))
         except etree.XMLSyntaxError as ex:
@@ -897,7 +972,7 @@ class MainWindow(QMainWindow):
     def _write_releases(self, root_tag: etree.Element):
         releases_tag = etree.SubElement(root_tag, "releases")
         for i in get_logical_table_row_list(self.releases_table):
-            version = self.releases_table.item(i, 0).text()
+            version = self.releases_table.item(i, 0).text().strip()
             date = self.releases_table.cellWidget(i, 1).date().toString(Qt.DateFormat.ISODate)
             release_type = self.releases_table.cellWidget(i, 2).currentData()
             single_release_tag = etree.SubElement(releases_tag, "release")
@@ -938,24 +1013,24 @@ class MainWindow(QMainWindow):
             root.append(etree.Comment("Created with jdAppdataEdit " + self._env.version))
 
         id_tag = etree.SubElement(root, "id")
-        id_tag.text = self.id_edit.text()
+        id_tag.text = self.id_edit.text().strip()
 
         name_tag = etree.SubElement(root, "name")
-        name_tag.text = self.name_edit.text()
+        name_tag.text = self.name_edit.text().strip()
         for key, value in self._name_translations.items():
             name_translation_tag = etree.SubElement(root, "name")
             name_translation_tag.set("{http://www.w3.org/XML/1998/namespace}lang", key)
             name_translation_tag.text = value
 
         summary_tag = etree.SubElement(root, "summary")
-        summary_tag.text = self.summary_edit.text()
+        summary_tag.text = self.summary_edit.text().strip()
         for key, value in self._summary_translations.items():
             summary_translation_tag = etree.SubElement(root, "summary")
             summary_translation_tag.set("{http://www.w3.org/XML/1998/namespace}lang", key)
             summary_translation_tag.text = value
 
         developer_name_tag = etree.SubElement(root, "developer_name")
-        developer_name_tag.text = self.developer_name_edit.text()
+        developer_name_tag.text = self.developer_name_edit.text().strip()
         for key, value in self._developer_name_translations.items():
             developer_name_tag = etree.SubElement(root, "developer_name")
             developer_name_tag.set("{http://www.w3.org/XML/1998/namespace}lang", key)
@@ -964,7 +1039,7 @@ class MainWindow(QMainWindow):
         if self.desktop_file_edit.text() != "":
             launchable_tag = etree.SubElement(root, "launchable")
             launchable_tag.set("type", "desktop-id")
-            launchable_tag.text = self.desktop_file_edit.text()
+            launchable_tag.text = self.desktop_file_edit.text().strip()
 
         if self.metadata_license_box.currentData() != "unknown":
             metadata_license_tag = etree.SubElement(root, "metadata_license")
@@ -976,11 +1051,11 @@ class MainWindow(QMainWindow):
 
         if self.update_contact_edit.text() != "":
             update_contact_tag = etree.SubElement(root, "update_contact")
-            update_contact_tag.text = self.update_contact_edit.text()
+            update_contact_tag.text = self.update_contact_edit.text().strip()
 
         if self.project_group_edit.text() != "":
             project_group_tag = etree.SubElement(root, "project_group")
-            project_group_tag.text = self.project_group_edit.text()
+            project_group_tag.text = self.project_group_edit.text().strip()
 
         description_tag = etree.SubElement(root, "description")
         self._description_widget.get_tags(description_tag)
@@ -1049,19 +1124,26 @@ class MainWindow(QMainWindow):
             keywords_tag = etree.SubElement(root, "keywords")
             for i in range(self.keyword_list.count()):
                 single_keyword_tag = etree.SubElement(keywords_tag, "keyword")
-                single_keyword_tag.text = self.keyword_list.item(i).text()
+                single_keyword_tag.text = self.keyword_list.item(i).text().strip()
 
         self._advanced_widget.save_data(root)
 
         xml = etree.tostring(root, pretty_print=True, xml_declaration=True, encoding="utf-8").decode("utf-8")
 
         # lxml filters the tags from the description text, so we need to convert them back
-        xml = xml.replace("&lt;", "<")
-        xml = xml.replace("&gt;", ">")
+        xml = xml.replace("&lt;code&gt;", "<code>")
+        xml = xml.replace("&lt;/code&gt;", "</code>")
+        xml = xml.replace("&lt;em&gt;", "<em>")
+        xml = xml.replace("&lt;/em&gt;", "</em>")
 
         return xml
 
     def save_file(self, path: str):
+        try:
+            os.makedirs(os.path.dirname(path))
+        except Exception:
+            pass
+
         with open(path, "w", encoding="utf-8", newline='\n') as f:
             f.write(self.get_xml_text())
 

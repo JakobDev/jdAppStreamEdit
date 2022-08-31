@@ -24,8 +24,10 @@ def _create_artifact_source_tag(url: str) -> etree.Element:
 
 def _github_importer(parent_widget: QWidget):
     repo_url, ok = QInputDialog.getText(parent_widget, QCoreApplication.translate("ReleaseImporter", "Enter Repo URL"), QCoreApplication.translate("ReleaseImporter", "Please Enter the URL to the GitHub Repo"))
+
     if not ok:
         return
+
     try:
         parsed = urllib.parse.urlparse(repo_url)
         if parsed.netloc != "github.com":
@@ -34,10 +36,19 @@ def _github_importer(parent_widget: QWidget):
     except Exception:
         QMessageBox.critical(parent_widget, QCoreApplication.translate("ReleaseImporter", "Invalid URL"), QCoreApplication.translate("ReleaseImporter", "Could not get the Repo and Owner from the URL"))
         return
-    api_data = requests.get(f"https://api.github.com/repos/{owner}/{repo}/releases").json()
+
+    r = requests.get(f"https://api.github.com/repos/{owner}/{repo}/releases")
+
+    if r.status_code != 200:
+        QMessageBox.critical(parent_widget, QCoreApplication.translate("ReleaseImporter", "Error"), QCoreApplication.translate("ReleaseImporter", "Something went wrong while getting releases for {{url}}").replace("{{url}}", repo_url))
+        return
+
+    api_data = r.json()
+
     if len(api_data) == 0:
         QMessageBox.critical(parent_widget, QCoreApplication.translate("ReleaseImporter", "Nothing found"), QCoreApplication.translate("ReleaseImporter", "It looks like this Repo doesn't  have any releases"))
         return
+
     release_list = []
     for i in api_data:
         data = {}
@@ -46,7 +57,6 @@ def _github_importer(parent_widget: QWidget):
         # paragraph_tag = etree.SubElement(description_tag, "p")
         # paragraph_tag.text = i["body"]
         # data["description"] = description_tag
-
 
         release_list.append({"version": i["tag_name"], "date": QDate.fromString(i["published_at"], Qt.DateFormat.ISODate), "development": i["prerelease"], "data": data})
     return release_list
