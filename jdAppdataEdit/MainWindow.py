@@ -117,7 +117,7 @@ class MainWindow(QMainWindow):
             importer_action.setData(i[1])
             importer_action.triggered.connect(self._release_import_function)
             release_importer_menu.addAction(importer_action)
-        release_importer_menu.setFixedWidth(self.release_import_button.width())
+        # release_importer_menu.setFixedWidth(self.release_import_button.width())
         self.release_import_button.setMenu(release_importer_menu)
 
         stretch_table_widget_colums_size(self.screenshot_table)
