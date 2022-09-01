@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <component type="desktop">
-  <!--Created with jdAppdataEdit 4.2-->
+  <!--Created with jdAppdataEdit 5.0-->
   <id>com.gitlab.JakobDev.jdAppdataEdit</id>
   <name>jdAppdataEdit</name>
   <summary>A graphical Program to create and edit AppStream files</summary>
@@ -53,8 +53,17 @@
     </screenshot>
   </screenshots>
   <releases>
-     <release version="4.2" date="2022-08-03" type="stable">
+    <release version="5.0" date="2022-09-01" type="stable">
       <description>
+        <ul>
+          <li>Add support for new internet tag</li>
+          <li>Add support for new replaces tag</li>
+          <li>Add templates</li>
+          <li>Allow auto sort releases</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.2" date="2022-08-03" type="stable"><description>
         <ul>
           <li>Allow using a .desktop file as template</li>
           <li>You can now import from more sources</li>
