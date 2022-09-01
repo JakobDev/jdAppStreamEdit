@@ -182,4 +182,6 @@ yi
 yo
 za
 zh
+zh_CN
+zh_TW
 zu
