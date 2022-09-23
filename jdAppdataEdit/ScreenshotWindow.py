@@ -67,7 +67,7 @@ class ScreenshotWindow(QDialog):
         if len(self._main_window.screenshot_list) == 0:
             new_dict["default"] = True
         else:
-            if self._position:
+            if self._position is not None:
                 new_dict["default"] =  self._main_window.screenshot_list[self._position]["default"]
             else:
                 new_dict["default"] = False
