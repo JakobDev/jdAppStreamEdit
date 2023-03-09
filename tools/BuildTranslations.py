@@ -1,6 +1,7 @@
 #!/usr/env python
 from typing import Optional
 import subprocess
+import pathlib
 import shutil
 import sys
 import os
@@ -20,10 +21,10 @@ def main() -> None:
         print("lrelease not found", file=sys.stderr)
         sys.exit(1)
 
-    translation_dir = os.path.join(os.path.dirname(__file__), "jdAppStreamEdit", "translations")
-    for i in os.listdir(translation_dir):
-        if i.endswith(".ts"):
-            subprocess.run([command, os.path.join(translation_dir, i), "-qm", os.path.join(translation_dir, i[:-3] + ".qm")])
+    translation_dir = (pathlib.Path(__file__).parent.parent / "jdAppStreamEdit" / "translations")
+    for i in translation_dir.iterdir():
+        if i.suffix == ".ts":
+            subprocess.run([command, str(i), "-qm", os.path.join(translation_dir, i.stem + ".qm")])
 
 
 if __name__ == "__main__":

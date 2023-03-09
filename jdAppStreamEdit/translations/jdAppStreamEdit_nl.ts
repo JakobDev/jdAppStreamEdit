@@ -457,7 +457,7 @@
     </message>
     <message>
       <location filename="..\ExternalReleasesWindow.py" line="133" />
-      <source>Welcome to the jdAppdataEdit External Releases Editor!</source>
+      <source>Welcome to the jdAppStreamEdit External Releases Editor!</source>
       <translation type="unfinished" />
     </message>
     <message>
@@ -467,7 +467,7 @@
     </message>
     <message>
       <location filename="..\ExternalReleasesWindow.py" line="135" />
-      <source>It is part of jdAppdataEdit</source>
+      <source>It is part of jdAppStreamEdit</source>
       <translation type="unfinished" />
     </message>
     <message>
@@ -760,13 +760,13 @@
     </message>
     <message>
       <location filename="..\MainWindow.py" line="263" />
-      <source>Welcome to jdAppdataEdit!</source>
-      <translation>Welkom in jdAppdataEdit!</translation>
+      <source>Welcome to jdAppStreamEdit!</source>
+      <translation type="unfinished" />
     </message>
     <message>
       <location filename="..\MainWindow.py" line="264" />
-      <source>With jdAppdataEdit you can create and edit AppStream files (*.metainfo.xml or .appdata.xml). This files are to provide data for your Application (Description, Screenshots etc.) to Software Centers.</source>
-      <translation>Met jdAppdataEdit kunt u AppStream-bestanden (*.metainfo.xml of .appdata.xml) aanmaken en bewerken. Deze bestanden leveren informatie over uw programma (omschrijving, schermfoto's, etc.) aan softwarewinkels.</translation>
+      <source>With jdAppStreamEdit you can create and edit AppStream files (*.metainfo.xml or .appdata.xml). This files are to provide data for your Application (Description, Screenshots etc.) to Software Centers.</source>
+      <translation type="unfinished" />
     </message>
     <message>
       <location filename="..\MainWindow.py" line="265" />
@@ -2904,17 +2904,17 @@
       <translation>Systeemtaal</translation>
     </message>
     <message>
-      <location filename="..\SettingsWindow.py" line="34" />
+      <location filename="..\SettingsWindow.py" line="35" />
       <source>Nothing</source>
       <translation>Niets</translation>
     </message>
     <message>
-      <location filename="..\SettingsWindow.py" line="35" />
+      <location filename="..\SettingsWindow.py" line="36" />
       <source>Filename</source>
       <translation>Bestandsnaam</translation>
     </message>
     <message>
-      <location filename="..\SettingsWindow.py" line="36" />
+      <location filename="..\SettingsWindow.py" line="37" />
       <source>Path</source>
       <translation>Locatie</translation>
     </message>
