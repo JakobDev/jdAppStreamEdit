@@ -5,3 +5,6 @@ __pycache__/
 build/
 dist/
 jdAppdataEdit.egg-info/
+
+# ui
+jdAppdataEdit/ui_compiled/

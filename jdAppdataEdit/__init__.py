@@ -3,13 +3,17 @@ from .TranslateWindow import TranslateWindow
 from PyQt6.QtWidgets import QApplication
 from .Environment import Environment
 from .Functions import is_url_valid
-from .MainWindow import MainWindow
+from typing import Literal
 import argparse
 import sys
 import os
 
 
-def main():
+def _internal_main(app_name: Literal["jdAppdataEdit", "ExternalReleases"]):
+    if not os.path.isdir(os.path.join(os.path.dirname(__file__), "ui_compiled")):
+        print("Could not find compiled ui files. Please run tool/COmpileUI.py first.", file=sys.stderr)
+        return
+
     app = QApplication(sys.argv)
     env = Environment()
 
@@ -37,7 +41,13 @@ def main():
 
     env.translate_window = TranslateWindow(env)
 
-    main_window = MainWindow(env)
+    if app_name == "jdAppdataEdit":
+        from .MainWindow import MainWindow
+        main_window = MainWindow(env)
+    elif app_name == "ExternalReleases":
+        from .ExternalReleasesWindow import ExternalReleasesWindow
+        main_window = ExternalReleasesWindow(env)
+
     main_window.show()
 
     parser = argparse.ArgumentParser()
@@ -55,3 +65,11 @@ def main():
         main_window.show_welcome_dialog()
 
     sys.exit(app.exec())
+
+
+def jdAppdataEdit():
+    _internal_main("jdAppdataEdit")
+
+
+def ExternalReleases():
+    _internal_main("ExternalReleases")

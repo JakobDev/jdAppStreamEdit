@@ -3,11 +3,10 @@ from PyQt6.QtWidgets import QApplication, QCheckBox, QComboBox, QLineEdit, QList
 from PyQt6.QtGui import QAction,  QDragEnterEvent, QDropEvent, QCloseEvent
 from .ManageTemplatesWindow import ManageTemplatesWindow
 from PyQt6.QtCore import Qt, QCoreApplication, QDate
-from .ReleaseImporter import get_release_importer
 from .DescriptionWidget import DescriptionWidget
 from .ScreenshotWindow import ScreenshotWindow
 from .RelationsWidget import RelationsWidget
-from .ReleasesWindow import ReleasesWindow
+from .ReleasesWidget import ReleasesWidget
 from .SettingsWindow import SettingsWindow
 from .ValidateWindow import ValidateWindow
 from .AdvancedWidget import AdvancedWidget
@@ -17,7 +16,6 @@ from .OarsWidget import OarsWidget
 from typing import List, Optional
 from lxml import etree
 from PyQt6 import uic
-import urllib.parse
 import webbrowser
 import subprocess
 import requests
@@ -41,11 +39,13 @@ class MainWindow(QMainWindow):
         self._validate_window = ValidateWindow(env, self)
         self._xml_window = ViewXMLWindow(env, self)
         self._screenshot_window = ScreenshotWindow(env, self)
-        self._releases_window = ReleasesWindow(env, self)
+        self._releases_widget = ReleasesWidget(env, self)
         self._about_window = AboutWindow(env)
 
         self._description_widget = DescriptionWidget(env, self)
         self.description_layout.addWidget(self._description_widget)
+
+        self.releases_layout.replaceWidget(self.releases_widget_placeholder, self._releases_widget)
 
         self._relations_widget = RelationsWidget(env, self)
         self.relations_layout.addWidget(self._relations_widget)
@@ -79,6 +79,8 @@ class MainWindow(QMainWindow):
                 value.verticalHeader().sectionMoved.connect(self.set_file_edited)
             elif isinstance(value, QListWidget):
                 value.model().rowsMoved.connect(self.set_file_edited)
+            elif isinstance(value, QRadioButton):
+                value.toggled.connect(self.set_file_edited)
 
         self._update_new_template_file_menu()
         self._update_recent_files_menu()
@@ -110,23 +112,15 @@ class MainWindow(QMainWindow):
         self.metadata_license_box.setCurrentIndex(0)
         self.project_license_box.setCurrentIndex(0)
 
-        release_importer_menu = QMenu()
-        for i in get_release_importer():
-            importer_action = QAction(i[0], self)
-            importer_action.setData(i[1])
-            importer_action.triggered.connect(self._release_import_function)
-            release_importer_menu.addAction(importer_action)
-        # release_importer_menu.setFixedWidth(self.release_import_button.width())
-        self.release_import_button.setMenu(release_importer_menu)
+        self.internal_releases_radio_button.setChecked(True)
 
         stretch_table_widget_colums_size(self.screenshot_table)
-        stretch_table_widget_colums_size(self.releases_table)
         stretch_table_widget_colums_size(self.provides_table)
 
         self.screenshot_table.verticalHeader().setSectionsMovable(True)
-        self.releases_table.verticalHeader().setSectionsMovable(True)
         self.provides_table.verticalHeader().setSectionsMovable(True)
 
+        self._update_releases_enabled()
         self._update_categorie_remove_button_enabled()
         self._update_keyword_edit_remove_button()
 
@@ -144,8 +138,7 @@ class MainWindow(QMainWindow):
         self.screenshot_add_button.clicked.connect(lambda: self._screenshot_window.open_window(None))
         self.check_screenshot_url_button.clicked.connect(self._check_screenshot_urls)
 
-        self.release_add_button.clicked.connect(self._release_add_button_clicked)
-        self.release_sort_button.clicked.connect(self._release_sort_button_clicked)
+        self.internal_releases_radio_button.toggled.connect(self._update_releases_enabled)
 
         self.check_links_url_button.clicked.connect(self._check_links_url_button_clicked)
 
@@ -493,108 +486,13 @@ class MainWindow(QMainWindow):
 
     # Releases
 
-    def _set_release_row(self, row: int, version: Optional[str] = "", date: Optional[QDate] = None, development: bool = False, data: Optional[dict] = None):
-        version_item = QTableWidgetItem(version)
-        if data:
-            version_item.setData(42, data)
-        else:
-            version_item.setData(42, {})
-        self.releases_table.setItem(row, 0, version_item)
+    def _update_releases_enabled(self) -> None:
+        internal = self.internal_releases_radio_button.isChecked()
+        self._releases_widget.setEnabled(internal)
+        self.external_releases_url_label.setEnabled(not internal)
+        self.external_releases_url_edit.setEnabled(not internal)
 
-        date_edit = QDateEdit()
-        if date is None:
-            date_edit.setDate(QDate.currentDate())
-        else:
-           date_edit.setDate(date)
-        self.releases_table.setCellWidget(row, 1, date_edit)
-
-        type_box = QComboBox()
-        type_box.addItem(QCoreApplication.translate("MainWindow", "Stable"), "stable")
-        type_box.addItem(QCoreApplication.translate("MainWindow", "Development"), "development")
-        if development:
-            type_box.setCurrentIndex(1)
-        self.releases_table.setCellWidget(row, 2, type_box)
-
-        edit_button = QPushButton(QCoreApplication.translate("MainWindow", "Edit"))
-        edit_button.clicked.connect(self._release_edit_button_clicked)
-        self.releases_table.setCellWidget(row, 3, edit_button)
-
-        remove_button = QPushButton(QCoreApplication.translate("MainWindow", "Remove"))
-        remove_button.clicked.connect(self._release_remove_button_clicked)
-        self.releases_table.setCellWidget(row, 4, remove_button)
-
-    def _release_edit_button_clicked(self):
-        for i in range(self.releases_table.rowCount()):
-            if self.releases_table.cellWidget(i, 3) == self.sender():
-                self._releases_window.open_window(i)
-
-    def _release_remove_button_clicked(self):
-        for i in range(self.releases_table.rowCount()):
-            if self.releases_table.cellWidget(i, 4) == self.sender():
-                self.releases_table.removeRow(i)
-                self.set_file_edited()
-                return
-
-    def _release_add_button_clicked(self):
-        self.releases_table.insertRow(0)
-        self._set_release_row(0)
-        self.set_file_edited()
-
-    def _release_sort_button_clicked(self):
-        try:
-            import packaging.version
-        except ModuleNotFoundError:
-            QMessageBox.critical(self, QCoreApplication.translate("MainWindow", "packaging not found"), QCoreApplication.translate("MainWindow", "This function needs the packaging python module to work"))
-            return
-
-        version_list = []
-        row_dict = {}
-
-        for row in range(self.releases_table.rowCount()):
-            version_string = self.releases_table.item(row, 0).text().strip()
-
-            if version_string == "":
-                continue
-
-            try:
-                version = packaging.version.Version(version_string)
-            except packaging.version.InvalidVersion:
-                QMessageBox.critical(self, QCoreApplication.translate("MainWindow", "Could not parse version"), QCoreApplication.translate("MainWindow", "Coul not parse version {{version}}").replace("{{version}}", version_string))
-                return
-
-            row_dict[version] = {"date": self.releases_table.cellWidget(row, 1).date(), "development": self.releases_table.cellWidget(row, 2).currentData() == "development", "data": self.releases_table.item(row, 0).data(42)}
-            version_list.append(version)
-
-        clear_table_widget(self.releases_table)
-
-        version_list.sort(reverse=True)
-
-        for row, version in enumerate(version_list):
-            self.releases_table.insertRow(row)
-            self._set_release_row(row, version=str(version), date=row_dict[version]["date"], development=row_dict[version]["development"], data=row_dict[version]["data"])
-
-        self.set_file_edited()
-
-    def _release_import_function(self):
-        action = self.sender()
-
-        if not action:
-            return
-
-        release_data = action.data()(self)
-        if release_data is None or len(release_data) == 0:
-            return
-
-        if self.releases_table.rowCount() > 0:
-            ans = QMessageBox.question(self, QCoreApplication.translate("MainWindow", "Overwrite evrything"), QCoreApplication.translate("MainWindow", "If you proceed, all your chnages in the release tab will be overwritten. Continue?"), QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No)
-            if ans != QMessageBox.StandardButton.Yes:
-                return
-
-        for count, i in enumerate(release_data):
-            self.releases_table.insertRow(count)
-            self._set_release_row(count, version=i["version"], date=i["date"], development=i.get("development", False), data=i.get("data", {}))
-
-        self.set_file_edited()
+    # Links
 
     def _check_links_url_button_clicked(self):
         for i in self._url_list:
@@ -721,7 +619,7 @@ class MainWindow(QMainWindow):
         return self.id_edit.text()
 
     def reset_data(self):
-        for key, value in vars(self).items():
+        for value in vars(self).values():
             if isinstance(value, QLineEdit):
                 value.setText("")
             elif isinstance(value, QComboBox):
@@ -736,6 +634,8 @@ class MainWindow(QMainWindow):
                 value.clear()
         self._description_widget.reset_data()
         self.screenshot_list.clear()
+        self.internal_releases_radio_button.setChecked(True)
+        self._releases_widget.reset_data()
         self._relations_widget.reset_data()
         self._oars_widget.reset_data()
         self._name_translations.clear()
@@ -898,24 +798,15 @@ class MainWindow(QMainWindow):
         if screenshots_tag is not None:
             self._parse_screenshots_tag(screenshots_tag)
 
-        releases_tag = root.find("releases")
-        if releases_tag is not None:
-            for i in releases_tag.getchildren():
-                current_row = self.releases_table.rowCount()
-                data = {}
-                if i.get("urgency") is not None:
-                    data["urgency"] = i.get("urgency")
-                url_tag = i.find("url")
-                if url_tag is not None:
-                    data["url"] = url_tag.text
-                description_tag = i.find("description")
-                if description_tag is not None:
-                    data["description"] = description_tag
-                artifacts_tag = i.find("artifacts")
-                if artifacts_tag is not None:
-                     data["artifacts"] = artifacts_tag
-                self.releases_table.insertRow(current_row)
-                self._set_release_row(current_row, version=i.get("version"), date=QDate.fromString(i.get("date"), Qt.DateFormat.ISODate), development=(i.get("type") == "development"), data=data)
+        if (releases_tag := root.find("releases")) is not None:
+            if releases_tag.get("type") == "external":
+                self.external_releases_radio_button.setChecked(True)
+                if releases_tag.get("url") is not None:
+                    self.external_releases_url_edit.setText(releases_tag.get("url"))
+                else:
+                    self.external_releases_url_edit.setText("")
+            else:
+                self._releases_widget.load_tag(releases_tag)
 
         categories_tag = root.find("categories")
         if categories_tag is not None:
@@ -973,29 +864,14 @@ class MainWindow(QMainWindow):
 
     def _write_releases(self, root_tag: etree.Element):
         releases_tag = etree.SubElement(root_tag, "releases")
-        for i in get_logical_table_row_list(self.releases_table):
-            version = self.releases_table.item(i, 0).text().strip()
-            date = self.releases_table.cellWidget(i, 1).date().toString(Qt.DateFormat.ISODate)
-            release_type = self.releases_table.cellWidget(i, 2).currentData()
-            single_release_tag = etree.SubElement(releases_tag, "release")
-            single_release_tag.set("version", version)
-            single_release_tag.set("date", date)
-            single_release_tag.set("type", release_type)
-
-            data = self.releases_table.item(i, 0).data(42)
-
-            if "urgency" in data:
-                single_release_tag.set("urgency", data["urgency"])
-
-            if "url" in data:
-                url_tag =  etree.SubElement(single_release_tag, "url")
-                url_tag.text = data["url"]
-
-            if "description" in data:
-                single_release_tag.append(data["description"])
-
-            if "artifacts" in data:
-                single_release_tag.append(data["artifacts"])
+        if self.internal_releases_radio_button.isChecked():
+            self._releases_widget.write_tag(releases_tag)
+            if len(releases_tag.getchildren()) == 0:
+                root_tag.remove(releases_tag)
+        else:
+            releases_tag.set("type", "external")
+            if (url := self.external_releases_url_edit.text().strip()) != "":
+                releases_tag.set("url", url)
 
     def _write_requires_recommends_supports_tags(self, root_tag: etree._Element, current_type: str):
         current_tag = etree.SubElement(root_tag, current_type)
@@ -1083,8 +959,7 @@ class MainWindow(QMainWindow):
                 if "height" in i:
                     image_tag.set("height", str(i["height"]))
 
-        if self.releases_table.rowCount() > 0:
-            self._write_releases(root)
+        self._write_releases(root)
 
         for i in self._url_list:
             url = getattr(self, f"{i}_url_edit").text()

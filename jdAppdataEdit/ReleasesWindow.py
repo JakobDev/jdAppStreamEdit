@@ -1,20 +1,27 @@
-from .Functions import get_logical_table_row_list, clear_table_widget, stretch_table_widget_colums_size, select_combo_box_data
-from PyQt6.QtWidgets import QDialog, QPushButton, QTableWidgetItem
+from .Functions import get_logical_table_row_list, clear_table_widget, stretch_table_widget_colums_size, select_combo_box_data, get_sender_table_row
+from PyQt6.QtWidgets import QDialog, QWidget, QPushButton, QTableWidgetItem
 from .DescriptionWidget import DescriptionWidget
 from PyQt6.QtCore import QCoreApplication, Qt
 from .ArtifactWindow import ArtifactWindow
+from typing import TYPE_CHECKING
 from lxml import etree
 from PyQt6 import uic
 import sys
 import os
 
 
+if TYPE_CHECKING:
+    from .ReleasesWidget import ReleasesWidget
+    from .Environment import Environment
+
+
 class ReleasesWindow(QDialog):
-    def __init__(self, env, main_window):
+    def __init__(self, env: "Environment", releases_widget: "ReleasesWidget", parent_window: QWidget):
         super().__init__()
         uic.loadUi(os.path.join(env.program_dir, "ReleasesWindow.ui"), self)
 
-        self._main_window = main_window
+        self._releases_widget = releases_widget
+        self._parent_window = parent_window
 
         self._description_widget = DescriptionWidget(env)
         self.description_layout.addWidget(self._description_widget)
@@ -35,14 +42,12 @@ class ReleasesWindow(QDialog):
         self.cancel_button.clicked.connect(self.close)
 
     def _edit_artifact_clicked(self):
-        for i in range(self.artifacts_table.rowCount()):
-            if self.artifacts_table.cellWidget(i, 1) == self.sender():
-                self._artifacts_window.open_window(i)
+        row = get_sender_table_row(self.artifacts_table, 1, self.sender())
+        self._artifacts_window.open_window(row)
 
     def _remove_artifact_clicked(self):
-        for i in range(self.artifacts_table.rowCount()):
-            if self.artifacts_table.cellWidget(i, 2) == self.sender():
-                self.artifacts_table.removeRow(i)
+        row = get_sender_table_row(self.artifacts_table, 2, self.sender())
+        self.artifacts_table.removeRow(row)
 
     def _ok_button_clicked(self):
         new_dict = {}
@@ -64,9 +69,9 @@ class ReleasesWindow(QDialog):
                 artifacts_tag.append(self.artifacts_table.item(i, 0).data(42))
             new_dict["artifacts"] = artifacts_tag
 
-        self._main_window.releases_table.item(self._position, 0).setData(42, new_dict)
+        self._releases_widget.releases_table.item(self._position, 0).setData(42, new_dict)
 
-        self._main_window.set_file_edited()
+        self._parent_window.set_file_edited()
 
         self.close()
 
@@ -84,7 +89,7 @@ class ReleasesWindow(QDialog):
     def open_window(self, position: int):
         self._position = position
 
-        data = self._main_window.releases_table.item(self._position, 0).data(42)
+        data = self._releases_widget.releases_table.item(self._position, 0).data(42)
 
         if "url" in data:
             self.url_edit.setText(data["url"])
@@ -118,6 +123,6 @@ class ReleasesWindow(QDialog):
 
         self.main_tab_widget.setCurrentIndex(0)
 
-        self.setWindowTitle(QCoreApplication.translate("ReleasesWindow", "Edit release {{release}}").replace("{{release}}", self._main_window.releases_table.item(self._position, 0).text()))
+        self.setWindowTitle(QCoreApplication.translate("ReleasesWindow", "Edit release {{release}}").replace("{{release}}", self._releases_widget.releases_table.item(self._position, 0).text()))
 
         self.exec()

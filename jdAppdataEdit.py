@@ -1,3 +1,3 @@
 #!/usr/bin/env python
-from jdAppdataEdit import main
-main()
+from jdAppdataEdit import jdAppdataEdit
+jdAppdataEdit()

@@ -120,7 +120,7 @@ def _git_importer(parent_widget: QWidget):
         QMessageBox.critical(parent_widget,  QCoreApplication.translate("ReleaseImporter", "git not found"), QCoreApplication.translate("ReleaseImporter", "git was not found. Make sure it is installed and in PATH."))
         return
 
-    repo_url, ok = QInputDialog.getText(parent_widget, QCoreApplication.translate("ReleaseImporter", "Enter Repo URL"), QCoreApplication.translate("ReleaseImporter", "Please Enter the URL to the Git Repo. It is tahe URL you would use with git clone."))
+    repo_url, ok = QInputDialog.getText(parent_widget, QCoreApplication.translate("ReleaseImporter", "Enter Repo URL"), QCoreApplication.translate("ReleaseImporter", "Please Enter the URL to the Git Repo. It is the URL you would use with git clone."))
     if not ok:
         return
 

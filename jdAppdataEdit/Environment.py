@@ -25,10 +25,16 @@ class Environment:
         self.settings.load(os.path.join(self.data_dir, "settings.json"))
 
         try:
-            with open(os.path.join(self.data_dir, "recentfiles.json"), "r", encoding="utf-8") as f:
+            with open(os.path.join(self.data_dir, "recentFiles.json"), "r", encoding="utf-8") as f:
                 self.recent_files = json.load(f)
         except Exception:
             self.recent_files = []
+
+        try:
+            with open(os.path.join(self.data_dir, "recentFilesExternalReleases.json"), "r", encoding="utf-8") as f:
+                self.recent_files_external_releases = json.load(f)
+        except Exception:
+            self.recent_files_external_releases = []
 
         self.template_list = []
         self.update_template_list()
@@ -57,7 +63,7 @@ class Environment:
 
     def _get_data_path(self) -> str:
         if platform.system() == "Windows":
-            return os.path.join(os.getenv("appdata"), "jdAppdataEdit")
+            return os.path.join(os.getenv("APPDATA"), "jdAppdataEdit")
         elif platform.system() == "Darwin":
             return os.path.join(str(Path.home()), "Library", "Application Support", "jdAppdataEdit")
         elif platform.system() == "Haiku":
@@ -69,11 +75,26 @@ class Environment:
                 return os.path.join(str(Path.home()), ".local", "share", "jdAppdataEdit")
 
     def save_recent_files(self):
-        save_path = os.path.join(self.data_dir, "recentfiles.json")
-        if len(self.recent_files) == 0 and not os.path.isfile(save_path):
+        save_path = os.path.join(self.data_dir, "recentFiles.json")
+
+        if len(self.recent_files) == 0:
+            if os.path.isfile(save_path):
+                os.remove(save_path)
             return
+
         with open(save_path, "w", encoding="utf-8") as f:
             json.dump(self.recent_files, f, ensure_ascii=False, indent=4)
+
+    def save_recent_files_external_releases(self):
+        save_path = os.path.join(self.data_dir, "recentFilesExternalReleases.json")
+
+        if len(self.recent_files) == 0:
+            if os.path.isfile(save_path):
+                os.remove(save_path)
+            return
+
+        with open(save_path, "w", encoding="utf-8") as f:
+            json.dump(self.recent_files_external_releases, f, ensure_ascii=False, indent=4)
 
     def update_template_list(self):
         self.template_list.clear()

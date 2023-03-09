@@ -147,7 +147,7 @@ def get_save_settings(path: Optional[str], settings: "Settings") -> dict[str, st
             config["indent_style"] = "space"
 
     if "indent_size" not in config:
-        config["ident_size"] = str(settings.get("whitespaceCount"))
+        config["indent_size"] = str(settings.get("whitespaceCount"))
 
     save_settings: dict[str, str] = {}
 
