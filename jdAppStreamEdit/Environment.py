@@ -63,16 +63,16 @@ class Environment:
 
     def _get_data_path(self) -> str:
         if platform.system() == "Windows":
-            return os.path.join(os.getenv("APPDATA"), "jdAppdataEdit")
+            return os.path.join(os.getenv("APPDATA"), "JakobDev", "jdAppStreamEdit")
         elif platform.system() == "Darwin":
-            return os.path.join(str(Path.home()), "Library", "Application Support", "jdAppdataEdit")
+            return os.path.join(str(Path.home()), "Library", "Application Support", "JakobDev", "jdAppStreamEdit")
         elif platform.system() == "Haiku":
-            return os.path.join(str(Path.home()), "config", "settings", "jdAppdataEdit")
+            return os.path.join(str(Path.home()), "config", "settings", "JakobDev", "jdAppStreamEdit")
         else:
             if os.getenv("XDG_DATA_HOME"):
-                return os.path.join(os.getenv("XDG_DATA_HOME"), "jdAppdataEdit")
+                return os.path.join(os.getenv("XDG_DATA_HOME"), "JakobDev", "jdAppStreamEdit")
             else:
-                return os.path.join(str(Path.home()), ".local", "share", "jdAppdataEdit")
+                return os.path.join(str(Path.home()), ".local", "share", "JakobDev", "jdAppStreamEdit")
 
     def save_recent_files(self):
         save_path = os.path.join(self.data_dir, "recentFiles.json")

@@ -1,10 +1,10 @@
 __pycache__/
 *.qm
 
-#setup.py
+# setup.py
 build/
 dist/
-jdAppdataEdit.egg-info/
+jdAppStreamEdit.egg-info/
 
 # ui
-jdAppdataEdit/ui_compiled/
+jdAppStreamEdit/ui_compiled/

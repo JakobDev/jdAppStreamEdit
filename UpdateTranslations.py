@@ -11,9 +11,9 @@ def main():
         print("pylupdate6 was not found")
         sys.exit(1)
 
-    for i in (Path(__file__).parent / "jdAppdataEdit" / "i18n").iterdir():
+    for i in (Path(__file__).parent / "jdAppStreamEdit" / "translations").iterdir():
         if i.suffix == ".ts":
-            subprocess.run(["pylupdate6", "jdAppdataEdit", "--ts", os.path.join("jdAppdataEdit", "i18n", i.name), "--no-obsolete"], cwd=Path(__file__).parent)
+            subprocess.run(["pylupdate6", "jdAppStreamEdit", "--ts", os.path.join("jdAppStreamEdit", "translations", i.name), "--no-obsolete"], cwd=Path(__file__).parent)
 
 
 if __name__ == "__main__":

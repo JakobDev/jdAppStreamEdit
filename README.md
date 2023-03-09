@@ -1,3 +1,3 @@
-# jdAppdataEdit
+# jdAppStreamEdit
 
 A graphical Program to create and edit Appdata files

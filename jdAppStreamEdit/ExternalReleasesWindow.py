@@ -65,13 +65,13 @@ class ExternalReleasesWindow(QMainWindow, Ui_ExternalReleasesWindow):
 
     def update_window_title(self) -> None:
         if self._env.settings.get("windowTitleType") == "none":
-            title = "jdAppdataEdit External Releases Editor"
+            title = "jdAppStreamEdit External Releases Editor"
         elif self._current_path is None:
-            title = QCoreApplication.translate("ExternalReleasesWindow", "Untitled") + " - jdAppdataEdit External Releases Editor"
+            title = QCoreApplication.translate("ExternalReleasesWindow", "Untitled") + " - jdAppStreamEdit External Releases Editor"
         elif self._env.settings.get("windowTitleType") == "filename":
-            title= os.path.basename(self._current_path) + " - jdAppdataEdit External Releases Editor"
+            title= os.path.basename(self._current_path) + " - jdAppStreamEdit External Releases Editor"
         elif self._env.settings.get("windowTitleType") == "filename":
-            title = self._current_path + " - jdAppdataEdit External Releases Editor"
+            title = self._current_path + " - jdAppStreamEdit External Releases Editor"
         else:
             title = QCoreApplication.translate("ExternalReleasesWindow", "Error")
 
@@ -130,9 +130,9 @@ class ExternalReleasesWindow(QMainWindow, Ui_ExternalReleasesWindow):
 
     def show_welcome_dialog(self) -> None:
         text = "<center>"
-        text += QCoreApplication.translate("ExternalReleasesWindow", "Welcome to the jdAppdataEdit External Releases Editor!") + "<br><br>"
+        text += QCoreApplication.translate("ExternalReleasesWindow", "Welcome to the jdAppStreamEdit External Releases Editor!") + "<br><br>"
         text += QCoreApplication.translate("ExternalReleasesWindow", "This Editor allows you to create and edit AppStream External Relases file (*.releases.xml)") + "<br><br>"
-        text += QCoreApplication.translate("ExternalReleasesWindow", "It is part of jdAppdataEdit") + "<br><br>"
+        text += QCoreApplication.translate("ExternalReleasesWindow", "It is part of jdAppStreamEdit") + "<br><br>"
         text += QCoreApplication.translate("ExternalReleasesWindow", "It is highly recommend to read the the AppStream Documentation before using this Program. You can open it under ?>AppStream documentation.") + "<br><br>"
         text += "</center>"
 
@@ -271,7 +271,7 @@ class ExternalReleasesWindow(QMainWindow, Ui_ExternalReleasesWindow):
         root = etree.Element("releases")
 
         if self._env.settings.get("addCommentSave"):
-            root.append(etree.Comment("Created with jdAppdataEdit " + self._env.version))
+            root.append(etree.Comment("Created with jdAppStreamEdit " + self._env.version))
 
         self._releases_widget.write_tag(root)
 

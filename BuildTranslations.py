@@ -20,7 +20,7 @@ def main() -> None:
         print("lrelease not found", file=sys.stderr)
         sys.exit(1)
 
-    translation_dir = os.path.join(os.path.dirname(__file__), "jdAppdataEdit", "i18n")
+    translation_dir = os.path.join(os.path.dirname(__file__), "jdAppStreamEdit", "translations")
     for i in os.listdir(translation_dir):
         if i.endswith(".ts"):
             subprocess.run([command, os.path.join(translation_dir, i), "-qm", os.path.join(translation_dir, i[:-3] + ".qm")])

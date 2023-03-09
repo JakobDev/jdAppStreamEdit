@@ -564,11 +564,6 @@
     </message>
     <message>
       <location filename="..\ui\ExternalReleasesWindow.ui" line="0" />
-      <source>MainWindow</source>
-      <translation type="unfinished" />
-    </message>
-    <message>
-      <location filename="..\ui\ExternalReleasesWindow.ui" line="0" />
       <source>File</source>
       <translation type="unfinished">Datei</translation>
     </message>
@@ -2909,17 +2904,17 @@
       <translation>Systemsprache</translation>
     </message>
     <message>
-      <location filename="..\SettingsWindow.py" line="33" />
+      <location filename="..\SettingsWindow.py" line="34" />
       <source>Nothing</source>
       <translation>Nichts</translation>
     </message>
     <message>
-      <location filename="..\SettingsWindow.py" line="34" />
+      <location filename="..\SettingsWindow.py" line="35" />
       <source>Filename</source>
       <translation>Dateiname</translation>
     </message>
     <message>
-      <location filename="..\SettingsWindow.py" line="35" />
+      <location filename="..\SettingsWindow.py" line="36" />
       <source>Path</source>
       <translation>Pfad</translation>
     </message>

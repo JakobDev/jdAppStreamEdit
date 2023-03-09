@@ -1,10 +1,10 @@
 from .Functions import clear_table_widget, stretch_table_widget_colums_size, list_widget_contains_item, is_url_reachable, get_logical_table_row_list, create_artifact_source_tag, select_combo_box_data, is_flatpak, get_shared_temp_dir, is_url_valid, get_save_settings
-from PyQt6.QtWidgets import QApplication, QCheckBox, QComboBox, QLineEdit, QListWidget, QMainWindow, QMessageBox, QDateEdit, QInputDialog, QPlainTextEdit, QPushButton, QTableWidget, QTableWidgetItem, QRadioButton, QFileDialog, QMenu
+from PyQt6.QtWidgets import QApplication, QCheckBox, QComboBox, QLineEdit, QListWidget, QMainWindow, QMessageBox, QDateEdit, QInputDialog, QPlainTextEdit, QPushButton, QTableWidget, QTableWidgetItem, QRadioButton, QFileDialog
 from PyQt6.QtGui import QAction,  QDragEnterEvent, QDropEvent, QCloseEvent
 from .ManageTemplatesWindow import ManageTemplatesWindow
-from PyQt6.QtCore import Qt, QCoreApplication, QDate
 from .DescriptionWidget import DescriptionWidget
 from .ScreenshotWindow import ScreenshotWindow
+from PyQt6.QtCore import Qt, QCoreApplication
 from .RelationsWidget import RelationsWidget
 from .ReleasesWidget import ReleasesWidget
 from .SettingsWindow import SettingsWindow
@@ -186,13 +186,13 @@ class MainWindow(QMainWindow):
 
     def update_window_title(self):
         if self._env.settings.get("windowTitleType") == "none":
-            title = "jdAppdataEdit"
+            title = "jdAppStreamEdit"
         elif self._current_path is None:
-            title = QCoreApplication.translate("MainWindow", "Untitled") + " - jdAppdataEdit"
+            title = QCoreApplication.translate("MainWindow", "Untitled") + " - jdAppStreamEdit"
         elif self._env.settings.get("windowTitleType") == "filename":
-            title= os.path.basename(self._current_path) + " - jdAppdataEdit"
+            title= os.path.basename(self._current_path) + " - jdAppStreamEdit"
         elif self._env.settings.get("windowTitleType") == "filename":
-            title = self._current_path + " - jdAppdataEdit"
+            title = self._current_path + " - jdAppStreamEdit"
         else:
             title = QCoreApplication.translate("MainWindow", "Error")
 
@@ -260,8 +260,8 @@ class MainWindow(QMainWindow):
 
     def show_welcome_dialog(self) -> None:
         text = "<center>"
-        text += QCoreApplication.translate("MainWindow", "Welcome to jdAppdataEdit!") + "<br><br>"
-        text += QCoreApplication.translate("MainWindow", "With jdAppdataEdit you can create and edit AppStream files (*.metainfo.xml or .appdata.xml). This files are to provide data for your Application (Description, Screenshots etc.) to Software Centers.") + "<br><br>"
+        text += QCoreApplication.translate("MainWindow", "Welcome to jdAppStreamEdit!") + "<br><br>"
+        text += QCoreApplication.translate("MainWindow", "With jdAppStreamEdit you can create and edit AppStream files (*.metainfo.xml or .appdata.xml). This files are to provide data for your Application (Description, Screenshots etc.) to Software Centers.") + "<br><br>"
         text += QCoreApplication.translate("MainWindow", "It is highly recommend to read the the AppStream Documentation before using this Program. You can open it under ?>AppStream documentation.") + "<br><br>"
         text += QCoreApplication.translate("MainWindow", "You can check if your AppStream is valid under Tools>Validate.")
         text += "</center>"
@@ -888,7 +888,7 @@ class MainWindow(QMainWindow):
         root.set("type", self.component_type_box.currentData())
 
         if self._env.settings.get("addCommentSave"):
-            root.append(etree.Comment("Created with jdAppdataEdit " + self._env.version))
+            root.append(etree.Comment("Created with jdAppStreamEdit " + self._env.version))
 
         id_tag = etree.SubElement(root, "id")
         id_tag.text = self.id_edit.text().strip()

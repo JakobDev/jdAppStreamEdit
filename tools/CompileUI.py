@@ -10,7 +10,7 @@ def main():
         print("pyuic6 was not found", file=sys.stderr)
         sys.exit(1)
 
-    program_dir = pathlib.Path(__file__).parent.parent / "jdAppdataEdit"
+    program_dir = pathlib.Path(__file__).parent.parent / "jdAppStreamEdit"
     compiled_dir = program_dir / "ui_compiled"
     source_dir = program_dir / "ui"
 

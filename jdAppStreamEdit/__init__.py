@@ -9,9 +9,9 @@ import sys
 import os
 
 
-def _internal_main(app_name: Literal["jdAppdataEdit", "ExternalReleases"]):
+def _internal_main(app_name: Literal["jdAppStreamEdit", "ExternalReleases"]):
     if not os.path.isdir(os.path.join(os.path.dirname(__file__), "ui_compiled")):
-        print("Could not find compiled ui files. Please run tool/COmpileUI.py first.", file=sys.stderr)
+        print("Could not find compiled ui files. Please run tool/CompileUI.py first.", file=sys.stderr)
         return
 
     app = QApplication(sys.argv)
@@ -23,17 +23,17 @@ def _internal_main(app_name: Literal["jdAppdataEdit", "ExternalReleases"]):
 
     app_translator = QTranslator()
     qt_translator = QTranslator()
-    app_trans_dir = os.path.join(env.program_dir, "i18n")
+    app_trans_dir = os.path.join(env.program_dir, "translations")
     qt_trans_dir = QLibraryInfo.path(QLibraryInfo.LibraryPath.TranslationsPath)
     language = env.settings.get("language")
     if language == "default":
         system_language = QLocale.system().name()
-        app_translator.load(os.path.join(app_trans_dir, "jdAppdataEdit_" + system_language.split("_")[0] + ".qm"))
-        app_translator.load(os.path.join(app_trans_dir, "jdAppdataEdit_" + system_language + ".qm"))
+        app_translator.load(os.path.join(app_trans_dir, "jdAppStreamEdit_" + system_language.split("_")[0] + ".qm"))
+        app_translator.load(os.path.join(app_trans_dir, "jdAppStreamEdit_" + system_language + ".qm"))
         qt_translator.load(os.path.join(qt_trans_dir, "qt_" + system_language.split("_")[0] + ".qm"))
         qt_translator.load(os.path.join(qt_trans_dir, "qt_" + system_language + ".qm"))
     else:
-        app_translator.load(os.path.join(app_trans_dir, "jdAppdataEdit_" + language + ".qm"))
+        app_translator.load(os.path.join(app_trans_dir, "jdAppStreamEdit_" + language + ".qm"))
         qt_translator.load(os.path.join(qt_trans_dir, "qt_" + language.split("_")[0] + ".qm"))
         qt_translator.load(os.path.join(qt_trans_dir, "qt_" + language + ".qm"))
     app.installTranslator(app_translator)
@@ -41,7 +41,7 @@ def _internal_main(app_name: Literal["jdAppdataEdit", "ExternalReleases"]):
 
     env.translate_window = TranslateWindow(env)
 
-    if app_name == "jdAppdataEdit":
+    if app_name == "jdAppStreamEdit":
         from .MainWindow import MainWindow
         main_window = MainWindow(env)
     elif app_name == "ExternalReleases":
@@ -67,8 +67,8 @@ def _internal_main(app_name: Literal["jdAppdataEdit", "ExternalReleases"]):
     sys.exit(app.exec())
 
 
-def jdAppdataEdit():
-    _internal_main("jdAppdataEdit")
+def jdAppStreamEdit():
+    _internal_main("jdAppStreamEdit")
 
 
 def ExternalReleases():
