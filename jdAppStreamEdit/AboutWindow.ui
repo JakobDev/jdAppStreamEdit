@@ -39,7 +39,7 @@
    <item>
     <widget class="QLabel" name="version_label">
      <property name="text">
-      <string notr="true">jdAppdataEdit {version}</string>
+      <string notr="true">jdAppStreamEdit {{version}}</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -69,7 +69,7 @@
    <item>
     <widget class="QLabel" name="label_3">
      <property name="text">
-      <string notr="true">Copyright © 2022 JakobDev</string>
+      <string notr="true">Copyright © 2022-2023 JakobDev</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
