@@ -6,7 +6,7 @@ import json
 import os
 
 
-class Enviroment():
+class Environment:
     def __init__(self):
         self.program_dir = os.path.dirname(os.path.realpath(__file__))
         self.data_dir = self._get_data_path()

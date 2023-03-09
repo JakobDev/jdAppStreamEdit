@@ -1,5 +1,5 @@
+from .Functions import clear_table_widget, stretch_table_widget_colums_size, list_widget_contains_item, is_url_reachable, get_logical_table_row_list, create_artifact_source_tag, select_combo_box_data, is_flatpak, get_shared_temp_dir, is_url_valid, get_save_settings
 from PyQt6.QtWidgets import QApplication, QCheckBox, QComboBox, QLineEdit, QListWidget, QMainWindow, QMessageBox, QDateEdit, QInputDialog, QPlainTextEdit, QPushButton, QTableWidget, QTableWidgetItem, QRadioButton, QFileDialog, QMenu
-from .Functions import clear_table_widget, stretch_table_widget_colums_size, list_widget_contains_item, is_url_reachable, get_logical_table_row_list, create_artifact_source_tag, select_combo_box_data, is_flatpak, get_shared_temp_dir, is_url_valid
 from PyQt6.QtGui import QAction,  QDragEnterEvent, QDropEvent, QCloseEvent
 from .ManageTemplatesWindow import ManageTemplatesWindow
 from PyQt6.QtCore import Qt, QCoreApplication, QDate
@@ -69,7 +69,6 @@ class MainWindow(QMainWindow):
                 value.addItem(QCoreApplication.translate("MainWindow", "Required"), "requires")
                 value.addItem(QCoreApplication.translate("MainWindow", "Recommend"), "recommends")
                 value.addItem(QCoreApplication.translate("MainWindow", "Supported"), "supports")
-
             if isinstance(value, QLineEdit):
                 value.textEdited.connect(self.set_file_edited)
             elif isinstance(value, QComboBox):
@@ -111,7 +110,7 @@ class MainWindow(QMainWindow):
         self.metadata_license_box.setCurrentIndex(0)
         self.project_license_box.setCurrentIndex(0)
 
-        release_importer_menu = QMenu("HHH")
+        release_importer_menu = QMenu()
         for i in get_release_importer():
             importer_action = QAction(i[0], self)
             importer_action.setData(i[1])
@@ -391,6 +390,7 @@ class MainWindow(QMainWindow):
         if self._current_path is None:
             self._save_as_clicked()
             return
+
         self.save_file(self._current_path)
         self.add_to_recent_files(self._current_path)
         self._edited = False
@@ -398,12 +398,14 @@ class MainWindow(QMainWindow):
 
     def _save_as_clicked(self):
         filter = QCoreApplication.translate("MainWindow", "AppStream Files") + " (*.metainfo.xml *.appdata.xml);;" +   QCoreApplication.translate("MainWindow", "All Files") + " (*)"
-        path = QFileDialog.getSaveFileName(self, filter=filter)
+        path = QFileDialog.getSaveFileName(self, filter=filter)[0]
+
         if path[0] == "":
             return
-        self.save_file(path[0])
-        self._current_path = path[0]
-        self.add_to_recent_files(path[0])
+
+        self._current_path = path
+        self.save_file(path)
+        self.add_to_recent_files(path)
         self._edited = False
         self.update_window_title()
 
@@ -1127,6 +1129,9 @@ class MainWindow(QMainWindow):
                 single_keyword_tag.text = self.keyword_list.item(i).text().strip()
 
         self._advanced_widget.save_data(root)
+
+        save_settings = get_save_settings(self._current_path, self._env.settings)
+        etree.indent(root, space=save_settings["ident"])
 
         xml = etree.tostring(root, pretty_print=True, xml_declaration=True, encoding="utf-8").decode("utf-8")
 

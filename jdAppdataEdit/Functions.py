@@ -1,12 +1,24 @@
 from PyQt6.QtWidgets import QTableWidget, QHeaderView, QListWidget, QComboBox
-from typing import Optional, List, Any
+from typing import Optional, List, Any, TYPE_CHECKING
 from PyQt6.QtCore import QObject
 from lxml import etree
 import urllib.parse
+import collections
 import requests
 import tempfile
 import hashlib
+import sys
 import os
+
+
+try:
+    import editorconfig
+except ModuleNotFoundError:
+    print("Optional module editorconfig not found", file=sys.stderr)
+
+
+if TYPE_CHECKING:
+    from .Settings import Settings
 
 
 def clear_table_widget(table: QTableWidget):
@@ -106,7 +118,7 @@ def is_flatpak() -> bool:
 
 def get_shared_temp_dir() -> str:
     if is_flatpak():
-        return os.path.join( os.getenv("XDG_CACHE_HOME"), "jdAppdataEdit")
+        return os.path.join(os.getenv("XDG_CACHE_HOME"), "jdAppdataEdit")
     else:
         return os.path.join(tempfile.gettempdir(), "jdAppdataEdit")
 
@@ -116,3 +128,35 @@ def get_sender_table_row(table: QTableWidget, column: int, sender: QObject) -> i
     for i in range(table.rowCount()):
         if table.cellWidget(i, column) == sender:
             return i
+
+
+def get_save_settings(path: Optional[str], settings: "Settings") -> dict[str, str]:
+    if path is not None and editorconfig is not None and settings.get("useEditorconfig"):
+        try:
+            config = editorconfig.get_properties(path)
+        except editorconfig.EditorConfigError:
+            print("Invalid .editorconfig", file=sys.stderr)
+            config = collections.OrderedDict
+    else:
+        config = collections.OrderedDict()
+
+    if "indent_style" not in config:
+        if settings.get("useTabsInsteadOfSpaces"):
+            config["indent_style"] = "tab"
+        else:
+            config["indent_style"] = "space"
+
+    if "indent_size" not in config:
+        config["ident_size"] = str(settings.get("whitespaceCount"))
+
+    save_settings: dict[str, str] = {}
+
+    if config.get("indent_style") == "tab":
+        save_settings["ident"] = "\t"
+    else:
+        try:
+            save_settings["ident"] = " " * int(config.get("indent_size"))
+        except ValueError:
+            return "  "
+
+    return save_settings

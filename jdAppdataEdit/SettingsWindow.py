@@ -1,12 +1,18 @@
 from PyQt6.QtCore import QCoreApplication, QLocale
 from .Functions import select_combo_box_data
 from PyQt6.QtWidgets import QDialog
+from typing import TYPE_CHECKING
 from PyQt6 import uic
 import os
 
 
+if TYPE_CHECKING:
+    from .Environment import Environment
+    from .MainWindow import MainWindow
+
+
 class SettingsWindow(QDialog):
-    def __init__(self, env, main_window):
+    def __init__(self, env: "Environment", main_window: "MainWindow"):
         super().__init__()
         uic.loadUi(os.path.join(env.program_dir, "SettingsWindow.ui"), self)
 
@@ -28,6 +34,7 @@ class SettingsWindow(QDialog):
         self.window_title_box.addItem(QCoreApplication.translate("SettingsWindow", "Filename"), "filename")
         self.window_title_box.addItem(QCoreApplication.translate("SettingsWindow", "Path"), "path")
 
+        self.use_tabs_check_box.stateChanged.connect(self._update_whitespace_section_enabled)
         self.reset_button.clicked.connect(self._reset_button_clicked)
         self.ok_button.clicked.connect(self._ok_button_clicked)
         self.cancel_button.clicked.connect(self.close)
@@ -43,7 +50,15 @@ class SettingsWindow(QDialog):
         select_combo_box_data(self.window_title_box, self._env.settings.get("windowTitleType"))
         self.check_save_check_box.setChecked(self._env.settings.get("checkSaveBeforeClosing"))
         self.title_edited_check_box.setChecked(self._env.settings.get("showEditedTitle"))
+        self.use_editorconfig_check_box.setChecked(self._env.settings.get("useEditorconfig"))
+        self.whitespace_spin_box.setValue(self._env.settings.get("whitespaceCount"))
+        self.use_tabs_check_box.setChecked(self._env.settings.get("useTabsInsteadOfSpaces"))
         self.add_comment_check_box.setChecked(self._env.settings.get("addCommentSave"))
+
+    def _update_whitespace_section_enabled(self) -> None:
+        enabled = not self.use_tabs_check_box.isChecked()
+        self.whitespace_label.setEnabled(enabled)
+        self.whitespace_spin_box.setEnabled(enabled)
 
     def _reset_button_clicked(self):
         self._env.settings.reset()
@@ -55,6 +70,9 @@ class SettingsWindow(QDialog):
         self._env.settings.set("windowTitleType",  self.window_title_box.currentData())
         self._env.settings.set("checkSaveBeforeClosing", self.check_save_check_box.isChecked())
         self._env.settings.set("showEditedTitle", self.title_edited_check_box.isChecked())
+        self._env.settings.set("useEditorconfig", self.use_editorconfig_check_box.isChecked())
+        self._env.settings.set("whitespaceCount", self.whitespace_spin_box.value())
+        self._env.settings.set("useTabsInsteadOfSpaces", self.use_tabs_check_box.isChecked())
         self._env.settings.set("addCommentSave", self.add_comment_check_box.isChecked())
 
         self._env.recent_files = self._env.recent_files[:self._env.settings.get("recentFilesLength")]

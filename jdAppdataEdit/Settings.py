@@ -11,6 +11,9 @@ class Settings():
             "windowTitleType": "filename",
             "checkSaveBeforeClosing": True,
             "showEditedTitle": True,
+            "useEditorconfig": True,
+            "whitespaceCount": 2,
+            "useTabsInsteadOfSpaces": False,
             "addCommentSave": True,
             "showWelcomeDialog": True
         }

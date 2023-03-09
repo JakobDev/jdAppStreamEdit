@@ -56,6 +56,7 @@ setup(name="jdAppdataEdit",
     ],
     extras_require = {
         "Import .desktop files":  ["desktop-entry-lib"],
+        "Use .editorconfig":  ["editorconfig"],
         "Sort releases": ["packaging"]
     },
     packages=["jdAppdataEdit"],

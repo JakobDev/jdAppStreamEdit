@@ -1,9 +1,9 @@
 from PyQt6.QtCore import QTranslator, QLocale, QLibraryInfo
 from .TranslateWindow import TranslateWindow
 from PyQt6.QtWidgets import QApplication
+from .Environment import Environment
 from .Functions import is_url_valid
 from .MainWindow import MainWindow
-from .Enviroment import Enviroment
 import argparse
 import sys
 import os
@@ -11,7 +11,7 @@ import os
 
 def main():
     app = QApplication(sys.argv)
-    env = Enviroment()
+    env = Environment()
 
     app.setDesktopFileName("com.gitlab.JakobDev.jdAppdataEdit")
     app.setApplicationName("jdAppdataEdit")
