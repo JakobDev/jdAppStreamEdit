@@ -1,19 +1,19 @@
 <?xml version='1.0' encoding='utf-8'?>
 <component type="desktop">
-  <!--Created with jdAppdataEdit 5.1-->
-  <id>com.gitlab.JakobDev.jdAppdataEdit</id>
-  <name>jdAppdataEdit</name>
+  <!--Created with jdAppStreamEdit 6.0-->
+  <id>page.codeberg.JakobDev.jdAppStreamEdit</id>
+  <name>jdAppStreamEdit</name>
   <summary>A graphical Program to create and edit AppStream files</summary>
   <summary xml:lang="de">Ein grafisches Programm zum erstellen und bearbeiten von AppStream Dateien</summary>
   <summary xml:lang="nl">Een grafisch programma voor het aanmaken en bewerken van AppStream-bestanden</summary>
   <developer_name>JakobDev</developer_name>
-  <launchable type="desktop-id">com.gitlab.JakobDev.jdAppdataEdit.desktop</launchable>
+  <launchable type="desktop-id">page.codeberg.JakobDev.jdAppdataEdit.desktop</launchable>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0</project_license>
   <description>
-    <p>jdAppdataEdit allows you to easily create and edit AppStream (.appdata.xml or .metainfo.xml) files for your Application.</p>
-    <p xml:lang="de">jdAppdataEdit bietet eine einfache Möglichkeit zum erstellen und bearbeiten von AppStream (.appdata.xml oder .metainfo.xml) Dateien.</p>
-    <p xml:lang="nl">Met jdAppdataEdit kunt op eenvoudige wijze AppStream-bestanden (.appdata.xml of .metainfo.xml) aanmaken en bewerken.</p>
+    <p>jdAppStreamEdit (previously known as jdAppdataEdit) allows you to easily create and edit AppStream (.appdata.xml or .metainfo.xml) files for your Application.</p>
+    <p xml:lang="de">jdAppStreamEdit (zuvor bekannt als jdAppdataEdit) bietet eine einfache Möglichkeit zum erstellen und bearbeiten von AppStream (.appdata.xml oder .metainfo.xml) Dateien.</p>
+    <p xml:lang="nl">Met jdAppStreamEdit kunt op eenvoudige wijze AppStream-bestanden (.appdata.xml of .metainfo.xml) aanmaken en bewerken.</p>
     <p>Features:</p>
     <p xml:lang="de">Features</p>
     <p xml:lang="nl">Kenmerken</p>
@@ -27,8 +27,8 @@
       <li>The AppStream files are fully translatable</li>
       <li xml:lang="de">Die AppStream Dateien sind vollständig übersetzbar</li>
       <li xml:lang="nl">De Appstream-bestanden zijn volledig vertaalbaar</li>
-      <li>Releases can be imported from GitHub and GitLab</li>
-      <li xml:lang="de">Releases können von GitHub und GitLab importiert werden</li>
+      <li>Releases can be imported from GitHub, GitLab, Gitea, Git Repos and NEWS files</li>
+      <li xml:lang="de">Releases können von GitHub, GitLab, Gitea, Git Repos und NEWS Dateien importiert werden</li>
       <li xml:lang="nl">Uitgaven kunnen van GitHub en GitLab worden geïmporteerd</li>
       <li>You can view a preview in Gnome Software</li>
       <li xml:lang="de">Du kannst dir eine Vorschau in Gnome Software anzeigen lassen</li>
@@ -41,15 +41,15 @@
   <screenshots>
     <screenshot type="default">
       <caption>The General Tab</caption>
-      <image type="source">https://gitlab.com/JakobDev/jdAppdataEdit/-/raw/2.0/Screenshots/GeneralTab.png</image>
+      <image type="source">https://codeberg.org/JakobDev/jdAppStreamEdit/raw/tag/6.0/screenshots/GeneralTab.png</image>
     </screenshot>
     <screenshot>
       <caption>The Control Tab</caption>
-      <image type="source">https://gitlab.com/JakobDev/jdAppdataEdit/-/raw/2.0/Screenshots/ControlTab.png</image>
+      <image type="source">https://codeberg.org/JakobDev/jdAppStreamEdit/raw/tag/6.0/screenshots/ControlTab.png</image>
     </screenshot>
     <screenshot>
       <caption>The Oars Tab</caption>
-      <image type="source">https://gitlab.com/JakobDev/jdAppdataEdit/-/raw/2.0/Screenshots/OarsTab.png</image>
+      <image type="source">https://codeberg.org/JakobDev/jdAppStreamEdit/raw/tag/6.0/screenshots/OarsTab.png</image>
     </screenshot>
   </screenshots>
   <releases>
@@ -60,7 +60,8 @@
         </ul>
       </description>
     </release>
-    <release version="5.0" date="2022-09-01" type="stable"><description>
+    <release version="5.0" date="2022-09-01" type="stable">
+      <description>
         <ul>
           <li>Add support for new internet tag</li>
           <li>Add support for new replaces tag</li>
@@ -69,20 +70,23 @@
         </ul>
       </description>
     </release>
-    <release version="4.2" date="2022-08-03" type="stable"><description>
+    <release version="4.2" date="2022-08-03" type="stable">
+      <description>
         <ul>
           <li>Allow using a .desktop file as template</li>
           <li>You can now import from more sources</li>
         </ul>
       </description>
     </release>
-    <release version="4.1" date="2022-07-28" type="stable"><description>
+    <release version="4.1" date="2022-07-28" type="stable">
+      <description>
         <ul>
           <li>Added Dutch translation</li>
         </ul>
       </description>
     </release>
-    <release version="4.0" date="2022-07-08" type="stable"><description>
+    <release version="4.0" date="2022-07-08" type="stable">
+      <description>
         <ul>
           <li>Add Advanced section</li>
           <li>Add Welcome dialog</li>
@@ -90,13 +94,15 @@
         </ul>
       </description>
     </release>
-    <release version="3.3" date="2022-06-21" type="stable"><description>
+    <release version="3.3" date="2022-06-21" type="stable">
+      <description>
         <ul>
           <li>Add preview in Gnome Software</li>
         </ul>
       </description>
     </release>
-    <release version="3.2" date="2022-06-14" type="stable"><description>
+    <release version="3.2" date="2022-06-14" type="stable">
+      <description>
         <ul>
           <li>You can now resize the contents of the Description tab</li>
           <li>The current version is shown in the edit version window</li>
@@ -104,7 +110,9 @@
         </ul>
       </description>
     </release>
-    <release version="3.1" date="2022-05-15" type="stable"><url>https://gitlab.com/JakobDev/jdAppdataEdit/-/releases/3.1</url><description>
+    <release version="3.1" date="2022-05-15" type="stable">
+      <url>https://gitlab.com/JakobDev/jdAppdataEdit/-/releases/3.1</url>
+      <description>
         <ul>
           <li>Add vcs-browser and contribute URL types</li>
           <li>Allow selecting a type</li>
@@ -113,7 +121,9 @@
         </ul>
       </description>
     </release>
-    <release version="3.0" date="2022-01-21" type="stable"><url>https://gitlab.com/JakobDev/jdAppdataEdit/-/releases/3.0</url><description>
+    <release version="3.0" date="2022-01-21" type="stable">
+      <url>https://gitlab.com/JakobDev/jdAppdataEdit/-/releases/3.0</url>
+      <description>
         <ul>
           <li>Add support for relations</li>
           <li>Add support for more description information</li>
@@ -121,13 +131,17 @@
         </ul>
       </description>
     </release>
-    <release version="2.1" date="2022-01-16" type="stable"><url>https://gitlab.com/JakobDev/jdAppdataEdit/-/releases/2.1</url><description>
+    <release version="2.1" date="2022-01-16" type="stable">
+      <url>https://gitlab.com/JakobDev/jdAppdataEdit/-/releases/2.1</url>
+      <description>
         <ul>
           <li>Remove auto generated tkinter import</li>
         </ul>
       </description>
     </release>
-    <release version="2.0" date="2022-01-15" type="stable"><url>https://gitlab.com/JakobDev/jdAppdataEdit/-/releases/2.0</url><description>
+    <release version="2.0" date="2022-01-15" type="stable">
+      <url>https://gitlab.com/JakobDev/jdAppdataEdit/-/releases/2.0</url>
+      <description>
         <ul>
           <li>Add option to translate files</li>
           <li>Add new Description Widget</li>
@@ -136,13 +150,17 @@
         </ul>
       </description>
     </release>
-    <release version="1.1" date="2022-01-11" type="stable"><url>https://gitlab.com/JakobDev/jdAppdataEdit/-/releases/1.1</url><description>
+    <release version="1.1" date="2022-01-11" type="stable">
+      <url>https://gitlab.com/JakobDev/jdAppdataEdit/-/releases/1.1</url>
+      <description>
         <ul>
           <li>Fix Bugs</li>
         </ul>
       </description>
     </release>
-    <release version="1.0" date="2022-01-08" type="stable"><url>https://gitlab.com/JakobDev/jdAppdataEdit/-/releases/1.0</url><description>
+    <release version="1.0" date="2022-01-08" type="stable">
+      <url>https://gitlab.com/JakobDev/jdAppdataEdit/-/releases/1.0</url>
+      <description>
         <ul>
           <li>First Release</li>
         </ul>
@@ -165,9 +183,11 @@
   </recommends>
   <content_rating type="oars-1.1"/>
   <provides>
-    <binary>jdappdataedit</binary>
-    <python3>jdAppdataEdit</python3>
+    <binary>jdappstreamedit</binary>
+    <binary>jdappstreamedit-external-releases-editor</binary>
+    <python3>jdAppStreamEdit</python3>
     <mediatype>application/x-freedesktop-appstream</mediatype>
+    <mediatype>application/x-freedesktop-appstream-releases</mediatype>
   </provides>
   <keywords>
     <keyword>appstream</keyword>
@@ -176,4 +196,7 @@
     <keyword>python</keyword>
     <keyword>pyqt</keyword>
   </keywords>
+  <replaces>
+    <id>com.gitlab.JakobDev.jdAppdataEdit</id>
+  </replaces>
 </component>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
     <mime-type type="application/x-freedesktop-appstream">
-        <generic-icon name="com.gitlab.JakobDev.jdAppdataEdit"/>
+        <generic-icon name="page.codeberg.JakobDev.jdAppStreamEdit"/>
         <comment>Freedesktop AppStream</comment>
         <sub-class-of type="application/xml"/>
         <glob pattern="*.metainfo.xml"/>

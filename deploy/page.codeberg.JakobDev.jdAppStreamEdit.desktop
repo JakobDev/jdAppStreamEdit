@@ -1,0 +1,12 @@
+# Created with jdDesktopEntryEdit 1.0
+[Desktop Entry]
+Type=Application
+Name=jdAppStreamEdit
+Comment=A graphical Program to create and edit AppStream files
+Comment[de]=Ein grafisches Programm zum erstellen und bearbeiten von AppStream Dateien
+Comment[nl]=Een grafisch programma voor het aanmaken en bewerken van AppStream-bestanden
+Icon=page.codeberg.JakobDev.jdAppStreamEdit
+TryExec=jdappstreamedit
+Exec=jdappstreamedit %f
+MimeType=application/x-freedesktop-appstream;
+Categories=Development;
