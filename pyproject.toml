@@ -49,6 +49,7 @@ sort-releases = ["packaging"]
 [project.urls]
 Source = "https://codeberg.org/JakobDev/jdAppStreamEdit"
 Issues = "https://codeberg.org/JakobDev/jdAppStreamEdit/issues"
+Translate = "https://translate.codeberg.org/projects/jdAppStreamEdit"
 Donation = "https://ko-fi.com/jakobdev"
 
 [project.gui-scripts]

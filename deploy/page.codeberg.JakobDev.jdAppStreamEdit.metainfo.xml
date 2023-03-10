@@ -167,11 +167,11 @@
       </description>
     </release>
   </releases>
-  <url type="homepage">https://gitlab.com/JakobDev/jdAppdataEdit</url>
-  <url type="bugtracker">https://gitlab.com/JakobDev/jdAppdataEdit/-/issues</url>
-  <url type="translate">https://gitlab.com/JakobDev/jdAppdataEdit/-/blob/main/TRANSLATE.md</url>
-  <url type="vcs-browser">https://gitlab.com/JakobDev/jdAppdataEdit</url>
-  <url type="contribute">https://gitlab.com/JakobDev/jdAppdataEdit/-/blob/main/CONTRIBUTING.md</url>
+  <url type="homepage">https://codeberg.org/JakobDev/jdAppStreamEdit</url>
+  <url type="bugtracker">https://codeberg.org/JakobDev/jdAppStreamEdit/issues</url>
+  <url type="donation">https://ko-fi.com/jakobdev</url>
+  <url type="translate">https://translate.codeberg.org/projects/jdAppStreamEdit</url>
+  <url type="contribute">https://codeberg.org/JakobDev/jdAppStreamEdit/src/branch/main/CONTRIBUTING.md</url>
   <categories>
     <category>Development</category>
     <category>Qt</category>
