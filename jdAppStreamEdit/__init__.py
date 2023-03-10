@@ -32,6 +32,8 @@ def _internal_main(app_name: Literal["jdAppStreamEdit", "ExternalReleases"]):
         app_translator.load(os.path.join(app_trans_dir, "jdAppStreamEdit_" + system_language + ".qm"))
         qt_translator.load(os.path.join(qt_trans_dir, "qt_" + system_language.split("_")[0] + ".qm"))
         qt_translator.load(os.path.join(qt_trans_dir, "qt_" + system_language + ".qm"))
+    elif language == "en":
+        pass
     else:
         app_translator.load(os.path.join(app_trans_dir, "jdAppStreamEdit_" + language + ".qm"))
         qt_translator.load(os.path.join(qt_trans_dir, "qt_" + language.split("_")[0] + ".qm"))
@@ -61,7 +63,9 @@ def _internal_main(app_name: Literal["jdAppStreamEdit", "ExternalReleases"]):
             if main_window.open_file(path):
                  main_window.add_to_recent_files(path)
 
-    if env.settings.get("showWelcomeDialog"):
+    if app_name == "jdAppStreamEdit" and env.settings.get("showWelcomeDialog"):
+        main_window.show_welcome_dialog()
+    elif app_name == "ExternalReleases" and env.settings.get("showWelcomeDialogExternalReleases"):
         main_window.show_welcome_dialog()
 
     sys.exit(app.exec())

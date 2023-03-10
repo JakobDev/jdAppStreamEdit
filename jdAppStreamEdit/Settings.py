@@ -15,7 +15,8 @@ class Settings():
             "whitespaceCount": 2,
             "useTabsInsteadOfSpaces": False,
             "addCommentSave": True,
-            "showWelcomeDialog": True
+            "showWelcomeDialog": True,
+            "showWelcomeDialogExternalReleases": True
         }
 
         self._user_settings = {}

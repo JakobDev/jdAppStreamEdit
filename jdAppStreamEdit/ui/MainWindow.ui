@@ -311,7 +311,7 @@
         <item>
          <widget class="QLabel" name="releases_widget_placeholder">
           <property name="text">
-           <string>Releases Widget Placeholder</string>
+           <string notr="true">Releases Widget Placeholder</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>

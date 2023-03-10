@@ -11,6 +11,14 @@ if TYPE_CHECKING:
     from .MainWindow import MainWindow
 
 
+def get_language_names() -> dict[str, str]:
+    return {
+        "en": QCoreApplication.translate("Language", "Englisch"),
+        "de": QCoreApplication.translate("Language", "German"),
+        "nl": QCoreApplication.translate("Language", "Dutch"),
+    }
+
+
 class SettingsWindow(QDialog, Ui_SettingsWindow):
     def __init__(self, env: "Environment", main_window: "MainWindow"):
         super().__init__()
@@ -21,13 +29,13 @@ class SettingsWindow(QDialog, Ui_SettingsWindow):
         self._main_window = main_window
 
         self.language_box.addItem(QCoreApplication.translate("SettingsWindow", "System language"), "default")
-        self.language_box.addItem("Englisch", "en")
+        lannguage_names = get_language_names()
         translations_found = False
         if os.path.isdir(os.path.join(env.program_dir, "translations")):
             for i in os.listdir(os.path.join(env.program_dir, "translations")):
                 if i.endswith(".qm"):
                     lang = i.removeprefix("jdAppStreamEdit_").removesuffix(".qm")
-                    self.language_box.addItem(QLocale.languageToString(QLocale(lang).language()), lang)
+                    self.language_box.addItem(lannguage_names.get(lang, lang), lang)
                     translations_found = True
 
         if not translations_found:
