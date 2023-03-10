@@ -745,8 +745,8 @@
       <translation>Naamloos</translation>
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="685" />
-      <location filename="..\MainWindow.py" line="661" />
+      <location filename="..\MainWindow.py" line="687" />
+      <location filename="..\MainWindow.py" line="663" />
       <location filename="..\MainWindow.py" line="201" />
       <source>Error</source>
       <translation>Foutmelding</translation>
@@ -822,32 +822,42 @@
       <translation>Desktopitembestanden</translation>
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="397" />
-      <location filename="..\MainWindow.py" line="361" />
+      <location filename="..\MainWindow.py" line="399" />
+      <location filename="..\MainWindow.py" line="363" />
       <location filename="..\MainWindow.py" line="306" />
       <source>All Files</source>
       <translation>Alle bestanden</translation>
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="397" />
-      <location filename="..\MainWindow.py" line="361" />
+      <location filename="..\MainWindow.py" line="314" />
+      <source>Could not read file</source>
+      <translation type="unfinished" />
+    </message>
+    <message>
+      <location filename="..\MainWindow.py" line="314" />
+      <source>Could not read {{path}}. Make sure it is a valid desktop entry and you have the Permission to read it.</source>
+      <translation type="unfinished" />
+    </message>
+    <message>
+      <location filename="..\MainWindow.py" line="399" />
+      <location filename="..\MainWindow.py" line="363" />
       <source>AppStream Files</source>
       <translation>AppStream-bestanden</translation>
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="381" />
+      <location filename="..\MainWindow.py" line="383" />
       <source>Enter URL</source>
       <translation>Voer een url in</translation>
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="381" />
+      <location filename="..\MainWindow.py" line="383" />
       <source>Please enter a URL</source>
       <translation>Voer een url in</translation>
     </message>
     <message>
       <location filename="..\ui\MainWindow.ui" line="0" />
       <location filename="..\ui\MainWindow.ui" line="0" />
-      <location filename="..\MainWindow.py" line="435" />
+      <location filename="..\MainWindow.py" line="437" />
       <source>Edit</source>
       <translation>Bewerken</translation>
     </message>
@@ -856,169 +866,169 @@
       <location filename="..\ui\MainWindow.ui" line="0" />
       <location filename="..\ui\MainWindow.ui" line="0" />
       <location filename="..\ui\MainWindow.ui" line="0" />
-      <location filename="..\MainWindow.py" line="566" />
-      <location filename="..\MainWindow.py" line="439" />
+      <location filename="..\MainWindow.py" line="568" />
+      <location filename="..\MainWindow.py" line="441" />
       <source>Remove</source>
       <translation>Verwijderen</translation>
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="676" />
-      <location filename="..\MainWindow.py" line="507" />
-      <location filename="..\MainWindow.py" line="446" />
+      <location filename="..\MainWindow.py" line="678" />
+      <location filename="..\MainWindow.py" line="509" />
+      <location filename="..\MainWindow.py" line="448" />
       <source>Invalid URL</source>
       <translation>Ongeldige url</translation>
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="446" />
+      <location filename="..\MainWindow.py" line="448" />
       <source>The URL {{url}} does not work</source>
       <translation>{{url}} werkt niet</translation>
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="509" />
-      <location filename="..\MainWindow.py" line="448" />
+      <location filename="..\MainWindow.py" line="511" />
+      <location filename="..\MainWindow.py" line="450" />
       <source>Everything OK</source>
       <translation>Alles werkt</translation>
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="509" />
-      <location filename="..\MainWindow.py" line="448" />
+      <location filename="..\MainWindow.py" line="511" />
+      <location filename="..\MainWindow.py" line="450" />
       <source>All URLs are working</source>
       <translation>Alle url's werken</translation>
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="507" />
+      <location filename="..\MainWindow.py" line="509" />
       <source>The URL {url} does not work</source>
       <translation>De url, {url}, werkt niet</translation>
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="520" />
+      <location filename="..\MainWindow.py" line="522" />
       <source>Add a Categorie</source>
       <translation>Categorie toevoegen</translation>
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="520" />
+      <location filename="..\MainWindow.py" line="522" />
       <source>Please select a Categorie from the list below</source>
       <translation>Kies een categorie van onderstaande lijst</translation>
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="524" />
+      <location filename="..\MainWindow.py" line="526" />
       <source>Categorie already added</source>
       <translation>Categorie is al toegevoegd</translation>
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="524" />
+      <location filename="..\MainWindow.py" line="526" />
       <source>You can't add the same Categorie twice</source>
       <translation>U kunt niet tweemaal dezelfde categorie kiezen</translation>
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="582" />
+      <location filename="..\MainWindow.py" line="584" />
       <source>New Keyword</source>
       <translation>Nieuw trefwoord</translation>
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="582" />
+      <location filename="..\MainWindow.py" line="584" />
       <source>Please enter a new Keyword</source>
       <translation>Voer een nieuw trefwoord in</translation>
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="600" />
-      <location filename="..\MainWindow.py" line="586" />
+      <location filename="..\MainWindow.py" line="602" />
+      <location filename="..\MainWindow.py" line="588" />
       <source>Keyword in List</source>
       <translation>Bestaand trefwoord</translation>
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="600" />
-      <location filename="..\MainWindow.py" line="586" />
+      <location filename="..\MainWindow.py" line="602" />
+      <location filename="..\MainWindow.py" line="588" />
       <source>This Keyword is already in the List</source>
       <translation>Dit trefwoord is al toegevoegd</translation>
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="596" />
+      <location filename="..\MainWindow.py" line="598" />
       <source>Edit Keyword</source>
       <translation>Trefwoord bewerken</translation>
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="596" />
+      <location filename="..\MainWindow.py" line="598" />
       <source>Please edit the Keyword</source>
       <translation>Bewerk het trefwoord</translation>
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="658" />
+      <location filename="..\MainWindow.py" line="660" />
       <source>File not found</source>
       <translation>Bestand niet aangetroffen</translation>
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="658" />
+      <location filename="..\MainWindow.py" line="660" />
       <source>{{path}} does not exists</source>
       <translation>{{path}} bestaat niet</translation>
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="661" />
+      <location filename="..\MainWindow.py" line="663" />
       <source>An error occurred while trying to open {{path}}</source>
       <translation>Er is een fout opgetreden tijdens het openen van {{path}}</translation>
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="676" />
+      <location filename="..\MainWindow.py" line="678" />
       <source>{{url}} is not a valid http/https URL</source>
       <translation>{{url}} is geen geldige http-/https-url</translation>
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="682" />
+      <location filename="..\MainWindow.py" line="684" />
       <source>Could not connect</source>
       <translation>Kan geen verbinding maken</translation>
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="682" />
+      <location filename="..\MainWindow.py" line="684" />
       <source>Could not connect to {{url}}</source>
       <translation>Er kan geen verbinding worden gemaakt met {{url}}</translation>
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="685" />
+      <location filename="..\MainWindow.py" line="687" />
       <source>An error occurred while trying to connect to {{url}}</source>
       <translation>Er is een fout opgetreden tijdens het openen van {{url}}</translation>
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="737" />
+      <location filename="..\MainWindow.py" line="739" />
       <source>XML parsing failed</source>
       <translation>Xml-verwerking mislukt</translation>
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="741" />
+      <location filename="..\MainWindow.py" line="743" />
       <source>No component tag</source>
       <translation>Geen onderdeeltag</translation>
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="741" />
+      <location filename="..\MainWindow.py" line="743" />
       <source>This XML file has no component tag</source>
       <translation>Het xml-bestand bevat geen onderdeeltag</translation>
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="744" />
+      <location filename="..\MainWindow.py" line="746" />
       <source>Too many component tags</source>
       <translation>Teveel onderdeeltags</translation>
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="744" />
+      <location filename="..\MainWindow.py" line="746" />
       <source>Only files with one component tag are supported</source>
       <translation>Er is alleen ondersteuning voor bestanden met één onderdeeltag</translation>
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="1036" />
+      <location filename="..\MainWindow.py" line="1038" />
       <source>No ID</source>
       <translation>Geen id</translation>
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="1036" />
+      <location filename="..\MainWindow.py" line="1038" />
       <source>You need to set a ID to use this feature</source>
       <translation>Ken een id toe om deze functie te gebruiken</translation>
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="1055" />
+      <location filename="..\MainWindow.py" line="1057" />
       <source>{{binary}} not found</source>
       <translation>{{binary}} niet aangetroffen</translation>
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="1055" />
+      <location filename="..\MainWindow.py" line="1057" />
       <source>{{binary}} was not found. Make sure it is installed and in PATH.</source>
       <translation>{{binary}} is niet aangetroffen. Zorg er voor dat het bestand bestaat en toegevoegd is aan uw PATH.</translation>
     </message>

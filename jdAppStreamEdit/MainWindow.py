@@ -308,11 +308,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         if path == "":
             return
 
-        app_id = os.path.basename(path).removesuffix(".desktop")
+        try:
+            entry = desktop_entry_lib.DesktopEntry.from_file(path)
+        except Exception:
+            QMessageBox.critical(self, QCoreApplication.translate("MainWindow", "Could not read file"), QCoreApplication.translate("MainWindow", "Could not read {{path}}. Make sure it is a valid desktop entry and you have the Permission to read it.").replace("{{path}}", path))
+            return
 
-        entry = desktop_entry_lib.DesktopEntry.from_file(path)
-
-        self.id_edit.setText(app_id)
+        self.id_edit.setText(entry.desktop_id)
 
         self.name_edit.setText(entry.Name.default_text)
         for key, value in entry.Name.translations.items():
@@ -322,7 +324,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         for key, value in entry.Comment.translations.items():
             self._summary_translations[key] = value
 
-        self.desktop_file_edit.setText(app_id + ".desktop")
+        self.desktop_file_edit.setText(os.path.basename(path))
 
         for i in entry.Categories:
             self.categorie_list.addItem(i)
