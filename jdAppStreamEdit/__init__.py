@@ -11,7 +11,7 @@ import os
 
 def _internal_main(app_name: Literal["jdAppStreamEdit", "ExternalReleases"]):
     if not os.path.isdir(os.path.join(os.path.dirname(__file__), "ui_compiled")):
-        print("Could not find compiled ui files. Please run tool/CompileUI.py first.", file=sys.stderr)
+        print("Could not find compiled ui files. Please run tools/CompileUI.py first.", file=sys.stderr)
         return
 
     app = QApplication(sys.argv)
