@@ -44,6 +44,22 @@
       <image type="source">https://codeberg.org/JakobDev/jdAppStreamEdit/raw/tag/6.0/screenshots/GeneralTab.png</image>
     </screenshot>
     <screenshot>
+      <caption>The Description Tab</caption>
+      <image type="source">https://codeberg.org/JakobDev/jdAppStreamEdit/raw/tag/6.0/screenshots/DescriptionTab.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>The Screenshots Tab</caption>
+      <image type="source">https://codeberg.org/JakobDev/jdAppStreamEdit/raw/tag/6.0/screenshots/ScreenshotsTabTab.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>The Releases Tab</caption>
+      <image type="source">https://codeberg.org/JakobDev/jdAppStreamEdit/raw/tag/6.0/screenshots/ReleasesTab.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>The Links Tab</caption>
+      <image type="source">https://codeberg.org/JakobDev/jdAppStreamEdit/raw/tag/6.0/screenshots/LinksTab.png</image>
+    </screenshot>
+    <screenshot>
       <caption>The Control Tab</caption>
       <image type="source">https://codeberg.org/JakobDev/jdAppStreamEdit/raw/tag/6.0/screenshots/ControlTab.png</image>
     </screenshot>
