@@ -1,12 +1,12 @@
-from .Functions import clear_table_widget, stretch_table_widget_colums_size, list_widget_contains_item, is_url_reachable, get_logical_table_row_list, create_artifact_source_tag, select_combo_box_data, is_flatpak, get_shared_temp_dir, is_url_valid, get_save_settings
+from .Functions import clear_table_widget, stretch_table_widget_colums_size, list_widget_contains_item, is_url_reachable, get_logical_table_row_list, select_combo_box_data, is_flatpak, get_shared_temp_dir, is_url_valid, get_save_settings
 from PyQt6.QtWidgets import QApplication, QCheckBox, QComboBox, QLineEdit, QListWidget, QMainWindow, QMessageBox, QDateEdit, QInputDialog, QPlainTextEdit, QPushButton, QTableWidget, QTableWidgetItem, QRadioButton, QFileDialog
 from PyQt6.QtGui import QAction,  QDragEnterEvent, QDropEvent, QCloseEvent
 from .ManageTemplatesWindow import ManageTemplatesWindow
+from PyQt6.QtCore import Qt, QCoreApplication, QDate
 from .ui_compiled.MainWindow import Ui_MainWindow
 from .DescriptionWidget import DescriptionWidget
 from typing import List, Optional, TYPE_CHECKING
 from .ScreenshotWindow import ScreenshotWindow
-from PyQt6.QtCore import Qt, QCoreApplication
 from .RelationsWidget import RelationsWidget
 from .ReleasesWidget import ReleasesWidget
 from .SettingsWindow import SettingsWindow
@@ -85,6 +85,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 value.model().rowsMoved.connect(self.set_file_edited)
             elif isinstance(value, QRadioButton):
                 value.toggled.connect(self.set_file_edited)
+            elif isinstance(value, QCheckBox):
+                value.stateChanged.connect(self.set_file_edited)
+            elif isinstance(value, QDateEdit):
+                value.dateChanged.connect(self.set_file_edited)
+                value.setDate(QDate.currentDate())
 
         self._update_new_template_file_menu()
         self._update_recent_files_menu()
@@ -124,6 +129,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.screenshot_table.verticalHeader().setSectionsMovable(True)
         self.provides_table.verticalHeader().setSectionsMovable(True)
 
+        self._update_end_of_life_enabled()
         self._update_releases_enabled()
         self._update_categorie_remove_button_enabled()
         self._update_keyword_edit_remove_button()
@@ -137,6 +143,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.translate_name_button.clicked.connect(lambda: env.translate_window.open_window(self._name_translations))
         self.translate_summary_button.clicked.connect(lambda: env.translate_window.open_window(self._summary_translations))
         self.translate_developer_name_button.clicked.connect(lambda: env.translate_window.open_window(self._developer_name_translations))
+        self.end_of_life_check_box.stateChanged.connect(self._update_end_of_life_enabled)
 
         self.screenshot_table.verticalHeader().sectionMoved.connect(self._screenshot_table_row_moved)
         self.screenshot_add_button.clicked.connect(lambda: self._screenshot_window.open_window(None))
@@ -421,6 +428,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self._update_recent_files_menu()
         self._env.save_recent_files()
 
+    # General
+
+    def _update_end_of_life_enabled(self) -> None:
+        enabled = self.end_of_life_check_box.isChecked()
+        self.end_of_life_label.setEnabled(enabled)
+        self.end_of_life_date_edit.setEnabled(enabled)
+
     # Screenshots
 
     def update_sceenshot_table(self):
@@ -642,6 +656,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 value.setChecked(False)
             elif isinstance(value, QListWidget):
                 value.clear()
+            elif isinstance(value, QDateEdit):
+                value.setDate(QDate.currentDate())
+        self.end_of_life_check_box.setChecked(False)
         self._description_widget.reset_data()
         self.screenshot_list.clear()
         self.internal_releases_radio_button.setChecked(True)
@@ -653,6 +670,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self._advanced_widget.reset_data()
         self._update_categorie_remove_button_enabled()
         self._update_keyword_edit_remove_button()
+        self._update_end_of_life_enabled()
 
     # Read
 
@@ -753,6 +771,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.reset_data()
 
         select_combo_box_data(self.component_type_box, root.xpath("/component")[0].get("type"))
+
+        if (date_eol := root.getroot().get("date_eol")) is not None:
+            self.end_of_life_date_edit.setDate(QDate.fromString(date_eol, Qt.DateFormat.ISODate))
+            self.end_of_life_check_box.setChecked(True)
 
         id_tag = root.find("id")
         if id_tag is not None:
@@ -896,6 +918,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def get_xml_text(self) -> str:
         root = etree.Element("component")
         root.set("type", self.component_type_box.currentData())
+
+        if self.end_of_life_check_box.isChecked():
+            root.set("date_eol", self.end_of_life_date_edit.date().toString(Qt.DateFormat.ISODate))
 
         if self._env.settings.get("addCommentSave"):
             root.append(etree.Comment("Created with jdAppStreamEdit " + self._env.version))

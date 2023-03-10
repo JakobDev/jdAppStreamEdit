@@ -700,179 +700,179 @@
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="92" />
+      <location filename="..\MainWindow.py" line="97" />
       <source>Desktop</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="93" />
+      <location filename="..\MainWindow.py" line="98" />
       <source>Console</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="94" />
+      <location filename="..\MainWindow.py" line="99" />
       <source>Web Application</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="95" />
+      <location filename="..\MainWindow.py" line="100" />
       <source>Service</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="96" />
+      <location filename="..\MainWindow.py" line="101" />
       <source>Addon</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="97" />
+      <location filename="..\MainWindow.py" line="102" />
       <source>Font</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="98" />
+      <location filename="..\MainWindow.py" line="103" />
       <source>Icon Theme</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="99" />
+      <location filename="..\MainWindow.py" line="104" />
       <source>Codecs</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="100" />
+      <location filename="..\MainWindow.py" line="105" />
       <source>Input Method</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="101" />
+      <location filename="..\MainWindow.py" line="106" />
       <source>Firmware</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="112" />
+      <location filename="..\MainWindow.py" line="117" />
       <source>Unknown</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="199" />
+      <location filename="..\MainWindow.py" line="206" />
       <source>Untitled</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="691" />
-      <location filename="..\MainWindow.py" line="667" />
-      <location filename="..\MainWindow.py" line="205" />
+      <location filename="..\MainWindow.py" line="709" />
+      <location filename="..\MainWindow.py" line="685" />
+      <location filename="..\MainWindow.py" line="212" />
       <source>Error</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="216" />
+      <location filename="..\MainWindow.py" line="223" />
       <source>No templates found</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="230" />
+      <location filename="..\MainWindow.py" line="237" />
       <source>No recent files</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="243" />
+      <location filename="..\MainWindow.py" line="250" />
       <source>Clear</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="260" />
+      <location filename="..\MainWindow.py" line="267" />
       <source>Unsaved changes</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="260" />
+      <location filename="..\MainWindow.py" line="267" />
       <source>You have unsaved changes. Do you want to save now?</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="271" />
+      <location filename="..\MainWindow.py" line="278" />
       <source>Welcome to jdAppStreamEdit!</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="272" />
+      <location filename="..\MainWindow.py" line="279" />
       <source>With jdAppStreamEdit you can create and edit AppStream files (*.metainfo.xml or .appdata.xml). This files are to provide data for your Application (Description, Screenshots etc.) to Software Centers.</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="273" />
+      <location filename="..\MainWindow.py" line="280" />
       <source>It is highly recommend to read the the AppStream Documentation before using this Program. You can open it under ?&gt;AppStream documentation.</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="274" />
+      <location filename="..\MainWindow.py" line="281" />
       <source>You can check if your AppStream is valid under Tools&gt;Validate.</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="277" />
+      <location filename="..\MainWindow.py" line="284" />
       <source>Show this dialog at startup</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="281" />
+      <location filename="..\MainWindow.py" line="288" />
       <source>Welcome</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="302" />
+      <location filename="..\MainWindow.py" line="309" />
       <source>desktop-entry-lib not found</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="302" />
+      <location filename="..\MainWindow.py" line="309" />
       <source>This function needs the desktop-entry-lib python module to work</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="310" />
+      <location filename="..\MainWindow.py" line="317" />
       <source>Desktop Entry Files</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="403" />
-      <location filename="..\MainWindow.py" line="367" />
-      <location filename="..\MainWindow.py" line="310" />
+      <location filename="..\MainWindow.py" line="410" />
+      <location filename="..\MainWindow.py" line="374" />
+      <location filename="..\MainWindow.py" line="317" />
       <source>All Files</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="318" />
+      <location filename="..\MainWindow.py" line="325" />
       <source>Could not read file</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="318" />
+      <location filename="..\MainWindow.py" line="325" />
       <source>Could not read {{path}}. Make sure it is a valid desktop entry and you have the Permission to read it.</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="403" />
-      <location filename="..\MainWindow.py" line="367" />
+      <location filename="..\MainWindow.py" line="410" />
+      <location filename="..\MainWindow.py" line="374" />
       <source>AppStream Files</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="387" />
+      <location filename="..\MainWindow.py" line="394" />
       <source>Enter URL</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="387" />
+      <location filename="..\MainWindow.py" line="394" />
       <source>Please enter a URL</source>
       <translation type="unfinished" />
     </message>
     <message>
       <location filename="..\ui\MainWindow.ui" line="0" />
       <location filename="..\ui\MainWindow.ui" line="0" />
-      <location filename="..\MainWindow.py" line="441" />
+      <location filename="..\MainWindow.py" line="455" />
       <source>Edit</source>
       <translation type="unfinished" />
     </message>
@@ -881,169 +881,169 @@
       <location filename="..\ui\MainWindow.ui" line="0" />
       <location filename="..\ui\MainWindow.ui" line="0" />
       <location filename="..\ui\MainWindow.ui" line="0" />
-      <location filename="..\MainWindow.py" line="572" />
-      <location filename="..\MainWindow.py" line="445" />
+      <location filename="..\MainWindow.py" line="586" />
+      <location filename="..\MainWindow.py" line="459" />
       <source>Remove</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="682" />
-      <location filename="..\MainWindow.py" line="513" />
-      <location filename="..\MainWindow.py" line="452" />
+      <location filename="..\MainWindow.py" line="700" />
+      <location filename="..\MainWindow.py" line="527" />
+      <location filename="..\MainWindow.py" line="466" />
       <source>Invalid URL</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="452" />
+      <location filename="..\MainWindow.py" line="466" />
       <source>The URL {{url}} does not work</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="515" />
-      <location filename="..\MainWindow.py" line="454" />
+      <location filename="..\MainWindow.py" line="529" />
+      <location filename="..\MainWindow.py" line="468" />
       <source>Everything OK</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="515" />
-      <location filename="..\MainWindow.py" line="454" />
+      <location filename="..\MainWindow.py" line="529" />
+      <location filename="..\MainWindow.py" line="468" />
       <source>All URLs are working</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="513" />
+      <location filename="..\MainWindow.py" line="527" />
       <source>The URL {url} does not work</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="526" />
+      <location filename="..\MainWindow.py" line="540" />
       <source>Add a Categorie</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="526" />
+      <location filename="..\MainWindow.py" line="540" />
       <source>Please select a Categorie from the list below</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="530" />
+      <location filename="..\MainWindow.py" line="544" />
       <source>Categorie already added</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="530" />
+      <location filename="..\MainWindow.py" line="544" />
       <source>You can't add the same Categorie twice</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="588" />
+      <location filename="..\MainWindow.py" line="602" />
       <source>New Keyword</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="588" />
+      <location filename="..\MainWindow.py" line="602" />
       <source>Please enter a new Keyword</source>
       <translation type="unfinished" />
     </message>
     <message>
+      <location filename="..\MainWindow.py" line="620" />
       <location filename="..\MainWindow.py" line="606" />
-      <location filename="..\MainWindow.py" line="592" />
       <source>Keyword in List</source>
       <translation type="unfinished" />
     </message>
     <message>
+      <location filename="..\MainWindow.py" line="620" />
       <location filename="..\MainWindow.py" line="606" />
-      <location filename="..\MainWindow.py" line="592" />
       <source>This Keyword is already in the List</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="602" />
+      <location filename="..\MainWindow.py" line="616" />
       <source>Edit Keyword</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="602" />
+      <location filename="..\MainWindow.py" line="616" />
       <source>Please edit the Keyword</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="664" />
+      <location filename="..\MainWindow.py" line="682" />
       <source>File not found</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="664" />
+      <location filename="..\MainWindow.py" line="682" />
       <source>{{path}} does not exists</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="667" />
+      <location filename="..\MainWindow.py" line="685" />
       <source>An error occurred while trying to open {{path}}</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="682" />
+      <location filename="..\MainWindow.py" line="700" />
       <source>{{url}} is not a valid http/https URL</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="688" />
+      <location filename="..\MainWindow.py" line="706" />
       <source>Could not connect</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="688" />
+      <location filename="..\MainWindow.py" line="706" />
       <source>Could not connect to {{url}}</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="691" />
+      <location filename="..\MainWindow.py" line="709" />
       <source>An error occurred while trying to connect to {{url}}</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="743" />
+      <location filename="..\MainWindow.py" line="761" />
       <source>XML parsing failed</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="747" />
+      <location filename="..\MainWindow.py" line="765" />
       <source>No component tag</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="747" />
+      <location filename="..\MainWindow.py" line="765" />
       <source>This XML file has no component tag</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="750" />
+      <location filename="..\MainWindow.py" line="768" />
       <source>Too many component tags</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="750" />
+      <location filename="..\MainWindow.py" line="768" />
       <source>Only files with one component tag are supported</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="1042" />
+      <location filename="..\MainWindow.py" line="1067" />
       <source>No ID</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="1042" />
+      <location filename="..\MainWindow.py" line="1067" />
       <source>You need to set a ID to use this feature</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="1061" />
+      <location filename="..\MainWindow.py" line="1086" />
       <source>{{binary}} not found</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <location filename="..\MainWindow.py" line="1061" />
+      <location filename="..\MainWindow.py" line="1086" />
       <source>{{binary}} was not found. Make sure it is installed and in PATH.</source>
       <translation type="unfinished" />
     </message>
@@ -1143,6 +1143,16 @@
     <message>
       <location filename="..\ui\MainWindow.ui" line="0" />
       <source>If the software is part of a bigger group e.g. GNOME or KDE, you can provide it here</source>
+      <translation type="unfinished" />
+    </message>
+    <message>
+      <location filename="..\ui\MainWindow.ui" line="0" />
+      <source>End of life date::</source>
+      <translation type="unfinished" />
+    </message>
+    <message>
+      <location filename="..\ui\MainWindow.ui" line="0" />
+      <source>Set a End of life date</source>
       <translation type="unfinished" />
     </message>
     <message>
