@@ -203,7 +203,7 @@ class ExternalReleasesWindow(QMainWindow, Ui_ExternalReleasesWindow):
         filter = QCoreApplication.translate("ExternalReleasesWindow", "AppStream Releases") + " (*.releases.xml);;" +   QCoreApplication.translate("ExternalReleasesWindow", "All Files") + " (*)"
         path = QFileDialog.getSaveFileName(self, filter=filter)[0]
 
-        if path[0] == "":
+        if path == "":
             return
 
         self._current_path = path

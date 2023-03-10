@@ -410,7 +410,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         filter = QCoreApplication.translate("MainWindow", "AppStream Files") + " (*.metainfo.xml *.appdata.xml);;" +   QCoreApplication.translate("MainWindow", "All Files") + " (*)"
         path = QFileDialog.getSaveFileName(self, filter=filter)[0]
 
-        if path[0] == "":
+        if path == "":
             return
 
         self._current_path = path
