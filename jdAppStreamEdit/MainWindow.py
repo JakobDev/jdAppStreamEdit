@@ -506,7 +506,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             del self.screenshot_list[old_visual_index]
         else:
             del self.screenshot_list[old_visual_index + 1]
-        print(new_visual_index)
         self.update_sceenshot_table()
 
     # Releases
