@@ -50,6 +50,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.description_layout.addWidget(self._description_widget)
 
         self.releases_layout.replaceWidget(self.releases_widget_placeholder, self._releases_widget)
+        self.releases_widget_placeholder.setParent(None)
 
         self._relations_widget = RelationsWidget(self)
         self.relations_layout.addWidget(self._relations_widget)
