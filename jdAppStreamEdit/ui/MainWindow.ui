@@ -33,7 +33,7 @@
     <item>
      <widget class="QTabWidget" name="main_tab_widget">
       <property name="currentIndex">
-       <number>3</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -937,6 +937,11 @@
     <addaction name="welcome_dialog_action"/>
     <addaction name="documentation_action"/>
     <addaction name="separator"/>
+    <addaction name="view_source_action"/>
+    <addaction name="report_bug_action"/>
+    <addaction name="translate_action"/>
+    <addaction name="donate_action"/>
+    <addaction name="separator"/>
     <addaction name="about_action"/>
     <addaction name="about_qt_action"/>
    </widget>
@@ -1060,6 +1065,26 @@
   <action name="actionPlaceholder_2">
    <property name="text">
     <string notr="true">Placeholder</string>
+   </property>
+  </action>
+  <action name="view_source_action">
+   <property name="text">
+    <string>View Source</string>
+   </property>
+  </action>
+  <action name="report_bug_action">
+   <property name="text">
+    <string>Report Bug</string>
+   </property>
+  </action>
+  <action name="translate_action">
+   <property name="text">
+    <string>Translate</string>
+   </property>
+  </action>
+  <action name="donate_action">
+   <property name="text">
+    <string>Donate</string>
    </property>
   </action>
  </widget>

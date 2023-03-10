@@ -49,7 +49,7 @@
    <item>
     <widget class="QLabel" name="label">
      <property name="text">
-      <string>A graphical Program to create and edit Appstream files</string>
+      <string>A graphical Program to create and edit AppStream files</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -77,22 +77,11 @@
     </widget>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <widget class="QPushButton" name="view_source_button">
-       <property name="text">
-        <string>View source</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="close_button">
-       <property name="text">
-        <string>Close</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
+    <widget class="QPushButton" name="close_button">
+     <property name="text">
+      <string>Close</string>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>

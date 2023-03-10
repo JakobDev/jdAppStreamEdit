@@ -52,6 +52,10 @@ class ExternalReleasesWindow(QMainWindow, Ui_ExternalReleasesWindow):
 
         self.welcome_dialog_action.triggered.connect(self.show_welcome_dialog)
         self.documentation_action.triggered.connect(lambda: webbrowser.open("https://www.freedesktop.org/software/appstream/docs"))
+        self.view_source_action.triggered.connect(lambda: webbrowser.open("https://codeberg.org/JakobDev/jdAppStreamEdit"))
+        self.report_bug_action.triggered.connect(lambda: webbrowser.open("https://codeberg.org/JakobDev/jdAppStreamEdit/issues"))
+        self.translate_action.triggered.connect(lambda: webbrowser.open("https://translate.codeberg.org/projects/jdAppStreamEdit"))
+        self.donate_action.triggered.connect(lambda: webbrowser.open("https://ko-fi.com/jakobdev"))
         self.about_action.triggered.connect(self._about_window.exec)
         self.about_qt_action.triggered.connect(QApplication.instance().aboutQt)
 
@@ -105,14 +109,14 @@ class ExternalReleasesWindow(QMainWindow, Ui_ExternalReleasesWindow):
         while path in self._env.recent_files_external_releases:
             self._env.recent_files_external_releases.remove(path)
         self._env.recent_files_external_releases.insert(0, path)
-        self._env.recent_files = self._env.recent_files_external_releases[:self._env.settings.get("recentFilesLength")]
+        self._env.recent_files_external_releases = self._env.recent_files_external_releases[:self._env.settings.get("recentFilesLength")]
         self._update_recent_files_menu()
         self._env.save_recent_files_external_releases()
 
     def _clear_recent_files(self):
-        self._env.recent_files.clear()
+        self._env.recent_files_external_releases.clear()
+        self._env.save_recent_files_external_releases()
         self._update_recent_files_menu()
-        self._env.save_recent_files()
 
     def _ask_for_save(self) -> bool:
         if not self._edited:
