@@ -1,16 +1,20 @@
 from .Functions import stretch_table_widget_colums_size, select_combo_box_data, get_logical_table_row_list, clear_table_widget, list_widget_contains_item, get_sender_table_row
 from PyQt6.QtWidgets import QWidget, QComboBox, QTableWidgetItem, QInputDialog, QMessageBox, QPushButton
+from .ui_compiled.AdvancedWidget import Ui_AdvancedWidget
+from typing import Optional, TYPE_CHECKING
 from PyQt6.QtCore import QCoreApplication
-from typing import Optional
 from lxml import etree
-from PyQt6 import uic
-import os
 
 
-class AdvancedWidget(QWidget):
-    def __init__(self, env, main_window):
+if TYPE_CHECKING:
+    from .MainWindow import MainWindow
+
+
+class AdvancedWidget(QWidget, Ui_AdvancedWidget):
+    def __init__(self, main_window: "MainWindow"):
         super().__init__()
-        uic.loadUi(os.path.join(env.program_dir, "AdvancedWidget.ui"), self)
+
+        self.setupUi(self)
 
         self._main_window = main_window
 

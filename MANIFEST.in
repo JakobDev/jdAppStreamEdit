@@ -1,5 +1,6 @@
-include jdAppdataEdit/*.ui
-include jdAppdataEdit/data/*
-include jdAppdataEdit/i18n/*.qm
-include jdAppdataEdit/Icon.svg
-include jdAppdataEdit/version.txt
+include jdAppStreamEdit/translations/*.ts
+include jdAppStreamEdit/version.txt
+include jdAppStreamEdit/Icon.svg
+include jdAppStreamEdit/ui/*.ui
+include jdAppStreamEdit/data/*
+include BuildBackend.py

@@ -1,16 +1,21 @@
+from .ui_compiled.OarsWidget import Ui_OarsWidget
 from .Functions import select_combo_box_data
 from PyQt6.QtCore import QCoreApplication
 from PyQt6.QtWidgets import QWidget
+from typing import TYPE_CHECKING
 from lxml import etree
-from PyQt6 import uic
 import sys
-import os
 
 
-class OarsWidget(QWidget):
-    def __init__(self, env, main_window):
+if TYPE_CHECKING:
+    from .MainWindow import MainWindow
+
+
+class OarsWidget(QWidget, Ui_OarsWidget):
+    def __init__(self, main_window: "MainWindow"):
         super().__init__()
-        uic.loadUi(os.path.join(env.program_dir, "OarsWidget.ui"), self)
+
+        self.setupUi(self)
 
         self._box_list = []
         for key, value in vars(self).items():

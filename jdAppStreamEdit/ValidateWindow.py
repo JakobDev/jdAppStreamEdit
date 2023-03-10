@@ -1,15 +1,22 @@
+from .ui_compiled.ValidateWindow import Ui_ValidateWindow
 from PyQt6.QtWidgets import QDialog, QMessageBox
 from PyQt6.QtCore import QCoreApplication
-from PyQt6 import uic
+from typing import TYPE_CHECKING
 import subprocess
 import tempfile
 import os
 
 
-class ValidateWindow(QDialog):
-    def __init__(self, env, main_window):
+if TYPE_CHECKING:
+    from .Environment import Environment
+    from .MainWindow import MainWindow
+
+
+class ValidateWindow(QDialog, Ui_ValidateWindow):
+    def __init__(self, env: "Environment", main_window: "MainWindow"):
         super().__init__()
-        uic.loadUi(os.path.join(env.program_dir, "ValidateWindow.ui"), self)
+
+        self.setupUi(self)
 
         self._env = env
         self._main_window = main_window

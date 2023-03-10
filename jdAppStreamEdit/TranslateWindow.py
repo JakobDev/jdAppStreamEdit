@@ -1,17 +1,20 @@
 from .Functions import clear_table_widget, select_combo_box_data, get_logical_table_row_list, stretch_table_widget_colums_size
 from PyQt6.QtWidgets import QDialog, QComboBox, QPushButton, QTableWidgetItem, QMessageBox
+from .ui_compiled.TranslateWindow import Ui_TranslateWindow
 from PyQt6.QtCore import QCoreApplication, QLocale
-from typing import Dict, Optional
-from PyQt6 import uic
-import os
+from typing import Dict, Optional, TYPE_CHECKING
 
 
-class TranslateWindow(QDialog):
-    def __init__(self, env):
+if TYPE_CHECKING:
+    from .Environment import Environment
+
+
+class TranslateWindow(QDialog, Ui_TranslateWindow):
+    def __init__(self, env: "Environment"):
         super().__init__()
-        uic.loadUi(os.path.join(env.program_dir, "TranslateWindow.ui"), self)
-
         self._env = env
+
+        self.setupUi(self)
 
         stretch_table_widget_colums_size(self.table_widget)
 

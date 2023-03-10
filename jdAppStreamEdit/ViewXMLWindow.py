@@ -1,8 +1,12 @@
-from PyQt6.QtGui import QSyntaxHighlighter, QTextCharFormat, QColor
+from PyQt6.QtGui import QSyntaxHighlighter, QTextCharFormat, QColor, QShowEvent
+from .ui_compiled.ViewXMLWindow import Ui_ViewXMLWindow
 from PyQt6.QtWidgets import QDialog
-from PyQt6 import uic
+from typing import TYPE_CHECKING
 import re
-import os
+
+
+if TYPE_CHECKING:
+    from .MainWindow import MainWindow
 
 
 class XMLHighlighter(QSyntaxHighlighter):
@@ -44,14 +48,15 @@ class XMLHighlighter(QSyntaxHighlighter):
             self.setFormat(i.start(), i.end() - i.start(), self._value_format)
 
 
-class ViewXMLWindow(QDialog):
-    def __init__(self, env, main_window):
+class ViewXMLWindow(QDialog, Ui_ViewXMLWindow):
+    def __init__(self, main_window: "MainWindow"):
         super().__init__()
-        uic.loadUi(os.path.join(env.program_dir, "ViewXMLWindow.ui"), self)
+
+        self.setupUi(self)
 
         self._main_window = main_window
 
-        self.test = XMLHighlighter(self.preview_edit.document())
+        self._xml_highlighter = XMLHighlighter(self.preview_edit.document())
 
-    def showEvent(self, event):
+    def showEvent(self, event: QShowEvent):
         self.preview_edit.setPlainText(self._main_window.get_xml_text())

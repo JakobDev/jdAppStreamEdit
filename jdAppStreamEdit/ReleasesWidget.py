@@ -1,13 +1,12 @@
 from .Functions import stretch_table_widget_colums_size, get_sender_table_row, clear_table_widget, get_logical_table_row_list
 from PyQt6.QtWidgets import QWidget, QPushButton, QComboBox, QDateEdit, QTableWidgetItem, QMessageBox, QMenu
+from .ui_compiled.ReleasesWidget import Ui_ReleasesWidget
 from PyQt6.QtCore import Qt, QCoreApplication, QDate
 from .ReleaseImporter import get_release_importer
 from .ReleasesWindow import ReleasesWindow
 from typing import Optional, TYPE_CHECKING
 from PyQt6.QtGui import QAction
 from lxml import etree
-from PyQt6 import uic
-import os
 
 
 if TYPE_CHECKING:
@@ -22,10 +21,11 @@ class _COLUMNS:
     REMOVE_BUTTON = 4
 
 
-class ReleasesWidget(QWidget):
+class ReleasesWidget(QWidget, Ui_ReleasesWidget):
     def __init__(self, env: "Environment", parent: QWidget) -> None:
         super().__init__()
-        uic.loadUi(os.path.join(env.program_dir, "ReleasesWidget.ui"), self)
+
+        self.setupUi(self)
 
         self._parent = parent
         self._env = env

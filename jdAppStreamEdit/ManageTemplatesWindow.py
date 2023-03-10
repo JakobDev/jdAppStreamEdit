@@ -1,14 +1,21 @@
+from .ui_compiled.ManageTemplatesWindow import Ui_ManageTemplatesWindow
 from PyQt6.QtWidgets import QDialog, QInputDialog, QMessageBox
 from PyQt6.QtCore import QCoreApplication
-from PyQt6 import uic
+from typing import TYPE_CHECKING
 import sys
 import os
 
 
-class ManageTemplatesWindow(QDialog):
-    def __init__(self, env, main_window):
+if TYPE_CHECKING:
+    from .Environment import Environment
+    from .MainWindow import MainWindow
+
+
+class ManageTemplatesWindow(QDialog, Ui_ManageTemplatesWindow):
+    def __init__(self, env: "Environment", main_window: "MainWindow"):
         super().__init__()
-        uic.loadUi(os.path.join(env.program_dir, "ManageTemplatesWindow.ui"), self)
+
+        self.setupUi(self)
 
         self._env = env
         self._main_window = main_window

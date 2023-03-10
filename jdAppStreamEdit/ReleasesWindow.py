@@ -1,13 +1,12 @@
 from .Functions import get_logical_table_row_list, clear_table_widget, stretch_table_widget_colums_size, select_combo_box_data, get_sender_table_row
 from PyQt6.QtWidgets import QDialog, QWidget, QPushButton, QTableWidgetItem
+from .ui_compiled.ReleasesWindow import Ui_ReleasesWindow
 from .DescriptionWidget import DescriptionWidget
 from PyQt6.QtCore import QCoreApplication, Qt
 from .ArtifactWindow import ArtifactWindow
 from typing import TYPE_CHECKING
 from lxml import etree
-from PyQt6 import uic
 import sys
-import os
 
 
 if TYPE_CHECKING:
@@ -15,10 +14,11 @@ if TYPE_CHECKING:
     from .Environment import Environment
 
 
-class ReleasesWindow(QDialog):
+class ReleasesWindow(QDialog, Ui_ReleasesWindow):
     def __init__(self, env: "Environment", releases_widget: "ReleasesWidget", parent_window: QWidget):
         super().__init__()
-        uic.loadUi(os.path.join(env.program_dir, "ReleasesWindow.ui"), self)
+
+        self.setupUi(self)
 
         self._releases_widget = releases_widget
         self._parent_window = parent_window

@@ -1,18 +1,24 @@
 from PyQt6.QtWidgets import QDialog, QMessageBox, QTableWidgetItem, QLineEdit
 from .Functions import is_url_valid, calculate_checksum_from_url
+from .ui_compiled.ArtifactWindow import Ui_ArtifactWindow
 from PyQt6.QtCore import QCoreApplication, Qt
-from typing import Optional
+from typing import Optional, TYPE_CHECKING
 from lxml import etree
-from PyQt6 import uic
 import requests
 import sys
 import os
 
 
-class ArtifactWindow(QDialog):
-    def __init__(self, env, releases_window):
+if TYPE_CHECKING:
+    from .ReleasesWindow import ReleasesWindow
+    from .Environment import Environment
+
+
+class ArtifactWindow(QDialog, Ui_ArtifactWindow):
+    def __init__(self, env: "Environment", releases_window: "ReleasesWindow"):
         super().__init__()
-        uic.loadUi(os.path.join(env.program_dir, "ArtifactWindow.ui"), self)
+
+        self.setupUi(self)
 
         self._releases_window = releases_window
 

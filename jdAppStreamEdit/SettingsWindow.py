@@ -1,8 +1,8 @@
+from .ui_compiled.SettingsWindow import Ui_SettingsWindow
 from PyQt6.QtCore import QCoreApplication, QLocale
 from .Functions import select_combo_box_data
 from PyQt6.QtWidgets import QDialog
 from typing import TYPE_CHECKING
-from PyQt6 import uic
 import os
 
 
@@ -11,10 +11,11 @@ if TYPE_CHECKING:
     from .MainWindow import MainWindow
 
 
-class SettingsWindow(QDialog):
+class SettingsWindow(QDialog, Ui_SettingsWindow):
     def __init__(self, env: "Environment", main_window: "MainWindow"):
         super().__init__()
-        uic.loadUi(os.path.join(env.program_dir, "SettingsWindow.ui"), self)
+
+        self.setupUi(self)
 
         self._env = env
         self._main_window = main_window

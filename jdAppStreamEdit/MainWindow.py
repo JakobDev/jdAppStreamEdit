@@ -2,7 +2,9 @@ from .Functions import clear_table_widget, stretch_table_widget_colums_size, lis
 from PyQt6.QtWidgets import QApplication, QCheckBox, QComboBox, QLineEdit, QListWidget, QMainWindow, QMessageBox, QDateEdit, QInputDialog, QPlainTextEdit, QPushButton, QTableWidget, QTableWidgetItem, QRadioButton, QFileDialog
 from PyQt6.QtGui import QAction,  QDragEnterEvent, QDropEvent, QCloseEvent
 from .ManageTemplatesWindow import ManageTemplatesWindow
+from .ui_compiled.MainWindow import Ui_MainWindow
 from .DescriptionWidget import DescriptionWidget
+from typing import List, Optional, TYPE_CHECKING
 from .ScreenshotWindow import ScreenshotWindow
 from PyQt6.QtCore import Qt, QCoreApplication
 from .RelationsWidget import RelationsWidget
@@ -13,9 +15,7 @@ from .AdvancedWidget import AdvancedWidget
 from .ViewXMLWindow import ViewXMLWindow
 from .AboutWindow import AboutWindow
 from .OarsWidget import OarsWidget
-from typing import List, Optional
 from lxml import etree
-from PyQt6 import uic
 import webbrowser
 import subprocess
 import requests
@@ -25,19 +25,23 @@ import os
 import io
 
 
-class MainWindow(QMainWindow):
-    def __init__(self, env):
-        super().__init__()
-        uic.loadUi(os.path.join(env.program_dir, "MainWindow.ui"), self)
+if TYPE_CHECKING:
+    from .Environment import Environment
 
+
+class MainWindow(QMainWindow, Ui_MainWindow):
+    def __init__(self, env: "Environment"):
+        super().__init__()
         self._env = env
+
+        self.setupUi(self)
 
         self._current_path = None
 
         self._settings_window = SettingsWindow(env, self)
         self._manage_templates_window = ManageTemplatesWindow(env, self)
         self._validate_window = ValidateWindow(env, self)
-        self._xml_window = ViewXMLWindow(env, self)
+        self._xml_window = ViewXMLWindow(self)
         self._screenshot_window = ScreenshotWindow(env, self)
         self._releases_widget = ReleasesWidget(env, self)
         self._about_window = AboutWindow(env)
@@ -47,13 +51,13 @@ class MainWindow(QMainWindow):
 
         self.releases_layout.replaceWidget(self.releases_widget_placeholder, self._releases_widget)
 
-        self._relations_widget = RelationsWidget(env, self)
+        self._relations_widget = RelationsWidget(self)
         self.relations_layout.addWidget(self._relations_widget)
 
-        self._oars_widget = OarsWidget(env, self)
+        self._oars_widget = OarsWidget(self)
         self.oras_layout.addWidget(self._oars_widget)
 
-        self._advanced_widget = AdvancedWidget(env, self)
+        self._advanced_widget = AdvancedWidget(self)
         self.advanced_layout.addWidget(self._advanced_widget)
 
         self.screenshot_list = []

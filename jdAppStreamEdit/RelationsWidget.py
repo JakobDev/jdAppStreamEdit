@@ -1,18 +1,22 @@
 from PyQt6.QtWidgets import QWidget, QComboBox, QLineEdit, QTableWidget, QTableWidgetItem, QPushButton, QHeaderView
 from .Functions import select_combo_box_data, is_string_number, get_logical_table_row_list, clear_table_widget
+from .ui_compiled.RelationsWidget import Ui_RelationsWidget
+from typing import Optional, List, TYPE_CHECKING
 from PyQt6.QtCore import QCoreApplication
 from PyQt6.QtGui import QIntValidator
-from typing import Optional, List
 from lxml import etree
-from PyQt6 import uic
 import sys
-import os
 
 
-class RelationsWidget(QWidget):
-    def __init__(self, env, main_window):
+if TYPE_CHECKING:
+    from .MainWindow import MainWindow
+
+
+class RelationsWidget(QWidget, Ui_RelationsWidget):
+    def __init__(self, main_window: "MainWindow"):
         super().__init__()
-        uic.loadUi(os.path.join(env.program_dir, "RelationsWidget.ui"), self)
+
+        self.setupUi(self)
 
         self._main_window = main_window
 

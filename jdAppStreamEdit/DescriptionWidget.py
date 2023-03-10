@@ -1,16 +1,20 @@
 from PyQt6.QtWidgets import QWidget, QTableWidgetItem, QPlainTextEdit, QPushButton, QListWidget, QListWidgetItem, QHeaderView, QInputDialog, QAbstractItemView, QHBoxLayout, QVBoxLayout
 from .Functions import clear_table_widget, get_logical_table_row_list
+from .ui_compiled.DescriptionWidget import Ui_DescriptionWidget
 from PyQt6.QtCore import Qt, QCoreApplication
-from typing import Dict, Optional
+from typing import Optional, TYPE_CHECKING
 from lxml import etree
-from PyQt6 import uic
 import copy
 import sys
-import os
+
+
+if TYPE_CHECKING:
+    from .Environment import Environment
+    from .MainWindow import MainWindow
 
 
 class ParagraphWidget(QWidget):
-    def __init__(self, env, description_widget, text: Optional[str] = None, translations: Optional[Dict[str, str]] = None):
+    def __init__(self, env: "Environment", description_widget: "DescriptionWidget", text: Optional[str] = None, translations: Optional[dict[str, str]] = None):
         super().__init__()
 
         self._env = env
@@ -53,7 +57,7 @@ class ParagraphWidget(QWidget):
 
 
 class ListWidget(QListWidget):
-    def __init__(self, env, description_widget, list_type: str, parent_tag: Optional[etree._Element] = None):
+    def __init__(self, env: "Environment", description_widget: "DescriptionWidget", list_type: str, parent_tag: Optional[etree._Element] = None):
         super().__init__()
 
         self._description_widget = description_widget
@@ -167,10 +171,11 @@ class ListWidget(QListWidget):
 
 
 
-class DescriptionWidget(QWidget):
-    def __init__(self, env, main_window = None):
+class DescriptionWidget(QWidget, Ui_DescriptionWidget):
+    def __init__(self, env: "Environment", main_window: Optional["MainWindow"] = None):
         super().__init__()
-        uic.loadUi(os.path.join(env.program_dir, "DescriptionWidget.ui"), self)
+
+        self.setupUi(self)
 
         self._env = env
         self._main_window = main_window
@@ -183,7 +188,7 @@ class DescriptionWidget(QWidget):
         self.ordered_list_add_button.clicked.connect(lambda: self._add_list("ol"))
         self.unordered_list_add_button.clicked.connect(lambda: self._add_list("ul"))
 
-    def _add_paragraph(self, text: Optional[str] = None, translations: Optional[Dict[str, str]] = None):
+    def _add_paragraph(self, text: Optional[str] = None, translations: Optional[dict[str, str]] = None):
         row = self.description_table.rowCount()
         self.description_table.insertRow(row)
 

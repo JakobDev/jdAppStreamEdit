@@ -1,18 +1,23 @@
+from .ui_compiled.ScreenshotWindow import Ui_ScreenshotWindow
 from PyQt6.QtWidgets import QDialog, QMessageBox
 from PyQt6.QtGui import QIntValidator, QPixmap
+from typing import Optional, TYPE_CHECKING
 from PyQt6.QtCore import QCoreApplication
 from .Functions import is_url_valid
-from typing import Optional
-from PyQt6 import uic
 import requests
 import copy
-import os
 
 
-class ScreenshotWindow(QDialog):
-    def __init__(self, env, main_window):
+if TYPE_CHECKING:
+    from .Environment import Environment
+    from .MainWindow import MainWindow
+
+
+class ScreenshotWindow(QDialog, Ui_ScreenshotWindow):
+    def __init__(self, env: "Environment", main_window: "MainWindow"):
         super().__init__()
-        uic.loadUi(os.path.join(env.program_dir, "ScreenshotWindow.ui"), self)
+
+        self.setupUi(self)
 
         self._main_window = main_window
 
