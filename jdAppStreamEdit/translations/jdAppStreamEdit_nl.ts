@@ -453,210 +453,210 @@
     <message>
         <location filename="..\ExternalReleasesWindow.py" line="137"/>
         <source>Welcome to the jdAppStreamEdit External Releases Editor!</source>
-        <translation type="unfinished"></translation>
+        <translation>Welkom in de jdAppStreamEdit-bewerker voor externe uitgaven!</translation>
     </message>
     <message>
         <location filename="..\ExternalReleasesWindow.py" line="138"/>
         <source>This Editor allows you to create and edit AppStream External Relases file (*.releases.xml)</source>
-        <translation type="unfinished"></translation>
+        <translation>Met deze bewerker kunt u externe uitgavebestanden van AppStream (*.releases.xml) bewerken</translation>
     </message>
     <message>
         <location filename="..\ExternalReleasesWindow.py" line="139"/>
         <source>It is part of jdAppStreamEdit</source>
-        <translation type="unfinished"></translation>
+        <translation>De bewerker is onderdeel van jdAppStreamEdit</translation>
     </message>
     <message>
         <location filename="..\ExternalReleasesWindow.py" line="140"/>
         <source>It is highly recommend to read the the AppStream Documentation before using this Program. You can open it under ?&gt;AppStream documentation.</source>
-        <translation type="unfinished">Wij raden ten zeerste aan de AppStream-documentatie door te nemen alvorens dit programma te gebruiken, te openen via ? → AppStream-documentatie.</translation>
+        <translation>Wij raden ten zeerste aan de AppStream-documentatie door te nemen alvorens dit programma te gebruiken, te openen via ? → AppStream-documentatie.</translation>
     </message>
     <message>
         <location filename="..\ExternalReleasesWindow.py" line="143"/>
         <source>Show this dialog at startup</source>
-        <translation type="unfinished">Venster tonen na elke opstart</translation>
+        <translation>Venster tonen na elke opstart</translation>
     </message>
     <message>
         <location filename="..\ExternalReleasesWindow.py" line="147"/>
         <source>Welcome</source>
-        <translation type="unfinished">Welkom</translation>
+        <translation>Welkom</translation>
     </message>
     <message>
         <location filename="..\ExternalReleasesWindow.py" line="203"/>
         <location filename="..\ExternalReleasesWindow.py" line="167"/>
         <source>AppStream Releases</source>
-        <translation type="unfinished"></translation>
+        <translation>AppStream-uitgaven</translation>
     </message>
     <message>
         <location filename="..\ExternalReleasesWindow.py" line="203"/>
         <location filename="..\ExternalReleasesWindow.py" line="167"/>
         <source>All Files</source>
-        <translation type="unfinished">Alle bestanden</translation>
+        <translation>Alle bestanden</translation>
     </message>
     <message>
         <location filename="..\ExternalReleasesWindow.py" line="187"/>
         <source>Enter URL</source>
-        <translation type="unfinished">Voer een url in</translation>
+        <translation>Voer een url in</translation>
     </message>
     <message>
         <location filename="..\ExternalReleasesWindow.py" line="187"/>
         <source>Please enter a URL</source>
-        <translation type="unfinished">Voer een url in</translation>
+        <translation>Voer een url in</translation>
     </message>
     <message>
         <location filename="..\ExternalReleasesWindow.py" line="224"/>
         <source>File not found</source>
-        <translation type="unfinished">Bestand niet aangetroffen</translation>
+        <translation>Bestand niet aangetroffen</translation>
     </message>
     <message>
         <location filename="..\ExternalReleasesWindow.py" line="224"/>
         <source>{{path}} does not exists</source>
-        <translation type="unfinished">{{path}} bestaat niet</translation>
+        <translation>{{path}} bestaat niet</translation>
     </message>
     <message>
         <location filename="..\ExternalReleasesWindow.py" line="227"/>
         <source>An error occurred while trying to open {{path}}</source>
-        <translation type="unfinished">Er is een fout opgetreden tijdens het openen van {{path}}</translation>
+        <translation>Er is een fout opgetreden tijdens het openen van {{path}}</translation>
     </message>
     <message>
         <location filename="..\ExternalReleasesWindow.py" line="239"/>
         <source>Invalid URL</source>
-        <translation type="unfinished">Ongeldige url</translation>
+        <translation>Ongeldige url</translation>
     </message>
     <message>
         <location filename="..\ExternalReleasesWindow.py" line="239"/>
         <source>{{url}} is not a valid http/https URL</source>
-        <translation type="unfinished">{{url}} is geen geldige http-/https-url</translation>
+        <translation>{{url}} is geen geldige http-/https-url</translation>
     </message>
     <message>
         <location filename="..\ExternalReleasesWindow.py" line="245"/>
         <source>Could not connect</source>
-        <translation type="unfinished">Kan geen verbinding maken</translation>
+        <translation>Kan geen verbinding maken</translation>
     </message>
     <message>
         <location filename="..\ExternalReleasesWindow.py" line="245"/>
         <source>Could not connect to {{url}}</source>
-        <translation type="unfinished">Er kan geen verbinding worden gemaakt met {{url}}</translation>
+        <translation>Er kan geen verbinding worden gemaakt met {{url}}</translation>
     </message>
     <message>
         <location filename="..\ExternalReleasesWindow.py" line="248"/>
         <source>An error occurred while trying to connect to {{url}}</source>
-        <translation type="unfinished">Er is een fout opgetreden tijdens het openen van {{url}}</translation>
+        <translation>Er is een fout opgetreden tijdens het openen van {{url}}</translation>
     </message>
     <message>
         <location filename="..\ExternalReleasesWindow.py" line="259"/>
         <source>XML parsing failed</source>
-        <translation type="unfinished">Xml-verwerking mislukt</translation>
+        <translation>Xml-verwerking mislukt</translation>
     </message>
     <message>
         <location filename="..\ExternalReleasesWindow.py" line="265"/>
         <source>No releases tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Geen uitgavetag</translation>
     </message>
     <message>
         <location filename="..\ExternalReleasesWindow.py" line="265"/>
         <source>This XML file has no releases tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Dit xml-bestand bevat geen uitgavetag</translation>
     </message>
     <message>
         <location filename="..\ui\ExternalReleasesWindow.ui" line="0"/>
         <source>File</source>
-        <translation type="unfinished">Bestand</translation>
+        <translation>Bestand</translation>
     </message>
     <message>
         <location filename="..\ui\ExternalReleasesWindow.ui" line="0"/>
         <source>Open recent</source>
-        <translation type="unfinished">Onlangs geopend</translation>
+        <translation>Onlangs geopend</translation>
     </message>
     <message>
         <location filename="..\ui\ExternalReleasesWindow.ui" line="0"/>
         <location filename="..\ui\ExternalReleasesWindow.ui" line="0"/>
         <source>Settings</source>
-        <translation type="unfinished">Instellingen</translation>
+        <translation>Instellingen</translation>
     </message>
     <message>
         <location filename="..\ui\ExternalReleasesWindow.ui" line="0"/>
         <source>Tools</source>
-        <translation type="unfinished">Hulpmiddelen</translation>
+        <translation>Hulpmiddelen</translation>
     </message>
     <message>
         <location filename="..\ui\ExternalReleasesWindow.ui" line="0"/>
         <source>?</source>
-        <translation type="unfinished">?</translation>
+        <translation>?</translation>
     </message>
     <message>
         <location filename="..\ui\ExternalReleasesWindow.ui" line="0"/>
         <source>New</source>
-        <translation type="unfinished">Nieuw</translation>
+        <translation>Nieuw</translation>
     </message>
     <message>
         <location filename="..\ui\ExternalReleasesWindow.ui" line="0"/>
         <source>Open</source>
-        <translation type="unfinished">Openen</translation>
+        <translation>Openen</translation>
     </message>
     <message>
         <location filename="..\ui\ExternalReleasesWindow.ui" line="0"/>
         <source>Open from URL</source>
-        <translation type="unfinished">Laden uit url</translation>
+        <translation>Laden uit url</translation>
     </message>
     <message>
         <location filename="..\ui\ExternalReleasesWindow.ui" line="0"/>
         <source>Save</source>
-        <translation type="unfinished">Opslaan</translation>
+        <translation>Opslaan</translation>
     </message>
     <message>
         <location filename="..\ui\ExternalReleasesWindow.ui" line="0"/>
         <source>Save As...</source>
-        <translation type="unfinished">Opslaan als…</translation>
+        <translation>Opslaan als…</translation>
     </message>
     <message>
         <location filename="..\ui\ExternalReleasesWindow.ui" line="0"/>
         <source>Exit</source>
-        <translation type="unfinished">Afsluiten</translation>
+        <translation>Afsluiten</translation>
     </message>
     <message>
         <location filename="..\ui\ExternalReleasesWindow.ui" line="0"/>
         <source>View XML</source>
-        <translation type="unfinished">Xml-opmaak bekijken</translation>
+        <translation>Xml-opmaak bekijken</translation>
     </message>
     <message>
         <location filename="..\ui\ExternalReleasesWindow.ui" line="0"/>
         <source>About</source>
-        <translation type="unfinished">Over</translation>
+        <translation>Over</translation>
     </message>
     <message>
         <location filename="..\ui\ExternalReleasesWindow.ui" line="0"/>
         <source>About Qt</source>
-        <translation type="unfinished">Over Qt</translation>
+        <translation>Over Qt</translation>
     </message>
     <message>
         <location filename="..\ui\ExternalReleasesWindow.ui" line="0"/>
         <source>Show welcome dialog</source>
-        <translation type="unfinished">Welkomstvenster tonen</translation>
+        <translation>Welkomstvenster tonen</translation>
     </message>
     <message>
         <location filename="..\ui\ExternalReleasesWindow.ui" line="0"/>
         <source>AppStream documentation</source>
-        <translation type="unfinished">AppStream-documentatie</translation>
+        <translation>AppStream-documentatie</translation>
     </message>
     <message>
         <location filename="..\ui\ExternalReleasesWindow.ui" line="0"/>
         <source>View Source</source>
-        <translation type="unfinished"></translation>
+        <translation>Broncode bekijken</translation>
     </message>
     <message>
         <location filename="..\ui\ExternalReleasesWindow.ui" line="0"/>
         <source>Report Bug</source>
-        <translation type="unfinished"></translation>
+        <translation>Bug melden</translation>
     </message>
     <message>
         <location filename="..\ui\ExternalReleasesWindow.ui" line="0"/>
         <source>Translate</source>
-        <translation type="unfinished">Vertalen</translation>
+        <translation>Vertalen</translation>
     </message>
     <message>
         <location filename="..\ui\ExternalReleasesWindow.ui" line="0"/>
         <source>Donate</source>
-        <translation type="unfinished"></translation>
+        <translation>Doneren</translation>
     </message>
 </context>
 <context>
@@ -664,17 +664,17 @@
     <message>
         <location filename="..\SettingsWindow.py" line="16"/>
         <source>Englisch</source>
-        <translation type="unfinished"></translation>
+        <translation>Engels</translation>
     </message>
     <message>
         <location filename="..\SettingsWindow.py" line="17"/>
         <source>German</source>
-        <translation type="unfinished"></translation>
+        <translation>Duits</translation>
     </message>
     <message>
         <location filename="..\SettingsWindow.py" line="18"/>
         <source>Dutch</source>
-        <translation type="unfinished"></translation>
+        <translation>Nederlands</translation>
     </message>
 </context>
 <context>
@@ -794,12 +794,12 @@
     <message>
         <location filename="..\MainWindow.py" line="278"/>
         <source>Welcome to jdAppStreamEdit!</source>
-        <translation type="unfinished"></translation>
+        <translation>Welkom in jdAppStreamEdit!</translation>
     </message>
     <message>
         <location filename="..\MainWindow.py" line="279"/>
         <source>With jdAppStreamEdit you can create and edit AppStream files (*.metainfo.xml or .appdata.xml). This files are to provide data for your Application (Description, Screenshots etc.) to Software Centers.</source>
-        <translation type="unfinished"></translation>
+        <translation>Met jdAppStreamEdit kunt u AppStream-bestanden (*.metainfo.xml of .appdata.xml) maken en bewerken. Deze bestanden bieden gegevens voor uw programma (omschrijving, schermfoto&apos;s, etc.) voor gebruik in softwarecentra.</translation>
     </message>
     <message>
         <location filename="..\MainWindow.py" line="280"/>
@@ -846,12 +846,12 @@
     <message>
         <location filename="..\MainWindow.py" line="325"/>
         <source>Could not read file</source>
-        <translation type="unfinished"></translation>
+        <translation>Het bestand kan niet worden ingelezen</translation>
     </message>
     <message>
         <location filename="..\MainWindow.py" line="325"/>
         <source>Could not read {{path}}. Make sure it is a valid desktop entry and you have the Permission to read it.</source>
-        <translation type="unfinished"></translation>
+        <translation>{{path}} kan niet worden ingelezen. Zorg er voor dat het een geldig .desktop-bestand is en dat u over de juiste rechten beschikt.</translation>
     </message>
     <message>
         <location filename="..\MainWindow.py" line="410"/>
@@ -1148,12 +1148,12 @@
     <message>
         <location filename="..\ui\MainWindow.ui" line="0"/>
         <source>End of life date::</source>
-        <translation type="unfinished"></translation>
+        <translation>Vervaldatum:</translation>
     </message>
     <message>
         <location filename="..\ui\MainWindow.ui" line="0"/>
         <source>Set a End of life date</source>
-        <translation type="unfinished"></translation>
+        <translation>Vervaldatum instellen</translation>
     </message>
     <message>
         <location filename="..\ui\MainWindow.ui" line="0"/>
@@ -1196,17 +1196,17 @@
     <message>
         <location filename="..\ui\MainWindow.ui" line="0"/>
         <source>Internal</source>
-        <translation type="unfinished"></translation>
+        <translation>Intern</translation>
     </message>
     <message>
         <location filename="..\ui\MainWindow.ui" line="0"/>
         <source>External</source>
-        <translation type="unfinished"></translation>
+        <translation>Extern</translation>
     </message>
     <message>
         <location filename="..\ui\MainWindow.ui" line="0"/>
         <source>URL:</source>
-        <translation type="unfinished">Url:</translation>
+        <translation>Url:</translation>
     </message>
     <message>
         <location filename="..\ui\MainWindow.ui" line="0"/>
@@ -1522,17 +1522,17 @@
     <message>
         <location filename="..\ui\MainWindow.ui" line="0"/>
         <source>View Source</source>
-        <translation type="unfinished"></translation>
+        <translation>Broncode bekijken</translation>
     </message>
     <message>
         <location filename="..\ui\MainWindow.ui" line="0"/>
         <source>Report Bug</source>
-        <translation type="unfinished"></translation>
+        <translation>Bug melden</translation>
     </message>
     <message>
         <location filename="..\ui\MainWindow.ui" line="0"/>
         <source>Donate</source>
-        <translation type="unfinished"></translation>
+        <translation>Doneren</translation>
     </message>
 </context>
 <context>
@@ -2599,7 +2599,7 @@
     <message>
         <location filename="..\ReleaseImporter.py" line="123"/>
         <source>Please Enter the URL to the Git Repo. It is the URL you would use with git clone.</source>
-        <translation type="unfinished"></translation>
+        <translation>Voer de url van de git-repo in. Dit is de url die u normaliter zou gebruiken in combinatie met git clone.</translation>
     </message>
     <message>
         <location filename="..\ReleaseImporter.py" line="133"/>
@@ -2657,84 +2657,84 @@
     <message>
         <location filename="..\ReleasesWidget.py" line="70"/>
         <source>Stable</source>
-        <translation type="unfinished">Stabiel</translation>
+        <translation>Stabiel</translation>
     </message>
     <message>
         <location filename="..\ReleasesWidget.py" line="71"/>
         <source>Development</source>
-        <translation type="unfinished">In ontwikkeling</translation>
+        <translation>In ontwikkeling</translation>
     </message>
     <message>
         <location filename="..\ui\ReleasesWidget.ui" line="0"/>
         <location filename="..\ReleasesWidget.py" line="77"/>
         <source>Edit</source>
-        <translation type="unfinished">Bewerken</translation>
+        <translation>Bewerken</translation>
     </message>
     <message>
         <location filename="..\ui\ReleasesWidget.ui" line="0"/>
         <location filename="..\ReleasesWidget.py" line="81"/>
         <source>Remove</source>
-        <translation type="unfinished">Verwijderen</translation>
+        <translation>Verwijderen</translation>
     </message>
     <message>
         <location filename="..\ReleasesWidget.py" line="103"/>
         <source>packaging not found</source>
-        <translation type="unfinished">er is geen pakket aangetroffen</translation>
+        <translation>er is geen pakket aangetroffen</translation>
     </message>
     <message>
         <location filename="..\ReleasesWidget.py" line="103"/>
         <source>This function needs the packaging python module to work</source>
-        <translation type="unfinished">Voor deze functie is de packaging-pythonmodule vereist</translation>
+        <translation>Voor deze functie is de packaging-pythonmodule vereist</translation>
     </message>
     <message>
         <location filename="..\ReleasesWidget.py" line="118"/>
         <source>Could not parse version</source>
-        <translation type="unfinished">Het versienummer kan niet worden verwerkt</translation>
+        <translation>Het versienummer kan niet worden verwerkt</translation>
     </message>
     <message>
         <location filename="..\ReleasesWidget.py" line="118"/>
         <source>Could not parse version {{version}}</source>
-        <translation type="unfinished"></translation>
+        <translation>{{version}} kan niet worden verwerkt</translation>
     </message>
     <message>
         <location filename="..\ReleasesWidget.py" line="145"/>
         <source>Overwrite everything</source>
-        <translation type="unfinished"></translation>
+        <translation>Alles overschrijven</translation>
     </message>
     <message>
         <location filename="..\ReleasesWidget.py" line="145"/>
         <source>If you proceed, all your chnages in the release tab will be overwritten. Continue?</source>
-        <translation type="unfinished">Als u doorgaat, dan worden alle wijzigingen op dit tabblad verworpen. Weet u het zeker?</translation>
+        <translation>Als u doorgaat, dan worden alle wijzigingen op dit tabblad verworpen. Weet u het zeker?</translation>
     </message>
     <message>
         <location filename="..\ui\ReleasesWidget.ui" line="0"/>
         <source>Version</source>
-        <translation type="unfinished">Versie</translation>
+        <translation>Versie</translation>
     </message>
     <message>
         <location filename="..\ui\ReleasesWidget.ui" line="0"/>
         <source>Date</source>
-        <translation type="unfinished">Datum</translation>
+        <translation>Datum</translation>
     </message>
     <message>
         <location filename="..\ui\ReleasesWidget.ui" line="0"/>
         <source>Type</source>
-        <translation type="unfinished">Type</translation>
+        <translation>Type</translation>
     </message>
     <message>
         <location filename="..\ui\ReleasesWidget.ui" line="0"/>
         <source>Add</source>
-        <translation type="unfinished">Toevoegen</translation>
+        <translation>Toevoegen</translation>
     </message>
     <message>
         <location filename="..\ui\ReleasesWidget.ui" line="0"/>
         <source>Sort</source>
-        <translation type="unfinished">Sorteren</translation>
+        <translation>Sorteren</translation>
     </message>
     <message>
         <location filename="..\ui\ReleasesWidget.ui" line="0"/>
         <source>Import</source>
-        <translation type="unfinished">Importeren</translation>
+        <translation>Importeren</translation>
     </message>
 </context>
 <context>
@@ -2985,7 +2985,7 @@
     <message>
         <location filename="..\ui\SettingsWindow.ui" line="0"/>
         <source>General</source>
-        <translation type="unfinished">Algemeen</translation>
+        <translation>Algemeen</translation>
     </message>
     <message>
         <location filename="..\ui\SettingsWindow.ui" line="0"/>
@@ -3020,22 +3020,22 @@
     <message>
         <location filename="..\ui\SettingsWindow.ui" line="0"/>
         <source>Save</source>
-        <translation type="unfinished">Opslaan</translation>
+        <translation>Opslaan</translation>
     </message>
     <message>
         <location filename="..\ui\SettingsWindow.ui" line="0"/>
         <source>Use settings from .editorconfig if available</source>
-        <translation type="unfinished"></translation>
+        <translation>Instellingen uit .editorconfig gebruiken (indien beschikbaar)</translation>
     </message>
     <message>
         <location filename="..\ui\SettingsWindow.ui" line="0"/>
         <source>Whitespaces:</source>
-        <translation type="unfinished"></translation>
+        <translation>Witruimten:</translation>
     </message>
     <message>
         <location filename="..\ui\SettingsWindow.ui" line="0"/>
         <source>Use tabs instead of spaces</source>
-        <translation type="unfinished"></translation>
+        <translation>Tabs in plaats van spaties gebruiken</translation>
     </message>
     <message>
         <location filename="..\ui\SettingsWindow.ui" line="0"/>
@@ -3205,12 +3205,12 @@
     <message>
         <location filename="..\ui\ViewXMLWindow.ui" line="0"/>
         <source>Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopiëren</translation>
     </message>
     <message>
         <location filename="..\ui\ViewXMLWindow.ui" line="0"/>
         <source>Close</source>
-        <translation type="unfinished">Sluiten</translation>
+        <translation>Sluiten</translation>
     </message>
 </context>
 </TS>
