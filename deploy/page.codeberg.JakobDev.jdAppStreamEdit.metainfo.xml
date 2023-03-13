@@ -75,8 +75,10 @@
       <description>
         <ul>
           <li>Rename to jdAppStreamEdit</li>
+          <li>Move Project to Codeberg</li>
           <li>Add Support for External Releases</li>
           <li>Add Support for EOL Date</li>
+          <li>Add Settings how to write File</li>
         </ul>
       </description>
     </release>
