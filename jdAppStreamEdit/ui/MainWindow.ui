@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string notr="true">jdAppdataEdit</string>
+   <string notr="true">jdAppStreamEdit</string>
   </property>
   <property name="documentMode">
    <bool>false</bool>

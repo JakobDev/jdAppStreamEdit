@@ -28,14 +28,15 @@ class SettingsWindow(QDialog, Ui_SettingsWindow):
         self._env = env
         self._main_window = main_window
 
-        self.language_box.addItem(QCoreApplication.translate("SettingsWindow", "System language"), "default")
-        lannguage_names = get_language_names()
         translations_found = False
+        language_names = get_language_names()
+        self.language_box.addItem(QCoreApplication.translate("SettingsWindow", "System language"), "default")
+        self.language_box.addItem(language_names["en"], "en")
         if os.path.isdir(os.path.join(env.program_dir, "translations")):
             for i in os.listdir(os.path.join(env.program_dir, "translations")):
                 if i.endswith(".qm"):
                     lang = i.removeprefix("jdAppStreamEdit_").removesuffix(".qm")
-                    self.language_box.addItem(lannguage_names.get(lang, lang), lang)
+                    self.language_box.addItem(language_names.get(lang, lang), lang)
                     translations_found = True
 
         if not translations_found:
