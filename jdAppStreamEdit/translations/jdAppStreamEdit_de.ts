@@ -153,7 +153,7 @@
     <message>
         <location filename="../ui/AdvancedWidget.ui" line="0"/>
         <source>You can edit the tags here. For more information take a look at the documentation.</source>
-        <translation>Du kannst hier die Tags bearbeiten.  Für mehr Informationen wirf einen Blick in die Dokumentation.</translation>
+        <translation>Du kannst hier die Tags bearbeiten. Für mehr Informationen wirf einen Blick in die Dokumentation.</translation>
     </message>
     <message>
         <location filename="../ui/AdvancedWidget.ui" line="0"/>
@@ -1684,7 +1684,7 @@
     <message>
         <location filename="../OarsWidget.py" line="49"/>
         <source>Moderate: Realistic characters in depictions of aggressive conflict</source>
-        <translation>Moderat: Realistische Charaktere  in aggressivem Konflikt</translation>
+        <translation>Moderat: Realistische Charaktere in aggressivem Konflikt</translation>
     </message>
     <message>
         <location filename="../OarsWidget.py" line="50"/>
@@ -2268,7 +2268,7 @@
     <message>
         <location filename="../ui/OarsWidget.ui" line="0"/>
         <source>For example, this would include uploading the GPS co-ordinates of your current location. NOTE: This does not include heuristic based location services, e.g. GeoIP and others.</source>
-        <translation>Dazu gehört zum Beispiel das Hochladen der GPS-Koordinaten des  aktuellen Standorts. HINWEIS: Dies gilt nicht für heuristisch basierte Standortdienste wie z. B. GeoIP.</translation>
+        <translation>Dazu gehört zum Beispiel das Hochladen der GPS-Koordinaten des aktuellen Standorts. HINWEIS: Dies gilt nicht für heuristisch basierte Standortdienste wie z. B. GeoIP.</translation>
     </message>
 </context>
 <context>
@@ -2282,7 +2282,7 @@
     <message>
         <location filename="../RelationsWidget.py" line="29"/>
         <source>Very small screens e.g. wearables</source>
-        <translation>Sehr kleine Bildschirme z.B.  Wearables</translation>
+        <translation>Sehr kleine Bildschirme z.B. Wearables</translation>
     </message>
     <message>
         <location filename="../RelationsWidget.py" line="30"/>
@@ -2488,7 +2488,7 @@
     <message>
         <location filename="../ui/RelationsWidget.ui" line="0"/>
         <source>Check for specific hardware to be present via its modalias. The modalias may contain a wildcard expression.</source>
-        <translation>Prüfung auf Hardware mithilfe des  modalias. Der modalias kann einen Platzhalterausdruck enthalten.</translation>
+        <translation>Prüfung auf Hardware mithilfe des modalias. Der modalias kann einen Platzhalterausdruck enthalten.</translation>
     </message>
     <message>
         <location filename="../ui/RelationsWidget.ui" line="0"/>
