@@ -200,7 +200,7 @@ class ExternalReleasesWindow(QMainWindow, Ui_ExternalReleasesWindow):
         self.update_window_title()
 
     def _save_as_clicked(self):
-        filter = QCoreApplication.translate("ExternalReleasesWindow", "AppStream Releases") + " (*.releases.xml);;" +   QCoreApplication.translate("ExternalReleasesWindow", "All Files") + " (*)"
+        filter = QCoreApplication.translate("ExternalReleasesWindow", "AppStream Releases") + " (*.releases.xml *..releases.xml.in);;" +   QCoreApplication.translate("ExternalReleasesWindow", "All Files") + " (*)"
         path = QFileDialog.getSaveFileName(self, filter=filter)[0]
 
         if path == "":
