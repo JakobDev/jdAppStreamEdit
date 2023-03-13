@@ -5,6 +5,8 @@
         <comment>Freedesktop AppStream</comment>
         <sub-class-of type="application/xml"/>
         <glob pattern="*.metainfo.xml"/>
+        <glob pattern="*.metainfo.xml.in"/>
         <glob pattern="*.appdata.xml"/>
+        <glob pattern="*.appdata.xml.in"/>
     </mime-type>
 </mime-info>

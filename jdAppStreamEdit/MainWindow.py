@@ -372,7 +372,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def _open_menu_action_clicked(self):
         if not self._ask_for_save():
             return
-        filter = QCoreApplication.translate("MainWindow", "AppStream Files") + " (*.metainfo.xml *.appdata.xml);;" +   QCoreApplication.translate("MainWindow", "All Files") + " (*)"
+        filter = QCoreApplication.translate("MainWindow", "AppStream Files") + " (*.metainfo.xml *.metainfo.xml.in *.appdata.xml *.appdata.xml.in);;" +   QCoreApplication.translate("MainWindow", "All Files") + " (*)"
         path = QFileDialog.getOpenFileName(self, filter=filter)
         if path[0] == "":
             return
