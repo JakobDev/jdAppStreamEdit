@@ -36,6 +36,7 @@
       <li>You can use a existing .desktop file as template</li>
       <li xml:lang="de">Du kannst eine existierende .desktop Datei als Vorlage benutzen</li>
       <li xml:lang="nl">U kunt een bestaand .desktopbestand gebruiken als sjabloon</li>
+      <li>Supports External Releases</li>
     </ul>
   </description>
   <screenshots>
@@ -69,6 +70,16 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="6.0" date="2023-03-13" type="stable">
+      <url>https://codeberg.org/JakobDev/jdAppStreamEdit/releases/tag/6.0</url>
+      <description>
+        <ul>
+          <li>Rename to jdAppStreamEdit</li>
+          <li>Add Support for External Releases</li>
+          <li>Add Support for EOL Date</li>
+        </ul>
+      </description>
+    </release>
     <release version="5.1" date="2022-09-23" type="stable">
       <description>
         <ul>
