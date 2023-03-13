@@ -118,9 +118,9 @@ def is_flatpak() -> bool:
 
 def get_shared_temp_dir() -> str:
     if is_flatpak():
-        return os.path.join(os.getenv("XDG_CACHE_HOME"), "jdAppdataEdit")
+        return os.path.join(os.getenv("XDG_CACHE_HOME"), "jdAppStreamEdit")
     else:
-        return os.path.join(tempfile.gettempdir(), "jdAppdataEdit")
+        return os.path.join(tempfile.gettempdir(), "jdAppStreamEdit")
 
 
 def get_sender_table_row(table: QTableWidget, column: int, sender: QObject) -> int:
