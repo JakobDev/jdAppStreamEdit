@@ -1,6 +1,6 @@
 from PyQt6.QtCore import QTranslator, QLocale, QLibraryInfo
-from .TranslateWindow import TranslateWindow
 from PyQt6.QtWidgets import QApplication
+from .Environment import Environment
 from .Functions import is_url_valid
 from typing import Literal
 import argparse
@@ -12,8 +12,6 @@ def _internal_main(app_name: Literal["jdAppStreamEdit", "ExternalReleases"]):
     if not os.path.isdir(os.path.join(os.path.dirname(__file__), "ui_compiled")):
         print("Could not find compiled ui files. Please run tools/CompileUI.py first.", file=sys.stderr)
         return
-
-    from .Environment import Environment
 
     app = QApplication(sys.argv)
     env = Environment()
@@ -46,6 +44,7 @@ def _internal_main(app_name: Literal["jdAppStreamEdit", "ExternalReleases"]):
     app.installTranslator(app_translator)
     app.installTranslator(qt_translator)
 
+    from .TranslateWindow import TranslateWindow
     env.translate_window = TranslateWindow(env)
 
     if app_name == "jdAppStreamEdit":
