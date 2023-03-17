@@ -3,8 +3,6 @@
 Type=Application
 Name=jdAppStreamEdit External Releases Editor
 Comment=A graphical Program to create and edit AppStream Releases files
-Comment[de]=Ein grafisches Programm zum erstellen und bearbeiten von AppStream Releases Dateien
-Comment[nl]=Een grafisch programma voor het aanmaken en bewerken van AppStream-Releases bestanden
 Icon=page.codeberg.JakobDev.jdAppStreamEdit
 TryExec=jdappstreamedit-external-releases-editor
 Exec=jdappstreamedit-external-releases-editor %f

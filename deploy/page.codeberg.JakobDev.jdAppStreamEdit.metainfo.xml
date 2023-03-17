@@ -4,38 +4,20 @@
   <id>page.codeberg.JakobDev.jdAppStreamEdit</id>
   <name>jdAppStreamEdit</name>
   <summary>A graphical Program to create and edit AppStream files</summary>
-  <summary xml:lang="de">Ein grafisches Programm zum erstellen und bearbeiten von AppStream Dateien</summary>
-  <summary xml:lang="nl">Een grafisch programma voor het aanmaken en bewerken van AppStream-bestanden</summary>
   <developer_name>JakobDev</developer_name>
   <launchable type="desktop-id">page.codeberg.JakobDev.jdAppStreamEdit.desktop</launchable>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0</project_license>
   <description>
     <p>jdAppStreamEdit (previously known as jdAppdataEdit) allows you to easily create and edit AppStream (.appdata.xml or .metainfo.xml) files for your Application.</p>
-    <p xml:lang="de">jdAppStreamEdit (zuvor bekannt als jdAppdataEdit) bietet eine einfache Möglichkeit zum erstellen und bearbeiten von AppStream (.appdata.xml oder .metainfo.xml) Dateien.</p>
-    <p xml:lang="nl">Met jdAppStreamEdit kunt op eenvoudige wijze AppStream-bestanden (.appdata.xml of .metainfo.xml) aanmaken en bewerken.</p>
     <p>Features:</p>
-    <p xml:lang="de">Features</p>
-    <p xml:lang="nl">Kenmerken</p>
     <ul>
       <li>Easy to use</li>
-      <li xml:lang="de">Einfach zu benutzen</li>
-      <li xml:lang="nl">Eenvoudig in het gebruik</li>
       <li>Full support for the Open Age Rating System (OARS)</li>
-      <li xml:lang="de">Vollständiger Support für das Open Age Rating System (OARS)</li>
-      <li xml:lang="nl">Volledige ondersteuning voor het Open Age Rating System (OARS)</li>
       <li>The AppStream files are fully translatable</li>
-      <li xml:lang="de">Die AppStream Dateien sind vollständig übersetzbar</li>
-      <li xml:lang="nl">De Appstream-bestanden zijn volledig vertaalbaar</li>
       <li>Releases can be imported from GitHub, GitLab, Gitea, Git Repos and NEWS files</li>
-      <li xml:lang="de">Releases können von GitHub, GitLab, Gitea, Git Repos und NEWS Dateien importiert werden</li>
-      <li xml:lang="nl">Uitgaven kunnen van GitHub en GitLab worden geïmporteerd</li>
       <li>You can view a preview in Gnome Software</li>
-      <li xml:lang="de">Du kannst dir eine Vorschau in Gnome Software anzeigen lassen</li>
-      <li xml:lang="nl">Het resultaat kan worden voorvertoond in Gnome Software</li>
       <li>You can use a existing .desktop file as template</li>
-      <li xml:lang="de">Du kannst eine existierende .desktop Datei als Vorlage benutzen</li>
-      <li xml:lang="nl">U kunt een bestaand .desktopbestand gebruiken als sjabloon</li>
       <li>Supports External Releases</li>
     </ul>
   </description>
@@ -65,7 +47,7 @@
       <image type="source">https://codeberg.org/JakobDev/jdAppStreamEdit/raw/tag/6.0/screenshots/ControlTab.png</image>
     </screenshot>
     <screenshot>
-      <caption>The Oars Tab</caption>
+      <caption>The OARS Tab</caption>
       <image type="source">https://codeberg.org/JakobDev/jdAppStreamEdit/raw/tag/6.0/screenshots/OarsTab.png</image>
     </screenshot>
   </screenshots>

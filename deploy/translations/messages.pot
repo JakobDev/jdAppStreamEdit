@@ -1,0 +1,76 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-03-17 10:06+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "A graphical Program to create and edit AppStream files"
+msgstr ""
+
+msgid ""
+"jdAppStreamEdit (previously known as jdAppdataEdit) allows you to easily "
+"create and edit AppStream (.appdata.xml or .metainfo.xml) files for your "
+"Application."
+msgstr ""
+
+msgid "Features:"
+msgstr ""
+
+msgid "Easy to use"
+msgstr ""
+
+msgid "Full support for the Open Age Rating System (OARS)"
+msgstr ""
+
+msgid "The AppStream files are fully translatable"
+msgstr ""
+
+msgid ""
+"Releases can be imported from GitHub, GitLab, Gitea, Git Repos and NEWS files"
+msgstr ""
+
+msgid "You can view a preview in Gnome Software"
+msgstr ""
+
+msgid "You can use a existing .desktop file as template"
+msgstr ""
+
+msgid "Supports External Releases"
+msgstr ""
+
+msgid "The General Tab"
+msgstr ""
+
+msgid "The Description Tab"
+msgstr ""
+
+msgid "The Screenshots Tab"
+msgstr ""
+
+msgid "The Releases Tab"
+msgstr ""
+
+msgid "The Links Tab"
+msgstr ""
+
+msgid "The Control Tab"
+msgstr ""
+
+msgid "The OARS Tab"
+msgstr ""
+
+msgid "A graphical Program to create and edit AppStream Releases files"
+msgstr ""
