@@ -2,6 +2,7 @@ from .Functions import clear_table_widget, stretch_table_widget_colums_size, lis
 from PyQt6.QtWidgets import QApplication, QCheckBox, QComboBox, QLineEdit, QListWidget, QMainWindow, QMessageBox, QDateEdit, QInputDialog, QPlainTextEdit, QPushButton, QTableWidget, QTableWidgetItem, QRadioButton, QFileDialog
 from PyQt6.QtGui import QAction,  QDragEnterEvent, QDropEvent, QCloseEvent
 from .ManageTemplatesWindow import ManageTemplatesWindow
+from .Types import ScreenshotDict, ScreenshotDictImage
 from PyQt6.QtCore import Qt, QCoreApplication, QDate
 from .ui_compiled.MainWindow import Ui_MainWindow
 from .DescriptionWidget import DescriptionWidget
@@ -15,6 +16,7 @@ from .AdvancedWidget import AdvancedWidget
 from .ViewXMLWindow import ViewXMLWindow
 from .AboutWindow import AboutWindow
 from .OarsWidget import OarsWidget
+from .Constants import XML_LANG
 from lxml import etree
 import webbrowser
 import subprocess
@@ -61,7 +63,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self._advanced_widget = AdvancedWidget(self)
         self.advanced_layout.addWidget(self._advanced_widget)
 
-        self.screenshot_list = []
+        self.screenshot_list: list[ScreenshotDict] = []
 
         self._url_list = []
         self._control_type_list = []
@@ -438,12 +440,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     # Screenshots
 
-    def update_sceenshot_table(self):
+    def update_screenshot_table(self):
         clear_table_widget(self.screenshot_table)
         for row, i in enumerate(self.screenshot_list):
             self.screenshot_table.insertRow(row)
 
-            url_item = QTableWidgetItem(i["url"])
+            url_item = QTableWidgetItem(i["source_url"])
             url_item.setFlags(url_item.flags() ^ Qt.ItemFlag.ItemIsEditable)
             self.screenshot_table.setItem(row, 0, url_item)
 
@@ -489,7 +491,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 del self.screenshot_list[i]
                 if default and len(self.screenshot_list) != 0:
                     self.screenshot_list[0]["default"] = True
-                self.update_sceenshot_table()
+                self.update_screenshot_table()
                 self.set_file_edited()
                 return
 
@@ -506,7 +508,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             del self.screenshot_list[old_visual_index]
         else:
             del self.screenshot_list[old_visual_index + 1]
-        self.update_sceenshot_table()
+        self.update_screenshot_table()
 
     # Releases
 
@@ -715,39 +717,36 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def _parse_screenshots_tag(self, screenshots_tag: etree._Element):
         for i in screenshots_tag.getchildren():
-            new_dict = {}
-            new_dict["caption_translations"] = {}
+            new_dict: ScreenshotDict = {
+                "default": i.get("type") == "default",
+                "caption": None,
+                "caption_translations": {},
+                "images": []
+            }
 
-            if i.get("type") == "default":
-                new_dict["default"] = True
-            else:
-                new_dict["default"] = False
+            for image_tag in i.findall("image"):
+                image: ScreenshotDictImage = {
+                    "url": image_tag.text,
+                    "type": image_tag.get("type", "source"),
+                    "language": image_tag.get(XML_LANG),
+                    "width": image_tag.get("width"),
+                    "height": image_tag.get("height")
+                }
 
-            if len(i.getchildren()) == 0:
-                new_dict["type"] = "source"
-                new_dict["url"] = i.text
-                self.screenshot_list.append(new_dict)
-                continue
+                if image["type"] == "source" and image["language"] is None:
+                    new_dict["source_url"] = image["url"]
 
-            image_tag = i.find("image")
-            new_dict["url"] = image_tag.text
+                new_dict["images"].append(image)
 
-            width = image_tag.get("width")
-            if width is not None:
-                new_dict["width"] = int(width)
-            height = image_tag.get("height")
-            if height is not None:
-                new_dict["height"] = int(height)
-
-            for caption in i.findall("caption"):
-                if caption.get("{http://www.w3.org/XML/1998/namespace}lang") is None:
-                    new_dict["caption"] = caption.text
+            for caption_tag in i.findall("caption"):
+                if caption_tag.get(XML_LANG) is None:
+                    new_dict["caption"] = caption_tag.text
                 else:
-                    new_dict["caption_translations"][caption.get("{http://www.w3.org/XML/1998/namespace}lang")] = caption.text
+                    new_dict["caption_translations"][caption_tag.get(XML_LANG)] = caption_tag.text
 
             self.screenshot_list.append(new_dict)
 
-        self.update_sceenshot_table()
+        self.update_screenshot_table()
 
     def load_xml(self, xml_data: bytes) -> bool:
         xml_data = xml_data.replace(b"<code>", b"&lt;code&gt;")
@@ -894,6 +893,36 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     # Write
 
+    def _get_screenshot_tag(self, screenshot: ScreenshotDict) -> etree.Element:
+        screenshot_tag = etree.Element("screenshot")
+
+        if screenshot["caption"] is not None:
+            caption_tag = etree.SubElement(screenshot_tag, "caption")
+            caption_tag.text = screenshot["caption"]
+
+        if screenshot["caption_translations"] is not None:
+            for key, value in screenshot["caption_translations"].items():
+                caption_trans_tag = etree.SubElement(screenshot_tag, "caption")
+                caption_trans_tag.set("{http://www.w3.org/XML/1998/namespace}lang", key)
+                caption_trans_tag.text = value
+
+        for image in screenshot["images"]:
+            image_tag = etree.SubElement(screenshot_tag, "image")
+            image_tag.set("type", image["type"])
+
+            if image["language"] is not None:
+                image_tag.set("{http://www.w3.org/XML/1998/namespace}lang", image["language"])
+
+            if image["width"] is not None:
+                image_tag.set("width", str(image["width"]))
+
+            if image["height"] is not None:
+                image_tag.set("height", str(image["height"]))
+
+            image_tag.text = image["url"]
+
+        return screenshot_tag
+
     def _write_releases(self, root_tag: etree.Element):
         releases_tag = etree.SubElement(root_tag, "releases")
         if self.internal_releases_radio_button.isChecked():
@@ -976,23 +1005,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         if len(self.screenshot_list) > 0:
             screenshots_tag = etree.SubElement(root, "screenshots")
             for i in self.screenshot_list:
-                single_screenshot_tag = etree.SubElement(screenshots_tag, "screenshot")
-                if i["default"]:
-                    single_screenshot_tag.set("type", "default")
-                if "caption" in i:
-                    caption_tag = etree.SubElement(single_screenshot_tag, "caption")
-                    caption_tag.text = i["caption"]
-                for key, value in i["caption_translations"].items():
-                    caption_trans_tag = etree.SubElement(single_screenshot_tag, "caption")
-                    caption_trans_tag.set("{http://www.w3.org/XML/1998/namespace}lang", key)
-                    caption_trans_tag.text = value
-                image_tag = etree.SubElement(single_screenshot_tag, "image")
-                image_tag.text = i["url"]
-                image_tag.set("type", "source")
-                if "width" in i:
-                    image_tag.set("width", str(i["width"]))
-                if "height" in i:
-                    image_tag.set("height", str(i["height"]))
+                screenshots_tag.append(self._get_screenshot_tag(i))
 
         self._write_releases(root)
 

@@ -1,4 +1,4 @@
-from PyQt6.QtWidgets import QTableWidget, QHeaderView, QListWidget, QComboBox
+from PyQt6.QtWidgets import QTableWidget, QHeaderView, QListWidget, QComboBox, QLayout, QWidget
 from typing import Optional, List, Any, TYPE_CHECKING
 from PyQt6.QtCore import QObject
 from lxml import etree
@@ -160,3 +160,15 @@ def get_save_settings(path: Optional[str], settings: "Settings") -> dict[str, st
             return "  "
 
     return save_settings
+
+
+def set_layout_enabled(layout: QLayout, enabled: bool) -> None:
+    "Set all widgets in this layout enabled"
+    for count in range(layout.count()):
+        item = layout.itemAt(count)
+
+        if (widget := item.widget()) is not None:
+            widget.setEnabled(enabled)
+
+        if (child_layout := item.layout()) is not None:
+            set_layout_enabled(child_layout, enabled)
