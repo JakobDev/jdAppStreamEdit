@@ -61,3 +61,15 @@ packages = ["jdAppStreamEdit", "jdAppStreamEdit.translations", "jdAppStreamEdit.
 
 [tool.setuptools.dynamic]
 version = { file = "jdAppStreamEdit/version.txt" }
+
+[tool.pyproject-appimage]
+script = "jdappstreamedit"
+output = "jdAppStreamEdit.AppImage"
+icon = "jdAppStreamEdit/Icon.svg"
+rename-icon = "page.codeberg.JakobDev.jdAppStreamEdit.svg"
+desktop-entry = "deploy/page.codeberg.JakobDev.jdAppStreamEdit.desktop"
+gettext-desktop-entry = true
+appstream = "deploy/page.codeberg.JakobDev.jdAppStreamEdit.metainfo.xml"
+gettext-appstream = true
+gettext-directory = "deploy/translations"
+python-version = "3.11"
