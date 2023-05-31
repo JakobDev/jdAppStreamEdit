@@ -1,6 +1,7 @@
 from .ui_compiled.SettingsWindow import Ui_SettingsWindow
-from PyQt6.QtCore import QCoreApplication, QLocale
 from .Functions import select_combo_box_data
+from .Languages import get_language_names
+from PyQt6.QtCore import QCoreApplication
 from PyQt6.QtWidgets import QDialog
 from typing import TYPE_CHECKING
 import os
@@ -9,14 +10,6 @@ import os
 if TYPE_CHECKING:
     from .Environment import Environment
     from .MainWindow import MainWindow
-
-
-def get_language_names() -> dict[str, str]:
-    return {
-        "en": QCoreApplication.translate("Language", "Englisch"),
-        "de": QCoreApplication.translate("Language", "German"),
-        "nl": QCoreApplication.translate("Language", "Dutch"),
-    }
 
 
 class SettingsWindow(QDialog, Ui_SettingsWindow):
