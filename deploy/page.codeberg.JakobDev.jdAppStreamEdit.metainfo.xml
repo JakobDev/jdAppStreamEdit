@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <component type="desktop">
-  <!--Created with jdAppStreamEdit 6.0-->
+  <!--Created with jdAppStreamEdit 7.0-->
   <id>page.codeberg.JakobDev.jdAppStreamEdit</id>
   <name>jdAppStreamEdit</name>
   <summary>A graphical Program to create and edit AppStream files</summary>
@@ -19,6 +19,7 @@
       <li>You can view a preview in Gnome Software</li>
       <li>You can use a existing .desktop file as template</li>
       <li>Supports External Releases</li>
+      <li>Plugins</li>
     </ul>
   </description>
   <screenshots>
@@ -52,6 +53,14 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="7.0" date="2023-05-31" type="stable">
+      <description>
+        <ul>
+          <li>Rework Screenshot Page</li>
+          <li>Add support for Plugins</li>
+        </ul>
+      </description>
+    </release>
     <release version="6.0" date="2023-03-13" type="stable">
       <url>https://codeberg.org/JakobDev/jdAppStreamEdit/releases/tag/6.0</url>
       <description>
@@ -182,7 +191,6 @@
   <url type="bugtracker">https://codeberg.org/JakobDev/jdAppStreamEdit/issues</url>
   <url type="donation">https://ko-fi.com/jakobdev</url>
   <url type="translate">https://translate.codeberg.org/projects/jdAppStreamEdit</url>
-  <url type="contribute">https://codeberg.org/JakobDev/jdAppStreamEdit/src/branch/main/CONTRIBUTING.md</url>
   <categories>
     <category>Development</category>
     <category>Qt</category>

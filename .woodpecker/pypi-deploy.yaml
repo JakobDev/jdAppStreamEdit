@@ -1,5 +1,5 @@
 pipeline:
-    pip_deploy:
+    pypi_deploy:
         image: python:latest
         commands:
             - pip install twine build

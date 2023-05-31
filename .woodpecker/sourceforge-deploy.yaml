@@ -1,0 +1,12 @@
+pipeline:
+    sourceforge_deploy:
+        image: codeberg.org/jakobdev/python-ci-build-container:latest
+        commands:
+            - init-container
+            - source set-file-env VERSION jdAppStreamEdit/version.txt
+            - full-python-build --name jdAppStreamEdit --version $VERSION --copy-windows-exe ExternalReleasesEditor.exe
+            - sourceforge-upload --upload-dir ./Output/ --project jdappstreamedit --version $VERSION --app-name jdAppStreamEdit
+        secrets: [SOURCEFORGE_USERNAME, SOURCEFORGE_PASSWORD, SOURCEFORGE_API_KEY]
+
+when:
+    event: tag

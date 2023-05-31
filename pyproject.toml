@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools"]
+requires = ["setuptools", "PyQt6", "wheel"]
 build-backend = "BuildBackend"
 backend-path = ["."]
 

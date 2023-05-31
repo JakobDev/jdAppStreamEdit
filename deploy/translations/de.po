@@ -6,10 +6,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-17 14:00+0100\n"
-"PO-Revision-Date: 2023-04-04 09:37+0000\n"
+"POT-Creation-Date: 2023-05-31 15:03+0200\n"
+"PO-Revision-Date: 2023-05-31 15:04+0200\n"
 "Last-Translator: JakobDev <jakobdev@gmx.de>\n"
 "Language-Team: German <https://translate.codeberg.org/projects/"
 "jdAppStreamEdit/UnixMetadata/de/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.16.4\n"
+"X-Generator: Poedit 3.1.1\n"
 
 msgid "A graphical Program to create and edit AppStream files"
 msgstr ""
@@ -59,6 +59,9 @@ msgstr "Du kannst eine existierende .desktop Datei als Vorlage benutzen"
 
 msgid "Supports External Releases"
 msgstr "Externe Veröffentlichungen werden unterstützt"
+
+msgid "Plugins"
+msgstr "Plugins"
 
 msgid "The General Tab"
 msgstr "Der Allgemeine Tab"
