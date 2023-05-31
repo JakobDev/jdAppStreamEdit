@@ -54,6 +54,7 @@ Var StartMenuFolder
 ;Languages
 !insertmacro MUI_LANGUAGE "English"
 !insertmacro MUI_LANGUAGE "German"
+!insertmacro MUI_LANGUAGE "Dutch"
 
 ;Get the current version
 !define /file VERSION "..\${APPNAME}\version.txt"
