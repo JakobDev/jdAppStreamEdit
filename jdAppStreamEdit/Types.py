@@ -1,4 +1,5 @@
 from typing import Optional, TypedDict, Literal
+from PyQt6.QtCore import QDate
 
 
 class ScreenshotDictImage(TypedDict):
@@ -15,3 +16,18 @@ class ScreenshotDict(TypedDict):
     caption_translations: Optional[dict[str, str]]
     images: list[ScreenshotDictImage]
     source_url: str
+
+
+class ReleaseImportInfo(TypedDict):
+    version: str
+    date: QDate
+    development: bool
+    data: dict
+
+
+class PluginDict(TypedDict, total=False):
+    id: str
+    name: str
+    init: str
+    description: str
+    homepage: str

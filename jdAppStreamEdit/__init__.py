@@ -1,3 +1,4 @@
+from .PluginLoader import load_single_plugin, load_plugin_directory
 from PyQt6.QtCore import QTranslator, QLocale, QLibraryInfo
 from PyQt6.QtWidgets import QApplication
 from .Environment import Environment
@@ -46,6 +47,14 @@ def _internal_main(app_name: Literal["jdAppStreamEdit", "ExternalReleases"]):
 
     from .TranslateWindow import TranslateWindow
     env.translate_window = TranslateWindow(env)
+
+    if env.plugins_enabled:
+        try:
+            os.makedirs(os.path.join(env.data_dir, "plugins"))
+        except FileExistsError:
+            pass
+
+        load_plugin_directory(os.path.join(env.data_dir, "plugins"), env)
 
     if app_name == "jdAppStreamEdit":
         from .MainWindow import MainWindow

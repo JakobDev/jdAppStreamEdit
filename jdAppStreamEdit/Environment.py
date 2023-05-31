@@ -1,4 +1,8 @@
+from .ReleaseImporter import get_release_importer
+from .Interfaces import ReleaseImporter
+from .PluginAPI import PluginAPI
 from .Settings import Settings
+from .Types import PluginDict
 from PyQt6.QtGui import QIcon
 from pathlib import Path
 import platform
@@ -60,6 +64,11 @@ class Environment:
                 for kernel in platform_data["os_kernels"]:
                     for environment in platform_data["os_environments"]:
                         self.platform_list.append(architecture + "-" + kernel + "-" + environment)
+
+        self.release_importer: list[ReleaseImporter] = get_release_importer()
+        self.plugin_api = PluginAPI(self)
+        self.plugin_list: list[PluginDict] = []
+        self.plugins_enabled = True
 
     def _get_data_path(self) -> str:
         if platform.system() == "Windows":

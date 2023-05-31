@@ -7,6 +7,7 @@ from .ReleasesWidget import ReleasesWidget
 from typing import Optional, TYPE_CHECKING
 from PyQt6.QtCore import QCoreApplication
 from .ViewXMLWindow import ViewXMLWindow
+from .PluginWindow import PluginWindow
 from .AboutWindow import AboutWindow
 from lxml import etree
 import webbrowser
@@ -29,6 +30,7 @@ class ExternalReleasesWindow(QMainWindow, Ui_ExternalReleasesWindow):
 
         self._releases_widget = ReleasesWidget(env, self)
         self._settings_window = SettingsWindow(env, self)
+        self._plugin_window = PluginWindow(env)
         self._xml_window = ViewXMLWindow(self)
         self._about_window = AboutWindow(env)
 
@@ -47,6 +49,7 @@ class ExternalReleasesWindow(QMainWindow, Ui_ExternalReleasesWindow):
         self.exit_action.triggered.connect(self._exit_menu_action_clicked)
 
         self.settings_action.triggered.connect(self._settings_window.open_window)
+        self.plugins_action.triggered.connect(self._open_plugin_settings)
 
         self.view_xml_action.triggered.connect(self._xml_window.exec)
 
@@ -215,6 +218,13 @@ class ExternalReleasesWindow(QMainWindow, Ui_ExternalReleasesWindow):
     def _exit_menu_action_clicked(self):
         if self._ask_for_save():
             sys.exit(0)
+
+    def _open_plugin_settings(self) -> None:
+        if len(self._env.plugin_list) == 0:
+            QMessageBox.information(self, QCoreApplication.translate("MainWindow", "No Plugins installed"), QCoreApplication.translate("MainWindow", "You have no Plugins installed"))
+            return
+
+        self._plugin_window.exec()
 
     def open_file(self, path: str) -> bool:
         try:

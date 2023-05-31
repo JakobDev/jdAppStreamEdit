@@ -14,6 +14,7 @@ from .SettingsWindow import SettingsWindow
 from .ValidateWindow import ValidateWindow
 from .AdvancedWidget import AdvancedWidget
 from .ViewXMLWindow import ViewXMLWindow
+from .PluginWindow import PluginWindow
 from .AboutWindow import AboutWindow
 from .OarsWidget import OarsWidget
 from .Constants import XML_LANG
@@ -42,6 +43,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         self._settings_window = SettingsWindow(env, self)
         self._manage_templates_window = ManageTemplatesWindow(env, self)
+        self._plugin_window = PluginWindow(env)
         self._validate_window = ValidateWindow(env, self)
         self._xml_window = ViewXMLWindow(self)
         self._screenshot_window = ScreenshotWindow(env, self)
@@ -178,7 +180,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.exit_action.triggered.connect(self._exit_menu_action_clicked)
 
         self.settings_action.triggered.connect(self._settings_window.open_window)
-        self.manage_templates_action.triggered.connect( self._manage_templates_window.exec)
+        self.manage_templates_action.triggered.connect(self._manage_templates_window.exec)
+        self.plugins_action.triggered.connect(self._open_plugin_settings)
 
         self.validate_action.triggered.connect(self._validate_window.open_window)
         self.view_xml_action.triggered.connect(self._xml_window.exec)
@@ -430,6 +433,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self._env.recent_files.clear()
         self._update_recent_files_menu()
         self._env.save_recent_files()
+
+    def _open_plugin_settings(self) -> None:
+        if len(self._env.plugin_list) == 0:
+            QMessageBox.information(self, QCoreApplication.translate("MainWindow", "No Plugins installed"), QCoreApplication.translate("MainWindow", "You have no Plugins installed"))
+            return
+
+        self._plugin_window.exec()
 
     # General
 
@@ -895,6 +905,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def _get_screenshot_tag(self, screenshot: ScreenshotDict) -> etree.Element:
         screenshot_tag = etree.Element("screenshot")
+
+        if screenshot["default"]:
+            screenshot_tag.set("type", "default")
 
         if screenshot["caption"] is not None:
             caption_tag = etree.SubElement(screenshot_tag, "caption")

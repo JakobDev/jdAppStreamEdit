@@ -172,3 +172,13 @@ def set_layout_enabled(layout: QLayout, enabled: bool) -> None:
 
         if (child_layout := item.layout()) is not None:
             set_layout_enabled(child_layout, enabled)
+
+
+def assert_func(expression: bool) -> None:
+    """
+    The assert keyword is not available when running Python in Optimized Mode.
+    This function is a drop-in replacement.
+    See https://docs.python.org/3/using/cmdline.html?highlight=pythonoptimize#cmdoption-O
+    """
+    if not expression:
+        raise AssertionError()

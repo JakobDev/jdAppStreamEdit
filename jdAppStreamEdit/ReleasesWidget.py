@@ -2,11 +2,12 @@ from .Functions import stretch_table_widget_colums_size, get_sender_table_row, c
 from PyQt6.QtWidgets import QWidget, QPushButton, QComboBox, QDateEdit, QTableWidgetItem, QMessageBox, QMenu
 from .ui_compiled.ReleasesWidget import Ui_ReleasesWidget
 from PyQt6.QtCore import Qt, QCoreApplication, QDate
-from .ReleaseImporter import get_release_importer
 from .ReleasesWindow import ReleasesWindow
 from typing import Optional, TYPE_CHECKING
 from PyQt6.QtGui import QAction
 from lxml import etree
+import traceback
+import sys
 
 
 if TYPE_CHECKING:
@@ -33,9 +34,9 @@ class ReleasesWidget(QWidget, Ui_ReleasesWidget):
         self._releases_window = ReleasesWindow(env, self, parent)
 
         release_importer_menu = QMenu()
-        for i in get_release_importer():
-            importer_action = QAction(i[0], self)
-            importer_action.setData(i[1])
+        for i in env.release_importer:
+            importer_action = QAction(i.get_menu_text(), self)
+            importer_action.setData(i.do_import)
             importer_action.triggered.connect(self._release_import_function)
             release_importer_menu.addAction(importer_action)
         release_importer_menu.setFixedWidth(self.import_button.width())
@@ -137,7 +138,20 @@ class ReleasesWidget(QWidget, Ui_ReleasesWidget):
         if not action:
             return
 
-        release_data = action.data()(self)
+        try:
+            release_data = action.data()(self)
+        except Exception as ex:
+            print(traceback.format_exc(), end="", file=sys.stderr)
+
+            msg_box = QMessageBox()
+            msg_box.setWindowTitle(QCoreApplication.translate("ReleasesWidget", "Error"))
+            msg_box.setText(QCoreApplication.translate("ReleasesWidget", "An Error happened during Import"))
+            msg_box.setDetailedText(traceback.format_exc())
+            msg_box.setIcon(QMessageBox.Icon.Critical)
+            msg_box.exec()
+
+            return
+
         if release_data is None or len(release_data) == 0:
             return
 
@@ -148,7 +162,19 @@ class ReleasesWidget(QWidget, Ui_ReleasesWidget):
 
         for count, i in enumerate(release_data):
             self.releases_table.insertRow(count)
-            self._set_release_row(count, version=i["version"], date=i["date"], development=i.get("development", False), data=i.get("data", {}))
+            try:
+                self._set_release_row(count, version=i["version"], date=i["date"], development=i.get("development", False), data=i.get("data", {}))
+            except Exception as ex:
+                print(traceback.format_exc(), end="", file=sys.stderr)
+
+                msg_box = QMessageBox()
+                msg_box.setWindowTitle(QCoreApplication.translate("ReleasesWidget", "Error"))
+                msg_box.setText(QCoreApplication.translate("ReleasesWidget", "An Error happened during Import"))
+                msg_box.setDetailedText(traceback.format_exc())
+                msg_box.setIcon(QMessageBox.Icon.Critical)
+                msg_box.exec()
+
+                return
 
         self._parent.set_file_edited()
 

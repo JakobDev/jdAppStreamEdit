@@ -1,5 +1,6 @@
 from typing import Any
 import json
+import copy
 import os
 
 
@@ -16,7 +17,8 @@ class Settings():
             "useTabsInsteadOfSpaces": False,
             "addCommentSave": True,
             "showWelcomeDialog": True,
-            "showWelcomeDialogExternalReleases": True
+            "showWelcomeDialogExternalReleases": True,
+            "disabledPlugins": []
         }
 
         self._user_settings = {}
@@ -24,15 +26,15 @@ class Settings():
     def get(self, key: str) -> Any:
         """Returns the given setting"""
         if key in self._user_settings:
-            return self._user_settings[key]
+            return copy.deepcopy(self._user_settings[key])
         elif key in self._default_settings:
-            return self._default_settings[key]
+            return copy.deepcopy(self._default_settings[key])
         else:
             return None
 
     def set(self, key: str, value: Any):
         """Set the value of a setting"""
-        self._user_settings[key] = value
+        self._user_settings[key] = copy.deepcopy(value)
 
     def save(self, path: str):
         """Save settings into file"""
