@@ -1,5 +1,6 @@
 __pycache__/
 *.qm
+*.mo
 
 # setup.py
 build/
