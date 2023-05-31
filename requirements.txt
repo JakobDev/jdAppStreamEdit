@@ -1,0 +1,6 @@
+desktop-entry-lib
+editorconfig
+packaging
+requests
+PyQt6
+lxml
