@@ -25,6 +25,9 @@ You can get jdAppStreamEdit from [Flathub](https://flathub.org/apps/details/page
 ### AUR
 Arch Users can get jdAppStreamEdit from the [AUR](https://aur.archlinux.org/packages/jdappstreamedit)
 
+### Sourceforge
+You can get Windows and AppImage Builds from [Sourceforge](https://sourceforge.net/projects/jdappstreamedit)
+
 ### pip
 You can install jdAppStreamEdit from [PyPI](https://pypi.org/project/jdAppStreamEdit) using `pip`:
 ```shell
