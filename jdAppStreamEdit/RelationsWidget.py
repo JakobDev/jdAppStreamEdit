@@ -21,26 +21,13 @@ class RelationsWidget(QWidget, Ui_RelationsWidget):
         self._main_window = main_window
 
         for key, value in vars(self).items():
-            if key.startswith("rad_screen_device_class_"):
-                value.setChecked(True)
-                value.toggled.connect(self._update_screen_widgets_enabled)
-            elif key.startswith("box_screen_device_class_"):
-                value.addItem(QCoreApplication.translate("RelationsWidget", "Not specified"), "none")
-                value.addItem(QCoreApplication.translate("RelationsWidget", "Very small screens e.g. wearables"), "xsmall")
-                value.addItem(QCoreApplication.translate("RelationsWidget", "Small screens e.g. phones"), "small")
-                value.addItem(QCoreApplication.translate("RelationsWidget", "Screens in laptops, tablets"), "medium")
-                value.addItem(QCoreApplication.translate("RelationsWidget", "Bigger computer monitors"), "large")
-                value.addItem(QCoreApplication.translate("RelationsWidget", "Television screens, large projected images"), "xlarge")
-            elif key.startswith("edit_screen_custom_"):
+            if key.startswith("edit_screen_custom_") or key.startswith("edit_internet_bandwidth_"):
                 value.setValidator(QIntValidator())
             elif key.startswith("box_internet_"):
                 value.addItem(QCoreApplication.translate("RelationsWidget", "Not specified"), "none")
                 value.addItem(QCoreApplication.translate("RelationsWidget", "Never uses the internet, even if it’s available"), "offline-only")
                 value.addItem(QCoreApplication.translate("RelationsWidget", "Uses the internet only the first time the application is run"), "first-run")
                 value.addItem(QCoreApplication.translate("RelationsWidget", "Needs internet connectivity to work"), "always")
-                value.currentIndexChanged.connect(self._update_internet_bandwith_enabled)
-            elif key.startswith("edit_internet_bandwidth_"):
-                value.setValidator(QIntValidator())
 
             if isinstance(value, QComboBox):
                 value.currentIndexChanged.connect(main_window.set_file_edited)
@@ -59,23 +46,11 @@ class RelationsWidget(QWidget, Ui_RelationsWidget):
         self.button_modalias_add.clicked.connect(self._add_modalias_row)
         self.button_hardware_add.clicked.connect(self._add_hardware_row)
 
-        self._update_screen_widgets_enabled()
         self._update_internet_bandwith_enabled()
 
         self.main_tab_widget.setCurrentIndex(0)
 
     # Screen
-
-    def _update_screen_widgets_enabled(self):
-        for size in ("ge", "le"):
-            for relation in ("requires", "recommends"):
-                append_string = size + "_" + relation
-                if getattr(self, "rad_screen_device_class_" + append_string).isChecked():
-                    getattr(self, "box_screen_device_class_" + append_string).setEnabled(True)
-                    getattr(self, "edit_screen_custom_" + append_string).setEnabled(False)
-                else:
-                    getattr(self, "box_screen_device_class_" + append_string).setEnabled(False)
-                    getattr(self, "edit_screen_custom_" + append_string).setEnabled(True)
 
     def _load_screen_data(self, tag_list: List[etree.Element], relation: str):
         for i in tag_list:
@@ -87,22 +62,22 @@ class RelationsWidget(QWidget, Ui_RelationsWidget):
                 continue
             append_string = size + "_" + relation
             if is_string_number(i.text):
-                getattr(self, "rad_screen_custom_" + append_string).setChecked(True)
                 getattr(self, "edit_screen_custom_" + append_string).setText(i.text)
-            else:
-                select_combo_box_data(getattr(self, "box_screen_device_class_" + append_string), i.text)
+            elif i.text == "xsmall":
+                getattr(self, "edit_screen_custom_" + append_string).setText("360")
+            elif i.text == "small":
+                getattr(self, "edit_screen_custom_" + append_string).setText("420")
+            elif i.text == "medium":
+                getattr(self, "edit_screen_custom_" + append_string).setText("760")
+            elif i.text == "large":
+                getattr(self, "edit_screen_custom_" + append_string).setText("900")
+            elif i.text == "xlarge":
+                getattr(self, "edit_screen_custom_" + append_string).setText("1200")
 
     def _get_screen_save_data(self, parent_tag: etree.Element, relation: str):
         for size in ("ge", "le"):
             append_string = size + "_" + relation
-            if getattr(self, "rad_screen_device_class_" + append_string).isChecked():
-                box = getattr(self, "box_screen_device_class_" + append_string)
-                if box.currentData() == "none":
-                    continue
-                display_tag = etree.SubElement(parent_tag, "display_length")
-                display_tag.set("compare", size)
-                display_tag.text = box.currentData()
-            else:
+            if getattr(self, "edit_screen_custom_" + append_string).text() != "":
                 display_tag = etree.SubElement(parent_tag, "display_length")
                 display_tag.set("compare", size)
                 display_tag.text = getattr(self, "edit_screen_custom_" + append_string).text()

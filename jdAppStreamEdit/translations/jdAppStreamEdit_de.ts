@@ -2401,74 +2401,48 @@
 <context>
     <name>RelationsWidget</name>
     <message>
-        <location filename="../RelationsWidget.py" line="37"/>
-        <location filename="../RelationsWidget.py" line="28"/>
+        <location filename="../RelationsWidget.py" line="27"/>
         <source>Not specified</source>
         <translation>Nicht angegeben</translation>
     </message>
     <message>
-        <location filename="../RelationsWidget.py" line="29"/>
-        <source>Very small screens e.g. wearables</source>
-        <translation>Sehr kleine Bildschirme z.B. Wearables</translation>
-    </message>
-    <message>
-        <location filename="../RelationsWidget.py" line="30"/>
-        <source>Small screens e.g. phones</source>
-        <translation>Kleine Bildschirme z.B. Smartphones</translation>
-    </message>
-    <message>
-        <location filename="../RelationsWidget.py" line="31"/>
-        <source>Screens in laptops, tablets</source>
-        <translation>Bildschirme in Laptops, Tablets</translation>
-    </message>
-    <message>
-        <location filename="../RelationsWidget.py" line="32"/>
-        <source>Bigger computer monitors</source>
-        <translation>Größere Computermonitore</translation>
-    </message>
-    <message>
-        <location filename="../RelationsWidget.py" line="33"/>
-        <source>Television screens, large projected images</source>
-        <translation>Fernseher, Beamer</translation>
-    </message>
-    <message>
-        <location filename="../RelationsWidget.py" line="38"/>
+        <location filename="../RelationsWidget.py" line="28"/>
         <source>Never uses the internet, even if it’s available</source>
         <translation>Nutzt nie das Internet, selbst wenn es verfügbar ist</translation>
     </message>
     <message>
-        <location filename="../RelationsWidget.py" line="39"/>
+        <location filename="../RelationsWidget.py" line="29"/>
         <source>Uses the internet only the first time the application is run</source>
         <translation>Verwendet das Internet nur bei der ersten Ausführung der Anwendung</translation>
     </message>
     <message>
-        <location filename="../RelationsWidget.py" line="40"/>
+        <location filename="../RelationsWidget.py" line="30"/>
         <source>Needs internet connectivity to work</source>
         <translation>Benötigt zum Betrieb eine Internetverbindung</translation>
     </message>
     <message>
-        <location filename="../RelationsWidget.py" line="160"/>
-        <location filename="../RelationsWidget.py" line="127"/>
+        <location filename="../RelationsWidget.py" line="135"/>
+        <location filename="../RelationsWidget.py" line="102"/>
         <source>Supported</source>
         <translation>Unterstützt</translation>
     </message>
     <message>
-        <location filename="../RelationsWidget.py" line="161"/>
-        <location filename="../RelationsWidget.py" line="128"/>
+        <location filename="../RelationsWidget.py" line="136"/>
+        <location filename="../RelationsWidget.py" line="103"/>
         <source>Recommend</source>
         <translation>Empfohlen</translation>
     </message>
     <message>
-        <location filename="../RelationsWidget.py" line="162"/>
-        <location filename="../RelationsWidget.py" line="129"/>
+        <location filename="../RelationsWidget.py" line="137"/>
+        <location filename="../RelationsWidget.py" line="104"/>
         <source>Required</source>
         <translation>Benötigt</translation>
     </message>
     <message>
         <location filename="../ui/RelationsWidget.ui" line="0"/>
         <location filename="../ui/RelationsWidget.ui" line="0"/>
-        <location filename="../RelationsWidget.py" line="173"/>
-        <location filename="../RelationsWidget.py" line="140"/>
+        <location filename="../RelationsWidget.py" line="148"/>
+        <location filename="../RelationsWidget.py" line="115"/>
         <source>Remove</source>
         <translation>Löschen</translation>
     </message>
@@ -2486,22 +2460,6 @@
         <location filename="../ui/RelationsWidget.ui" line="0"/>
         <source>You can select the maximum screen size, that is rerequired to use the Software here</source>
         <translation>Du kannst hier die vorgeschriebene maximale Bildschirmgröße, die die Software unterstützt festlegen</translation>
-    </message>
-    <message>
-        <location filename="../ui/RelationsWidget.ui" line="0"/>
-        <location filename="../ui/RelationsWidget.ui" line="0"/>
-        <location filename="../ui/RelationsWidget.ui" line="0"/>
-        <location filename="../ui/RelationsWidget.ui" line="0"/>
-        <source>Device class</source>
-        <translation>Geräteklasse</translation>
-    </message>
-    <message>
-        <location filename="../ui/RelationsWidget.ui" line="0"/>
-        <location filename="../ui/RelationsWidget.ui" line="0"/>
-        <location filename="../ui/RelationsWidget.ui" line="0"/>
-        <location filename="../ui/RelationsWidget.ui" line="0"/>
-        <source>Custom</source>
-        <translation>Eigen</translation>
     </message>
     <message>
         <location filename="../ui/RelationsWidget.ui" line="0"/>
@@ -2580,7 +2538,7 @@
     <message>
         <location filename="../ui/RelationsWidget.ui" line="0"/>
         <source>Supports:</source>
-        <translation>Ünterstützt:</translation>
+        <translation>Unterstützt:</translation>
     </message>
     <message>
         <location filename="../ui/RelationsWidget.ui" line="0"/>

@@ -53,6 +53,13 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="7.1" date="2023-09-14" type="stable">
+      <description>
+        <ul>
+          <li>Remove named values for display_length, as it's no longer supported</li>
+        </ul>
+      </description>
+    </release>
     <release version="7.0" date="2023-05-31" type="stable">
       <description>
         <ul>
@@ -198,7 +205,6 @@
   <recommends>
     <control>pointing</control>
     <control>keyboard</control>
-    <display_length compare="ge">medium</display_length>
   </recommends>
   <content_rating type="oars-1.1"/>
   <provides>
