@@ -21,9 +21,9 @@ def _internal_main(app_name: Literal["jdAppStreamEdit", "ExternalReleases"]):
     app.setWindowIcon(env.icon)
 
     if app_name == "jdAppStreamEdit":
-        app.setDesktopFileName("page.codeberg.JakobDev.jdAppStreamEdit.desktop")
+        app.setDesktopFileName("page.codeberg.JakobDev.jdAppStreamEdit")
     elif app_name == "ExternalReleases":
-        app.setDesktopFileName("page.codeberg.JakobDev.jdAppStreamEdit.ExternalReleasesEditor.desktop")
+        app.setDesktopFileName("page.codeberg.JakobDev.jdAppStreamEdit.ExternalReleasesEditor")
 
     app_translator = QTranslator()
     qt_translator = QTranslator()
