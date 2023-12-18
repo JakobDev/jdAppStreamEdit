@@ -1,3 +1,4 @@
+from .Constants import TRANSLATE_LANGUAGE_SORT_SETTING
 from typing import Any
 import json
 import copy
@@ -18,7 +19,8 @@ class Settings():
             "addCommentSave": True,
             "showWelcomeDialog": True,
             "showWelcomeDialogExternalReleases": True,
-            "disabledPlugins": []
+            "disabledPlugins": [],
+            "translateLanguageSort": TRANSLATE_LANGUAGE_SORT_SETTING.NAME
         }
 
         self._user_settings = {}

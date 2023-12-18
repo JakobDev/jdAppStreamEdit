@@ -2837,44 +2837,44 @@
   <context>
     <name>ReleasesWindow</name>
     <message>
-      <location filename="../ReleasesWindow.py" line="31" />
+      <location filename="../ReleasesWindow.py" line="32" />
       <source>Not specified</source>
       <translation>Niet opgegeven</translation>
     </message>
     <message>
-      <location filename="../ReleasesWindow.py" line="32" />
+      <location filename="../ReleasesWindow.py" line="33" />
       <source>Low</source>
       <translation>Laag</translation>
     </message>
     <message>
-      <location filename="../ReleasesWindow.py" line="33" />
+      <location filename="../ReleasesWindow.py" line="34" />
       <source>Medium</source>
       <translation>Gemiddeld</translation>
     </message>
     <message>
-      <location filename="../ReleasesWindow.py" line="34" />
+      <location filename="../ReleasesWindow.py" line="35" />
       <source>High</source>
       <translation>Hoog</translation>
     </message>
     <message>
-      <location filename="../ReleasesWindow.py" line="35" />
+      <location filename="../ReleasesWindow.py" line="36" />
       <source>Critical</source>
       <translation>Kritiek</translation>
     </message>
     <message>
       <location filename="../ui/ReleasesWindow.ui" line="0" />
-      <location filename="../ReleasesWindow.py" line="81" />
+      <location filename="../ReleasesWindow.py" line="85" />
       <source>Edit</source>
       <translation>Bewerken</translation>
     </message>
     <message>
       <location filename="../ui/ReleasesWindow.ui" line="0" />
-      <location filename="../ReleasesWindow.py" line="85" />
+      <location filename="../ReleasesWindow.py" line="89" />
       <source>Remove</source>
       <translation>Verwijderen</translation>
     </message>
     <message>
-      <location filename="../ReleasesWindow.py" line="126" />
+      <location filename="../ReleasesWindow.py" line="130" />
       <source>Edit release {{release}}</source>
       <translation>Uitgave “{{release}}” bewerken</translation>
     </message>
@@ -2932,82 +2932,82 @@
   <context>
     <name>ScreenshotWindow</name>
     <message>
-      <location filename="../ScreenshotWindow.py" line="50" />
+      <location filename="../ScreenshotWindow.py" line="53" />
       <source>No URL</source>
       <translation>Geen url</translation>
     </message>
     <message>
-      <location filename="../ScreenshotWindow.py" line="50" />
+      <location filename="../ScreenshotWindow.py" line="53" />
       <source>Please enter a URL</source>
       <translation>Voer een url in</translation>
     </message>
     <message>
-      <location filename="../ScreenshotWindow.py" line="53" />
+      <location filename="../ScreenshotWindow.py" line="56" />
       <source>Invalid URL</source>
       <translation>Ongeldige url</translation>
     </message>
     <message>
-      <location filename="../ScreenshotWindow.py" line="53" />
+      <location filename="../ScreenshotWindow.py" line="56" />
       <source>Please enter a valid URL</source>
       <translation>Voer een geldige url in</translation>
     </message>
     <message>
-      <location filename="../ScreenshotWindow.py" line="64" />
+      <location filename="../ScreenshotWindow.py" line="67" />
       <source>Can't get Image</source>
       <translation>Kan afbeelding niet ophalen</translation>
     </message>
     <message>
-      <location filename="../ScreenshotWindow.py" line="64" />
+      <location filename="../ScreenshotWindow.py" line="67" />
       <source>It looks like the given URL does not work</source>
       <translation>Het lijkt er op dat de opgegeven url niet werkt</translation>
     </message>
     <message>
-      <location filename="../ScreenshotWindow.py" line="71" />
+      <location filename="../ScreenshotWindow.py" line="74" />
       <source>Can't decode Image</source>
       <translation>Kan afbeelding niet converteren</translation>
     </message>
     <message>
-      <location filename="../ScreenshotWindow.py" line="71" />
+      <location filename="../ScreenshotWindow.py" line="74" />
       <source>The given Image can't be decoded</source>
       <translation>De opgegeven afbeelding kan niet worden geconverteerd</translation>
     </message>
     <message>
       <location filename="../ui/ScreenshotWindow.ui" line="0" />
-      <location filename="../ThumbnailWindow.py" line="73" />
-      <location filename="../ScreenshotWindow.py" line="120" />
+      <location filename="../ThumbnailWindow.py" line="78" />
+      <location filename="../ScreenshotWindow.py" line="123" />
       <source>Add Language</source>
       <translation>Taal toevoegen</translation>
     </message>
     <message>
-      <location filename="../ThumbnailWindow.py" line="73" />
-      <location filename="../ScreenshotWindow.py" line="120" />
+      <location filename="../ThumbnailWindow.py" line="78" />
+      <location filename="../ScreenshotWindow.py" line="123" />
       <source>Please enter a Language Code</source>
       <translation>Voer een taalcode in</translation>
     </message>
     <message>
-      <location filename="../ThumbnailWindow.py" line="79" />
-      <location filename="../ScreenshotWindow.py" line="126" />
+      <location filename="../ThumbnailWindow.py" line="84" />
+      <location filename="../ScreenshotWindow.py" line="129" />
       <source>Language exists</source>
       <translation>Deze taal bestaat al</translation>
     </message>
     <message>
-      <location filename="../ThumbnailWindow.py" line="79" />
-      <location filename="../ScreenshotWindow.py" line="126" />
+      <location filename="../ThumbnailWindow.py" line="84" />
+      <location filename="../ScreenshotWindow.py" line="129" />
       <source>There is already a translated Image for {{language}}</source>
       <translation>Er is al een vertaalde afbeelding voor {{language}}</translation>
     </message>
     <message>
-      <location filename="../ScreenshotWindow.py" line="235" />
+      <location filename="../ScreenshotWindow.py" line="238" />
       <source>Add Screenshot</source>
       <translation>Schermfoto toevoegen</translation>
     </message>
     <message>
-      <location filename="../ScreenshotWindow.py" line="249" />
+      <location filename="../ScreenshotWindow.py" line="252" />
       <source>Edit Screenshot</source>
       <translation>Schermfoto bewerken</translation>
     </message>
     <message>
-      <location filename="../ScreenshotWindow.py" line="252" />
+      <location filename="../ScreenshotWindow.py" line="255" />
       <source>If you click Preview, your Screenshot will appear here scaled by 256x256</source>
       <translation>Als u op ‘Voorvertonen’ klikt, dan wordt uw schermfoto hier in 256x256 getoond</translation>
     </message>
@@ -3116,22 +3116,22 @@
   <context>
     <name>SettingsWindow</name>
     <message>
-      <location filename="../SettingsWindow.py" line="26" />
+      <location filename="../SettingsWindow.py" line="28" />
       <source>System language</source>
       <translation>Systeemtaal</translation>
     </message>
     <message>
-      <location filename="../SettingsWindow.py" line="38" />
+      <location filename="../SettingsWindow.py" line="40" />
       <source>Nothing</source>
       <translation>Niets</translation>
     </message>
     <message>
-      <location filename="../SettingsWindow.py" line="39" />
+      <location filename="../SettingsWindow.py" line="41" />
       <source>Filename</source>
       <translation>Bestandsnaam</translation>
     </message>
     <message>
-      <location filename="../SettingsWindow.py" line="40" />
+      <location filename="../SettingsWindow.py" line="42" />
       <source>Path</source>
       <translation>Locatie</translation>
     </message>
@@ -3199,6 +3199,28 @@
       <location filename="../ui/SettingsWindow.ui" line="0" />
       <source>Add comment to Files</source>
       <translation>Opmerkingen toevoegen aan bestanden</translation>
+    </message>
+    <message>
+      <location filename="../ui/SettingsWindow.ui" line="0" />
+      <source>Translate</source>
+      <translation type="unfinished">Vertalen</translation>
+    </message>
+    <message>
+      <location filename="../ui/SettingsWindow.ui" line="0" />
+      <source>Sort languages by</source>
+      <translation type="unfinished" />
+    </message>
+    <message>
+      <location filename="../ui/SettingsWindow.ui" line="0" />
+      <source>Name</source>
+      <extracomment>The name of the language</extracomment>
+      <translation type="unfinished" />
+    </message>
+    <message>
+      <location filename="../ui/SettingsWindow.ui" line="0" />
+      <source>Code</source>
+      <extracomment>The alpha-2 code of the language</extracomment>
+      <translation type="unfinished" />
     </message>
     <message>
       <location filename="../ui/SettingsWindow.ui" line="0" />
@@ -3287,43 +3309,43 @@
   <context>
     <name>TranslateWindow</name>
     <message>
-      <location filename="../TranslateWindow.py" line="32" />
+      <location filename="../TranslateWindow.py" line="37" />
       <source>Select Language</source>
       <translation>Kies een taal</translation>
     </message>
     <message>
       <location filename="../ui/TranslateWindow.ui" line="0" />
-      <location filename="../TranslateWindow.py" line="46" />
+      <location filename="../TranslateWindow.py" line="56" />
       <source>Remove</source>
       <translation>Verwijderen</translation>
     </message>
     <message>
-      <location filename="../TranslateWindow.py" line="60" />
+      <location filename="../TranslateWindow.py" line="70" />
       <source>No Language selected</source>
       <translation>Geen taal gekozen</translation>
     </message>
     <message>
-      <location filename="../TranslateWindow.py" line="60" />
+      <location filename="../TranslateWindow.py" line="70" />
       <source>You had no Language selected for at least one Item</source>
       <translation>U heeft bij minimaal één item geen taal ingesteld</translation>
     </message>
     <message>
-      <location filename="../TranslateWindow.py" line="66" />
+      <location filename="../TranslateWindow.py" line="76" />
       <source>Language double</source>
       <translation>Dubbele taal</translation>
     </message>
     <message>
-      <location filename="../TranslateWindow.py" line="66" />
+      <location filename="../TranslateWindow.py" line="76" />
       <source>{name} appears twice or more times in the table</source>
       <translation>{name} komt twee of meer keer voor in de tabel</translation>
     </message>
     <message>
-      <location filename="../TranslateWindow.py" line="70" />
+      <location filename="../TranslateWindow.py" line="80" />
       <source>No Text</source>
       <translation>Geen tekst</translation>
     </message>
     <message>
-      <location filename="../TranslateWindow.py" line="70" />
+      <location filename="../TranslateWindow.py" line="80" />
       <source>The Translation for {name} has no Text</source>
       <translation>De vertaling van {name} bevat geen tekst</translation>
     </message>
@@ -3361,22 +3383,22 @@
   <context>
     <name>ValidateWindow</name>
     <message>
-      <location filename="../ValidateWindow.py" line="35" />
+      <location filename="../ValidateWindow.py" line="37" />
       <source>appstreamcli was not found</source>
       <translation>appstreamcli is niet aangetroffen</translation>
     </message>
     <message>
-      <location filename="../ValidateWindow.py" line="48" />
+      <location filename="../ValidateWindow.py" line="50" />
       <source>appstream-util was not found</source>
       <translation>appstream-util is niet aangetroffen</translation>
     </message>
     <message>
-      <location filename="../ValidateWindow.py" line="57" />
+      <location filename="../ValidateWindow.py" line="59" />
       <source>No ID</source>
       <translation>Geen id</translation>
     </message>
     <message>
-      <location filename="../ValidateWindow.py" line="57" />
+      <location filename="../ValidateWindow.py" line="59" />
       <source>You need to set a ID to use this feature</source>
       <translation>Ken een id toe om deze functie te gebruiken</translation>
     </message>

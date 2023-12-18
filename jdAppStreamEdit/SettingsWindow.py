@@ -1,4 +1,5 @@
 from .ui_compiled.SettingsWindow import Ui_SettingsWindow
+from .Constants import TRANSLATE_LANGUAGE_SORT_SETTING
 from .Functions import select_combo_box_data
 from PyQt6.QtWidgets import QDialog, QStyle
 from .Languages import get_language_names
@@ -65,6 +66,11 @@ class SettingsWindow(QDialog, Ui_SettingsWindow):
         self.use_tabs_check_box.setChecked(self._env.settings.get("useTabsInsteadOfSpaces"))
         self.add_comment_check_box.setChecked(self._env.settings.get("addCommentSave"))
 
+        if self._env.settings.get("translateLanguageSort") == TRANSLATE_LANGUAGE_SORT_SETTING.NAME:
+            self.name_language_translate_rad.setChecked(True)
+        elif self._env.settings.get("translateLanguageSort") == TRANSLATE_LANGUAGE_SORT_SETTING.CODE:
+            self.code_language_translate_rad.setChecked(True)
+
     def _update_whitespace_section_enabled(self) -> None:
         enabled = not self.use_tabs_check_box.isChecked()
         self.whitespace_label.setEnabled(enabled)
@@ -84,6 +90,11 @@ class SettingsWindow(QDialog, Ui_SettingsWindow):
         self._env.settings.set("whitespaceCount", self.whitespace_spin_box.value())
         self._env.settings.set("useTabsInsteadOfSpaces", self.use_tabs_check_box.isChecked())
         self._env.settings.set("addCommentSave", self.add_comment_check_box.isChecked())
+
+        if self.name_language_translate_rad.isChecked():
+            self._env.settings.set("translateLanguageSort", TRANSLATE_LANGUAGE_SORT_SETTING.NAME)
+        elif self.code_language_translate_rad.isChecked():
+            self._env.settings.set("translateLanguageSort", TRANSLATE_LANGUAGE_SORT_SETTING.CODE)
 
         self._env.recent_files = self._env.recent_files[:self._env.settings.get("recentFilesLength")]
         self._env.save_recent_files()

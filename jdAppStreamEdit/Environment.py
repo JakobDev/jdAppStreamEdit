@@ -8,6 +8,7 @@ from PyQt6.QtGui import QIcon
 from pathlib import Path
 import platform
 import json
+import csv
 import os
 
 
@@ -56,8 +57,11 @@ class Environment:
         with open(os.path.join(self.program_dir, "data", "categories.txt"), "r", encoding="utf-8") as f:
             self.categories = f.read().splitlines()
 
-        with open(os.path.join(self.program_dir, "data", "langcodes.txt"), "r", encoding="utf-8") as f:
-            self.language_codes = f.read().splitlines()
+        self.language_codes: dict[str, str] = {}
+        with open(os.path.join(self.program_dir, "data", "language_codes.csv"), "r", encoding="utf-8") as f:
+            csv_reader =  csv.DictReader(f, delimiter=",")
+            for row in csv_reader:
+                self.language_codes[row["alpha2"]] = row["English"]
 
         # Source: https://github.com/ximion/appstream/blob/master/data/platforms.yml
         self.platform_list = []

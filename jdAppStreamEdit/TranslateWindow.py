@@ -1,7 +1,8 @@
 from .Functions import clear_table_widget, select_combo_box_data, get_logical_table_row_list, stretch_table_widget_colums_size
 from PyQt6.QtWidgets import QDialog, QComboBox, QPushButton, QTableWidgetItem, QMessageBox, QStyle
 from .ui_compiled.TranslateWindow import Ui_TranslateWindow
-from PyQt6.QtCore import QCoreApplication, QLocale
+from PyQt6.QtCore import QCoreApplication, QLocale, Qt
+from .Constants import TRANSLATE_LANGUAGE_SORT_SETTING
 from typing import Dict, Optional, TYPE_CHECKING
 from PyQt6.QtGui import QIcon
 
@@ -34,8 +35,13 @@ class TranslateWindow(QDialog, Ui_TranslateWindow):
 
         language_box = QComboBox()
         language_box.setPlaceholderText(QCoreApplication.translate("TranslateWindow", "Select Language"))
-        for i in self._env.language_codes:
-            language_box.addItem(QLocale.languageToString(QLocale(i).language()) + " (" + i + ")", i)
+
+        for key, value in self._env.language_codes.items():
+            language_box.addItem(value + " (" + key + ")", key)
+
+        if self._env.settings.get("translateLanguageSort") == TRANSLATE_LANGUAGE_SORT_SETTING.NAME:
+            language_box.model().sort(0, Qt.SortOrder.AscendingOrder)
+
         if not language is None:
             select_combo_box_data(language_box, language, default_index=-1)
         else:
