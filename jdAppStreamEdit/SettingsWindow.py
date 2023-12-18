@@ -14,7 +14,7 @@ if TYPE_CHECKING:
 
 class SettingsWindow(QDialog, Ui_SettingsWindow):
     def __init__(self, env: "Environment", main_window: "MainWindow"):
-        super().__init__()
+        super().__init__(main_window)
 
         self.setupUi(self)
 
@@ -90,4 +90,4 @@ class SettingsWindow(QDialog, Ui_SettingsWindow):
 
     def open_window(self):
         self._update_widgets()
-        self.exec()
+        self.open()

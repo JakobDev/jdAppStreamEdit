@@ -17,7 +17,7 @@ if TYPE_CHECKING:
 
 class ScreenshotWindow(QDialog, Ui_ScreenshotWindow):
     def __init__(self, env: "Environment", main_window: "MainWindow"):
-        super().__init__()
+        super().__init__(main_window)
 
         self.setupUi(self)
 
@@ -255,4 +255,4 @@ class ScreenshotWindow(QDialog, Ui_ScreenshotWindow):
         self._update_source_image_translation_widgets()
         self.tab_widget.setCurrentIndex(0)
 
-        self.exec()
+        self.open()

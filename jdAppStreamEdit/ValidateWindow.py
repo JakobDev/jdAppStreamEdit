@@ -14,7 +14,7 @@ if TYPE_CHECKING:
 
 class ValidateWindow(QDialog, Ui_ValidateWindow):
     def __init__(self, env: "Environment", main_window: "MainWindow"):
-        super().__init__()
+        super().__init__(main_window)
 
         self.setupUi(self)
 
@@ -54,9 +54,9 @@ class ValidateWindow(QDialog, Ui_ValidateWindow):
 
     def open_window(self):
         if self._main_window.get_id() == "":
-            QMessageBox.critical(self, QCoreApplication.translate("ValidateWindow", "No ID"), QCoreApplication.translate("ValidateWindow", "You need to set a ID to use this feature"))
+            QMessageBox.critical(self.parent(), QCoreApplication.translate("ValidateWindow", "No ID"), QCoreApplication.translate("ValidateWindow", "You need to set a ID to use this feature"))
             return
 
         self.mode_box.setCurrentIndex(0)
         self._execute_command()
-        self.exec()
+        self.open()

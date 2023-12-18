@@ -16,7 +16,7 @@ if TYPE_CHECKING:
 
 class ReleasesWindow(QDialog, Ui_ReleasesWindow):
     def __init__(self, env: "Environment", releases_widget: "ReleasesWidget", parent_window: QWidget):
-        super().__init__()
+        super().__init__(parent_window)
 
         self.setupUi(self)
 
@@ -125,4 +125,4 @@ class ReleasesWindow(QDialog, Ui_ReleasesWindow):
 
         self.setWindowTitle(QCoreApplication.translate("ReleasesWindow", "Edit release {{release}}").replace("{{release}}", self._releases_widget.releases_table.item(self._position, 0).text()))
 
-        self.exec()
+        self.open()
