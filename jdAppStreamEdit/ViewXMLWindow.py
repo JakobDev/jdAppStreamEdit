@@ -1,11 +1,13 @@
 from PyQt6.QtGui import QSyntaxHighlighter, QTextCharFormat, QColor, QShowEvent
+from PyQt6.QtWidgets import QDialog, QApplication, QStyle
 from .ui_compiled.ViewXMLWindow import Ui_ViewXMLWindow
-from PyQt6.QtWidgets import QDialog, QApplication
 from typing import TYPE_CHECKING
+from PyQt6.QtGui import QIcon
 import re
 
 
 if TYPE_CHECKING:
+    from .Environment import Environment
     from .MainWindow import MainWindow
 
 
@@ -49,7 +51,7 @@ class XMLHighlighter(QSyntaxHighlighter):
 
 
 class ViewXMLWindow(QDialog, Ui_ViewXMLWindow):
-    def __init__(self, main_window: "MainWindow"):
+    def __init__(self, env: "Environment", main_window: "MainWindow"):
         super().__init__()
 
         self.setupUi(self)
@@ -58,9 +60,10 @@ class ViewXMLWindow(QDialog, Ui_ViewXMLWindow):
 
         self._xml_highlighter = XMLHighlighter(self.preview_edit.document())
 
+        self.close_button.setIcon(QIcon(env.app.style().standardIcon(QStyle.StandardPixmap.SP_DialogCloseButton)))
+
         self.copy_button.clicked.connect(lambda: QApplication.clipboard().setText(self.preview_edit.toPlainText()))
         self.close_button.clicked.connect(self.close)
-
 
     def showEvent(self, event: QShowEvent):
         self.preview_edit.setPlainText(self._main_window.get_xml_text())

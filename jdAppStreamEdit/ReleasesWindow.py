@@ -1,10 +1,11 @@
 from .Functions import get_logical_table_row_list, clear_table_widget, stretch_table_widget_colums_size, select_combo_box_data, get_sender_table_row
-from PyQt6.QtWidgets import QDialog, QWidget, QPushButton, QTableWidgetItem
+from PyQt6.QtWidgets import QDialog, QWidget, QPushButton, QTableWidgetItem, QStyle
 from .ui_compiled.ReleasesWindow import Ui_ReleasesWindow
 from .DescriptionWidget import DescriptionWidget
 from PyQt6.QtCore import QCoreApplication, Qt
 from .ArtifactWindow import ArtifactWindow
 from typing import TYPE_CHECKING
+from PyQt6.QtGui import QIcon
 from lxml import etree
 import sys
 
@@ -36,6 +37,9 @@ class ReleasesWindow(QDialog, Ui_ReleasesWindow):
 
         stretch_table_widget_colums_size(self.artifacts_table)
         self.artifacts_table.verticalHeader().setSectionsMovable(True)
+
+        self.ok_button.setIcon(QIcon(env.app.style().standardIcon(QStyle.StandardPixmap.SP_DialogOkButton)))
+        self.cancel_button.setIcon(QIcon(env.app.style().standardIcon(QStyle.StandardPixmap.SP_DialogCancelButton)))
 
         self.add_artifact_button.clicked.connect(lambda: self._artifacts_window.open_window(None))
         self.ok_button.clicked.connect(self._ok_button_clicked)

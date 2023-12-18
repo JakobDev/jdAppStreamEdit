@@ -31,7 +31,7 @@ class ExternalReleasesWindow(QMainWindow, Ui_ExternalReleasesWindow):
         self._releases_widget = ReleasesWidget(env, self)
         self._settings_window = SettingsWindow(env, self)
         self._plugin_window = PluginWindow(env)
-        self._xml_window = ViewXMLWindow(self)
+        self._xml_window = ViewXMLWindow(env, self)
         self._about_window = AboutWindow(env)
 
         self._current_path: Optional[str] = None

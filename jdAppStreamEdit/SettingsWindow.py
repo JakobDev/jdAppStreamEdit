@@ -1,9 +1,10 @@
 from .ui_compiled.SettingsWindow import Ui_SettingsWindow
 from .Functions import select_combo_box_data
+from PyQt6.QtWidgets import QDialog, QStyle
 from .Languages import get_language_names
 from PyQt6.QtCore import QCoreApplication
-from PyQt6.QtWidgets import QDialog
 from typing import TYPE_CHECKING
+from PyQt6.QtGui import QIcon
 import os
 
 
@@ -38,6 +39,10 @@ class SettingsWindow(QDialog, Ui_SettingsWindow):
         self.window_title_box.addItem(QCoreApplication.translate("SettingsWindow", "Nothing"), "none")
         self.window_title_box.addItem(QCoreApplication.translate("SettingsWindow", "Filename"), "filename")
         self.window_title_box.addItem(QCoreApplication.translate("SettingsWindow", "Path"), "path")
+
+        self.reset_button.setIcon(QIcon(env.app.style().standardIcon(QStyle.StandardPixmap.SP_DialogResetButton)))
+        self.ok_button.setIcon(QIcon(env.app.style().standardIcon(QStyle.StandardPixmap.SP_DialogOkButton)))
+        self.cancel_button.setIcon(QIcon(env.app.style().standardIcon(QStyle.StandardPixmap.SP_DialogCancelButton)))
 
         self.use_tabs_check_box.stateChanged.connect(self._update_whitespace_section_enabled)
         self.reset_button.clicked.connect(self._reset_button_clicked)

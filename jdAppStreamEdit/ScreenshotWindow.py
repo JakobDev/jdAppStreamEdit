@@ -1,11 +1,11 @@
+from PyQt6.QtWidgets import QDialog, QMessageBox, QInputDialog, QListWidgetItem, QStyle
 from .Functions import is_url_valid, set_layout_enabled, list_widget_contains_item
-from PyQt6.QtWidgets import QDialog, QMessageBox, QInputDialog, QListWidgetItem
 from .ui_compiled.ScreenshotWindow import Ui_ScreenshotWindow
 from .Types import ScreenshotDict, ScreenshotDictImage
 from .ThumbnailWindow import ThumbnailWindow
 from typing import Optional, TYPE_CHECKING
 from PyQt6.QtCore import QCoreApplication
-from PyQt6.QtGui import QPixmap
+from PyQt6.QtGui import QPixmap, QIcon
 import requests
 import copy
 
@@ -29,6 +29,9 @@ class ScreenshotWindow(QDialog, Ui_ScreenshotWindow):
 
         self.tab_widget.tabBar().setDocumentMode(True)
         self.tab_widget.tabBar().setExpanding(True)
+
+        self.ok_button.setIcon(QIcon(env.app.style().standardIcon(QStyle.StandardPixmap.SP_DialogOkButton)))
+        self.cancel_button.setIcon(QIcon(env.app.style().standardIcon(QStyle.StandardPixmap.SP_DialogCancelButton)))
 
         self.source_width_height_check_box.stateChanged.connect(lambda: self.source_width_height_group_box.setEnabled(self.source_width_height_check_box.isChecked()))
         self.translate_caption_button.clicked.connect(lambda: env.translate_window.open_window(self._caption_translations))

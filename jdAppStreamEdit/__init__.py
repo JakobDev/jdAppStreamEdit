@@ -15,7 +15,7 @@ def _internal_main(app_name: Literal["jdAppStreamEdit", "ExternalReleases"]):
         return
 
     app = QApplication(sys.argv)
-    env = Environment()
+    env = Environment(app)
 
     app.setApplicationName("jdAppStreamEdit")
     app.setWindowIcon(env.icon)

@@ -1,7 +1,8 @@
 from .ui_compiled.ValidateWindow import Ui_ValidateWindow
-from PyQt6.QtWidgets import QDialog, QMessageBox
+from PyQt6.QtWidgets import QDialog, QMessageBox, QStyle
 from PyQt6.QtCore import QCoreApplication
 from typing import TYPE_CHECKING
+from PyQt6.QtGui import QIcon
 import subprocess
 import tempfile
 import os
@@ -21,9 +22,10 @@ class ValidateWindow(QDialog, Ui_ValidateWindow):
         self._env = env
         self._main_window = main_window
 
+        self.ok_button.setIcon(QIcon(env.app.style().standardIcon(QStyle.StandardPixmap.SP_DialogOkButton)))
+
         self.mode_box.currentIndexChanged.connect(self._execute_command)
         self.ok_button.clicked.connect(self.close)
-
 
     def _execute_command(self):
         temp_path = os.path.join(tempfile.gettempdir(), self._main_window.get_id() + ".metainfo.xml")

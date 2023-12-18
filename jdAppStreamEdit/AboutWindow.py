@@ -1,7 +1,8 @@
 from .ui_compiled.AboutWindow import Ui_AboutWindow
+from PyQt6.QtWidgets import QDialog, QStyle
 from .Languages import get_language_names
-from PyQt6.QtWidgets import QDialog
 from typing import TYPE_CHECKING
+from PyQt6.QtGui import QIcon
 import json
 import os
 
@@ -39,5 +40,7 @@ class AboutWindow(QDialog, Ui_AboutWindow):
         self.tab_widget.tabBar().setExpanding(True)
 
         self.tab_widget.setCurrentIndex(0)
+
+        self.close_button.setIcon(QIcon(env.app.style().standardIcon(QStyle.StandardPixmap.SP_DialogCloseButton)))
 
         self.close_button.clicked.connect(self.close)

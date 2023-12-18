@@ -1,8 +1,9 @@
 from .Functions import clear_table_widget, select_combo_box_data, get_logical_table_row_list, stretch_table_widget_colums_size
-from PyQt6.QtWidgets import QDialog, QComboBox, QPushButton, QTableWidgetItem, QMessageBox
+from PyQt6.QtWidgets import QDialog, QComboBox, QPushButton, QTableWidgetItem, QMessageBox, QStyle
 from .ui_compiled.TranslateWindow import Ui_TranslateWindow
 from PyQt6.QtCore import QCoreApplication, QLocale
 from typing import Dict, Optional, TYPE_CHECKING
+from PyQt6.QtGui import QIcon
 
 
 if TYPE_CHECKING:
@@ -19,6 +20,9 @@ class TranslateWindow(QDialog, Ui_TranslateWindow):
         stretch_table_widget_colums_size(self.table_widget)
 
         self.table_widget.verticalHeader().setSectionsMovable(True)
+
+        self.ok_button.setIcon(QIcon(env.app.style().standardIcon(QStyle.StandardPixmap.SP_DialogOkButton)))
+        self.cancel_button.setIcon(QIcon(env.app.style().standardIcon(QStyle.StandardPixmap.SP_DialogCancelButton)))
 
         self.add_button.clicked.connect(self._add_row)
         self.ok_button.clicked.connect(self._ok_button_clicked)

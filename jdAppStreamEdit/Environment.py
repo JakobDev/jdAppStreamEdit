@@ -1,4 +1,5 @@
 from .ReleaseImporter import get_release_importer
+from PyQt6.QtWidgets import QApplication
 from .Interfaces import ReleaseImporter
 from .PluginAPI import PluginAPI
 from .Settings import Settings
@@ -11,7 +12,9 @@ import os
 
 
 class Environment:
-    def __init__(self):
+    def __init__(self, app: QApplication) -> None:
+        self.app = app
+
         self.program_dir = os.path.dirname(os.path.realpath(__file__))
         self.data_dir = self._get_data_path()
 

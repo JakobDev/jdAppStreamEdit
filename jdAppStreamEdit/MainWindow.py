@@ -45,7 +45,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self._manage_templates_window = ManageTemplatesWindow(env, self)
         self._plugin_window = PluginWindow(env)
         self._validate_window = ValidateWindow(env, self)
-        self._xml_window = ViewXMLWindow(self)
+        self._xml_window = ViewXMLWindow(env, self)
         self._screenshot_window = ScreenshotWindow(env, self)
         self._releases_widget = ReleasesWidget(env, self)
         self._about_window = AboutWindow(env)

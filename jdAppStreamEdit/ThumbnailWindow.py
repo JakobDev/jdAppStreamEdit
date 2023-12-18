@@ -1,9 +1,10 @@
+from PyQt6.QtWidgets import QDialog, QMessageBox, QInputDialog, QListWidgetItem, QStyle
+from .Functions import is_url_valid, set_layout_enabled, list_widget_contains_item
 from .ui_compiled.ThumbnailWindow import Ui_ThumbnailWindow
 from .Types import ScreenshotDict, ScreenshotDictImage
-from PyQt6.QtWidgets import QDialog, QMessageBox, QInputDialog, QListWidgetItem
 from typing import Optional, TYPE_CHECKING
 from PyQt6.QtCore import QCoreApplication
-from .Functions import is_url_valid, set_layout_enabled, list_widget_contains_item
+from PyQt6.QtGui import QIcon
 import requests
 import copy
 
@@ -26,11 +27,15 @@ class ThumbnailWindow(QDialog, Ui_ThumbnailWindow):
         self.tab_widget.tabBar().setDocumentMode(True)
         self.tab_widget.tabBar().setExpanding(True)
 
+        self.ok_button.setIcon(QIcon(env.app.style().standardIcon(QStyle.StandardPixmap.SP_DialogOkButton)))
+        self.cancel_button.setIcon(QIcon(env.app.style().standardIcon(QStyle.StandardPixmap.SP_DialogCancelButton)))
+
         self.thumbnail_image_language_list.currentItemChanged.connect(self._thumbnail_image_language_list_item_changed)
         self.thumbnail_image_language_add_button.clicked.connect(self._thumbnail_image_language_add_button_clicked)
         self.thumbnail_image_language_remove_button.clicked.connect(self._thumbnail_image_language_remove_button_clicked)
 
         self.ok_button.clicked.connect(self._ok_button_clicked)
+        self.cancel_button.clicked.connect(self.close)
 
     def _update_thumbnail_image_language_list_buttons_enabled(self) -> None:
         enabled = self.thumbnail_image_language_list.currentRow() != -1
