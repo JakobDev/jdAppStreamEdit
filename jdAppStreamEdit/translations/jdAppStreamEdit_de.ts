@@ -1150,7 +1150,7 @@
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
-        <source>Metaddata License:</source>
+        <source>Metadata License:</source>
         <translation>Metadatenlizenz:</translation>
     </message>
     <message>
