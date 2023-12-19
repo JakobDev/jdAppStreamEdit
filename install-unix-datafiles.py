@@ -50,9 +50,9 @@ def main() -> None:
     create_directory(os.path.join(args.prefix, "share", "applications"))
     create_directory(os.path.join(args.prefix, "share", "metainfo"))
 
-    subprocess.run(["msgfmt", "--desktop", "--template", os.path.join(project_root, "deploy", "page.codeberg.JakobDev.jdAppStreamEdit.desktop"), "-d", os.path.join(project_root, "deploy", "translations"), "-o",  os.path.join(args.prefix, "share", "applications", "page.codeberg.JakobDev.jdAppStreamEdit.desktop")], check=True)
-    subprocess.run(["msgfmt", "--desktop", "--template", os.path.join(project_root, "deploy", "page.codeberg.JakobDev.jdAppStreamEdit.ExternalReleasesEditor.desktop"), "-d", os.path.join(project_root, "deploy", "translations"), "-o",  os.path.join(args.prefix, "share", "applications", "page.codeberg.JakobDev.jdAppStreamEdit.ExternalReleasesEditor.desktop")], check=True)
-    subprocess.run(["msgfmt", "--xml", "--template", os.path.join(project_root, "deploy", "page.codeberg.JakobDev.jdAppStreamEdit.metainfo.xml"), "-d", os.path.join(project_root, "deploy", "translations"), "-o",  os.path.join(args.prefix, "share", "metainfo", "page.codeberg.JakobDev.jdAppStreamEdit.metainfo.xml")], check=True)
+    subprocess.run(["msgfmt", "--desktop", "--template", os.path.join(project_root, "deploy", "page.codeberg.JakobDev.jdAppStreamEdit.desktop"), "-d", os.path.join(project_root, "deploy", "translations"), "-o", os.path.join(args.prefix, "share", "applications", "page.codeberg.JakobDev.jdAppStreamEdit.desktop")], check=True)
+    subprocess.run(["msgfmt", "--desktop", "--template", os.path.join(project_root, "deploy", "page.codeberg.JakobDev.jdAppStreamEdit.ExternalReleasesEditor.desktop"), "-d", os.path.join(project_root, "deploy", "translations"), "-o", os.path.join(args.prefix, "share", "applications", "page.codeberg.JakobDev.jdAppStreamEdit.ExternalReleasesEditor.desktop")], check=True)
+    subprocess.run(["msgfmt", "--xml", "--template", os.path.join(project_root, "deploy", "page.codeberg.JakobDev.jdAppStreamEdit.metainfo.xml"), "-d", os.path.join(project_root, "deploy", "translations"), "-o", os.path.join(args.prefix, "share", "metainfo", "page.codeberg.JakobDev.jdAppStreamEdit.metainfo.xml")], check=True)
 
 
 if __name__ == "__main__":

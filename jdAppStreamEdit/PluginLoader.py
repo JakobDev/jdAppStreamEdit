@@ -49,7 +49,7 @@ def load_single_plugin(path: str, env: "Environment") -> None:
     namespace = "jdAppStreamEdit.Plugin." + manifest_data["id"]
     try:
         spec = importlib.util.spec_from_file_location(namespace, os.path.join(path, "__init__.py"))
-        plug= importlib.util.module_from_spec(spec)
+        plug = importlib.util.module_from_spec(spec)
         sys.modules[namespace] = plug
         spec.loader.exec_module(plug)
         sys.modules[namespace] = plug

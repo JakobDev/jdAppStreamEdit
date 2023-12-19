@@ -60,10 +60,12 @@ class ReleasesWidget(QWidget, Ui_ReleasesWidget):
         self.releases_table.setItem(row, _COLUMNS.VERSION, version_item)
 
         date_edit = QDateEdit()
+
         if date is None:
             date_edit.setDate(QDate.currentDate())
         else:
-           date_edit.setDate(date)
+            date_edit.setDate(date)
+
         date_edit.dateChanged.connect(self._parent.set_file_edited)
         self.releases_table.setCellWidget(row, _COLUMNS.DATE, date_edit)
 
@@ -83,7 +85,7 @@ class ReleasesWidget(QWidget, Ui_ReleasesWidget):
         remove_button.clicked.connect(self._remove_button_clicked)
         self.releases_table.setCellWidget(row, _COLUMNS.REMOVE_BUTTON, remove_button)
 
-    def _edit_button_clicked(self):
+    def _edit_button_clicked(self) -> None:
         row = get_sender_table_row(self.releases_table, _COLUMNS.EDIT_BUTTON, self.sender())
         self._releases_window.open_window(row)
 
@@ -92,12 +94,12 @@ class ReleasesWidget(QWidget, Ui_ReleasesWidget):
         self.releases_table.removeRow(row)
         self._parent.set_file_edited()
 
-    def _add_button_clicked(self):
+    def _add_button_clicked(self) -> None:
         self.releases_table.insertRow(0)
         self._set_release_row(0)
         self._parent.set_file_edited()
 
-    def _sort_button_clicked(self):
+    def _sort_button_clicked(self) -> None:
         try:
             import packaging.version
         except ModuleNotFoundError:
@@ -132,7 +134,7 @@ class ReleasesWidget(QWidget, Ui_ReleasesWidget):
 
         self._parent.set_file_edited()
 
-    def _release_import_function(self):
+    def _release_import_function(self) -> None:
         action = self.sender()
 
         if not action:
@@ -140,7 +142,7 @@ class ReleasesWidget(QWidget, Ui_ReleasesWidget):
 
         try:
             release_data = action.data()(self)
-        except Exception as ex:
+        except Exception:
             print(traceback.format_exc(), end="", file=sys.stderr)
 
             msg_box = QMessageBox()
@@ -164,7 +166,7 @@ class ReleasesWidget(QWidget, Ui_ReleasesWidget):
             self.releases_table.insertRow(count)
             try:
                 self._set_release_row(count, version=i["version"], date=i["date"], development=i.get("development", False), data=i.get("data", {}))
-            except Exception as ex:
+            except Exception:
                 print(traceback.format_exc(), end="", file=sys.stderr)
 
                 msg_box = QMessageBox()
@@ -199,13 +201,13 @@ class ReleasesWidget(QWidget, Ui_ReleasesWidget):
 
             artifacts_tag = i.find("artifacts")
             if artifacts_tag is not None:
-                     data["artifacts"] = artifacts_tag
+                data["artifacts"] = artifacts_tag
 
             self.releases_table.insertRow(current_row)
             self._set_release_row(current_row, version=i.get("version"), date=QDate.fromString(i.get("date"), Qt.DateFormat.ISODate), development=(i.get("type") == "development"), data=data)
 
     def write_tag(self, releases_tag: etree.Element) -> None:
-         for i in get_logical_table_row_list(self.releases_table):
+        for i in get_logical_table_row_list(self.releases_table):
             version = self.releases_table.item(i, _COLUMNS.VERSION).text().strip()
             date = self.releases_table.cellWidget(i, _COLUMNS.DATE).date().toString(Qt.DateFormat.ISODate)
             release_type = self.releases_table.cellWidget(i, _COLUMNS.TYPE).currentData()
@@ -220,7 +222,7 @@ class ReleasesWidget(QWidget, Ui_ReleasesWidget):
                 single_release_tag.set("urgency", data["urgency"])
 
             if "url" in data:
-                url_tag =  etree.SubElement(single_release_tag, "url")
+                url_tag = etree.SubElement(single_release_tag, "url")
                 url_tag.text = data["url"]
 
             if "description" in data:

@@ -6,7 +6,6 @@ from typing import Optional, TYPE_CHECKING
 from lxml import etree
 import requests
 import sys
-import os
 
 
 if TYPE_CHECKING:
@@ -15,7 +14,7 @@ if TYPE_CHECKING:
 
 
 class ArtifactWindow(QDialog, Ui_ArtifactWindow):
-    def __init__(self, env: "Environment", releases_window: "ReleasesWindow"):
+    def __init__(self, env: "Environment", releases_window: "ReleasesWindow") -> None:
         super().__init__()
 
         self.setupUi(self)
@@ -52,12 +51,12 @@ class ArtifactWindow(QDialog, Ui_ArtifactWindow):
         QMessageBox.critical(self, QCoreApplication.translate("ArtifactWindow", "No checksums"), QCoreApplication.translate("ArtifactWindow", "You need at least one checksum"))
         return False
 
-    def _update_platform_enabled(self):
+    def _update_platform_enabled(self) -> None:
         enabled = self.type_rad_binary.isChecked()
         self.platform_label.setEnabled(enabled)
         self.platform_box.setEnabled(enabled)
 
-    def _calculate_checksums_button_clicked(self):
+    def _calculate_checksums_button_clicked(self) -> None:
         if not self._check_url():
             return
 
@@ -67,8 +66,8 @@ class ArtifactWindow(QDialog, Ui_ArtifactWindow):
             try:
                 checksum = calculate_checksum_from_url(url, i)
                 if checksum is None:
-                     QMessageBox.critical(self, QCoreApplication.translate("ArtifactWindow", "Invalid URL"), QCoreApplication.translate("ArtifactWindow", "Can't get the File from the URL"))
-                     return
+                    QMessageBox.critical(self, QCoreApplication.translate("ArtifactWindow", "Invalid URL"), QCoreApplication.translate("ArtifactWindow", "Can't get the File from the URL"))
+                    return
             except requests.exceptions.ConnectionError:
                 QMessageBox.critical(self, QCoreApplication.translate("ArtifactWindow", "Invalid URL"), QCoreApplication.translate("ArtifactWindow", "Can't get the File from the URL"))
                 return
@@ -77,14 +76,14 @@ class ArtifactWindow(QDialog, Ui_ArtifactWindow):
                 return
             getattr(self, "checksum_edit_" + i).setText(checksum)
 
-    def _ok_button_clicked(self):
+    def _ok_button_clicked(self) -> None:
         if not self._check_url():
             return
 
         if not self._check_checksums_exists():
             return
 
-        atrtifact_tag =  etree.Element("artifact")
+        atrtifact_tag = etree.Element("artifact")
 
         if self.type_rad_source.isChecked():
             atrtifact_tag.set("type", "source")
@@ -127,14 +126,14 @@ class ArtifactWindow(QDialog, Ui_ArtifactWindow):
 
         self.close()
 
-    def _reset_data(self):
+    def _reset_data(self) -> None:
         for key, value in vars(self).items():
             if isinstance(value, QLineEdit):
                 value.setText("")
         self.type_rad_source.setChecked(True)
         self.platform_box.setCurrentIndex(0)
 
-    def _load_data(self, atrtifact_tag: etree.Element):
+    def _load_data(self, atrtifact_tag: etree.Element) -> None:
         if atrtifact_tag.get("type") == "source":
             self.type_rad_source.setChecked(True)
         else:
@@ -163,7 +162,7 @@ class ArtifactWindow(QDialog, Ui_ArtifactWindow):
         if filename_tag is not None:
             self.filename_edit.setText(filename_tag.text)
 
-    def open_window(self, position: Optional[int]):
+    def open_window(self, position: Optional[int]) -> None:
         self._position = position
 
         self._reset_data()

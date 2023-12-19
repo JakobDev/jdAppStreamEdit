@@ -18,7 +18,7 @@ class XMLHighlighter(QSyntaxHighlighter):
         http://www.yasinuludag.com/blog/?p=49
 
     '''
-    def __init__(self, parent=None):
+    def __init__(self, parent=None) -> None:
 
         super(XMLHighlighter, self).__init__(parent)
 
@@ -26,22 +26,22 @@ class XMLHighlighter(QSyntaxHighlighter):
 
         xmlAttributeFormat = QTextCharFormat()
         xmlAttributeFormat.setFontItalic(True)
-        xmlAttributeFormat.setForeground(QColor("#177317")) #green
+        xmlAttributeFormat.setForeground(QColor("#177317"))  # green
         self._highlighting_rules.append((re.compile(r"(<(.*?)|\"|\') (.*?)="), xmlAttributeFormat))
 
         xmlElementFormat = QTextCharFormat()
-        xmlElementFormat.setForeground(QColor("#000070")) #blue
+        xmlElementFormat.setForeground(QColor("#000070"))  # blue
         self._highlighting_rules.append((re.compile("<(.*?)[> ]"), xmlElementFormat))
 
         single_line_comment_format = QTextCharFormat()
-        single_line_comment_format.setForeground(QColor("#a0a0a4")) # grey
+        single_line_comment_format.setForeground(QColor("#a0a0a4"))  # grey
         self._highlighting_rules.append((re.compile("<!--[^\n]*-->"), single_line_comment_format))
 
         self._value_format = QTextCharFormat()
-        self._value_format.setForeground(QColor("#e35e00")) #orange
+        self._value_format.setForeground(QColor("#e35e00"))  # orange
         self._value_regex = re.compile(r"(?<=\S=)[\"\'](.*?)[\"\']")
 
-    def highlightBlock(self, text):
+    def highlightBlock(self, text: str) -> None:
         for pattern, format in self._highlighting_rules:
             for i in pattern.finditer(text):
                 self.setFormat(i.start(), i.end() - i.start(), format)
@@ -51,7 +51,7 @@ class XMLHighlighter(QSyntaxHighlighter):
 
 
 class ViewXMLWindow(QDialog, Ui_ViewXMLWindow):
-    def __init__(self, env: "Environment", main_window: "MainWindow"):
+    def __init__(self, env: "Environment", main_window: "MainWindow") -> None:
         super().__init__()
 
         self.setupUi(self)
@@ -65,5 +65,5 @@ class ViewXMLWindow(QDialog, Ui_ViewXMLWindow):
         self.copy_button.clicked.connect(lambda: QApplication.clipboard().setText(self.preview_edit.toPlainText()))
         self.close_button.clicked.connect(self.close)
 
-    def showEvent(self, event: QShowEvent):
+    def showEvent(self, event: QShowEvent) -> None:
         self.preview_edit.setPlainText(self._main_window.get_xml_text())

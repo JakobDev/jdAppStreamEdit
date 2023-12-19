@@ -1,6 +1,6 @@
-from .Functions import clear_table_widget, stretch_table_widget_colums_size, list_widget_contains_item, is_url_reachable, get_logical_table_row_list, select_combo_box_data, is_flatpak, get_shared_temp_dir, is_url_valid, get_save_settings
+from .Functions import clear_table_widget, stretch_table_widget_colums_size, list_widget_contains_item, is_url_reachable, get_logical_table_row_list, select_combo_box_data, is_flatpak, get_shared_temp_dir, is_url_valid, get_save_settings, assert_func
 from PyQt6.QtWidgets import QApplication, QCheckBox, QComboBox, QLineEdit, QListWidget, QMainWindow, QMessageBox, QDateEdit, QInputDialog, QPlainTextEdit, QPushButton, QTableWidget, QTableWidgetItem, QRadioButton, QFileDialog
-from PyQt6.QtGui import QAction,  QDragEnterEvent, QDropEvent, QCloseEvent
+from PyQt6.QtGui import QAction, QDragEnterEvent, QDropEvent, QCloseEvent
 from .ManageTemplatesWindow import ManageTemplatesWindow
 from .Types import ScreenshotDict, ScreenshotDictImage
 from PyQt6.QtCore import Qt, QCoreApplication, QDate
@@ -33,7 +33,7 @@ if TYPE_CHECKING:
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
-    def __init__(self, env: "Environment"):
+    def __init__(self, env: "Environment") -> None:
         super().__init__()
         self._env = env
 
@@ -201,17 +201,17 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.main_tab_widget.setCurrentIndex(0)
         self.update_window_title()
 
-    def set_file_edited(self):
+    def set_file_edited(self) -> None:
         self._edited = True
         self.update_window_title()
 
-    def update_window_title(self):
+    def update_window_title(self) -> None:
         if self._env.settings.get("windowTitleType") == "none":
             title = "jdAppStreamEdit"
         elif self._current_path is None:
             title = QCoreApplication.translate("MainWindow", "Untitled") + " - jdAppStreamEdit"
         elif self._env.settings.get("windowTitleType") == "filename":
-            title= os.path.basename(self._current_path) + " - jdAppStreamEdit"
+            title = os.path.basename(self._current_path) + " - jdAppStreamEdit"
         elif self._env.settings.get("windowTitleType") == "filename":
             title = self._current_path + " - jdAppStreamEdit"
         else:
@@ -222,7 +222,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         else:
             self.setWindowTitle(title)
 
-    def _update_new_template_file_menu(self):
+    def _update_new_template_file_menu(self) -> None:
         self.new_template_file_menu.clear()
 
         if len(self._env.template_list) == 0:
@@ -236,7 +236,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 template_action.triggered.connect(self._new_template_file_clicked)
                 self.new_template_file_menu.addAction(template_action)
 
-    def _update_recent_files_menu(self):
+    def _update_recent_files_menu(self) -> None:
         self.recent_files_menu.clear()
 
         if len(self._env.recent_files) == 0:
@@ -257,7 +257,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         clear_action.triggered.connect(self._clear_recent_files)
         self.recent_files_menu.addAction(clear_action)
 
-    def add_to_recent_files(self, path: str):
+    def add_to_recent_files(self, path: str) -> None:
         while path in self._env.recent_files:
             self._env.recent_files.remove(path)
         self._env.recent_files.insert(0, path)
@@ -300,7 +300,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self._env.settings.set("showWelcomeDialog", check_box.isChecked())
         self._env.settings.save(os.path.join(self._env.data_dir, "settings.json"))
 
-    def _new_menu_action_clicked(self):
+    def _new_menu_action_clicked(self) -> None:
         if not self._ask_for_save():
             return
         self.reset_data()
@@ -308,7 +308,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self._current_path = None
         self.update_window_title()
 
-    def _new_from_desktop_action_clicked(self):
+    def _new_from_desktop_action_clicked(self) -> None:
         try:
             import desktop_entry_lib
         except ModuleNotFoundError:
@@ -320,7 +320,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         self.reset_data()
 
-        filter = QCoreApplication.translate("MainWindow", "Desktop Entry Files") + " (*.desktop);;" +   QCoreApplication.translate("MainWindow", "All Files") + " (*)"
+        filter = QCoreApplication.translate("MainWindow", "Desktop Entry Files") + " (*.desktop);;" + QCoreApplication.translate("MainWindow", "All Files") + " (*)"
         path = QFileDialog.getOpenFileName(self, filter=filter)[0]
         if path == "":
             return
@@ -348,7 +348,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         try:
             prog = entry.Exec.split(" ")[0]
-            assert prog == os.path.basename(prog)
+            assert_func(prog == os.path.basename(prog))
             self._add_provides_row("binary", prog)
         except Exception:
             pass
@@ -363,7 +363,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self._current_path = None
         self.update_window_title()
 
-    def _new_template_file_clicked(self):
+    def _new_template_file_clicked(self) -> None:
         if not self._ask_for_save():
             return
 
@@ -374,17 +374,20 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         self.open_file(os.path.join(self._env.data_dir, "templates", action.data() + ".metainfo.xml"), template=True)
 
-    def _open_menu_action_clicked(self):
+    def _open_menu_action_clicked(self) -> None:
         if not self._ask_for_save():
             return
-        filter = QCoreApplication.translate("MainWindow", "AppStream Files") + " (*.metainfo.xml *.metainfo.xml.in *.appdata.xml *.appdata.xml.in);;" +   QCoreApplication.translate("MainWindow", "All Files") + " (*)"
+
+        filter = QCoreApplication.translate("MainWindow", "AppStream Files") + " (*.metainfo.xml *.metainfo.xml.in *.appdata.xml *.appdata.xml.in);;" + QCoreApplication.translate("MainWindow", "All Files") + " (*)"
         path = QFileDialog.getOpenFileName(self, filter=filter)
+
         if path[0] == "":
             return
+
         self.open_file(path[0])
         self.add_to_recent_files(path[0])
 
-    def _open_recent_file(self):
+    def _open_recent_file(self) -> None:
         if not self._ask_for_save():
             return
         action = self.sender()
@@ -393,16 +396,16 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.open_file(action.data())
         self.add_to_recent_files(action.data())
 
-    def _open_url_clicked(self):
+    def _open_url_clicked(self) -> None:
         if not self._ask_for_save():
             return
 
-        url = QInputDialog.getText(self, QCoreApplication.translate("MainWindow", "Enter URL"),  QCoreApplication.translate("MainWindow", "Please enter a URL"))[0]
+        url = QInputDialog.getText(self, QCoreApplication.translate("MainWindow", "Enter URL"), QCoreApplication.translate("MainWindow", "Please enter a URL"))[0]
 
         if url != "":
             self.open_url(url)
 
-    def _save_file_clicked(self):
+    def _save_file_clicked(self) -> None:
         if self._current_path is None:
             self._save_as_clicked()
             return
@@ -412,8 +415,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self._edited = False
         self.update_window_title()
 
-    def _save_as_clicked(self):
-        filter = QCoreApplication.translate("MainWindow", "AppStream Files") + " (*.metainfo.xml *.appdata.xml);;" +   QCoreApplication.translate("MainWindow", "All Files") + " (*)"
+    def _save_as_clicked(self) -> None:
+        filter = QCoreApplication.translate("MainWindow", "AppStream Files") + " (*.metainfo.xml *.appdata.xml);;" + QCoreApplication.translate("MainWindow", "All Files") + " (*)"
         path = QFileDialog.getSaveFileName(self, filter=filter)[0]
 
         if path == "":
@@ -425,11 +428,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self._edited = False
         self.update_window_title()
 
-    def _exit_menu_action_clicked(self):
+    def _exit_menu_action_clicked(self) -> None:
         if self._ask_for_save():
             sys.exit(0)
 
-    def _clear_recent_files(self):
+    def _clear_recent_files(self) -> None:
         self._env.recent_files.clear()
         self._update_recent_files_menu()
         self._env.save_recent_files()
@@ -450,7 +453,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     # Screenshots
 
-    def update_screenshot_table(self):
+    def update_screenshot_table(self) -> None:
         clear_table_widget(self.screenshot_table)
         for row, i in enumerate(self.screenshot_list):
             self.screenshot_table.insertRow(row)
@@ -473,14 +476,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             remove_button.clicked.connect(self._remove_screenshot_clicked)
             self.screenshot_table.setCellWidget(row, 3, remove_button)
 
-    def _check_screenshot_urls(self):
+    def _check_screenshot_urls(self) -> None:
         for i in self.screenshot_list:
             if not is_url_reachable(i["url"]):
                 QMessageBox.critical(self, QCoreApplication.translate("MainWindow", "Invalid URL"), QCoreApplication.translate("MainWindow", "The URL {{url}} does not work").replace("{{url}}", i["url"]))
                 return
         QMessageBox.information(self, QCoreApplication.translate("MainWindow", "Everything OK"), QCoreApplication.translate("MainWindow", "All URLs are working"))
 
-    def _default_button_clicked(self):
+    def _default_button_clicked(self) -> None:
         for count, i in enumerate(self.screenshot_list):
             if self.screenshot_table.cellWidget(count, 1).isChecked():
                 i["default"] = True
@@ -488,13 +491,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 i["default"] = False
         self.set_file_edited()
 
-    def _edit_screenshot_button_clicked(self):
+    def _edit_screenshot_button_clicked(self) -> None:
         for i in range(self.screenshot_table.rowCount()):
             if self.screenshot_table.cellWidget(i, 2) == self.sender():
                 self._screenshot_window.open_window(i)
                 return
 
-    def _remove_screenshot_clicked(self):
+    def _remove_screenshot_clicked(self) -> None:
         for i in range(self.screenshot_table.rowCount()):
             if self.screenshot_table.cellWidget(i, 3) == self.sender():
                 default = self.screenshot_list[i]["default"]
@@ -505,7 +508,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 self.set_file_edited()
                 return
 
-    def _screenshot_table_row_moved(self, logical_index: int, old_visual_index: int, new_visual_index: int):
+    def _screenshot_table_row_moved(self, logical_index: int, old_visual_index: int, new_visual_index: int) -> None:
         item = self.screenshot_list[old_visual_index]
         if new_visual_index == len(self.screenshot_list) - 1:
             self.screenshot_list.append(item)
@@ -530,7 +533,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     # Links
 
-    def _check_links_url_button_clicked(self):
+    def _check_links_url_button_clicked(self) -> None:
         for i in self._url_list:
             url = getattr(self, f"{i}_url_edit").text()
             if url == "":
@@ -542,13 +545,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     # Categories
 
-    def _update_categorie_remove_button_enabled(self):
+    def _update_categorie_remove_button_enabled(self) -> None:
         if self.categorie_list.currentRow() == -1:
             self.categorie_remove_button.setEnabled(False)
         else:
             self.categorie_remove_button.setEnabled(True)
 
-    def _add_categorie_button_clicked(self):
+    def _add_categorie_button_clicked(self) -> None:
         categorie, ok = QInputDialog.getItem(self, QCoreApplication.translate("MainWindow", "Add a Categorie"), QCoreApplication.translate("MainWindow", "Please select a Categorie from the list below"), self._env.categories, 0, False)
         if not ok:
             return
@@ -559,7 +562,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self._update_categorie_remove_button_enabled()
             self.set_file_edited()
 
-    def _remove_categorie_button_clicked(self):
+    def _remove_categorie_button_clicked(self) -> None:
         row = self.categorie_list.currentRow()
         if row == -1:
             return
@@ -569,7 +572,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     # Provides
 
-    def _add_provides_row(self, value_type: Optional[str] = None, value: str = ""):
+    def _add_provides_row(self, value_type: Optional[str] = None, value: str = "") -> None:
         row = self.provides_table.rowCount()
         self.provides_table.insertRow(row)
 
@@ -601,7 +604,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         self.set_file_edited()
 
-    def _remove_provides_button_clicked(self):
+    def _remove_provides_button_clicked(self) -> None:
         for i in range(self.provides_table.rowCount()):
             if self.provides_table.cellWidget(i, 2) == self.sender():
                 self.provides_table.removeRow(i)
@@ -610,7 +613,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     # Keywords
 
-    def _add_keyword(self):
+    def _add_keyword(self) -> None:
         text, ok = QInputDialog.getText(self, QCoreApplication.translate("MainWindow", "New Keyword"), QCoreApplication.translate("MainWindow", "Please enter a new Keyword"))
         if not ok:
             return
@@ -621,27 +624,30 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self._update_keyword_edit_remove_button()
         self.set_file_edited()
 
-    def _edit_keyword(self):
+    def _edit_keyword(self) -> None:
         if self.keyword_list.currentRow() == -1:
             return
         old_text = self.keyword_list.currentItem().text()
         new_text, ok = QInputDialog.getText(self, QCoreApplication.translate("MainWindow", "Edit Keyword"), QCoreApplication.translate("MainWindow", "Please edit the Keyword"), text=old_text)
+
         if not ok or old_text == new_text:
             return
+
         if list_widget_contains_item(self.keyword_list, new_text):
             QMessageBox.critical(self, QCoreApplication.translate("MainWindow", "Keyword in List"), QCoreApplication.translate("MainWindow", "This Keyword is already in the List"))
             return
+
         self.keyword_list.currentItem().setText(new_text)
         self.set_file_edited()
 
-    def _remove_keyword(self):
+    def _remove_keyword(self) -> None:
         index = self.keyword_list.currentRow()
         if index != -1:
             self.keyword_list.takeItem(index)
             self._update_keyword_edit_remove_button()
             self.set_file_edited()
 
-    def _update_keyword_edit_remove_button(self):
+    def _update_keyword_edit_remove_button(self) -> None:
         if self.keyword_list.currentRow() == -1:
             self.keyword_edit_button.setEnabled(False)
             self.keyword_remove_button.setEnabled(False)
@@ -654,7 +660,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def get_id(self) -> str:
         return self.id_edit.text()
 
-    def reset_data(self):
+    def reset_data(self) -> None:
         for value in vars(self).values():
             if isinstance(value, QLineEdit):
                 value.setText("")
@@ -725,7 +731,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self._current_path = None
             self.update_window_title()
 
-    def _parse_screenshots_tag(self, screenshots_tag: etree._Element):
+    def _parse_screenshots_tag(self, screenshots_tag: etree._Element) -> None:
         for i in screenshots_tag.getchildren():
             new_dict: ScreenshotDict = {
                 "default": i.get("type") == "default",
@@ -886,7 +892,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     elif i.get("type") == "system":
                         self._add_provides_row(value_type="dbus-system", value=i.text)
                     else:
-                        print(f"Invalid dbus type " + i.get("type"), file=sys.stderr)
+                        print("Invalid dbus type " + i.get("type"), file=sys.stderr)
                 else:
                     self._add_provides_row(value_type=i.tag, value=i.text)
 
@@ -936,7 +942,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         return screenshot_tag
 
-    def _write_releases(self, root_tag: etree.Element):
+    def _write_releases(self, root_tag: etree.Element) -> None:
         releases_tag = etree.SubElement(root_tag, "releases")
         if self.internal_releases_radio_button.isChecked():
             self._releases_widget.write_tag(releases_tag)
@@ -947,12 +953,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             if (url := self.external_releases_url_edit.text().strip()) != "":
                 releases_tag.set("url", url)
 
-    def _write_requires_recommends_supports_tags(self, root_tag: etree._Element, current_type: str):
+    def _write_requires_recommends_supports_tags(self, root_tag: etree._Element, current_type: str) -> None:
         current_tag = etree.SubElement(root_tag, current_type)
         for i in self._control_type_list:
             if getattr(self, "control_box_" + i).currentData() == current_type:
                 control_tag = etree.SubElement(current_tag, "control")
-                control_tag.text = i.replace("_", "-") # For tv-remote - is in a object name not supportet
+                control_tag.text = i.replace("_", "-")  # For tv-remote - is in a object name not supportet
         self._relations_widget.get_save_data(current_tag, current_type)
         if len(current_tag.getchildren()) == 0:
             root_tag.remove(current_tag)
@@ -1040,8 +1046,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self._write_requires_recommends_supports_tags(root, "recommends")
         self._write_requires_recommends_supports_tags(root, "supports")
 
-        content_rating_tag =  etree.SubElement(root, "content_rating")
-        content_rating_tag.set("type", "oars-1.1" )
+        content_rating_tag = etree.SubElement(root, "content_rating")
+        content_rating_tag.set("type", "oars-1.1")
         self._oars_widget.save_file(content_rating_tag)
 
         if self.provides_table.rowCount() > 0:
@@ -1079,7 +1085,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         return xml
 
-    def save_file(self, path: str):
+    def save_file(self, path: str) -> None:
         try:
             os.makedirs(os.path.dirname(path))
         except Exception:
@@ -1111,13 +1117,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         except Exception:
             QMessageBox.critical(self, QCoreApplication.translate("MainWindow", "{{binary}} not found").replace("{{binary}}", command[0]), QCoreApplication.translate("MainWindow", "{{binary}} was not found. Make sure it is installed and in PATH.").replace("{{binary}}", command[0]))
 
-    def dragEnterEvent(self, event: QDragEnterEvent):
+    def dragEnterEvent(self, event: QDragEnterEvent) -> None:
         if event.mimeData().hasUrls():
             event.accept()
         else:
             event.ignore()
 
-    def dropEvent(self, event: QDropEvent):
+    def dropEvent(self, event: QDropEvent) -> None:
         try:
             url = event.mimeData().urls()[0]
         except IndexError:
@@ -1133,7 +1139,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         else:
             self.open_url(url.toString())
 
-    def closeEvent(self, event: QCloseEvent):
+    def closeEvent(self, event: QCloseEvent) -> None:
         if self._ask_for_save():
             try:
                 shutil.rmtree(get_shared_temp_dir())

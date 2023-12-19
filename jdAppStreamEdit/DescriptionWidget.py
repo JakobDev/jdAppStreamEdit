@@ -14,7 +14,7 @@ if TYPE_CHECKING:
 
 
 class ParagraphWidget(QWidget):
-    def __init__(self, env: "Environment", description_widget: "DescriptionWidget", text: Optional[str] = None, translations: Optional[dict[str, str]] = None):
+    def __init__(self, env: "Environment", description_widget: "DescriptionWidget", text: Optional[str] = None, translations: Optional[dict[str, str]] = None) -> None:
         super().__init__()
 
         self._env = env
@@ -41,11 +41,11 @@ class ParagraphWidget(QWidget):
 
         self.setLayout(main_layout)
 
-    def _translate_button_clicked(self):
+    def _translate_button_clicked(self) -> None:
         self._env.translate_window.open_window(self._translations)
         self._description_widget.update_preview()
 
-    def get_tag(self, parent_tag:  etree._Element, preview: bool = False):
+    def get_tag(self, parent_tag: etree._Element, preview: bool = False) -> None:
         tag = etree.SubElement(parent_tag, "p")
         tag.text = self._edit_widget.toPlainText().strip()
         if preview:
@@ -57,7 +57,7 @@ class ParagraphWidget(QWidget):
 
 
 class ListWidget(QListWidget):
-    def __init__(self, env: "Environment", description_widget: "DescriptionWidget", list_type: str, parent_tag: Optional[etree._Element] = None):
+    def __init__(self, env: "Environment", description_widget: "DescriptionWidget", list_type: str, parent_tag: Optional[etree._Element] = None) -> None:
         super().__init__()
 
         self._description_widget = description_widget
@@ -96,7 +96,7 @@ class ListWidget(QListWidget):
         if parent_tag is not None:
             self._load_tag(parent_tag)
 
-    def _load_tag(self, tag: etree._Element):
+    def _load_tag(self, tag: etree._Element) -> None:
         translation_mode = False
         current_translations = {}
         current_text = None
@@ -120,7 +120,7 @@ class ListWidget(QListWidget):
             item.setData(42, current_translations)
             self._list_widget.addItem(item)
 
-    def _add_button_clicked(self):
+    def _add_button_clicked(self) -> None:
         text, ok = QInputDialog.getText(self, QCoreApplication.translate("DescriptionWidget", "Add Item"), QCoreApplication.translate("DescriptionWidget", "Please enter a new list item"))
         if not ok:
             return
@@ -129,7 +129,7 @@ class ListWidget(QListWidget):
         self._list_widget.addItem(item)
         self._description_widget.update_preview()
 
-    def _edit_item(self):
+    def _edit_item(self) -> None:
         item = self._list_widget.currentItem()
         if item is None:
             return
@@ -140,14 +140,14 @@ class ListWidget(QListWidget):
         item.setText(new_text)
         self._description_widget.update_preview()
 
-    def _remove_item(self):
+    def _remove_item(self) -> None:
         index = self._list_widget.currentRow()
         if index == -1:
             return
         self._list_widget.takeItem(index)
         self._description_widget.update_preview()
 
-    def _translate_button_clicked(self):
+    def _translate_button_clicked(self) -> None:
         item = self._list_widget.currentItem()
         if item is None:
             return
@@ -156,7 +156,7 @@ class ListWidget(QListWidget):
         item.setData(42, data)
         self._description_widget.update_preview()
 
-    def get_tag(self, parent_tag:  etree._Element, preview: bool = False):
+    def get_tag(self, parent_tag: etree._Element, preview: bool = False) -> None:
         list_tag = etree.SubElement(parent_tag, self._list_type)
         for i in range(self._list_widget.count()):
             entry_tag = etree.SubElement(list_tag, "li")
@@ -170,9 +170,8 @@ class ListWidget(QListWidget):
                 trans_tag.text = value
 
 
-
 class DescriptionWidget(QWidget, Ui_DescriptionWidget):
-    def __init__(self, env: "Environment", main_window: Optional["MainWindow"] = None):
+    def __init__(self, env: "Environment", main_window: Optional["MainWindow"] = None) -> None:
         super().__init__()
 
         self.setupUi(self)
@@ -188,7 +187,7 @@ class DescriptionWidget(QWidget, Ui_DescriptionWidget):
         self.ordered_list_add_button.clicked.connect(lambda: self._add_list("ol"))
         self.unordered_list_add_button.clicked.connect(lambda: self._add_list("ul"))
 
-    def _add_paragraph(self, text: Optional[str] = None, translations: Optional[dict[str, str]] = None):
+    def _add_paragraph(self, text: Optional[str] = None, translations: Optional[dict[str, str]] = None) -> None:
         row = self.description_table.rowCount()
         self.description_table.insertRow(row)
 
@@ -206,7 +205,7 @@ class DescriptionWidget(QWidget, Ui_DescriptionWidget):
 
         self.update_preview()
 
-    def _add_list(self, list_type: str, parent_tag: Optional[etree._Element] = None):
+    def _add_list(self, list_type: str, parent_tag: Optional[etree._Element] = None) -> None:
         row = self.description_table.rowCount()
         self.description_table.insertRow(row)
 
@@ -228,18 +227,18 @@ class DescriptionWidget(QWidget, Ui_DescriptionWidget):
 
         self.update_preview()
 
-    def _remove_button_clicked(self):
+    def _remove_button_clicked(self) -> None:
         for i in range(self.description_table.rowCount()):
             if self.description_table.cellWidget(i, 2) == self.sender():
                 self.description_table.removeRow(i)
                 self.update_preview()
                 return
 
-    def reset_data(self):
+    def reset_data(self) -> None:
         clear_table_widget(self.description_table)
         self.update_preview()
 
-    def load_tags(self, parent_tag: etree._Element):
+    def load_tags(self, parent_tag: etree._Element) -> None:
         paragraph_lang_mode = False
         current_paragraph = None
         current_paragraph_translations = {}
@@ -269,11 +268,11 @@ class DescriptionWidget(QWidget, Ui_DescriptionWidget):
 
         self.update_preview()
 
-    def get_tags(self, parent_tag: etree._Element, preview: bool = False):
+    def get_tags(self, parent_tag: etree._Element, preview: bool = False) -> None:
         for i in get_logical_table_row_list(self.description_table):
             self.description_table.cellWidget(i, 1).get_tag(parent_tag, preview=preview)
 
-    def update_preview(self):
+    def update_preview(self) -> None:
         body = etree.Element("body")
         self.get_tags(body, preview=True)
         self.description_preview.setHtml(etree.tostring(body).decode("utf-8"))

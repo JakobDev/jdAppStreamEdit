@@ -18,7 +18,7 @@ def get_categories_from_site(url: str) -> list[str]:
     return result
 
 
-def main():
+def main() -> None:
     if len(sys.argv) < 2:
         print("Usage: UpdateCategories <path>", file=sys.stderr)
         sys.exit(1)

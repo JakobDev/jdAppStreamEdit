@@ -1,6 +1,6 @@
 from PyQt6.QtWidgets import QWidget, QInputDialog, QMessageBox, QFileDialog
+from .Functions import calculate_checksum_from_url, assert_func
 from PyQt6.QtCore import Qt, QCoreApplication, QDate
-from .Functions import calculate_checksum_from_url
 from .Interfaces import ReleaseImporter
 from .Types import ReleaseImportInfo
 from lxml import etree
@@ -12,7 +12,7 @@ import requests
 
 def _create_artifact_source_tag(url: str) -> etree.Element:
     """Creates a artifact tag for the given source URL"""
-    atrtifact_tag =  etree.Element("artifact")
+    atrtifact_tag = etree.Element("artifact")
     atrtifact_tag.set("type", "source")
     location_tag = etree.SubElement(atrtifact_tag, "location")
     location_tag.text = url
@@ -21,7 +21,6 @@ def _create_artifact_source_tag(url: str) -> etree.Element:
         checksum_tag.set("type", i)
         checksum_tag.text = calculate_checksum_from_url(url, i)
     return atrtifact_tag
-
 
 
 class _GitHubImporter(ReleaseImporter):
@@ -80,7 +79,7 @@ class _GitLabImporter(ReleaseImporter):
         host = parsed.scheme + "://" + parsed.netloc
         try:
             r = requests.get(f"{host}/api/v4/projects/{urllib.parse.quote_plus(parsed.path[1:])}/releases")
-            assert r.status_code == 200
+            assert_func(r.status_code == 200)
         except Exception:
             QMessageBox.critical(parent_widget, QCoreApplication.translate("ReleaseImporter", "Could not get Data"), QCoreApplication.translate("ReleaseImporter", "Could not get release Data for that Repo. Make sure you have the right URL."))
             return
@@ -117,7 +116,7 @@ class _GiteaImporter(ReleaseImporter):
         try:
             r = requests.get(f"{host}/api/v1/repos/{parsed.path[1:]}/releases")
             print(f"{host}/api/v1/repos/{parsed.path[1:]}/releases")
-            assert r.status_code == 200
+            assert_func(r.status_code == 200)
         except Exception:
             QMessageBox.critical(parent_widget, QCoreApplication.translate("ReleaseImporter", "Could not get Data"), QCoreApplication.translate("ReleaseImporter", "Could not get release Data for that Repo. Make sure you have the right URL."))
             return
@@ -132,13 +131,14 @@ class _GiteaImporter(ReleaseImporter):
     def get_menu_text() -> str:
         return QCoreApplication.translate("ReleaseImporter", "From Gitea")
 
+
 class _GitImporter(ReleaseImporter):
     @staticmethod
     def do_import(parent_widget: QWidget) -> list[ReleaseImportInfo]:
         try:
             subprocess.run(["git"], capture_output=True)
         except FileNotFoundError:
-            QMessageBox.critical(parent_widget,  QCoreApplication.translate("ReleaseImporter", "git not found"), QCoreApplication.translate("ReleaseImporter", "git was not found. Make sure it is installed and in PATH."))
+            QMessageBox.critical(parent_widget, QCoreApplication.translate("ReleaseImporter", "git not found"), QCoreApplication.translate("ReleaseImporter", "git was not found. Make sure it is installed and in PATH."))
             return
 
         repo_url, ok = QInputDialog.getText(parent_widget, QCoreApplication.translate("ReleaseImporter", "Enter Repo URL"), QCoreApplication.translate("ReleaseImporter", "Please Enter the URL to the Git Repo. It is the URL you would use with git clone."))
@@ -174,7 +174,7 @@ class _NewsFileImporter(ReleaseImporter):
         try:
             subprocess.run(["appstreamcli"], capture_output=True)
         except FileNotFoundError:
-            QMessageBox.critical(parent_widget,  QCoreApplication.translate("ReleaseImporter", "appstreamcli not found"), QCoreApplication.translate("ReleaseImporter", "appstreamcli was not found. Make sure it is installed and in PATH."))
+            QMessageBox.critical(parent_widget, QCoreApplication.translate("ReleaseImporter", "appstreamcli not found"), QCoreApplication.translate("ReleaseImporter", "appstreamcli was not found. Make sure it is installed and in PATH."))
             return
 
         path = QFileDialog.getOpenFileName(parent_widget)[0]
@@ -185,7 +185,7 @@ class _NewsFileImporter(ReleaseImporter):
         result = subprocess.run(["appstreamcli", "news-to-metainfo", path, "-"], capture_output=True)
 
         if result.returncode != 0:
-            QMessageBox.critical(parent_widget,  QCoreApplication.translate("ReleaseImporter", "Import of NEWS file failed"), QCoreApplication.translate("ReleaseImporter", "An error occurred while importing the NEWS file. Make sure it has the correct format."))
+            QMessageBox.critical(parent_widget, QCoreApplication.translate("ReleaseImporter", "Import of NEWS file failed"), QCoreApplication.translate("ReleaseImporter", "An error occurred while importing the NEWS file. Make sure it has the correct format."))
             return
 
         tags = etree.fromstring(result.stdout)
@@ -195,7 +195,7 @@ class _NewsFileImporter(ReleaseImporter):
 
             description_tag = i.find("description")
             if description_tag is not None:
-                    data["description"] = description_tag
+                data["description"] = description_tag
 
             release_list.append({"version": i.get("version"), "date": QDate.fromString(i.get("date"), Qt.DateFormat.ISODate), "data": data})
         return release_list

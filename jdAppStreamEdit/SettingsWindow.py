@@ -15,7 +15,7 @@ if TYPE_CHECKING:
 
 
 class SettingsWindow(QDialog, Ui_SettingsWindow):
-    def __init__(self, env: "Environment", main_window: "MainWindow"):
+    def __init__(self, env: "Environment", main_window: "MainWindow") -> None:
         super().__init__(main_window)
 
         self.setupUi(self)
@@ -50,7 +50,7 @@ class SettingsWindow(QDialog, Ui_SettingsWindow):
         self.ok_button.clicked.connect(self._ok_button_clicked)
         self.cancel_button.clicked.connect(self.close)
 
-    def _update_widgets(self):
+    def _update_widgets(self) -> None:
         index = self.language_box.findData(self._env.settings.get("language"))
         if index == -1:
             self.language_box.setCurrentIndex(0)
@@ -76,14 +76,14 @@ class SettingsWindow(QDialog, Ui_SettingsWindow):
         self.whitespace_label.setEnabled(enabled)
         self.whitespace_spin_box.setEnabled(enabled)
 
-    def _reset_button_clicked(self):
+    def _reset_button_clicked(self) -> None:
         self._env.settings.reset()
         self._update_widgets()
 
-    def _ok_button_clicked(self):
+    def _ok_button_clicked(self) -> None:
         self._env.settings.set("language", self.language_box.currentData())
-        self._env.settings.set("recentFilesLength",  self.recent_files_spin_box.value())
-        self._env.settings.set("windowTitleType",  self.window_title_box.currentData())
+        self._env.settings.set("recentFilesLength", self.recent_files_spin_box.value())
+        self._env.settings.set("windowTitleType", self.window_title_box.currentData())
         self._env.settings.set("checkSaveBeforeClosing", self.check_save_check_box.isChecked())
         self._env.settings.set("showEditedTitle", self.title_edited_check_box.isChecked())
         self._env.settings.set("useEditorconfig", self.use_editorconfig_check_box.isChecked())
@@ -104,6 +104,6 @@ class SettingsWindow(QDialog, Ui_SettingsWindow):
         self._env.settings.save(os.path.join(self._env.data_dir, "settings.json"))
         self.close()
 
-    def open_window(self):
+    def open_window(self) -> None:
         self._update_widgets()
         self.open()

@@ -16,7 +16,7 @@ if TYPE_CHECKING:
 
 
 class ScreenshotWindow(QDialog, Ui_ScreenshotWindow):
-    def __init__(self, env: "Environment", main_window: "MainWindow"):
+    def __init__(self, env: "Environment", main_window: "MainWindow") -> None:
         super().__init__(main_window)
 
         self.setupUi(self)
@@ -57,7 +57,7 @@ class ScreenshotWindow(QDialog, Ui_ScreenshotWindow):
             return False
         return True
 
-    def _preview_button_clicked(self):
+    def _preview_button_clicked(self) -> None:
         if not self._check_url():
             return
 
@@ -174,7 +174,7 @@ class ScreenshotWindow(QDialog, Ui_ScreenshotWindow):
 
         return source_image
 
-    def _ok_button_clicked(self):
+    def _ok_button_clicked(self) -> None:
         if self.source_image_language_list.currentItem() is not None:
             lang = self.source_image_language_list.currentItem().text()
             self._source_image_translations[lang] = self._get_translated_source_image(lang)
@@ -193,7 +193,7 @@ class ScreenshotWindow(QDialog, Ui_ScreenshotWindow):
             new_dict["default"] = True
         else:
             if self._position is not None:
-                new_dict["default"] =  self._main_window.screenshot_list[self._position]["default"]
+                new_dict["default"] = self._main_window.screenshot_list[self._position]["default"]
             else:
                 new_dict["default"] = False
 

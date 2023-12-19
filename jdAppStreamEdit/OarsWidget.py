@@ -12,7 +12,7 @@ if TYPE_CHECKING:
 
 
 class OarsWidget(QWidget, Ui_OarsWidget):
-    def __init__(self, main_window: "MainWindow"):
+    def __init__(self, main_window: "MainWindow") -> None:
         super().__init__()
 
         self.setupUi(self)
@@ -31,7 +31,7 @@ class OarsWidget(QWidget, Ui_OarsWidget):
 
         self.tab_widget.setCurrentIndex(0)
 
-    def _fill_boxes(self):
+    def _fill_boxes(self) -> None:
         # Violence
 
         self.oars_box_violence_cartoon.addItem(QCoreApplication.translate("OarsWidget", "None"), "none")
@@ -150,18 +150,18 @@ class OarsWidget(QWidget, Ui_OarsWidget):
         self.oars_box_social_location.addItem(QCoreApplication.translate("OarsWidget", "None"), "none")
         self.oars_box_social_location.addItem(QCoreApplication.translate("OarsWidget", "Intense: Sharing physical location to other users e.g. a postal address"), "intense")
 
-    def reset_data(self):
+    def reset_data(self) -> None:
         for i in self._box_list:
             getattr(self, "oars_box_" + i).setCurrentIndex(0)
 
-    def open_file(self, content_rating_tag: etree._Element):
+    def open_file(self, content_rating_tag: etree._Element) -> None:
         for i in content_rating_tag.findall("content_attribute"):
             try:
                 select_combo_box_data(getattr(self, "oars_box_" + i.get("id").replace("-", "_")), i.text)
             except AttributeError:
-                print("Unknown ORAS Attribute ID " +  i.get("id").replace("-", "_"), file=sys.stderr)
+                print("Unknown ORAS Attribute ID " + i.get("id").replace("-", "_"), file=sys.stderr)
 
-    def save_file(self, content_rating_tag: etree._Element):
+    def save_file(self, content_rating_tag: etree._Element) -> None:
         for i in self._box_list:
             data = getattr(self, "oars_box_" + i).currentData()
             if data == "none":

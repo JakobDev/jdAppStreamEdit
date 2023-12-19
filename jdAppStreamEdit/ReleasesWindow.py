@@ -16,7 +16,7 @@ if TYPE_CHECKING:
 
 
 class ReleasesWindow(QDialog, Ui_ReleasesWindow):
-    def __init__(self, env: "Environment", releases_widget: "ReleasesWidget", parent_window: QWidget):
+    def __init__(self, env: "Environment", releases_widget: "ReleasesWidget", parent_window: QWidget) -> None:
         super().__init__(parent_window)
 
         self.setupUi(self)
@@ -45,15 +45,15 @@ class ReleasesWindow(QDialog, Ui_ReleasesWindow):
         self.ok_button.clicked.connect(self._ok_button_clicked)
         self.cancel_button.clicked.connect(self.close)
 
-    def _edit_artifact_clicked(self):
+    def _edit_artifact_clicked(self) -> None:
         row = get_sender_table_row(self.artifacts_table, 1, self.sender())
         self._artifacts_window.open_window(row)
 
-    def _remove_artifact_clicked(self):
+    def _remove_artifact_clicked(self) -> None:
         row = get_sender_table_row(self.artifacts_table, 2, self.sender())
         self.artifacts_table.removeRow(row)
 
-    def _ok_button_clicked(self):
+    def _ok_button_clicked(self) -> None:
         new_dict = {}
 
         if self.url_edit.text() != "":
@@ -79,7 +79,7 @@ class ReleasesWindow(QDialog, Ui_ReleasesWindow):
 
         self.close()
 
-    def add_artifacts_row(self, row: int):
+    def add_artifacts_row(self, row: int) -> None:
         self.artifacts_table.insertRow(row)
 
         edit_button = QPushButton(QCoreApplication.translate("ReleasesWindow", "Edit"))
@@ -90,7 +90,7 @@ class ReleasesWindow(QDialog, Ui_ReleasesWindow):
         remove_button.clicked.connect(self._remove_artifact_clicked)
         self.artifacts_table.setCellWidget(row, 2, remove_button)
 
-    def open_window(self, position: int):
+    def open_window(self, position: int) -> None:
         self._position = position
 
         data = self._releases_widget.releases_table.item(self._position, 0).data(42)
@@ -100,7 +100,7 @@ class ReleasesWindow(QDialog, Ui_ReleasesWindow):
         else:
             self.url_edit.setText("")
 
-        if "urgency"in data:
+        if "urgency" in data:
             select_combo_box_data(self.urgency_box, data["urgency"])
         else:
             self.urgency_box.setCurrentIndex(0)

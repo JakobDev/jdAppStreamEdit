@@ -1,12 +1,10 @@
 from PyQt6.QtWidgets import QDialog, QMessageBox, QInputDialog, QListWidgetItem, QStyle
-from .Functions import is_url_valid, set_layout_enabled, list_widget_contains_item
+from .Functions import set_layout_enabled, list_widget_contains_item
 from .ui_compiled.ThumbnailWindow import Ui_ThumbnailWindow
-from .Types import ScreenshotDict, ScreenshotDictImage
 from typing import Optional, TYPE_CHECKING
 from PyQt6.QtCore import QCoreApplication
+from .Types import ScreenshotDictImage
 from PyQt6.QtGui import QIcon
-import requests
-import copy
 
 
 if TYPE_CHECKING:

@@ -12,7 +12,7 @@ if TYPE_CHECKING:
 
 
 class ManageTemplatesWindow(QDialog, Ui_ManageTemplatesWindow):
-    def __init__(self, env: "Environment", main_window: "MainWindow"):
+    def __init__(self, env: "Environment", main_window: "MainWindow") -> None:
         super().__init__()
 
         self.setupUi(self)
@@ -29,7 +29,7 @@ class ManageTemplatesWindow(QDialog, Ui_ManageTemplatesWindow):
         self.delete_button.clicked.connect(self._delete_button_clicked)
         self.close_button.clicked.connect(self.close)
 
-    def _update_rename_delete_buttons_enabled(self):
+    def _update_rename_delete_buttons_enabled(self) -> None:
         if self.template_list.currentRow() == -1:
             self.rename_button.setEnabled(False)
             self.delete_button.setEnabled(False)
@@ -37,7 +37,7 @@ class ManageTemplatesWindow(QDialog, Ui_ManageTemplatesWindow):
             self.rename_button.setEnabled(True)
             self.delete_button.setEnabled(True)
 
-    def _update_template_list_widget(self):
+    def _update_template_list_widget(self) -> None:
         self.template_list.clear()
 
         for i in self._env.template_list:
@@ -45,7 +45,7 @@ class ManageTemplatesWindow(QDialog, Ui_ManageTemplatesWindow):
 
         self._update_rename_delete_buttons_enabled()
 
-    def _save_button_clicked(self):
+    def _save_button_clicked(self) -> None:
         name = QInputDialog.getText(self, QCoreApplication.translate("ManageTemplatesWindow", "Enter name"), QCoreApplication.translate("ManageTemplatesWindow", "This will save your current document as template. Please enter a name."))[0]
 
         if name == "":
@@ -61,7 +61,7 @@ class ManageTemplatesWindow(QDialog, Ui_ManageTemplatesWindow):
         self._update_template_list_widget()
         self._main_window._update_new_template_file_menu()
 
-    def _rename_button_clicked(self):
+    def _rename_button_clicked(self) -> None:
         new_name = QInputDialog.getText(self, QCoreApplication.translate("ManageTemplatesWindow", "Enter name"), QCoreApplication.translate("ManageTemplatesWindow", "Please enter the new name"))[0]
 
         if new_name == "":
@@ -84,7 +84,7 @@ class ManageTemplatesWindow(QDialog, Ui_ManageTemplatesWindow):
         self._update_template_list_widget()
         self._main_window._update_new_template_file_menu()
 
-    def _delete_button_clicked(self):
+    def _delete_button_clicked(self) -> None:
         current_name = self.template_list.currentItem().text()
 
         if QMessageBox.question(self, QCoreApplication.translate("ManageTemplatesWindow", "Delete {{name}}").replace("{{name}}", current_name), QCoreApplication.translate("ManageTemplatesWindow", "Are you sure you want to delete {{name}}?").replace("{{name}}", current_name), QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No) != QMessageBox.StandardButton.Yes:

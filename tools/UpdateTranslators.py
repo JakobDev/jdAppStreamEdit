@@ -12,6 +12,7 @@ def get_git_authors(path: pathlib.Path) -> list[str]:
     authors = result.stdout.decode("utf-8").splitlines()
     return authors
 
+
 def parse_translation_directory(path: pathlib.Path, prefix: str, suffix: str, translator_dict: dict[str, list[str]]) -> None:
     for file in path.iterdir():
         if file.suffix != suffix:
@@ -41,7 +42,6 @@ def main() -> None:
 
     with open(root_dir / "jdAppStreamEdit" / "data" / "translators.json", "w", encoding="utf-8", newline="\n") as f:
         json.dump(write_dict, f, ensure_ascii=False, indent=4)
-
 
 
 if __name__ == "__main__":

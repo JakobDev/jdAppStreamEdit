@@ -10,5 +10,5 @@ class PluginAPI:
     def __init__(self, env: "Environment") -> None:
         self._env = env
 
-    def add_release_importer(self,release_importer: ReleaseImporter) -> None:
+    def add_release_importer(self, release_importer: ReleaseImporter) -> None:
         self._env.release_importer.append(release_importer)

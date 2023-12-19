@@ -5,7 +5,7 @@ import shutil
 import sys
 
 
-def main():
+def main() -> None:
     if shutil.which("pyuic6") is None:
         print("pyuic6 was not found", file=sys.stderr)
         sys.exit(1)

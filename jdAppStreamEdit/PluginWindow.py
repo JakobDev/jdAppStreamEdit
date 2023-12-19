@@ -13,7 +13,7 @@ if TYPE_CHECKING:
 
 
 class PluginWindow(QDialog, Ui_PluginWindow):
-    def __init__(self, env: "Environment"):
+    def __init__(self, env: "Environment") -> None:
         super().__init__()
         self._env = env
 

@@ -14,7 +14,7 @@ if TYPE_CHECKING:
 
 
 class ValidateWindow(QDialog, Ui_ValidateWindow):
-    def __init__(self, env: "Environment", main_window: "MainWindow"):
+    def __init__(self, env: "Environment", main_window: "MainWindow") -> None:
         super().__init__(main_window)
 
         self.setupUi(self)
@@ -27,7 +27,7 @@ class ValidateWindow(QDialog, Ui_ValidateWindow):
         self.mode_box.currentIndexChanged.connect(self._execute_command)
         self.ok_button.clicked.connect(self.close)
 
-    def _execute_command(self):
+    def _execute_command(self) -> None:
         temp_path = os.path.join(tempfile.gettempdir(), self._main_window.get_id() + ".metainfo.xml")
         self._main_window.save_file(temp_path)
         if self.mode_box.currentIndex() == 0:
@@ -53,8 +53,7 @@ class ValidateWindow(QDialog, Ui_ValidateWindow):
         self.output_field.setPlainText(result.stdout)
         os.remove(temp_path)
 
-
-    def open_window(self):
+    def open_window(self) -> None:
         if self._main_window.get_id() == "":
             QMessageBox.critical(self.parent(), QCoreApplication.translate("ValidateWindow", "No ID"), QCoreApplication.translate("ValidateWindow", "You need to set a ID to use this feature"))
             return

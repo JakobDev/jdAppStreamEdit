@@ -1,4 +1,4 @@
-from PyQt6.QtWidgets import QTableWidget, QHeaderView, QListWidget, QComboBox, QLayout, QWidget
+from PyQt6.QtWidgets import QTableWidget, QHeaderView, QListWidget, QComboBox, QLayout
 from typing import Optional, List, Any, TYPE_CHECKING
 from PyQt6.QtCore import QObject
 from lxml import etree
@@ -21,13 +21,13 @@ if TYPE_CHECKING:
     from .Settings import Settings
 
 
-def clear_table_widget(table: QTableWidget):
+def clear_table_widget(table: QTableWidget) -> None:
     """Removes all Rows from a QTableWidget"""
     while table.rowCount() > 0:
         table.removeRow(0)
 
 
-def stretch_table_widget_colums_size(table: QTableWidget):
+def stretch_table_widget_colums_size(table: QTableWidget) -> None:
     """Stretch all Colums of a QTableWidget"""
     for i in range(table.columnCount()):
         table.horizontalHeader().setSectionResizeMode(i, QHeaderView.ResizeMode.Stretch)
@@ -60,7 +60,7 @@ def is_url_reachable(url: str) -> bool:
         return False
 
 
-def select_combo_box_data(box: QComboBox, data: Any, default_index: int = 0):
+def select_combo_box_data(box: QComboBox, data: Any, default_index: int = 0) -> None:
     """Set the index to the item with the given data"""
     index = box.findData(data)
     if index == -1:
@@ -92,7 +92,7 @@ def calculate_checksum_from_url(url: str, hashtype: str) -> Optional[str]:
 
 def create_artifact_source_tag(url: str) -> etree.Element:
     """Creates a artifact tag for the given source URL"""
-    atrtifact_tag =  etree.Element("artifact")
+    atrtifact_tag = etree.Element("artifact")
     atrtifact_tag.set("type", "source")
     location_tag = etree.SubElement(atrtifact_tag, "location")
     location_tag.text = url

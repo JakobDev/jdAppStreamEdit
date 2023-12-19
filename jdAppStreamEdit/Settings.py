@@ -6,7 +6,7 @@ import os
 
 
 class Settings():
-    def __init__(self):
+    def __init__(self) -> None:
         self._default_settings = {
             "language": "default",
             "recentFilesLength": 10,
@@ -34,24 +34,25 @@ class Settings():
         else:
             return None
 
-    def set(self, key: str, value: Any):
+    def set(self, key: str, value: Any) -> None:
         """Set the value of a setting"""
         self._user_settings[key] = copy.deepcopy(value)
 
-    def save(self, path: str):
+    def save(self, path: str) -> None:
         """Save settings into file"""
         if len(self._user_settings) == 0 and not os.path.isfile(path):
             return
         with open(path, "w", encoding="utf-8") as f:
             json.dump(self._user_settings, f, ensure_ascii=False, indent=4)
 
-    def load(self, path: str):
+    def load(self, path: str) -> None:
         """Load settings from file"""
         if not os.path.isfile(path):
             return
+
         with open(path, "r", encoding="utf-8") as f:
             self._user_settings = json.load(f)
 
-    def reset(self):
+    def reset(self) -> None:
         """Resets all settings to the default values"""
         self._user_settings.clear()

@@ -6,7 +6,7 @@ import sys
 import os
 
 
-def main():
+def main() -> None:
     if not shutil.which("pylupdate6"):
         print("pylupdate6 was not found")
         sys.exit(1)

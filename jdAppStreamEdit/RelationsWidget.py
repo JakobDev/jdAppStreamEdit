@@ -13,7 +13,7 @@ if TYPE_CHECKING:
 
 
 class RelationsWidget(QWidget, Ui_RelationsWidget):
-    def __init__(self, main_window: "MainWindow"):
+    def __init__(self, main_window: "MainWindow") -> None:
         super().__init__()
 
         self.setupUi(self)
@@ -52,7 +52,7 @@ class RelationsWidget(QWidget, Ui_RelationsWidget):
 
     # Screen
 
-    def _load_screen_data(self, tag_list: List[etree.Element], relation: str):
+    def _load_screen_data(self, tag_list: List[etree.Element], relation: str) -> None:
         for i in tag_list:
             size = i.get("compare")
             if size is None:
@@ -74,7 +74,7 @@ class RelationsWidget(QWidget, Ui_RelationsWidget):
             elif i.text == "xlarge":
                 getattr(self, "edit_screen_custom_" + append_string).setText("1200")
 
-    def _get_screen_save_data(self, parent_tag: etree.Element, relation: str):
+    def _get_screen_save_data(self, parent_tag: etree.Element, relation: str) -> None:
         for size in ("ge", "le"):
             append_string = size + "_" + relation
             if getattr(self, "edit_screen_custom_" + append_string).text() != "":
@@ -84,7 +84,7 @@ class RelationsWidget(QWidget, Ui_RelationsWidget):
 
     # Internet
 
-    def _update_internet_bandwith_enabled(self):
+    def _update_internet_bandwith_enabled(self) -> None:
         for relation in ("supports", "requires", "recommends"):
             value = getattr(self, f"box_internet_{relation}").currentData()
             enabled = value in ("first-run", "always")
@@ -94,7 +94,7 @@ class RelationsWidget(QWidget, Ui_RelationsWidget):
 
     # Modalias
 
-    def _add_modalias_row(self, relation: Optional[str] = None, chid: Optional[str] = None):
+    def _add_modalias_row(self, relation: Optional[str] = None, chid: Optional[str] = None) -> None:
         row = self.modalias_table.rowCount()
         self.modalias_table.insertRow(row)
 
@@ -118,7 +118,7 @@ class RelationsWidget(QWidget, Ui_RelationsWidget):
 
         self._main_window.set_file_edited()
 
-    def _remove_modalias_clicked(self):
+    def _remove_modalias_clicked(self) -> None:
         for i in range(self.modalias_table.rowCount()):
             if self.modalias_table.cellWidget(i, 2) == self.sender():
                 self.modalias_table.removeRow(i)
@@ -127,7 +127,7 @@ class RelationsWidget(QWidget, Ui_RelationsWidget):
 
     # Hardware
 
-    def _add_hardware_row(self, relation: Optional[str] = None, chid: Optional[str] = None):
+    def _add_hardware_row(self, relation: Optional[str] = None, chid: Optional[str] = None) -> None:
         row = self.hardware_table.rowCount()
         self.hardware_table.insertRow(row)
 
@@ -151,14 +151,14 @@ class RelationsWidget(QWidget, Ui_RelationsWidget):
 
         self._main_window.set_file_edited()
 
-    def _remove_hardware_clicked(self):
+    def _remove_hardware_clicked(self) -> None:
         for i in range(self.hardware_table.rowCount()):
             if self.hardware_table.cellWidget(i, 2) == self.sender():
                 self.hardware_table.removeRow(i)
                 self._main_window.set_file_edited()
                 return
 
-    def reset_data(self):
+    def reset_data(self) -> None:
         for key, value in vars(self).items():
             if key.startswith("rad_screen_device_class_"):
                 value.setChecked(True)
@@ -169,7 +169,7 @@ class RelationsWidget(QWidget, Ui_RelationsWidget):
             elif isinstance(value, QTableWidget):
                 clear_table_widget(value)
 
-    def load_data(self, relation_tag: etree.Element):
+    def load_data(self, relation_tag: etree.Element) -> None:
         self._load_screen_data(relation_tag.findall("display_length"), relation_tag.tag)
 
         memory_tag = relation_tag.find("memory")
@@ -193,7 +193,7 @@ class RelationsWidget(QWidget, Ui_RelationsWidget):
         for i in relation_tag.findall("hardware"):
             self._add_hardware_row(relation=relation_tag.tag, chid=i.text)
 
-    def get_save_data(self, parent_tag: etree.Element, relation: str):
+    def get_save_data(self, parent_tag: etree.Element, relation: str) -> None:
         if relation == "requires" or relation == "recommends":
             self._get_screen_save_data(parent_tag, relation)
 
@@ -216,9 +216,9 @@ class RelationsWidget(QWidget, Ui_RelationsWidget):
         for i in get_logical_table_row_list(self.modalias_table):
             if self.modalias_table.cellWidget(i, 0).currentData() == relation:
                 modalias_tag = etree.SubElement(parent_tag, "modalias")
-                modalias_tag.text =  self.modalias_table.item(i, 1).text().strip()
+                modalias_tag.text = self.modalias_table.item(i, 1).text().strip()
 
         for i in get_logical_table_row_list(self.hardware_table):
             if self.hardware_table.cellWidget(i, 0).currentData() == relation:
                 hardware_tag = etree.SubElement(parent_tag, "hardware")
-                hardware_tag.text =  self.hardware_table.item(i, 1).text().strip()
+                hardware_tag.text = self.hardware_table.item(i, 1).text().strip()

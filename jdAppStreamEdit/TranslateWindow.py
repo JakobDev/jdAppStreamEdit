@@ -1,9 +1,9 @@
 from .Functions import clear_table_widget, select_combo_box_data, get_logical_table_row_list, stretch_table_widget_colums_size
 from PyQt6.QtWidgets import QDialog, QComboBox, QPushButton, QTableWidgetItem, QMessageBox, QStyle
 from .ui_compiled.TranslateWindow import Ui_TranslateWindow
-from PyQt6.QtCore import QCoreApplication, QLocale, Qt
 from .Constants import TRANSLATE_LANGUAGE_SORT_SETTING
 from typing import Dict, Optional, TYPE_CHECKING
+from PyQt6.QtCore import QCoreApplication, Qt
 from PyQt6.QtGui import QIcon
 
 
@@ -12,7 +12,7 @@ if TYPE_CHECKING:
 
 
 class TranslateWindow(QDialog, Ui_TranslateWindow):
-    def __init__(self, env: "Environment"):
+    def __init__(self, env: "Environment") -> None:
         super().__init__()
         self._env = env
 
@@ -29,7 +29,7 @@ class TranslateWindow(QDialog, Ui_TranslateWindow):
         self.ok_button.clicked.connect(self._ok_button_clicked)
         self.cancel_button.clicked.connect(self.close)
 
-    def _add_row(self, language: Optional[str] = None, text: Optional[str] = None):
+    def _add_row(self, language: Optional[str] = None, text: Optional[str] = None) -> None:
         row = self.table_widget.rowCount()
         self.table_widget.insertRow(row)
 
@@ -42,7 +42,7 @@ class TranslateWindow(QDialog, Ui_TranslateWindow):
         if self._env.settings.get("translateLanguageSort") == TRANSLATE_LANGUAGE_SORT_SETTING.NAME:
             language_box.model().sort(0, Qt.SortOrder.AscendingOrder)
 
-        if not language is None:
+        if language is not None:
             select_combo_box_data(language_box, language, default_index=-1)
         else:
             language_box.setCurrentIndex(-1)
@@ -57,7 +57,7 @@ class TranslateWindow(QDialog, Ui_TranslateWindow):
         remove_button.clicked.connect(self._remove_button_clicked)
         self.table_widget.setCellWidget(row, 2, remove_button)
 
-    def _remove_button_clicked(self):
+    def _remove_button_clicked(self) -> None:
         for i in range(self.table_widget.rowCount()):
             if self.table_widget.cellWidget(i, 2) == self.sender():
                 self.table_widget.removeRow(i)
@@ -81,7 +81,7 @@ class TranslateWindow(QDialog, Ui_TranslateWindow):
                 return False
         return True
 
-    def _ok_button_clicked(self):
+    def _ok_button_clicked(self) -> None:
         if not self._check_valid():
             return
 
@@ -98,7 +98,7 @@ class TranslateWindow(QDialog, Ui_TranslateWindow):
 
         self.close()
 
-    def open_window(self, current_dict: Dict[str, str], main_window = None) -> bool:
+    def open_window(self, current_dict: Dict[str, str], main_window=None) -> bool:
         self._current_dict = current_dict
         self._saved = False
 

@@ -1,5 +1,5 @@
-from .PluginLoader import load_single_plugin, load_plugin_directory
 from PyQt6.QtCore import QTranslator, QLocale, QLibraryInfo
+from .PluginLoader import load_plugin_directory
 from PyQt6.QtWidgets import QApplication
 from .Environment import Environment
 from .Functions import is_url_valid
@@ -9,7 +9,7 @@ import sys
 import os
 
 
-def _internal_main(app_name: Literal["jdAppStreamEdit", "ExternalReleases"]):
+def _internal_main(app_name: Literal["jdAppStreamEdit", "ExternalReleases"]) -> None:
     if not os.path.isdir(os.path.join(os.path.dirname(__file__), "ui_compiled")):
         print("Could not find compiled ui files. Please run tools/CompileUI.py first.", file=sys.stderr)
         return
@@ -70,11 +70,11 @@ def _internal_main(app_name: Literal["jdAppStreamEdit", "ExternalReleases"]):
     args = parser.parse_known_args()[0]
     if args.file is not None:
         if is_url_valid(args.file):
-             main_window.open_url(args.file)
+            main_window.open_url(args.file)
         else:
             path = os.path.abspath(args.file)
             if main_window.open_file(path):
-                 main_window.add_to_recent_files(path)
+                main_window.add_to_recent_files(path)
 
     if app_name == "jdAppStreamEdit" and env.settings.get("showWelcomeDialog"):
         main_window.show_welcome_dialog()
@@ -84,9 +84,9 @@ def _internal_main(app_name: Literal["jdAppStreamEdit", "ExternalReleases"]):
     sys.exit(app.exec())
 
 
-def jdAppStreamEdit():
+def jdAppStreamEdit() -> None:
     _internal_main("jdAppStreamEdit")
 
 
-def ExternalReleases():
+def ExternalReleases() -> None:
     _internal_main("ExternalReleases")

@@ -22,7 +22,7 @@ if TYPE_CHECKING:
 
 
 class ExternalReleasesWindow(QMainWindow, Ui_ExternalReleasesWindow):
-    def __init__(self, env: "Environment"):
+    def __init__(self, env: "Environment") -> None:
         super().__init__()
         self._env = env
 
@@ -76,7 +76,7 @@ class ExternalReleasesWindow(QMainWindow, Ui_ExternalReleasesWindow):
         elif self._current_path is None:
             title = QCoreApplication.translate("ExternalReleasesWindow", "Untitled") + " - jdAppStreamEdit External Releases Editor"
         elif self._env.settings.get("windowTitleType") == "filename":
-            title= os.path.basename(self._current_path) + " - jdAppStreamEdit External Releases Editor"
+            title = os.path.basename(self._current_path) + " - jdAppStreamEdit External Releases Editor"
         elif self._env.settings.get("windowTitleType") == "filename":
             title = self._current_path + " - jdAppStreamEdit External Releases Editor"
         else:
@@ -87,7 +87,7 @@ class ExternalReleasesWindow(QMainWindow, Ui_ExternalReleasesWindow):
         else:
             self.setWindowTitle(title)
 
-    def _update_recent_files_menu(self):
+    def _update_recent_files_menu(self) -> None:
         self.recent_files_menu.clear()
 
         if len(self._env.recent_files_external_releases) == 0:
@@ -108,7 +108,7 @@ class ExternalReleasesWindow(QMainWindow, Ui_ExternalReleasesWindow):
         clear_action.triggered.connect(self._clear_recent_files)
         self.recent_files_menu.addAction(clear_action)
 
-    def add_to_recent_files(self, path: str):
+    def add_to_recent_files(self, path: str) -> None:
         while path in self._env.recent_files_external_releases:
             self._env.recent_files_external_releases.remove(path)
         self._env.recent_files_external_releases.insert(0, path)
@@ -116,7 +116,7 @@ class ExternalReleasesWindow(QMainWindow, Ui_ExternalReleasesWindow):
         self._update_recent_files_menu()
         self._env.save_recent_files_external_releases()
 
-    def _clear_recent_files(self):
+    def _clear_recent_files(self) -> None:
         self._env.recent_files_external_releases.clear()
         self._env.save_recent_files_external_releases()
         self._update_recent_files_menu()
@@ -156,7 +156,7 @@ class ExternalReleasesWindow(QMainWindow, Ui_ExternalReleasesWindow):
         self._env.settings.set("showWelcomeDialogExternalReleases", check_box.isChecked())
         self._env.settings.save(os.path.join(self._env.data_dir, "settings.json"))
 
-    def _new_menu_action_clicked(self):
+    def _new_menu_action_clicked(self) -> None:
         if not self._ask_for_save():
             return
         self._releases_widget.reset_data()
@@ -164,17 +164,17 @@ class ExternalReleasesWindow(QMainWindow, Ui_ExternalReleasesWindow):
         self._current_path = None
         self.update_window_title()
 
-    def _open_menu_action_clicked(self):
+    def _open_menu_action_clicked(self) -> None:
         if not self._ask_for_save():
             return
-        filter = QCoreApplication.translate("ExternalReleasesWindow", "AppStream Releases") + " (*.releases.xml);;" +   QCoreApplication.translate("ExternalReleasesWindow", "All Files") + " (*)"
+        filter = QCoreApplication.translate("ExternalReleasesWindow", "AppStream Releases") + " (*.releases.xml);;" + QCoreApplication.translate("ExternalReleasesWindow", "All Files") + " (*)"
         path = QFileDialog.getOpenFileName(self, filter=filter)
         if path[0] == "":
             return
         self.open_file(path[0])
         self.add_to_recent_files(path[0])
 
-    def _open_recent_file(self):
+    def _open_recent_file(self) -> None:
         if not self._ask_for_save():
             return
         action = self.sender()
@@ -183,16 +183,16 @@ class ExternalReleasesWindow(QMainWindow, Ui_ExternalReleasesWindow):
         self.open_file(action.data())
         self.add_to_recent_files(action.data())
 
-    def _open_url_clicked(self):
+    def _open_url_clicked(self) -> None:
         if not self._ask_for_save():
             return
 
-        url = QInputDialog.getText(self, QCoreApplication.translate("ExternalReleasesWindow", "Enter URL"),  QCoreApplication.translate("ExternalReleasesWindow", "Please enter a URL"))[0]
+        url = QInputDialog.getText(self, QCoreApplication.translate("ExternalReleasesWindow", "Enter URL"), QCoreApplication.translate("ExternalReleasesWindow", "Please enter a URL"))[0]
 
         if url != "":
             self.open_url(url)
 
-    def _save_file_clicked(self):
+    def _save_file_clicked(self) -> None:
         if self._current_path is None:
             self._save_as_clicked()
             return
@@ -202,8 +202,8 @@ class ExternalReleasesWindow(QMainWindow, Ui_ExternalReleasesWindow):
         self._edited = False
         self.update_window_title()
 
-    def _save_as_clicked(self):
-        filter = QCoreApplication.translate("ExternalReleasesWindow", "AppStream Releases") + " (*.releases.xml *.releases.xml.in);;" +   QCoreApplication.translate("ExternalReleasesWindow", "All Files") + " (*)"
+    def _save_as_clicked(self) -> None:
+        filter = QCoreApplication.translate("ExternalReleasesWindow", "AppStream Releases") + " (*.releases.xml *.releases.xml.in);;" + QCoreApplication.translate("ExternalReleasesWindow", "All Files") + " (*)"
         path = QFileDialog.getSaveFileName(self, filter=filter)[0]
 
         if path == "":
@@ -215,7 +215,7 @@ class ExternalReleasesWindow(QMainWindow, Ui_ExternalReleasesWindow):
         self._edited = False
         self.update_window_title()
 
-    def _exit_menu_action_clicked(self):
+    def _exit_menu_action_clicked(self) -> None:
         if self._ask_for_save():
             sys.exit(0)
 
@@ -296,7 +296,7 @@ class ExternalReleasesWindow(QMainWindow, Ui_ExternalReleasesWindow):
 
         return xml
 
-    def save_file(self, path: str):
+    def save_file(self, path: str) -> None:
         try:
             os.makedirs(os.path.dirname(path))
         except Exception:
@@ -305,13 +305,13 @@ class ExternalReleasesWindow(QMainWindow, Ui_ExternalReleasesWindow):
         with open(path, "w", encoding="utf-8", newline='\n') as f:
             f.write(self.get_xml_text())
 
-    def dragEnterEvent(self, event: QDragEnterEvent):
+    def dragEnterEvent(self, event: QDragEnterEvent) -> None:
         if event.mimeData().hasUrls():
             event.accept()
         else:
             event.ignore()
 
-    def dropEvent(self, event: QDropEvent):
+    def dropEvent(self, event: QDropEvent) -> None:
         try:
             url = event.mimeData().urls()[0]
         except IndexError:
@@ -327,7 +327,7 @@ class ExternalReleasesWindow(QMainWindow, Ui_ExternalReleasesWindow):
         else:
             self.open_url(url.toString())
 
-    def closeEvent(self, event: QCloseEvent):
+    def closeEvent(self, event: QCloseEvent) -> None:
         if self._ask_for_save():
             event.accept()
         else:

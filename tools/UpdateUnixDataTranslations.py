@@ -4,7 +4,7 @@ import pathlib
 
 
 def main() -> None:
-    deploy_path = pathlib.Path(__file__).parent .parent/ "deploy"
+    deploy_path = pathlib.Path(__file__).parent .parent / "deploy"
     pot_path = str(deploy_path / "translations" / "messages.pot")
 
     subprocess.run(["xgettext", "-l", "xml", "--its", str(deploy_path / "translations" / "AppStream.its"), "--no-location", "-o", pot_path, str(deploy_path / "page.codeberg.JakobDev.jdAppStreamEdit.metainfo.xml")], check=True)

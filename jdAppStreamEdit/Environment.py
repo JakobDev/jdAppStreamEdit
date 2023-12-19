@@ -24,7 +24,7 @@ class Environment:
         except Exception:
             pass
 
-        with open(os.path.join(self.program_dir, "version.txt"), "r", encoding="utf-8") as  f:
+        with open(os.path.join(self.program_dir, "version.txt"), "r", encoding="utf-8") as f:
             self.version = f.read().strip()
 
         self.icon = QIcon(os.path.join(self.program_dir, "Icon.svg"))
@@ -59,7 +59,7 @@ class Environment:
 
         self.language_codes: dict[str, str] = {}
         with open(os.path.join(self.program_dir, "data", "language_codes.csv"), "r", encoding="utf-8") as f:
-            csv_reader =  csv.DictReader(f, delimiter=",")
+            csv_reader = csv.DictReader(f, delimiter=",")
             for row in csv_reader:
                 self.language_codes[row["alpha2"]] = row["name"]
 
@@ -90,7 +90,7 @@ class Environment:
             else:
                 return os.path.join(str(Path.home()), ".local", "share", "JakobDev", "jdAppStreamEdit")
 
-    def save_recent_files(self):
+    def save_recent_files(self) -> None:
         save_path = os.path.join(self.data_dir, "recentFiles.json")
 
         if len(self.recent_files) == 0:
@@ -101,7 +101,7 @@ class Environment:
         with open(save_path, "w", encoding="utf-8") as f:
             json.dump(self.recent_files, f, ensure_ascii=False, indent=4)
 
-    def save_recent_files_external_releases(self):
+    def save_recent_files_external_releases(self) -> None:
         save_path = os.path.join(self.data_dir, "recentFilesExternalReleases.json")
 
         if len(self.recent_files) == 0:
@@ -112,7 +112,7 @@ class Environment:
         with open(save_path, "w", encoding="utf-8") as f:
             json.dump(self.recent_files_external_releases, f, ensure_ascii=False, indent=4)
 
-    def update_template_list(self):
+    def update_template_list(self) -> None:
         self.template_list.clear()
 
         try:
