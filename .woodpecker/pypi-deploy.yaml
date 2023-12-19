@@ -1,3 +1,9 @@
+depends_on:
+    - lint
+    - check-starting
+    - freedesktop-check
+    - check-data-files
+
 steps:
     pypi_deploy:
         image: python:latest

@@ -1,0 +1,10 @@
+steps:
+    flake8:
+        image: python:latest
+        commands:
+              - pip install flake8 flake8-annotations flake8-assert-finder
+              - flake8 --show-source
+
+when:
+    - event: tag
+    - path: ["**/*.py", ".woodpecker/**"]
