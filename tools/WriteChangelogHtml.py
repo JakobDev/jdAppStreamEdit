@@ -28,7 +28,6 @@ def main() -> None:
         html_text += f"{description}<br>\n<br>\n"
     html_text = html_text.removesuffix("<br>\n<br>\n")
 
-
     if args.stdout:
         print(html_text)
     else:

@@ -45,7 +45,6 @@ def main() -> None:
     for lang, translators in translator_dict.items():
         write_dict[lang] = sorted(list(set(translators)))
 
-
     if args.stdout:
         print(json.dumps(write_dict, ensure_ascii=False, indent=4))
     else:

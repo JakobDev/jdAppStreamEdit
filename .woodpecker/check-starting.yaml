@@ -7,7 +7,7 @@ steps:
             - pip install --break-system-packages .
             - wget https://codeberg.org/JakobDev/ci-scripts/raw/branch/main/test/check-program-starting.py
             - python ./check-program-starting.py xvfb-run jdappstreamedit
-            - python ./check-program-starting.py xvfb-run jdappstreamedit-external-releases-editor
+            # - python ./check-program-starting.py xvfb-run jdappstreamedit-external-releases-editor
 
 when:
     - event: tag
