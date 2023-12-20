@@ -1,12 +1,14 @@
 from .Functions import clear_table_widget, stretch_table_widget_colums_size, list_widget_contains_item, is_url_reachable, get_logical_table_row_list, select_combo_box_data, is_flatpak, get_shared_temp_dir, is_url_valid, get_save_settings, assert_func
 from PyQt6.QtWidgets import QApplication, QCheckBox, QComboBox, QLineEdit, QListWidget, QMainWindow, QMessageBox, QDateEdit, QInputDialog, QPlainTextEdit, QPushButton, QTableWidget, QTableWidgetItem, QRadioButton, QFileDialog
 from PyQt6.QtGui import QAction, QDragEnterEvent, QDropEvent, QCloseEvent
+from .ComposeDirectoryWindow import ComposeDirectoryWindow
 from .ManageTemplatesWindow import ManageTemplatesWindow
 from .Types import ScreenshotDict, ScreenshotDictImage
 from PyQt6.QtCore import Qt, QCoreApplication, QDate
 from .ui_compiled.MainWindow import Ui_MainWindow
 from .DescriptionWidget import DescriptionWidget
 from typing import List, Optional, TYPE_CHECKING
+from .ViewCatalogWindow import ViewCatalogWindow
 from .ScreenshotWindow import ScreenshotWindow
 from .RelationsWidget import RelationsWidget
 from .ReleasesWidget import ReleasesWidget
@@ -41,11 +43,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         self._current_path = None
 
+        self._compose_directory_window = ComposeDirectoryWindow(self)
         self._settings_window = SettingsWindow(env, self)
         self._manage_templates_window = ManageTemplatesWindow(env, self)
         self._plugin_window = PluginWindow(env)
         self._validate_window = ValidateWindow(env, self)
         self._xml_window = ViewXMLWindow(env, self)
+        self._view_catalog_window = ViewCatalogWindow(env, self)
         self._screenshot_window = ScreenshotWindow(env, self)
         self._releases_widget = ReleasesWidget(env, self)
         self._about_window = AboutWindow(env)
@@ -178,6 +182,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.save_action.triggered.connect(self._save_file_clicked)
         self.save_as_action.triggered.connect(self._save_as_clicked)
         self.exit_action.triggered.connect(self._exit_menu_action_clicked)
+
+        self.compose_directory_action.triggered.connect(self._compose_directory_window.open_window)
+        self.view_catalog_action.triggered.connect(self._view_catalog_window.open_window)
 
         self.settings_action.triggered.connect(self._settings_window.open_window)
         self.manage_templates_action.triggered.connect(self._manage_templates_window.exec)

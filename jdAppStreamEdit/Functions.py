@@ -1,5 +1,6 @@
-from PyQt6.QtWidgets import QTableWidget, QHeaderView, QListWidget, QComboBox, QLayout
+from PyQt6.QtWidgets import QWidget, QTableWidget, QHeaderView, QListWidget, QComboBox, QLayout, QMessageBox
 from typing import Optional, List, Any, TYPE_CHECKING
+from PyQt6.QtCore import QCoreApplication
 from PyQt6.QtCore import QObject
 from lxml import etree
 import urllib.parse
@@ -7,6 +8,7 @@ import collections
 import requests
 import tempfile
 import hashlib
+import shutil
 import sys
 import os
 
@@ -183,3 +185,12 @@ def assert_func(expression: bool) -> None:
     """
     if not expression:
         raise AssertionError()
+
+
+def check_appstreamcli(parent: Optional[QWidget]) -> bool:
+    "Check if appstreamcli is installed"
+    if shutil.which("appstreamcli") is not None:
+        return True
+    else:
+        QMessageBox.critical(parent, QCoreApplication.translate("Functions", "appstreamcli not found"), QCoreApplication.translate("Functions", "appstreamcli was not found. Make sure it is installed and in PATH."))
+        return False
