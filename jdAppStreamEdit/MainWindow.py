@@ -15,6 +15,7 @@ from .ReleasesWidget import ReleasesWidget
 from .SettingsWindow import SettingsWindow
 from .ValidateWindow import ValidateWindow
 from .AdvancedWidget import AdvancedWidget
+from .SysinfoWindow import SysinfoWindow
 from .ViewXMLWindow import ViewXMLWindow
 from .PluginWindow import PluginWindow
 from .AboutWindow import AboutWindow
@@ -43,7 +44,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         self._current_path = None
 
-        self._compose_directory_window = ComposeDirectoryWindow(self)
         self._settings_window = SettingsWindow(env, self)
         self._manage_templates_window = ManageTemplatesWindow(env, self)
         self._plugin_window = PluginWindow(env)
@@ -52,6 +52,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self._view_catalog_window = ViewCatalogWindow(env, self)
         self._screenshot_window = ScreenshotWindow(env, self)
         self._releases_widget = ReleasesWidget(env, self)
+        self._compose_directory_window = ComposeDirectoryWindow(self)
+        self._sysinfo_window = SysinfoWindow(env, self)
         self._about_window = AboutWindow(env)
 
         self._description_widget = DescriptionWidget(env, self)
@@ -183,9 +185,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.save_as_action.triggered.connect(self._save_as_clicked)
         self.exit_action.triggered.connect(self._exit_menu_action_clicked)
 
-        self.compose_directory_action.triggered.connect(self._compose_directory_window.open_window)
-        self.view_catalog_action.triggered.connect(self._view_catalog_window.open_window)
-
         self.settings_action.triggered.connect(self._settings_window.open_window)
         self.manage_templates_action.triggered.connect(self._manage_templates_window.exec)
         self.plugins_action.triggered.connect(self._open_plugin_settings)
@@ -193,6 +192,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.validate_action.triggered.connect(self._validate_window.open_window)
         self.view_xml_action.triggered.connect(self._xml_window.exec)
         self.preview_gnome_software.triggered.connect(lambda: self._previev_appstream_file(["gnome-software", "--show-metainfo"]))
+        self.view_catalog_action.triggered.connect(self._view_catalog_window.open_window)
+        self.compose_directory_action.triggered.connect(self._compose_directory_window.open_window)
+        self.sysinfo_action.triggered.connect(self._sysinfo_window.open_window)
 
         self.welcome_dialog_action.triggered.connect(self.show_welcome_dialog)
         self.documentation_action.triggered.connect(lambda: webbrowser.open("https://www.freedesktop.org/software/appstream/docs"))

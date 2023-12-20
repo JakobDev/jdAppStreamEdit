@@ -1,39 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>ViewXMLWindow</class>
- <widget class="QDialog" name="ViewXMLWindow">
+ <class>SysinfoWindow</class>
+ <widget class="QDialog" name="SysinfoWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>494</width>
-    <height>410</height>
+    <width>513</width>
+    <height>420</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>View XML</string>
+   <string>Sysinfo</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QLabel" name="label">
-     <property name="text">
-      <string>Preview of the AppStream file</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QPlainTextEdit" name="preview_edit">
+    <widget class="QPlainTextEdit" name="sysinfo_edit">
      <property name="lineWrapMode">
       <enum>QPlainTextEdit::NoWrap</enum>
      </property>
      <property name="readOnly">
       <bool>true</bool>
-     </property>
-     <property name="plainText">
-      <string notr="true"/>
      </property>
     </widget>
    </item>
@@ -44,20 +31,27 @@
        <property name="text">
         <string>Copy</string>
        </property>
+       <property name="icon">
+        <iconset theme="edit-copy"/>
+       </property>
       </widget>
      </item>
      <item>
-      <spacer name="horizontalSpacer">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
      </item>
      <item>
       <widget class="QPushButton" name="close_button">

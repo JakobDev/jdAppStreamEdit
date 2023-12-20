@@ -979,6 +979,7 @@
     <addaction name="preview_gnome_software"/>
     <addaction name="view_catalog_action"/>
     <addaction name="compose_directory_action"/>
+    <addaction name="sysinfo_action"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuSettings"/>
@@ -1120,6 +1121,11 @@
   <action name="view_catalog_action">
    <property name="text">
     <string>View Catalog</string>
+   </property>
+  </action>
+  <action name="sysinfo_action">
+   <property name="text">
+    <string>Sysinfo</string>
    </property>
   </action>
  </widget>
