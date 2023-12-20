@@ -23,8 +23,8 @@ class ScreenshotWindow(QDialog, Ui_ScreenshotWindow):
 
         self._env = env
         self._main_window = main_window
-        self._thumbnail_window = ThumbnailWindow(env)
         self._caption_translations: dict[str, str] = {}
+        self._thumbnail_window = ThumbnailWindow(env, self)
         self._source_image_translations: dict[str, ScreenshotDictImage] = {}
 
         self.tab_widget.tabBar().setDocumentMode(True)
@@ -43,7 +43,10 @@ class ScreenshotWindow(QDialog, Ui_ScreenshotWindow):
         self.source_translation_width_height_check_box.stateChanged.connect(lambda: self.source_translation_width_height_group_box.setEnabled(self.source_translation_width_height_check_box.isChecked()))
         self.source_translation_scale_factor_check_box.stateChanged.connect(self._update_source_translation_scale_factor_enabled)
 
+        self.thumbnail_list.currentRowChanged.connect(self._update_thumbnail_buttons_enabled)
         self.add_thumbnail_button.clicked.connect(self._add_thumbnail_button_clicked)
+        self.edit_thumbnail_button.clicked.connect(self._edit_thumbnail_button_clicked)
+        self.remove_thumbnail_button.clicked.connect(self._remove_thumbnail_button_clicked)
 
         self.preview_button.clicked.connect(self._preview_button_clicked)
         self.ok_button.clicked.connect(self._ok_button_clicked)
@@ -171,17 +174,37 @@ class ScreenshotWindow(QDialog, Ui_ScreenshotWindow):
         self.source_image_language_list.takeItem(self.source_image_language_list.currentRow())
         self._update_source_image_language_list_buttons_enabled()
 
+    def _update_thumbnail_buttons_enabled(self) -> None:
+        enabled = self.thumbnail_list.currentRow() != -1
+        self.edit_thumbnail_button.setEnabled(enabled)
+        self.remove_thumbnail_button.setEnabled(enabled)
+
     def _add_thumbnail_button_clicked(self) -> None:
-        untranslated_image, image_list = self._thumbnail_window.open_window(None)
+        untranslated_image, image_list = self._thumbnail_window.open_window(None, [])
 
         if untranslated_image is None:
             return
 
         item = QListWidgetItem(untranslated_image["url"])
-        untranslated_image["url"]
         item.setData(42, (untranslated_image, image_list))
         self.thumbnail_list.addItem(item)
         self.thumbnail_list.setCurrentItem(item)
+        self._update_thumbnail_buttons_enabled()
+
+    def _edit_thumbnail_button_clicked(self) -> None:
+        item = self.thumbnail_list.currentItem()
+        old_untranslated_image, old_image_list = item.data(42)
+
+        new_untranslated_image, new_image_list = self._thumbnail_window.open_window(old_untranslated_image, old_image_list)
+
+        if new_untranslated_image is None:
+            return
+
+        item.setData(42, (new_untranslated_image, new_image_list))
+
+    def _remove_thumbnail_button_clicked(self) -> None:
+        self.thumbnail_list.takeItem(self.thumbnail_list.currentRow())
+        self._update_thumbnail_buttons_enabled()
 
     def _get_untranslated_source_image(self) -> ScreenshotDictImage:
         source_image: ScreenshotDictImage = {}
@@ -258,6 +281,7 @@ class ScreenshotWindow(QDialog, Ui_ScreenshotWindow):
         self._position = position
 
         self.source_image_language_list.clear()
+        self.thumbnail_list.clear()
 
         if position is None:
             self.source_url_edit.setText("")
@@ -274,12 +298,28 @@ class ScreenshotWindow(QDialog, Ui_ScreenshotWindow):
         else:
             current_entry: ScreenshotDict = self._main_window.screenshot_list[position]
 
+            current_untranslated_thumbnail: Optional[ScreenshotDict] = None
+            current_translated_thumbnails: list[ScreenshotDict] = []
             for image in current_entry["images"]:
                 if image["type"] == "source" and image["language"] is None:
                     self._load_untranslated_source_image(image)
                 elif image["type"] == "source" and image["language"] is not None:
                     self.source_image_language_list.addItem(image["language"])
                     self._source_image_translations[image["language"]] = image
+                elif image["type"] == "thumbnail" and image["language"] is None:
+                    if current_untranslated_thumbnail is not None:
+                        item = QListWidgetItem(current_untranslated_thumbnail["url"])
+                        item.setData(42, (current_untranslated_thumbnail, current_translated_thumbnails))
+                        self.thumbnail_list.addItem(item)
+                    current_untranslated_thumbnail = copy.deepcopy(image)
+                    current_translated_thumbnails.clear()
+                elif image["type"] == "thumbnail" and image["language"] is not None:
+                    current_translated_thumbnails.append(copy.deepcopy(image))
+
+            if current_untranslated_thumbnail is not None:
+                item = QListWidgetItem(current_untranslated_thumbnail["url"])
+                item.setData(42, (current_untranslated_thumbnail, current_translated_thumbnails))
+                self.thumbnail_list.addItem(item)
 
             self.caption_edit.setText(current_entry["caption"] or "")
             self._caption_translations = copy.deepcopy(current_entry["caption_translations"]) or {}
@@ -291,6 +331,7 @@ class ScreenshotWindow(QDialog, Ui_ScreenshotWindow):
 
         self._update_source_image_language_list_buttons_enabled()
         self._update_source_image_translation_widgets()
+        self._update_thumbnail_buttons_enabled()
         self.tab_widget.setCurrentIndex(0)
 
         self.open()

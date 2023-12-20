@@ -5,15 +5,17 @@ from typing import Optional, TYPE_CHECKING
 from PyQt6.QtCore import QCoreApplication
 from .Types import ScreenshotDictImage
 from PyQt6.QtGui import QIcon
+import copy
 
 
 if TYPE_CHECKING:
+    from .ScreenshotWindow import ScreenshotWindow
     from .Environment import Environment
 
 
 class ThumbnailWindow(QDialog, Ui_ThumbnailWindow):
-    def __init__(self, env: "Environment") -> None:
-        super().__init__()
+    def __init__(self, env: "Environment", screenshot_window: "ScreenshotWindow") -> None:
+        super().__init__(screenshot_window)
 
         self.setupUi(self)
 
@@ -150,7 +152,7 @@ class ThumbnailWindow(QDialog, Ui_ThumbnailWindow):
 
         self.close()
 
-    def open_window(self, untranslated_image: Optional[ScreenshotDictImage]) -> tuple[Optional[ScreenshotDictImage], list[ScreenshotDictImage]]:
+    def open_window(self, untranslated_image: Optional[ScreenshotDictImage], translated_images: list[ScreenshotDictImage]) -> tuple[Optional[ScreenshotDictImage], list[ScreenshotDictImage]]:
         if untranslated_image is None:
             self.thumbnail_url_edit.setText("")
             self.thumbnail_width_spin_box.setValue(0)
@@ -164,8 +166,14 @@ class ThumbnailWindow(QDialog, Ui_ThumbnailWindow):
             self.thumbnail_scale_factor_check_box.setChecked(untranslated_image["scale_factor"] is not None)
             self.thumbnail_scale_factor_spin_box.setValue(untranslated_image["scale_factor"] if untranslated_image["scale_factor"] is not None else 1)
 
-        self._untranslated_image = None
-        self._translated_images.clear()
+        self._untranslated_image = copy.deepcopy(untranslated_image)
+        self._translated_images = copy.deepcopy(translated_images)
+
+        self._thumbnail_image_translations.clear()
+        self.thumbnail_image_language_list.clear()
+        for image in translated_images:
+            self.thumbnail_image_language_list.addItem(image["language"])
+            self._thumbnail_image_translations[image["language"]] = image
 
         self._update_thumbnail_image_language_list_buttons_enabled()
         self._update_thumbnail_image_translation_widgets()
@@ -174,4 +182,4 @@ class ThumbnailWindow(QDialog, Ui_ThumbnailWindow):
 
         self.exec()
 
-        return self._untranslated_image, self._translated_images
+        return copy.deepcopy(self._untranslated_image), copy.deepcopy(self._translated_images)
