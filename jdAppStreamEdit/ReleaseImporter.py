@@ -61,7 +61,7 @@ class _GitHubImporter(ReleaseImporter):
             # paragraph_tag.text = i["body"]
             # data["description"] = description_tag
 
-            release_list.append({"version": i["tag_name"], "date": QDate.fromString(i["published_at"], Qt.DateFormat.ISODate), "development": i["prerelease"], "data": data})
+            release_list.append({"version": i["tag_name"], "date": QDate.fromString(i["published_at"], Qt.DateFormat.ISODate), "type": "development" if i["prerelease"] else "stable", "data": data})
         return release_list
 
     @staticmethod
@@ -123,7 +123,7 @@ class _GiteaImporter(ReleaseImporter):
 
         release_list = []
         for i in r.json():
-            release_list.append({"version": i["name"], "date": QDate.fromString(i["published_at"], Qt.DateFormat.ISODate), "development": i["prerelease"], "data": {"url": i["html_url"]}})
+            release_list.append({"version": i["name"], "date": QDate.fromString(i["published_at"], Qt.DateFormat.ISODate), "type": "development" if i["prerelease"] else "stable", "data": {"url": i["html_url"]}})
 
         return release_list
 

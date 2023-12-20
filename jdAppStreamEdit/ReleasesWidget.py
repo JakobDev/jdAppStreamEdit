@@ -1,9 +1,9 @@
-from .Functions import stretch_table_widget_colums_size, get_sender_table_row, clear_table_widget, get_logical_table_row_list
+from .Functions import stretch_table_widget_colums_size, get_sender_table_row, clear_table_widget, get_logical_table_row_list, select_combo_box_data
 from PyQt6.QtWidgets import QWidget, QPushButton, QComboBox, QDateEdit, QTableWidgetItem, QMessageBox, QMenu
 from .ui_compiled.ReleasesWidget import Ui_ReleasesWidget
 from PyQt6.QtCore import Qt, QCoreApplication, QDate
+from typing import Optional, Literal, TYPE_CHECKING
 from .ReleasesWindow import ReleasesWindow
-from typing import Optional, TYPE_CHECKING
 from PyQt6.QtGui import QAction
 from lxml import etree
 import traceback
@@ -51,7 +51,7 @@ class ReleasesWidget(QWidget, Ui_ReleasesWidget):
         self.add_button.clicked.connect(self._add_button_clicked)
         self.sort_button.clicked.connect(self._sort_button_clicked)
 
-    def _set_release_row(self, row: int, version: Optional[str] = "", date: Optional[QDate] = None, development: bool = False, data: Optional[dict] = None) -> None:
+    def _set_release_row(self, row: int, version: Optional[str] = "", date: Optional[QDate] = None, release_type: Literal["stable", "development", "snapshot"] = "stable", data: Optional[dict] = None) -> None:
         version_item = QTableWidgetItem(version)
         if data:
             version_item.setData(42, data)
@@ -72,8 +72,8 @@ class ReleasesWidget(QWidget, Ui_ReleasesWidget):
         type_box = QComboBox()
         type_box.addItem(QCoreApplication.translate("ReleasesWidget", "Stable"), "stable")
         type_box.addItem(QCoreApplication.translate("ReleasesWidget", "Development"), "development")
-        if development:
-            type_box.setCurrentIndex(1)
+        type_box.addItem(QCoreApplication.translate("ReleasesWidget", "Snapshot"), "snapshot")
+        select_combo_box_data(type_box, release_type)
         type_box.currentIndexChanged.connect(self._parent.set_file_edited)
         self.releases_table.setCellWidget(row, _COLUMNS.TYPE, type_box)
 
@@ -121,7 +121,7 @@ class ReleasesWidget(QWidget, Ui_ReleasesWidget):
                 QMessageBox.critical(self, QCoreApplication.translate("ReleasesWidget", "Could not parse version"), QCoreApplication.translate("ReleasesWidget", "Could not parse version {{version}}").replace("{{version}}", version_string))
                 return
 
-            row_dict[version] = {"date": self.releases_table.cellWidget(row, 1).date(), "development": self.releases_table.cellWidget(row, 2).currentData() == "development", "data": self.releases_table.item(row, 0).data(42)}
+            row_dict[version] = {"date": self.releases_table.cellWidget(row, 1).date(), "type": self.releases_table.cellWidget(row, 2).currentData() == "development", "data": self.releases_table.item(row, 0).data(42)}
             version_list.append(version)
 
         clear_table_widget(self.releases_table)
@@ -130,7 +130,7 @@ class ReleasesWidget(QWidget, Ui_ReleasesWidget):
 
         for row, version in enumerate(version_list):
             self.releases_table.insertRow(row)
-            self._set_release_row(row, version=str(version), date=row_dict[version]["date"], development=row_dict[version]["development"], data=row_dict[version]["data"])
+            self._set_release_row(row, version=str(version), date=row_dict[version]["date"], release_type=row_dict[version]["type"], data=row_dict[version]["data"])
 
         self._parent.set_file_edited()
 
@@ -162,10 +162,12 @@ class ReleasesWidget(QWidget, Ui_ReleasesWidget):
             if ans != QMessageBox.StandardButton.Yes:
                 return
 
+        clear_table_widget(self.releases_table)
+
         for count, i in enumerate(release_data):
             self.releases_table.insertRow(count)
             try:
-                self._set_release_row(count, version=i["version"], date=i["date"], development=i.get("development", False), data=i.get("data", {}))
+                self._set_release_row(count, version=i["version"], date=i["date"], release_type=i.get("type", "stable"), data=i.get("data", {}))
             except Exception:
                 print(traceback.format_exc(), end="", file=sys.stderr)
 
@@ -204,7 +206,7 @@ class ReleasesWidget(QWidget, Ui_ReleasesWidget):
                 data["artifacts"] = artifacts_tag
 
             self.releases_table.insertRow(current_row)
-            self._set_release_row(current_row, version=i.get("version"), date=QDate.fromString(i.get("date"), Qt.DateFormat.ISODate), development=(i.get("type") == "development"), data=data)
+            self._set_release_row(current_row, version=i.get("version"), date=QDate.fromString(i.get("date"), Qt.DateFormat.ISODate), release_type=(i.get("type", "stable")), data=data)
 
     def write_tag(self, releases_tag: etree.Element) -> None:
         for i in get_logical_table_row_list(self.releases_table):

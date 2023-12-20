@@ -22,7 +22,7 @@ class ScreenshotDict(TypedDict):
 class ReleaseImportInfo(TypedDict):
     version: str
     date: QDate
-    development: bool
+    type: Literal["stable", "development", "snapshot"]
     data: dict
 
 
