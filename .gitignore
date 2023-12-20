@@ -9,3 +9,4 @@ jdAppStreamEdit.egg-info/
 
 # ui
 jdAppStreamEdit/ui_compiled/
+jdAppStreamEdit/ui/*.py

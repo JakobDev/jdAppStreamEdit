@@ -3,6 +3,7 @@ import subprocess
 import pathlib
 import shutil
 import sys
+import os
 
 
 def main() -> None:
@@ -27,6 +28,11 @@ def main() -> None:
             continue
 
         subprocess.run(["pyuic6", str(i), "-o", str(compiled_dir / f"{i.stem}.py")], check=True)
+
+        try:
+            os.remove(source_dir / f"{i.stem}_ui.py")
+        except FileNotFoundError:
+            pass
 
 
 if __name__ == "__main__":

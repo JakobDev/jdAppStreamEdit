@@ -34,12 +34,14 @@ class ScreenshotWindow(QDialog, Ui_ScreenshotWindow):
         self.cancel_button.setIcon(QIcon(env.app.style().standardIcon(QStyle.StandardPixmap.SP_DialogCancelButton)))
 
         self.source_width_height_check_box.stateChanged.connect(lambda: self.source_width_height_group_box.setEnabled(self.source_width_height_check_box.isChecked()))
+        self.source_scale_factor_check_box.stateChanged.connect(self._update_source_scale_factor_enabled)
         self.translate_caption_button.clicked.connect(lambda: env.translate_window.open_window(self._caption_translations))
 
         self.source_image_language_list.currentItemChanged.connect(self._source_image_language_list_item_changed)
         self.source_image_language_add_button.clicked.connect(self._source_image_language_add_button_clicked)
         self.source_image_language_remove_button.clicked.connect(self._source_image_language_remove_button_clicked)
         self.source_translation_width_height_check_box.stateChanged.connect(lambda: self.source_translation_width_height_group_box.setEnabled(self.source_translation_width_height_check_box.isChecked()))
+        self.source_translation_scale_factor_check_box.stateChanged.connect(self._update_source_translation_scale_factor_enabled)
 
         self.add_thumbnail_button.clicked.connect(self._add_thumbnail_button_clicked)
 
@@ -73,6 +75,16 @@ class ScreenshotWindow(QDialog, Ui_ScreenshotWindow):
         else:
             QMessageBox.critical(self, QCoreApplication.translate("ScreenshotWindow", "Can't decode Image"), QCoreApplication.translate("ScreenshotWindow", "The given Image can't be decoded"))
 
+    def _update_source_scale_factor_enabled(self) -> None:
+        enabled = self.source_scale_factor_check_box.isChecked()
+        self.source_scale_factor_label.setEnabled(enabled)
+        self.source_scale_factor_spin_box.setEnabled(enabled)
+
+    def _update_source_translation_scale_factor_enabled(self) -> None:
+        enabled = self.source_translation_scale_factor_check_box.isChecked()
+        self.source_translation_scale_factor_label.setEnabled(enabled)
+        self.source_translation_scale_factor_spin_box.setEnabled(enabled)
+
     def _update_source_image_language_list_buttons_enabled(self) -> None:
         enabled = self.source_image_language_list.currentRow() != -1
         self.source_image_language_remove_button.setEnabled(enabled)
@@ -90,6 +102,11 @@ class ScreenshotWindow(QDialog, Ui_ScreenshotWindow):
             image["width"] = None
             image["height"] = None
 
+        if self.source_translation_scale_factor_check_box.isChecked():
+            image["scale_factor"] = self.source_translation_scale_factor_spin_box.value()
+        else:
+            image["scale_factor"] = None
+
         return image
 
     def _update_source_image_translation_widgets(self) -> None:
@@ -99,6 +116,8 @@ class ScreenshotWindow(QDialog, Ui_ScreenshotWindow):
             self.source_translation_width_height_check_box.setChecked(False)
             self.source_translation_width_spin_box.setValue(0)
             self.source_translation_height_spin_box.setValue(0)
+            self.source_translation_scale_factor_check_box.setChecked(False)
+            self.source_translation_scale_factor_spin_box.setValue(1)
             return
 
         set_layout_enabled(self.source_image_translation_widgets_layout, True)
@@ -110,6 +129,9 @@ class ScreenshotWindow(QDialog, Ui_ScreenshotWindow):
         self.source_translation_width_height_group_box.setEnabled(image["width"] is not None and image["height"] is not None)
         self.source_translation_width_spin_box.setValue(image["width"] or 0)
         self.source_translation_height_spin_box.setValue(image["height"] or 0)
+        self.source_translation_scale_factor_check_box.setChecked(image["scale_factor"] is not None)
+        self.source_translation_scale_factor_spin_box.setValue(image["scale_factor"] if image["scale_factor"] is not None else 1)
+        self._update_source_translation_scale_factor_enabled()
 
     def _source_image_language_list_item_changed(self, current: QListWidgetItem, previous: QListWidgetItem) -> None:
         if previous is not None:
@@ -120,9 +142,10 @@ class ScreenshotWindow(QDialog, Ui_ScreenshotWindow):
         self._update_source_image_language_list_buttons_enabled()
 
     def _source_image_language_add_button_clicked(self) -> None:
-        lang = QInputDialog.getItem(self, QCoreApplication.translate("ScreenshotWindow", "Add Language"), QCoreApplication.translate("ScreenshotWindow", "Please enter a Language Code"), self._env.language_codes)[0].strip()
+        lang, ok = QInputDialog.getItem(self, QCoreApplication.translate("ScreenshotWindow", "Add Language"), QCoreApplication.translate("ScreenshotWindow", "Please enter a Language Code"), self._env.language_codes.keys())
+        lang = lang.strip()
 
-        if lang == "":
+        if not ok or lang == "":
             return
 
         if list_widget_contains_item(self.source_image_language_list, lang):
@@ -134,7 +157,8 @@ class ScreenshotWindow(QDialog, Ui_ScreenshotWindow):
             "type": "source",
             "language": lang,
             "width": None,
-            "height": None
+            "height": None,
+            "scale_factor": None
         }
 
         item = QListWidgetItem(lang)
@@ -171,6 +195,11 @@ class ScreenshotWindow(QDialog, Ui_ScreenshotWindow):
         else:
             source_image["width"] = None
             source_image["height"] = None
+
+        if self.source_scale_factor_check_box.isChecked():
+            source_image["scale_factor"] = self.source_scale_factor_spin_box.value()
+        else:
+            source_image["scale_factor"] = None
 
         return source_image
 
@@ -221,6 +250,9 @@ class ScreenshotWindow(QDialog, Ui_ScreenshotWindow):
         self.source_width_height_group_box.setEnabled(source_image["width"] is not None and source_image["height"] is not None)
         self.source_width_spin_box.setValue(source_image["width"] or 0)
         self.source_height_spin_box.setValue(source_image["height"] or 0)
+        self.source_scale_factor_check_box.setChecked(source_image["scale_factor"] is not None)
+        self.source_scale_factor_spin_box.setValue(source_image["scale_factor"] if source_image["scale_factor"] is not None else 1)
+        self._update_source_scale_factor_enabled()
 
     def open_window(self, position: Optional[int]) -> None:
         self._position = position
@@ -233,6 +265,9 @@ class ScreenshotWindow(QDialog, Ui_ScreenshotWindow):
             self.source_width_height_group_box.setEnabled(False)
             self.source_width_spin_box.setValue(0)
             self.source_height_spin_box.setValue(0)
+            self.source_scale_factor_check_box.setChecked(False)
+            self.source_scale_factor_spin_box.setValue(1)
+            self._update_source_scale_factor_enabled()
             self.caption_edit.setText("")
             self._caption_translations = {}
             self.setWindowTitle(QCoreApplication.translate("ScreenshotWindow", "Add Screenshot"))

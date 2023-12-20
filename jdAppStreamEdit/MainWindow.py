@@ -749,6 +749,15 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     "height": image_tag.get("height")
                 }
 
+                if (scale := image_tag.get("scale")) is not None:
+                    try:
+                        image["scale_factor"] = int(scale)
+                    except ValueError:
+                        image_tag["scale_factor"] = None
+                        print(f"{scale} is not an integer", file=sys.stderr)
+                else:
+                    image_tag["scale_factor"] = None
+
                 if image["type"] == "source" and image["language"] is None:
                     new_dict["source_url"] = image["url"]
 
@@ -937,6 +946,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
             if image["height"] is not None:
                 image_tag.set("height", str(image["height"]))
+
+            if image["scale_factor"] is not None:
+                image_tag.set("scale", str(image["scale_factor"]))
 
             image_tag.text = image["url"]
 

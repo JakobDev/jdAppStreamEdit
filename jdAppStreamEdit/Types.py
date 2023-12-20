@@ -8,6 +8,7 @@ class ScreenshotDictImage(TypedDict):
     language: Optional[str]
     width: Optional[int]
     height: Optional[int]
+    scale_factor: Optional[int]
 
 
 class ScreenshotDict(TypedDict):
