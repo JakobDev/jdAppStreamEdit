@@ -15,6 +15,7 @@ try:
     import editorconfig
 except ModuleNotFoundError:
     print("Optional module editorconfig not found", file=sys.stderr)
+    editorconfig = None
 
 
 if TYPE_CHECKING:

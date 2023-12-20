@@ -753,10 +753,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     try:
                         image["scale_factor"] = int(scale)
                     except ValueError:
-                        image_tag["scale_factor"] = None
+                        image["scale_factor"] = None
                         print(f"{scale} is not an integer", file=sys.stderr)
                 else:
-                    image_tag["scale_factor"] = None
+                    image["scale_factor"] = None
 
                 if image["type"] == "source" and image["language"] is None:
                     new_dict["source_url"] = image["url"]
