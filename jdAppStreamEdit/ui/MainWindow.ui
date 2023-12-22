@@ -60,7 +60,7 @@
         <item row="1" column="1">
          <widget class="QLineEdit" name="id_edit">
           <property name="placeholderText">
-           <string>The uniquely ID of the Software</string>
+           <string>The unique ID of the software</string>
           </property>
          </widget>
         </item>
@@ -82,7 +82,7 @@
              <string/>
             </property>
             <property name="placeholderText">
-             <string>A human-readable name for your Software</string>
+             <string>A human-readable name for your software</string>
             </property>
            </widget>
           </item>
@@ -110,7 +110,7 @@
           <item>
            <widget class="QLineEdit" name="summary_edit">
             <property name="placeholderText">
-             <string>A short summary of your Software</string>
+             <string>A short summary of your software</string>
             </property>
            </widget>
           </item>
@@ -138,7 +138,7 @@
           <item>
            <widget class="QLineEdit" name="developer_name_edit">
             <property name="placeholderText">
-             <string>The Name of the Developer</string>
+             <string>The name of the developer</string>
             </property>
            </widget>
           </item>
@@ -161,7 +161,7 @@
         <item row="5" column="1">
          <widget class="QLineEdit" name="desktop_file_edit">
           <property name="placeholderText">
-           <string>The Name of the .desktop file of your Software</string>
+           <string>The name of the .desktop file of your software</string>
           </property>
          </widget>
         </item>
@@ -220,14 +220,14 @@
         <item row="12" column="0">
          <widget class="QLabel" name="end_of_life_label">
           <property name="text">
-           <string>End of life date::</string>
+           <string>End-of-life date:</string>
           </property>
          </widget>
         </item>
         <item row="10" column="0" colspan="2">
          <widget class="QCheckBox" name="end_of_life_check_box">
           <property name="text">
-           <string>Set a End of life date</string>
+           <string>Set an end-of-life date</string>
           </property>
          </widget>
         </item>
