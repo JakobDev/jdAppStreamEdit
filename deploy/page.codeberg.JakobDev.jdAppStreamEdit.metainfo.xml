@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <component type="desktop">
-  <!--Created with jdAppStreamEdit 7.0-->
+  <!--Created with jdAppStreamEdit 7.1-->
   <id>page.codeberg.JakobDev.jdAppStreamEdit</id>
   <name>jdAppStreamEdit</name>
   <summary>A graphical Program to create and edit AppStream files</summary>
@@ -53,6 +53,21 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="8.0" date="2023-12-22" type="stable">
+      <description>
+        <ul>
+          <li>Add support for viewing catalog</li>
+          <li>Allow to compose existing directory</li>
+          <li>Allow viewing Sysinfo</li>
+          <li>Add support for Screenshot scale factor</li>
+          <li>Add Snapshot Release type</li>
+          <li>Remove deprecated python2 provides</li>
+          <li>Some fixes to Thumbnails</li>
+          <li>Add Icons to Buttons</li>
+          <li>Improve Translate DIalog (Alexander-Wilms)</li>
+        </ul>
+      </description>
+    </release>
     <release version="7.1" date="2023-09-14" type="stable">
       <description>
         <ul>
@@ -194,10 +209,11 @@
       </description>
     </release>
   </releases>
-  <url type="homepage">https://codeberg.org/JakobDev/jdAppStreamEdit</url>
+  <url type="homepage">https://jakobdev.codeberg.page/work/app/jdAppStreamEdit</url>
   <url type="bugtracker">https://codeberg.org/JakobDev/jdAppStreamEdit/issues</url>
   <url type="donation">https://ko-fi.com/jakobdev</url>
   <url type="translate">https://translate.codeberg.org/projects/jdAppStreamEdit</url>
+  <url type="vcs-browser">https://codeberg.org/JakobDev/jdAppStreamEdit</url>
   <categories>
     <category>Development</category>
     <category>Qt</category>
