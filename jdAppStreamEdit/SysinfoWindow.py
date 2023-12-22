@@ -4,10 +4,6 @@ from .Functions import check_appstreamcli
 from typing import TYPE_CHECKING
 from PyQt6.QtGui import QIcon
 import subprocess
-import tempfile
-import shutil
-import gzip
-import os
 
 
 if TYPE_CHECKING:
