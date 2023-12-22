@@ -486,10 +486,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.screenshot_table.setCellWidget(row, 3, remove_button)
 
     def _check_screenshot_urls(self) -> None:
-        for i in self.screenshot_list:
-            if not is_url_reachable(i["url"]):
-                QMessageBox.critical(self, QCoreApplication.translate("MainWindow", "Invalid URL"), QCoreApplication.translate("MainWindow", "The URL {{url}} does not work").replace("{{url}}", i["url"]))
-                return
+        for screenshot in self.screenshot_list:
+            for image in screenshot["images"]:
+                if not is_url_reachable(image["url"]):
+                    QMessageBox.critical(self, QCoreApplication.translate("MainWindow", "Invalid URL"), QCoreApplication.translate("MainWindow", "The URL {{url}} does not work").replace("{{url}}", image["url"]))
+                    return
         QMessageBox.information(self, QCoreApplication.translate("MainWindow", "Everything OK"), QCoreApplication.translate("MainWindow", "All URLs are working"))
 
     def _default_button_clicked(self) -> None:
