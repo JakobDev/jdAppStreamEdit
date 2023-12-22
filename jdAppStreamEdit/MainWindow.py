@@ -592,7 +592,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         type_box.addItem("font", "font")
         type_box.addItem("modalias", "modalias")
         type_box.addItem("firmware", "firmware")
-        type_box.addItem("python2", "python2")
         type_box.addItem("python3", "python3")
         type_box.addItem("dbus-user", "dbus-user")
         type_box.addItem("dbus-system", "dbus-system")
