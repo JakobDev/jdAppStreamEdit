@@ -29,29 +29,31 @@ class TranslateWindow(QDialog, Ui_TranslateWindow):
         self.ok_button.clicked.connect(self._ok_button_clicked)
         self.cancel_button.clicked.connect(self.close)
 
-    def _add_row(self, language: Optional[str] = None, text: Optional[str] = None) -> None:
+    def _add_row(self, lang_code_of_paragraph: Optional[str] = None, translated_paragraph: Optional[str] = None) -> None:
         row = self.table_widget.rowCount()
         self.table_widget.insertRow(row)
 
         language_box = QComboBox()
         language_box.setPlaceholderText(QCoreApplication.translate("TranslateWindow", "Select Language"))
 
-        for key, value in self._env.language_codes.items():
-            language_box.addItem(value + " (" + key + ")", key)
+        for lang_code, lang_name in self._env.language_codes.items():
+            if self._env.settings.get("translateLanguageSort") == TRANSLATE_LANGUAGE_SORT_SETTING.NAME:
+                entry = f"{lang_name} ({lang_code})"
+            else:
+                entry = f"{lang_code}: {lang_name}"
 
-        if self._env.settings.get("translateLanguageSort") == TRANSLATE_LANGUAGE_SORT_SETTING.NAME:
-            language_box.model().sort(0, Qt.SortOrder.AscendingOrder)
+            language_box.addItem(entry, lang_code)
 
-        if language is not None:
-            select_combo_box_data(language_box, language, default_index=-1)
-        else:
-            language_box.setCurrentIndex(-1)
+        language_box.model().sort(0, Qt.SortOrder.AscendingOrder)
+
+        select_combo_box_data(language_box, lang_code_of_paragraph, default_index=-1)
+
         self.table_widget.setCellWidget(row, 0, language_box)
 
-        if text is None:
+        if translated_paragraph is None:
             self.table_widget.setItem(row, 1, QTableWidgetItem())
         else:
-            self.table_widget.setItem(row, 1, QTableWidgetItem(text))
+            self.table_widget.setItem(row, 1, QTableWidgetItem(translated_paragraph))
 
         remove_button = QPushButton(QCoreApplication.translate("TranslateWindow", "Remove"))
         remove_button.clicked.connect(self._remove_button_clicked)
@@ -98,8 +100,8 @@ class TranslateWindow(QDialog, Ui_TranslateWindow):
 
         self.close()
 
-    def open_window(self, current_dict: Dict[str, str], main_window=None) -> bool:
-        self._current_dict = current_dict
+    def open_window(self, translations_of_paragraph: Dict[str, str], main_window=None) -> bool:
+        self._current_dict = translations_of_paragraph
         self._saved = False
 
         if main_window:
@@ -109,8 +111,14 @@ class TranslateWindow(QDialog, Ui_TranslateWindow):
 
         clear_table_widget(self.table_widget)
 
-        for key, value in current_dict.items():
-            self._add_row(language=key, text=value)
+        if self._env.settings.get("translateLanguageSort") == TRANSLATE_LANGUAGE_SORT_SETTING.NAME:
+            key = lambda key: self._env.language_codes[key]
+        else:
+            key = lambda key: key
+
+        for lang_code_of_paragraph in sorted(translations_of_paragraph.keys(), key=key):
+            translated_paragraph = translations_of_paragraph[lang_code_of_paragraph]
+            self._add_row(lang_code_of_paragraph=lang_code_of_paragraph, translated_paragraph=translated_paragraph)
 
         self.exec()
 
