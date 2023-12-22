@@ -112,9 +112,9 @@ class TranslateWindow(QDialog, Ui_TranslateWindow):
         clear_table_widget(self.table_widget)
 
         if self._env.settings.get("translateLanguageSort") == TRANSLATE_LANGUAGE_SORT_SETTING.NAME:
-            key = lambda key: self._env.language_codes[key]
+            key = lambda key: self._env.language_codes[key]  # noqa: E731
         else:
-            key = lambda key: key
+            key = lambda key: key  # noqa: E731
 
         for lang_code_of_paragraph in sorted(translations_of_paragraph.keys(), key=key):
             translated_paragraph = translations_of_paragraph[lang_code_of_paragraph]
