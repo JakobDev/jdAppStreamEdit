@@ -1188,7 +1188,7 @@
     </message>
     <message>
       <location filename="../ui/MainWindow.ui" line="0" />
-      <source>The uniquely ID of the Software</source>
+      <source>The unique ID of the software</source>
       <translation>Die eindeutige ID der Software</translation>
     </message>
     <message>
@@ -1198,7 +1198,7 @@
     </message>
     <message>
       <location filename="../ui/MainWindow.ui" line="0" />
-      <source>A human-readable name for your Software</source>
+      <source>A human-readable name for your software</source>
       <translation>Der Name der Software</translation>
     </message>
     <message>
@@ -1216,7 +1216,7 @@
     </message>
     <message>
       <location filename="../ui/MainWindow.ui" line="0" />
-      <source>A short summary of your Software</source>
+      <source>A short summary of your software</source>
       <translation>Eine kurze Beschreibung der Software</translation>
     </message>
     <message>
@@ -1226,7 +1226,7 @@
     </message>
     <message>
       <location filename="../ui/MainWindow.ui" line="0" />
-      <source>The Name of the Developer</source>
+      <source>The name of the developer</source>
       <translation>Der Name des Entwicklers der Software</translation>
     </message>
     <message>
@@ -1236,7 +1236,7 @@
     </message>
     <message>
       <location filename="../ui/MainWindow.ui" line="0" />
-      <source>The Name of the .desktop file of your Software</source>
+      <source>The name of the .desktop file of your software</source>
       <translation>Der Name der .desktop Datei der Software</translation>
     </message>
     <message>
@@ -1271,12 +1271,12 @@
     </message>
     <message>
       <location filename="../ui/MainWindow.ui" line="0" />
-      <source>End of life date::</source>
+      <source>End-of-life date:</source>
       <translation>Lebensende:</translation>
     </message>
     <message>
       <location filename="../ui/MainWindow.ui" line="0" />
-      <source>Set a End of life date</source>
+      <source>Set an end-of-life date</source>
       <translation>Lege ein Lebensende fest</translation>
     </message>
     <message>

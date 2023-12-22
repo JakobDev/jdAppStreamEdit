@@ -1188,7 +1188,7 @@
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
-        <source>The uniquely ID of the Software</source>
+        <source>The unique ID of the software</source>
         <translation>De unieke id van deze software</translation>
     </message>
     <message>
@@ -1198,7 +1198,7 @@
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
-        <source>A human-readable name for your Software</source>
+        <source>A human-readable name for your software</source>
         <translation>De eenvoudig te lezen naam van deze software</translation>
     </message>
     <message>
@@ -1216,7 +1216,7 @@
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
-        <source>A short summary of your Software</source>
+        <source>A short summary of your software</source>
         <translation>Een korte beschrijving van uw software</translation>
     </message>
     <message>
@@ -1226,7 +1226,7 @@
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
-        <source>The Name of the Developer</source>
+        <source>The name of the developer</source>
         <translation>Uw (bij)naam</translation>
     </message>
     <message>
@@ -1236,7 +1236,7 @@
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
-        <source>The Name of the .desktop file of your Software</source>
+        <source>The name of the .desktop file of your software</source>
         <translation>De naam van het bij uw software behorende .desktopbestand</translation>
     </message>
     <message>
@@ -1271,12 +1271,12 @@
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
-        <source>End of life date::</source>
+        <source>End-of-life date:</source>
         <translation>Vervaldatum:</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
-        <source>Set a End of life date</source>
+        <source>Set an end-of-life date</source>
         <translation>Vervaldatum instellen</translation>
     </message>
     <message>
