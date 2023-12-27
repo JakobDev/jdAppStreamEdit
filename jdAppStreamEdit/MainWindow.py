@@ -119,8 +119,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         for key, value in env.metadata_license_list.items():
             self.metadata_license_box.addItem(f"{value} ({key})", key)
 
-        for i in env.project_license_list["licenses"]:
-            self.project_license_box.addItem(f'{i["name"]} ({i["licenseId"]})', i["licenseId"])
+        for license in env.project_license_list["licenses"]:
+            if not license["isDeprecatedLicenseId"]:
+                self.project_license_box.addItem(f'{license["name"]} ({license["licenseId"]})', license["licenseId"])
 
         self.metadata_license_box.model().sort(0, Qt.SortOrder.AscendingOrder)
         self.project_license_box.model().sort(0, Qt.SortOrder.AscendingOrder)
@@ -783,6 +784,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.update_screenshot_table()
 
     def load_xml(self, xml_data: bytes) -> bool:
+        self._edited = False
+
         xml_data = xml_data.replace(b"<code>", b"&lt;code&gt;")
         xml_data = xml_data.replace(b"</code>", b"&lt;/code&gt;")
         xml_data = xml_data.replace(b"<em>", b"&lt;em&gt;")
@@ -843,6 +846,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         project_license_tag = root.find("project_license")
         if project_license_tag is not None:
+            # update deprecated license tag
+            if project_license_tag.text.endswith("+"):
+                project_license_tag.text = project_license_tag.text[:-1] + "-or-later"
+                self._edited = True
             index = self.project_license_box.findData(project_license_tag.text)
             if index != -1:
                 self.project_license_box.setCurrentIndex(index)
@@ -920,8 +927,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 self.keyword_list.addItem(i.text)
 
         self._advanced_widget.load_data(root)
-
-        self._edited = False
 
         return True
 
