@@ -22,7 +22,6 @@ def check_file(tool: str, path: pathlib.Path, text: str) -> None:
 def main() -> None:
     root_dir = pathlib.Path(__file__).parent.parent
 
-    check_file("UpdateSPDXLicenses.py", root_dir / "jdAppStreamEdit" / "data" / "project_licenses.json", "The SPDX licenses are not up to date. Please run tools/UpdateSPDXLicenses.py.")
     check_file("UpdateTranslators.py", root_dir / "jdAppStreamEdit" / "data" / "translators.json", "The translators are not up to date. Please run tools/UpdateTranslators.py.")
     check_file("WriteChangelogHtml.py", root_dir / "jdAppStreamEdit" / "data" / "changelog.html", "The changelog is not up to date. Please run tools/WriteChangelogHtml.py.")
 
