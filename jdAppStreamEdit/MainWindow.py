@@ -849,7 +849,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             # update deprecated license tag
             if project_license_tag.text.endswith("+"):
                 project_license_tag.text = project_license_tag.text[:-1] + "-or-later"
-                self._edited = True
             index = self.project_license_box.findData(project_license_tag.text)
             if index != -1:
                 self.project_license_box.setCurrentIndex(index)
