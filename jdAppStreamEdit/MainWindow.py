@@ -784,8 +784,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.update_screenshot_table()
 
     def load_xml(self, xml_data: bytes) -> bool:
-        self._edited = False
-
         xml_data = xml_data.replace(b"<code>", b"&lt;code&gt;")
         xml_data = xml_data.replace(b"</code>", b"&lt;/code&gt;")
         xml_data = xml_data.replace(b"<em>", b"&lt;em&gt;")
@@ -926,6 +924,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 self.keyword_list.addItem(i.text)
 
         self._advanced_widget.load_data(root)
+
+        self._edited = False
 
         return True
 
