@@ -119,8 +119,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         for key, value in env.metadata_license_list.items():
             self.metadata_license_box.addItem(f"{value} ({key})", key)
 
-        for i in env.project_license_list["licenses"]:
-            self.project_license_box.addItem(f'{i["name"]} ({i["licenseId"]})', i["licenseId"])
+        for license in env.project_license_list["licenses"]:
+            if not license["isDeprecatedLicenseId"]:
+                self.project_license_box.addItem(f'{license["name"]} ({license["licenseId"]})', license["licenseId"])
 
         self.metadata_license_box.model().sort(0, Qt.SortOrder.AscendingOrder)
         self.project_license_box.model().sort(0, Qt.SortOrder.AscendingOrder)
@@ -843,6 +844,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         project_license_tag = root.find("project_license")
         if project_license_tag is not None:
+            # update deprecated license tag
+            if project_license_tag.text.endswith("+"):
+                project_license_tag.text = project_license_tag.text[:-1] + "-or-later"
             index = self.project_license_box.findData(project_license_tag.text)
             if index != -1:
                 self.project_license_box.setCurrentIndex(index)
