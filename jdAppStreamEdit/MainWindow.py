@@ -743,6 +743,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def _parse_screenshots_tag(self, screenshots_tag: etree._Element) -> None:
         for i in screenshots_tag.getchildren():
+            if i.tag != "screenshot":
+                continue
+
             new_dict: ScreenshotDict = {
                 "default": i.get("type") == "default",
                 "caption": None,
