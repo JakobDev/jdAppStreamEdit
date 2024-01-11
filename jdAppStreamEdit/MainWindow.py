@@ -853,6 +853,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             index = self.project_license_box.findData(project_license_tag.text)
             if index != -1:
                 self.project_license_box.setCurrentIndex(index)
+            else:
+                index = self.project_license_box.findData(project_license_tag.text + "-only")
+                if index != -1:
+                    self.project_license_box.setCurrentIndex(index)
 
         update_contact_tag = root.find("update_contact")
         if update_contact_tag is not None:
