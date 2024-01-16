@@ -25,7 +25,7 @@ def _create_artifact_source_tag(url: str) -> etree.Element:
 
 class _GitHubImporter(ReleaseImporter):
     @staticmethod
-    def do_import(parent_widget: QWidget) -> list[ReleaseImportInfo]:
+    def do_import(parent_widget: QWidget) -> ReleaseImportInfo:
         repo_url, ok = QInputDialog.getText(parent_widget, QCoreApplication.translate("ReleaseImporter", "Enter Repo URL"), QCoreApplication.translate("ReleaseImporter", "Please Enter the URL to the GitHub Repo"))
 
         if not ok:
@@ -61,8 +61,8 @@ class _GitHubImporter(ReleaseImporter):
             # paragraph_tag.text = i["body"]
             # data["description"] = description_tag
 
-            release_list.append({"version": i["tag_name"], "date": QDate.fromString(i["published_at"], Qt.DateFormat.ISODate), "type": "development" if i["prerelease"] else "stable", "data": data})
-        return release_list
+            release_list.append({"version": i["tag_name"], "date": QDate.fromString(i["published_at"], Qt.DateFormat.ISODate), "type": "development" if i["prerelease"] else "stable", "data": data, "changelog_text": i["body"]})
+        return {"releases": release_list, "changelog_importer": True}
 
     @staticmethod
     def get_menu_text() -> str:
@@ -71,7 +71,7 @@ class _GitHubImporter(ReleaseImporter):
 
 class _GitLabImporter(ReleaseImporter):
     @staticmethod
-    def do_import(parent_widget: QWidget) -> list[ReleaseImportInfo]:
+    def do_import(parent_widget: QWidget) -> ReleaseImportInfo:
         repo_url, ok = QInputDialog.getText(parent_widget, QCoreApplication.translate("ReleaseImporter", "Enter Repo URL"), QCoreApplication.translate("ReleaseImporter", "Please Enter the URL to the GitLab Repo"))
         if not ok:
             return
@@ -95,8 +95,8 @@ class _GitLabImporter(ReleaseImporter):
                     data["artifacts"] = artifacts_tag
                     break
 
-            release_list.append({"version": i["name"], "date": QDate.fromString(i["released_at"], Qt.DateFormat.ISODate), "data": data})
-        return release_list
+            release_list.append({"version": i["name"], "date": QDate.fromString(i["released_at"], Qt.DateFormat.ISODate), "data": data, "changelog_text": i["description"]})
+        return {"releases": release_list, "changelog_importer": True}
 
     @staticmethod
     def get_menu_text() -> str:
@@ -105,7 +105,7 @@ class _GitLabImporter(ReleaseImporter):
 
 class _GiteaImporter(ReleaseImporter):
     @staticmethod
-    def do_import(parent_widget: QWidget) -> list[ReleaseImportInfo]:
+    def do_import(parent_widget: QWidget) -> ReleaseImportInfo:
         repo_url, ok = QInputDialog.getText(parent_widget, QCoreApplication.translate("ReleaseImporter", "Enter Repo URL"), QCoreApplication.translate("ReleaseImporter", "Please Enter the URL to the Gitea Repo"))
         if not ok:
             return
@@ -115,7 +115,6 @@ class _GiteaImporter(ReleaseImporter):
 
         try:
             r = requests.get(f"{host}/api/v1/repos/{parsed.path[1:]}/releases")
-            print(f"{host}/api/v1/repos/{parsed.path[1:]}/releases")
             assert_func(r.status_code == 200)
         except Exception:
             QMessageBox.critical(parent_widget, QCoreApplication.translate("ReleaseImporter", "Could not get Data"), QCoreApplication.translate("ReleaseImporter", "Could not get release Data for that Repo. Make sure you have the right URL."))
@@ -123,9 +122,9 @@ class _GiteaImporter(ReleaseImporter):
 
         release_list = []
         for i in r.json():
-            release_list.append({"version": i["name"], "date": QDate.fromString(i["published_at"], Qt.DateFormat.ISODate), "type": "development" if i["prerelease"] else "stable", "data": {"url": i["html_url"]}})
+            release_list.append({"version": i["name"], "date": QDate.fromString(i["published_at"], Qt.DateFormat.ISODate), "type": "development" if i["prerelease"] else "stable", "data": {"url": i["html_url"]}, "changelog_text": i["body"]})
 
-        return release_list
+        return {"releases": release_list, "changelog_importer": True}
 
     @staticmethod
     def get_menu_text() -> str:
@@ -134,7 +133,7 @@ class _GiteaImporter(ReleaseImporter):
 
 class _GitImporter(ReleaseImporter):
     @staticmethod
-    def do_import(parent_widget: QWidget) -> list[ReleaseImportInfo]:
+    def do_import(parent_widget: QWidget) -> ReleaseImportInfo:
         try:
             subprocess.run(["git"], capture_output=True)
         except FileNotFoundError:
@@ -158,10 +157,9 @@ class _GitImporter(ReleaseImporter):
 
         release_list = []
         for i in result.stdout.decode("utf-8").splitlines():
-            print(i)
             date, version = i.split(" ", 1)
             release_list.append({"version": version, "date": QDate.fromString(date, Qt.DateFormat.ISODate)})
-        return release_list
+        return {"releases": release_list, "changelog_importer": False}
 
     @staticmethod
     def get_menu_text() -> str:
@@ -170,7 +168,7 @@ class _GitImporter(ReleaseImporter):
 
 class _NewsFileImporter(ReleaseImporter):
     @staticmethod
-    def do_import(parent_widget: QWidget) -> list[ReleaseImportInfo]:
+    def do_import(parent_widget: QWidget) -> ReleaseImportInfo:
         try:
             subprocess.run(["appstreamcli"], capture_output=True)
         except FileNotFoundError:
@@ -198,7 +196,7 @@ class _NewsFileImporter(ReleaseImporter):
                 data["description"] = description_tag
 
             release_list.append({"version": i.get("version"), "date": QDate.fromString(i.get("date"), Qt.DateFormat.ISODate), "data": data})
-        return release_list
+        return {"releases": release_list, "changelog_importer": False}
 
     @staticmethod
     def get_menu_text() -> str:

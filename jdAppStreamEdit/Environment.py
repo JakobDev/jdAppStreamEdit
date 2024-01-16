@@ -1,6 +1,7 @@
+from .Interfaces import ReleaseImporter, ChangelogImporter
+from .ChangelogImporter import get_changelog_importer
 from .ReleaseImporter import get_release_importer
 from PyQt6.QtWidgets import QApplication
-from .Interfaces import ReleaseImporter
 from .PluginAPI import PluginAPI
 from .Settings import Settings
 from .Types import PluginDict
@@ -73,6 +74,7 @@ class Environment:
                         self.platform_list.append(architecture + "-" + kernel + "-" + environment)
 
         self.release_importer: list[ReleaseImporter] = get_release_importer()
+        self.changelog_importer: list[ChangelogImporter] = get_changelog_importer()
         self.plugin_api = PluginAPI(self)
         self.plugin_list: list[PluginDict] = []
         self.plugins_enabled = True

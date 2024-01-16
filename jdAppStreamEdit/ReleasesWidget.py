@@ -1,9 +1,10 @@
 from .Functions import stretch_table_widget_colums_size, get_sender_table_row, clear_table_widget, get_logical_table_row_list, select_combo_box_data
-from PyQt6.QtWidgets import QWidget, QPushButton, QComboBox, QDateEdit, QTableWidgetItem, QMessageBox, QMenu
+from PyQt6.QtWidgets import QWidget, QPushButton, QComboBox, QDateEdit, QTableWidgetItem, QMessageBox, QMenu, QInputDialog
 from .ui_compiled.ReleasesWidget import Ui_ReleasesWidget
 from PyQt6.QtCore import Qt, QCoreApplication, QDate
 from typing import Optional, Literal, TYPE_CHECKING
 from .ReleasesWindow import ReleasesWindow
+from .Interfaces import ChangelogImporter
 from PyQt6.QtGui import QAction
 from lxml import etree
 import traceback
@@ -154,8 +155,22 @@ class ReleasesWidget(QWidget, Ui_ReleasesWidget):
 
             return
 
-        if release_data is None or len(release_data) == 0:
+        if release_data is None or len(release_data["releases"]) == 0:
             return
+
+        changelog_importer: Optional[ChangelogImporter] = None
+        if release_data.get("changelog_importer") is True:
+            changelog_importer_list: list[str] = []
+            changelog_importer_dict: dict[str, ChangelogImporter] = {}
+
+            changelog_importer_list.append(QCoreApplication.translate("ReleasesWidget", "None"))
+            for current_importer in self._env.changelog_importer:
+                changelog_importer_list.append(current_importer.get_name())
+                changelog_importer_dict[current_importer.get_name()] = current_importer
+
+            changelog_importer_name, ok = QInputDialog.getItem(self, QCoreApplication.translate("ReleasesWidget", "Import Changelog"), QCoreApplication.translate("ReleasesWidget", "jdAppStreamEdit can import the changelog if it adheres to a specific format. If this is the case, please choose the appropriate format."), changelog_importer_list, editable=False)
+            if ok and changelog_importer_name in changelog_importer_dict:
+                changelog_importer = changelog_importer_dict[changelog_importer_name]
 
         if self.releases_table.rowCount() > 0:
             ans = QMessageBox.question(self, QCoreApplication.translate("ReleasesWidget", "Overwrite everything"), QCoreApplication.translate("ReleasesWidget", "If you proceed, all your chnages in the release tab will be overwritten. Continue?"), QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No)
@@ -164,7 +179,19 @@ class ReleasesWidget(QWidget, Ui_ReleasesWidget):
 
         clear_table_widget(self.releases_table)
 
-        for count, i in enumerate(release_data):
+        for count, i in enumerate(release_data["releases"]):
+            changelog_text = i.get("changelog_text", "")
+            if changelog_importer is not None and changelog_text is not None and changelog_text != "":
+                try:
+                    changelog, _ = changelog_importer.do_import(changelog_text)
+
+                    if changelog is not None:
+                        if "data" not in i:
+                            i["data"] = {}
+                        i["data"]["description"] = changelog
+                except Exception:
+                    print(traceback.format_exc(), end="", file=sys.stderr)
+
             self.releases_table.insertRow(count)
             try:
                 self._set_release_row(count, version=i["version"], date=i["date"], release_type=i.get("type", "stable"), data=i.get("data", {}))

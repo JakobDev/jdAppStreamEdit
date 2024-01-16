@@ -1,4 +1,4 @@
-from .Interfaces import ReleaseImporter
+from .Interfaces import ReleaseImporter, ChangelogImporter
 from typing import TYPE_CHECKING
 
 
@@ -12,3 +12,6 @@ class PluginAPI:
 
     def add_release_importer(self, release_importer: ReleaseImporter) -> None:
         self._env.release_importer.append(release_importer)
+
+    def add_changelog_importer(self, changelog_importer: ChangelogImporter) -> None:
+        self._env.changelog_importer.append(changelog_importer)

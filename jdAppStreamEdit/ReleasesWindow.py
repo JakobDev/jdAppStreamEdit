@@ -1,9 +1,11 @@
 from .Functions import get_logical_table_row_list, clear_table_widget, stretch_table_widget_colums_size, select_combo_box_data, get_sender_table_row
 from PyQt6.QtWidgets import QDialog, QWidget, QPushButton, QTableWidgetItem, QStyle
 from .ui_compiled.ReleasesWindow import Ui_ReleasesWindow
+from .ImportChangelogWindow import ImportChangelogWindow
 from .DescriptionWidget import DescriptionWidget
 from PyQt6.QtCore import QCoreApplication, Qt
 from .ArtifactWindow import ArtifactWindow
+from .Types import ReleaseInfoDict
 from typing import TYPE_CHECKING
 from PyQt6.QtGui import QIcon
 from lxml import etree
@@ -21,11 +23,12 @@ class ReleasesWindow(QDialog, Ui_ReleasesWindow):
 
         self.setupUi(self)
 
+        self._import_changelog_window = ImportChangelogWindow(env, self)
         self._releases_widget = releases_widget
         self._parent_window = parent_window
 
         self._description_widget = DescriptionWidget(env)
-        self.description_layout.addWidget(self._description_widget)
+        self.description_layout.insertWidget(0, self._description_widget)
 
         self._artifacts_window = ArtifactWindow(env, self)
 
@@ -41,9 +44,16 @@ class ReleasesWindow(QDialog, Ui_ReleasesWindow):
         self.ok_button.setIcon(QIcon(env.app.style().standardIcon(QStyle.StandardPixmap.SP_DialogOkButton)))
         self.cancel_button.setIcon(QIcon(env.app.style().standardIcon(QStyle.StandardPixmap.SP_DialogCancelButton)))
 
+        self.import_changelog_button.clicked.connect(self._import_changelog_button_clicked)
         self.add_artifact_button.clicked.connect(lambda: self._artifacts_window.open_window(None))
         self.ok_button.clicked.connect(self._ok_button_clicked)
         self.cancel_button.clicked.connect(self.close)
+
+    def _import_changelog_button_clicked(self) -> None:
+        changelog_tag = self._import_changelog_window.get_changelog()
+
+        if changelog_tag is not None:
+            self._description_widget.load_tags(changelog_tag)
 
     def _edit_artifact_clicked(self) -> None:
         row = get_sender_table_row(self.artifacts_table, 1, self.sender())
@@ -54,7 +64,7 @@ class ReleasesWindow(QDialog, Ui_ReleasesWindow):
         self.artifacts_table.removeRow(row)
 
     def _ok_button_clicked(self) -> None:
-        new_dict = {}
+        new_dict: ReleaseInfoDict = {}
 
         if self.url_edit.text() != "":
             new_dict["url"] = self.url_edit.text()
