@@ -1,4 +1,4 @@
-from .Functions import clear_table_widget, stretch_table_widget_colums_size, list_widget_contains_item, is_url_reachable, get_logical_table_row_list, select_combo_box_data, is_flatpak, get_shared_temp_dir, is_url_valid, get_save_settings, assert_func
+from .Functions import clear_table_widget, stretch_table_widget_colums_size, list_widget_contains_item, is_url_reachable, get_logical_table_row_list, select_combo_box_data, is_flatpak, get_shared_temp_dir, is_url_valid, get_save_settings, assert_func, get_sender_table_row
 from PyQt6.QtWidgets import QApplication, QCheckBox, QComboBox, QLineEdit, QListWidget, QMainWindow, QMessageBox, QDateEdit, QInputDialog, QPlainTextEdit, QPushButton, QTableWidget, QTableWidgetItem, QRadioButton, QFileDialog
 from PyQt6.QtGui import QAction, QDragEnterEvent, QDropEvent, QCloseEvent
 from .ComposeDirectoryWindow import ComposeDirectoryWindow
@@ -136,9 +136,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.internal_releases_radio_button.setChecked(True)
 
         stretch_table_widget_colums_size(self.screenshot_table)
+        stretch_table_widget_colums_size(self.launchable_table)
         stretch_table_widget_colums_size(self.provides_table)
 
         self.screenshot_table.verticalHeader().setSectionsMovable(True)
+        self.launchable_table.verticalHeader().setSectionsMovable(True)
         self.provides_table.verticalHeader().setSectionsMovable(True)
 
         self._update_end_of_life_enabled()
@@ -169,6 +171,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.categorie_add_button.clicked.connect(self._add_categorie_button_clicked)
 
         self.categorie_remove_button.clicked.connect(self._remove_categorie_button_clicked)
+
+        self.launchable_add_button.clicked.connect(self._add_launchable_row)
 
         self.provides_add_button.clicked.connect(self._add_provides_row)
 
@@ -351,7 +355,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         for key, value in entry.Comment.translations.items():
             self._summary_translations[key] = value
 
-        self.desktop_file_edit.setText(os.path.basename(path))
+        self._add_launchable_row(value_type="deskop-id", value=os.path.basename(path))
 
         for i in entry.Categories:
             self.categorie_list.addItem(i)
@@ -580,6 +584,37 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.categorie_list.takeItem(row)
         self._update_categorie_remove_button_enabled()
         self.set_file_edited()
+
+    # Launchable
+
+    def _add_launchable_row(self, value_type: Optional[str] = None, value: str = "") -> None:
+        row = self.launchable_table.rowCount()
+        self.launchable_table.insertRow(row)
+
+        type_box = QComboBox()
+        type_box.addItem("desktop-id", "desktop-id")
+        type_box.addItem("service", "service")
+        type_box.addItem("cockpit-manifest", "cockpit-manifest")
+        type_box.addItem("url", "url")
+        if value_type:
+            index = type_box.findData(value_type)
+            if index != -1:
+                type_box.setCurrentIndex(index)
+            else:
+                print(f"Unkown provides type {value_type}", file=sys.stderr)
+        self.launchable_table.setCellWidget(row, 0, type_box)
+
+        self.launchable_table.setItem(row, 1, QTableWidgetItem(value))
+
+        remove_button = QPushButton(QCoreApplication.translate("MainWindow", "Remove"))
+        remove_button.clicked.connect(self._remove_launchable_button_clicked)
+        self.launchable_table.setCellWidget(row, 2, remove_button)
+
+        self.set_file_edited()
+
+    def _remove_launchable_button_clicked(self) -> None:
+        row = get_sender_table_row(self.launchable_table, 2, self.sender())
+        self.launchable_table.removeRow(row)
 
     # Provides
 
@@ -845,10 +880,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 else:
                     self._developer_name_translations[i.get("{http://www.w3.org/XML/1998/namespace}lang")] = i.text
 
-        launchable_tag = root.find("launchable")
-        if launchable_tag is not None:
-            self.desktop_file_edit.setText(launchable_tag.text)
-
         metadata_license_tag = root.find("metadata_license")
         if metadata_license_tag is not None:
             index = self.metadata_license_box.findData(metadata_license_tag.text)
@@ -921,6 +952,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         content_rating_tag = root.find("content_rating")
         if content_rating_tag is not None:
             self._oars_widget.open_file(content_rating_tag)
+
+        for launchable_tag in root.findall("launchable"):
+            self._add_launchable_row(value_type=launchable_tag.get("type"), value=launchable_tag.text)
 
         provides_tag = root.find("provides")
         if provides_tag is not None:
@@ -1042,11 +1076,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             developer_name_tag.set("{http://www.w3.org/XML/1998/namespace}lang", key)
             developer_name_tag.text = value
 
-        if self.desktop_file_edit.text() != "":
-            launchable_tag = etree.SubElement(root, "launchable")
-            launchable_tag.set("type", "desktop-id")
-            launchable_tag.text = self.desktop_file_edit.text().strip()
-
         if self.metadata_license_box.currentData() != "unknown":
             metadata_license_tag = etree.SubElement(root, "metadata_license")
             metadata_license_tag.text = self.metadata_license_box.currentData()
@@ -1094,6 +1123,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         content_rating_tag = etree.SubElement(root, "content_rating")
         content_rating_tag.set("type", "oars-1.1")
         self._oars_widget.save_file(content_rating_tag)
+
+        for i in get_logical_table_row_list(self.launchable_table):
+            launchable_tag = etree.SubElement(root, "launchable")
+            launchable_tag.set("type", self.launchable_table.cellWidget(i, 0).currentData())
+            launchable_tag.text = self.launchable_table.item(i, 1).text()
 
         if self.provides_table.rowCount() > 0:
             provides_tag = etree.SubElement(root, "provides")
