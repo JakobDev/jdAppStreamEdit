@@ -835,6 +835,16 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             else:
                 self._developer_name_translations[i.get("{http://www.w3.org/XML/1998/namespace}lang")] = i.text
 
+        if (developer_tag := root.find("developer")) is not None:
+            self.developer_id_edit.setText(developer_tag.get("id", ""))
+            self.developer_name_edit.setText("")
+            self._developer_name_translations.clear()
+            for i in developer_tag.findall("name"):
+                if i.get("{http://www.w3.org/XML/1998/namespace}lang") is None:
+                    self.developer_name_edit.setText(i.text)
+                else:
+                    self._developer_name_translations[i.get("{http://www.w3.org/XML/1998/namespace}lang")] = i.text
+
         launchable_tag = root.find("launchable")
         if launchable_tag is not None:
             self.desktop_file_edit.setText(launchable_tag.text)
@@ -1022,10 +1032,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             summary_translation_tag.set("{http://www.w3.org/XML/1998/namespace}lang", key)
             summary_translation_tag.text = value
 
-        developer_name_tag = etree.SubElement(root, "developer_name")
+        developer_tag = etree.SubElement(root, "developer")
+        if (developer_id := self.developer_id_edit.text()) != "":
+            developer_tag.set("id", developer_id)
+        developer_name_tag = etree.SubElement(developer_tag, "name")
         developer_name_tag.text = self.developer_name_edit.text().strip()
         for key, value in self._developer_name_translations.items():
-            developer_name_tag = etree.SubElement(root, "developer_name")
+            developer_name_tag = etree.SubElement(developer_tag, "name")
             developer_name_tag.set("{http://www.w3.org/XML/1998/namespace}lang", key)
             developer_name_tag.text = value
 

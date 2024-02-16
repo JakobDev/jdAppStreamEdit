@@ -123,14 +123,14 @@
           </item>
          </layout>
         </item>
-        <item row="4" column="0">
+        <item row="5" column="0">
          <widget class="QLabel" name="label_8">
           <property name="text">
            <string>Developer Name:</string>
           </property>
          </widget>
         </item>
-        <item row="4" column="1">
+        <item row="5" column="1">
          <layout class="QHBoxLayout" name="horizontalLayout_9">
           <property name="spacing">
            <number>0</number>
@@ -151,88 +151,102 @@
           </item>
          </layout>
         </item>
-        <item row="5" column="0">
+        <item row="6" column="0">
          <widget class="QLabel" name="label_19">
           <property name="text">
            <string>Desktop File:</string>
           </property>
          </widget>
         </item>
-        <item row="5" column="1">
+        <item row="6" column="1">
          <widget class="QLineEdit" name="desktop_file_edit">
           <property name="placeholderText">
            <string>The name of the .desktop file of your software</string>
           </property>
          </widget>
         </item>
-        <item row="6" column="0">
+        <item row="7" column="0">
          <widget class="QLabel" name="label_3">
           <property name="text">
            <string>Metadata License:</string>
           </property>
          </widget>
         </item>
-        <item row="6" column="1">
+        <item row="7" column="1">
          <widget class="QComboBox" name="metadata_license_box"/>
         </item>
-        <item row="7" column="0">
+        <item row="8" column="0">
          <widget class="QLabel" name="label_4">
           <property name="text">
            <string>Project License:</string>
           </property>
          </widget>
         </item>
-        <item row="7" column="1">
+        <item row="8" column="1">
          <widget class="QComboBox" name="project_license_box">
           <property name="editable">
            <bool>false</bool>
           </property>
          </widget>
         </item>
-        <item row="8" column="0">
+        <item row="9" column="0">
          <widget class="QLabel" name="label_5">
           <property name="text">
            <string>Update Contact:</string>
           </property>
          </widget>
         </item>
-        <item row="8" column="1">
+        <item row="9" column="1">
          <widget class="QLineEdit" name="update_contact_edit">
           <property name="placeholderText">
            <string>You can provide a email address for contacting you here</string>
           </property>
          </widget>
         </item>
-        <item row="9" column="0">
+        <item row="10" column="0">
          <widget class="QLabel" name="label_6">
           <property name="text">
            <string>Project Group:</string>
           </property>
          </widget>
         </item>
-        <item row="9" column="1">
+        <item row="10" column="1">
          <widget class="QLineEdit" name="project_group_edit">
           <property name="placeholderText">
            <string>If the software is part of a bigger group e.g. GNOME or KDE, you can provide it here</string>
           </property>
          </widget>
         </item>
-        <item row="12" column="0">
+        <item row="13" column="0">
          <widget class="QLabel" name="end_of_life_label">
           <property name="text">
            <string>End-of-life date:</string>
           </property>
          </widget>
         </item>
-        <item row="10" column="0" colspan="2">
+        <item row="11" column="0" colspan="2">
          <widget class="QCheckBox" name="end_of_life_check_box">
           <property name="text">
            <string>Set an end-of-life date</string>
           </property>
          </widget>
         </item>
-        <item row="12" column="1">
+        <item row="13" column="1">
          <widget class="QDateEdit" name="end_of_life_date_edit"/>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="label_23">
+          <property name="text">
+           <string>Developer ID:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QLineEdit" name="developer_id_edit">
+          <property name="placeholderText">
+           <string>A unique ID to identify the respective developer</string>
+          </property>
+         </widget>
         </item>
        </layout>
       </widget>
