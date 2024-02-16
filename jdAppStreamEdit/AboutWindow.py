@@ -9,11 +9,12 @@ import os
 
 if TYPE_CHECKING:
     from .Environment import Environment
+    from .MainWindow import MainWindow
 
 
 class AboutWindow(QDialog, Ui_AboutWindow):
-    def __init__(self, env: "Environment") -> None:
-        super().__init__()
+    def __init__(self, env: "Environment", main_window: "MainWindow") -> None:
+        super().__init__(main_window)
 
         self.setupUi(self)
 

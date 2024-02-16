@@ -13,7 +13,7 @@ if TYPE_CHECKING:
 
 class ViewXMLWindow(QDialog, Ui_ViewXMLWindow):
     def __init__(self, env: "Environment", main_window: "MainWindow") -> None:
-        super().__init__()
+        super().__init__(main_window)
 
         self.setupUi(self)
 

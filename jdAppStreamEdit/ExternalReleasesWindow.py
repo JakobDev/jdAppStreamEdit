@@ -30,9 +30,9 @@ class ExternalReleasesWindow(QMainWindow, Ui_ExternalReleasesWindow):
 
         self._releases_widget = ReleasesWidget(env, self)
         self._settings_window = SettingsWindow(env, self)
-        self._plugin_window = PluginWindow(env)
+        self._plugin_window = PluginWindow(env, self)
         self._xml_window = ViewXMLWindow(env, self)
-        self._about_window = AboutWindow(env)
+        self._about_window = AboutWindow(env, self)
 
         self._current_path: Optional[str] = None
         self._edited = False
@@ -146,7 +146,7 @@ class ExternalReleasesWindow(QMainWindow, Ui_ExternalReleasesWindow):
         check_box = QCheckBox(QCoreApplication.translate("ExternalReleasesWindow", "Show this dialog at startup"))
         check_box.setChecked(self._env.settings.get("showWelcomeDialogExternalReleases"))
 
-        message_box = QMessageBox()
+        message_box = QMessageBox(self)
         message_box.setWindowTitle(QCoreApplication.translate("ExternalReleasesWindow", "Welcome"))
         message_box.setText(text)
         message_box.setCheckBox(check_box)

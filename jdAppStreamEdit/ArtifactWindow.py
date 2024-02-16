@@ -15,7 +15,7 @@ if TYPE_CHECKING:
 
 class ArtifactWindow(QDialog, Ui_ArtifactWindow):
     def __init__(self, env: "Environment", releases_window: "ReleasesWindow") -> None:
-        super().__init__()
+        super().__init__(releases_window)
 
         self.setupUi(self)
 

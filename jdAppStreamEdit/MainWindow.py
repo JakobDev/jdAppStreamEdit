@@ -46,7 +46,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         self._settings_window = SettingsWindow(env, self)
         self._manage_templates_window = ManageTemplatesWindow(env, self)
-        self._plugin_window = PluginWindow(env)
+        self._plugin_window = PluginWindow(env, self)
         self._validate_window = ValidateWindow(env, self)
         self._xml_window = ViewXMLWindow(env, self)
         self._view_catalog_window = ViewCatalogWindow(env, self)
@@ -54,7 +54,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self._releases_widget = ReleasesWidget(env, self)
         self._compose_directory_window = ComposeDirectoryWindow(self)
         self._sysinfo_window = SysinfoWindow(env, self)
-        self._about_window = AboutWindow(env)
+        self._about_window = AboutWindow(env, self)
 
         self._description_widget = DescriptionWidget(env, self)
         self.description_layout.addWidget(self._description_widget)
@@ -304,7 +304,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         check_box = QCheckBox(QCoreApplication.translate("MainWindow", "Show this dialog at startup"))
         check_box.setChecked(self._env.settings.get("showWelcomeDialog"))
 
-        message_box = QMessageBox()
+        message_box = QMessageBox(self)
         message_box.setWindowTitle(QCoreApplication.translate("MainWindow", "Welcome"))
         message_box.setText(text)
         message_box.setCheckBox(check_box)
