@@ -797,37 +797,31 @@
         <translation>Import fehlgeschlagen</translation>
     </message>
     <message>
-        <location filename="../ui/ImportChangelogWindow_ui.py" line="87"/>
         <location filename="../ui/ImportChangelogWindow.ui" line="0"/>
         <source>Import Changelog</source>
         <translation>Änderungsprotokoll importieren</translation>
     </message>
     <message>
-        <location filename="../ui/ImportChangelogWindow_ui.py" line="88"/>
         <location filename="../ui/ImportChangelogWindow.ui" line="0"/>
         <source>You can import the changelog for a single version here if it adheres to a specific format.</source>
         <translation>Du kannst hier das Änderungsprotokoll für eine einzelne Version importieren, , wenn es ein bestimmtes Format einhält.</translation>
     </message>
     <message>
-        <location filename="../ui/ImportChangelogWindow_ui.py" line="89"/>
         <location filename="../ui/ImportChangelogWindow.ui" line="0"/>
         <source>Text:</source>
         <translation>Text:</translation>
     </message>
     <message>
-        <location filename="../ui/ImportChangelogWindow_ui.py" line="90"/>
         <location filename="../ui/ImportChangelogWindow.ui" line="0"/>
         <source>Format:</source>
         <translation>Format:</translation>
     </message>
     <message>
-        <location filename="../ui/ImportChangelogWindow_ui.py" line="91"/>
         <location filename="../ui/ImportChangelogWindow.ui" line="0"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../ui/ImportChangelogWindow_ui.py" line="92"/>
         <location filename="../ui/ImportChangelogWindow.ui" line="0"/>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
@@ -854,13 +848,13 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../MainWindow.py" line="452"/>
+        <location filename="../MainWindow.py" line="456"/>
         <location filename="../ExternalReleasesWindow.py" line="224"/>
         <source>No Plugins installed</source>
         <translation>Keine Plugins installiert</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="452"/>
+        <location filename="../MainWindow.py" line="456"/>
         <location filename="../ExternalReleasesWindow.py" line="224"/>
         <source>You have no Plugins installed</source>
         <translation>Du jast keine Plugins installiert</translation>
@@ -941,124 +935,124 @@
         <translation>Unbekannt</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="222"/>
+        <location filename="../MainWindow.py" line="226"/>
         <source>Untitled</source>
         <translation>Unbenannt</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="737"/>
-        <location filename="../MainWindow.py" line="713"/>
-        <location filename="../MainWindow.py" line="228"/>
+        <location filename="../MainWindow.py" line="772"/>
+        <location filename="../MainWindow.py" line="748"/>
+        <location filename="../MainWindow.py" line="232"/>
         <source>Error</source>
         <translation>Fehler</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="239"/>
+        <location filename="../MainWindow.py" line="243"/>
         <source>No templates found</source>
         <translation>Keine Vorlagen gefunden</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="253"/>
+        <location filename="../MainWindow.py" line="257"/>
         <source>No recent files</source>
         <translation>Keine zuletzt geöffneten Dateien</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="266"/>
+        <location filename="../MainWindow.py" line="270"/>
         <source>Clear</source>
         <translation>Löschen</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="283"/>
+        <location filename="../MainWindow.py" line="287"/>
         <source>Unsaved changes</source>
         <translation>Nicht gespeicherte Änderungen</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="283"/>
+        <location filename="../MainWindow.py" line="287"/>
         <source>You have unsaved changes. Do you want to save now?</source>
         <translation>Du hast nicht gespeicherte Änderungen. Möchtest du sie jetzt speichern?</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="294"/>
+        <location filename="../MainWindow.py" line="298"/>
         <source>Welcome to jdAppStreamEdit!</source>
         <translation>Willkommen bei jdAppStreamEdit!</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="295"/>
+        <location filename="../MainWindow.py" line="299"/>
         <source>With jdAppStreamEdit you can create and edit AppStream files (*.metainfo.xml or .appdata.xml). This files are to provide data for your Application (Description, Screenshots etc.) to Software Centers.</source>
         <translation>Mit jdAppStreamEditt kannst du AppStream Dateien (*.metainfo.xml oder *.appdata.xml) erstellen und bearbeiten. Diese Dateien stellen Informationen (z.B. Beschreibung, Screeenshots usw.) für Software Center zur Verfügung.</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="296"/>
+        <location filename="../MainWindow.py" line="300"/>
         <source>It is highly recommend to read the the AppStream Documentation before using this Program. You can open it under ?&gt;AppStream documentation.</source>
         <translation>Es wird empfohlen vor der benutzung die AppStream Dokumentation zu lesen. Du findest sie unter ?&gt;AppStream Dokumentation.</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="297"/>
+        <location filename="../MainWindow.py" line="301"/>
         <source>You can check if your AppStream is valid under Tools&gt;Validate.</source>
         <translation>Du kannst deine AppStream Datei unter Werkzeuge&gt;Validieren auf Gültigkeit überprüfen.</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="300"/>
+        <location filename="../MainWindow.py" line="304"/>
         <source>Show this dialog at startup</source>
         <translation>Diesen Dialog beim Programmstart anzeigen</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="304"/>
+        <location filename="../MainWindow.py" line="308"/>
         <source>Welcome</source>
         <translation>Willkommen</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="325"/>
+        <location filename="../MainWindow.py" line="329"/>
         <source>desktop-entry-lib not found</source>
         <translation>desktop-entrylib nicht gefunden</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="325"/>
+        <location filename="../MainWindow.py" line="329"/>
         <source>This function needs the desktop-entry-lib python module to work</source>
         <translation>Diese Funktion benötigt das desktop-entry-lib Python Modul</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="333"/>
+        <location filename="../MainWindow.py" line="337"/>
         <source>Desktop Entry Files</source>
         <translation>Desktopeinträge</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="429"/>
-        <location filename="../MainWindow.py" line="391"/>
-        <location filename="../MainWindow.py" line="333"/>
+        <location filename="../MainWindow.py" line="433"/>
+        <location filename="../MainWindow.py" line="395"/>
+        <location filename="../MainWindow.py" line="337"/>
         <source>All Files</source>
         <translation>Alle Dateien</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="341"/>
+        <location filename="../MainWindow.py" line="345"/>
         <source>Could not read file</source>
         <translation>Konnte Datei nicht lesen</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="341"/>
+        <location filename="../MainWindow.py" line="345"/>
         <source>Could not read {{path}}. Make sure it is a valid desktop entry and you have the Permission to read it.</source>
         <translation>Konnte {{path}} nicht lesen. Stelle sicher, dass die Datei ein gültiger Desktopeintrag ist und du Leserechte besitzt.</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="429"/>
-        <location filename="../MainWindow.py" line="391"/>
+        <location filename="../MainWindow.py" line="433"/>
+        <location filename="../MainWindow.py" line="395"/>
         <source>AppStream Files</source>
         <translation>AppStream Dateien</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="413"/>
+        <location filename="../MainWindow.py" line="417"/>
         <source>Enter URL</source>
         <translation>URL eingeben</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="413"/>
+        <location filename="../MainWindow.py" line="417"/>
         <source>Please enter a URL</source>
         <translation>Bitte gib eine URL ein</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <location filename="../ui/MainWindow.ui" line="0"/>
-        <location filename="../MainWindow.py" line="481"/>
+        <location filename="../MainWindow.py" line="485"/>
         <source>Edit</source>
         <translation>Bearbeiten</translation>
     </message>
@@ -1067,169 +1061,171 @@
         <location filename="../ui/MainWindow.ui" line="0"/>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <location filename="../ui/MainWindow.ui" line="0"/>
-        <location filename="../MainWindow.py" line="611"/>
-        <location filename="../MainWindow.py" line="485"/>
+        <location filename="../ui/MainWindow.ui" line="0"/>
+        <location filename="../MainWindow.py" line="646"/>
+        <location filename="../MainWindow.py" line="609"/>
+        <location filename="../MainWindow.py" line="489"/>
         <source>Remove</source>
         <translation>Löschen</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="728"/>
-        <location filename="../MainWindow.py" line="553"/>
-        <location filename="../MainWindow.py" line="493"/>
+        <location filename="../MainWindow.py" line="763"/>
+        <location filename="../MainWindow.py" line="557"/>
+        <location filename="../MainWindow.py" line="497"/>
         <source>Invalid URL</source>
         <translation>Ungültige URL</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="493"/>
+        <location filename="../MainWindow.py" line="497"/>
         <source>The URL {{url}} does not work</source>
         <translation>Die URL {{url}} funktioniert nicht</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="555"/>
-        <location filename="../MainWindow.py" line="495"/>
+        <location filename="../MainWindow.py" line="559"/>
+        <location filename="../MainWindow.py" line="499"/>
         <source>Everything OK</source>
         <translation>Alles in Ordnung</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="555"/>
-        <location filename="../MainWindow.py" line="495"/>
+        <location filename="../MainWindow.py" line="559"/>
+        <location filename="../MainWindow.py" line="499"/>
         <source>All URLs are working</source>
         <translation>Alle URLs funktionieren</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="553"/>
+        <location filename="../MainWindow.py" line="557"/>
         <source>The URL {url} does not work</source>
         <translation>Die URL {url} funktioniert nicht</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="566"/>
+        <location filename="../MainWindow.py" line="570"/>
         <source>Add a Categorie</source>
         <translation>Kategorie hinzufügen</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="566"/>
+        <location filename="../MainWindow.py" line="570"/>
         <source>Please select a Categorie from the list below</source>
         <translation>Bitte wähle eine Kategorie aus</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="570"/>
+        <location filename="../MainWindow.py" line="574"/>
         <source>Categorie already added</source>
         <translation>Kategorie bereits vorhanden</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="570"/>
+        <location filename="../MainWindow.py" line="574"/>
         <source>You can&apos;t add the same Categorie twice</source>
         <translation>Du kannst dieselbe Kategorie nicht ein zweites Mal hinzufügen</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="627"/>
+        <location filename="../MainWindow.py" line="662"/>
         <source>New Keyword</source>
         <translation>Neues Schlüsselwort</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="627"/>
+        <location filename="../MainWindow.py" line="662"/>
         <source>Please enter a new Keyword</source>
         <translation>Bitte gib ein neues Schlüsselwort ein</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="647"/>
-        <location filename="../MainWindow.py" line="631"/>
+        <location filename="../MainWindow.py" line="682"/>
+        <location filename="../MainWindow.py" line="666"/>
         <source>Keyword in List</source>
         <translation>Schlüsselwort in Liste</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="647"/>
-        <location filename="../MainWindow.py" line="631"/>
+        <location filename="../MainWindow.py" line="682"/>
+        <location filename="../MainWindow.py" line="666"/>
         <source>This Keyword is already in the List</source>
         <translation>ADs Schlüsselwort befindet sich bereits in der Liste</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="641"/>
+        <location filename="../MainWindow.py" line="676"/>
         <source>Edit Keyword</source>
         <translation>Schlüsselwort bearbeiten</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="641"/>
+        <location filename="../MainWindow.py" line="676"/>
         <source>Please edit the Keyword</source>
         <translation>Bitte bearbeite das Schlüsselwort</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="710"/>
+        <location filename="../MainWindow.py" line="745"/>
         <source>File not found</source>
         <translation>datei nicht gefunden</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="710"/>
+        <location filename="../MainWindow.py" line="745"/>
         <source>{{path}} does not exists</source>
         <translation>{{path}} existiert nicht</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="713"/>
+        <location filename="../MainWindow.py" line="748"/>
         <source>An error occurred while trying to open {{path}}</source>
         <translation>Während des öffnens von {{path}} ist ein Fehler aufgetreten</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="728"/>
+        <location filename="../MainWindow.py" line="763"/>
         <source>{{url}} is not a valid http/https URL</source>
         <translation>{{url}} ist keine gültige http/https URL</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="734"/>
+        <location filename="../MainWindow.py" line="769"/>
         <source>Could not connect</source>
         <translation>Kann nicht verbinden</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="734"/>
+        <location filename="../MainWindow.py" line="769"/>
         <source>Could not connect to {{url}}</source>
         <translation>Es kann keine Verbindung zu {{url}} aufgebaut werden</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="737"/>
+        <location filename="../MainWindow.py" line="772"/>
         <source>An error occurred while trying to connect to {{url}}</source>
         <translation>Während des verbindens zu {{url}} ist ein fehler aufgetreten</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="798"/>
+        <location filename="../MainWindow.py" line="833"/>
         <source>XML parsing failed</source>
         <translation>XML parsen fehlgeschlagen</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="802"/>
+        <location filename="../MainWindow.py" line="837"/>
         <source>No component tag</source>
         <translation>Kein component Tag</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="802"/>
+        <location filename="../MainWindow.py" line="837"/>
         <source>This XML file has no component tag</source>
         <translation>Die XML Datei hat keinen component Tag</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="805"/>
+        <location filename="../MainWindow.py" line="840"/>
         <source>Too many component tags</source>
         <translation>Zu viele components Tags</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="805"/>
+        <location filename="../MainWindow.py" line="840"/>
         <source>Only files with one component tag are supported</source>
         <translation>Nur ein component Tag ist erlaubt</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="1131"/>
+        <location filename="../MainWindow.py" line="1178"/>
         <source>No ID</source>
         <translation>Keine ID</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="1131"/>
+        <location filename="../MainWindow.py" line="1178"/>
         <source>You need to set a ID to use this feature</source>
         <translation>Du benötigst eine ID, um dieses Feature nutzen zu können</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="1150"/>
+        <location filename="../MainWindow.py" line="1197"/>
         <source>{{binary}} not found</source>
         <translation>{{binary}} nicht gefunden</translation>
     </message>
     <message>
-        <location filename="../MainWindow.py" line="1150"/>
+        <location filename="../MainWindow.py" line="1197"/>
         <source>{{binary}} was not found. Make sure it is installed and in PATH.</source>
         <translation>{{binary}} wurde nicht gefunden. Stelle sicher, dass es installiert und im PATH ist.</translation>
     </message>
@@ -1283,6 +1279,16 @@
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
+        <source>Developer ID:</source>
+        <translation>Entwickler ID:</translation>
+    </message>
+    <message>
+        <location filename="../ui/MainWindow.ui" line="0"/>
+        <source>A unique ID to identify the respective developer</source>
+        <translation>Eine eindeutige ID zur Identifizierung des jeweiligen Entwicklers</translation>
+    </message>
+    <message>
+        <location filename="../ui/MainWindow.ui" line="0"/>
         <source>Developer Name:</source>
         <translation>Entwicklername:</translation>
     </message>
@@ -1290,16 +1296,6 @@
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>The name of the developer</source>
         <translation>Der Name des Entwicklers der Software</translation>
-    </message>
-    <message>
-        <location filename="../ui/MainWindow.ui" line="0"/>
-        <source>Desktop File:</source>
-        <translation>Desktopdatei:</translation>
-    </message>
-    <message>
-        <location filename="../ui/MainWindow.ui" line="0"/>
-        <source>The name of the .desktop file of your software</source>
-        <translation>Der Name der .desktop Datei der Software</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
@@ -1333,13 +1329,13 @@
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
-        <source>End-of-life date:</source>
-        <translation>Lebensende:</translation>
+        <source>Set an end-of-life date</source>
+        <translation>Lege ein Lebensende fest</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
-        <source>Set an end-of-life date</source>
-        <translation>Lege ein Lebensende fest</translation>
+        <source>End-of-life date:</source>
+        <translation>Lebensende:</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
@@ -1362,6 +1358,7 @@
         <translation>Standard</translation>
     </message>
     <message>
+        <location filename="../ui/MainWindow.ui" line="0"/>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <location filename="../ui/MainWindow.ui" line="0"/>
@@ -1566,6 +1563,28 @@
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
+        <source>Launchable</source>
+        <translation>Startbar</translation>
+    </message>
+    <message>
+        <location filename="../ui/MainWindow.ui" line="0"/>
+        <source>Indicates possible methods to launch the software described in this component</source>
+        <translation>Zeigt mögliche Methoden zum Starten der in dieser Komponente beschriebenen Software an</translation>
+    </message>
+    <message>
+        <location filename="../ui/MainWindow.ui" line="0"/>
+        <location filename="../ui/MainWindow.ui" line="0"/>
+        <source>Type</source>
+        <translation>Typ</translation>
+    </message>
+    <message>
+        <location filename="../ui/MainWindow.ui" line="0"/>
+        <location filename="../ui/MainWindow.ui" line="0"/>
+        <source>Value</source>
+        <translation>Wert</translation>
+    </message>
+    <message>
+        <location filename="../ui/MainWindow.ui" line="0"/>
         <source>Provides</source>
         <translation>Bietet</translation>
     </message>
@@ -1573,16 +1592,6 @@
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>This is for advanced users. For more information take a look at the Appstream documentation.</source>
         <translation>Das ist für fortgeschrittene Nutzer. Für weitere Informationen besuche die Appstream Dokumentation.</translation>
-    </message>
-    <message>
-        <location filename="../ui/MainWindow.ui" line="0"/>
-        <source>Type</source>
-        <translation>Typ</translation>
-    </message>
-    <message>
-        <location filename="../ui/MainWindow.ui" line="0"/>
-        <source>Value</source>
-        <translation>Wert</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
@@ -2514,24 +2523,24 @@
 <context>
     <name>PluginWindow</name>
     <message>
-        <location filename="../PluginWindow.py" line="49"/>
+        <location filename="../PluginWindow.py" line="51"/>
         <source>None</source>
         <translation>Keine</translation>
     </message>
     <message>
-        <location filename="../PluginWindow.py" line="50"/>
+        <location filename="../PluginWindow.py" line="52"/>
         <source>Unknown</source>
         <translation>Unbekannt</translation>
     </message>
     <message>
-        <location filename="../PluginWindow.py" line="70"/>
-        <location filename="../PluginWindow.py" line="55"/>
+        <location filename="../PluginWindow.py" line="72"/>
+        <location filename="../PluginWindow.py" line="57"/>
         <source>Enable</source>
         <translation>Aktivieren</translation>
     </message>
     <message>
-        <location filename="../PluginWindow.py" line="67"/>
-        <location filename="../PluginWindow.py" line="57"/>
+        <location filename="../PluginWindow.py" line="69"/>
+        <location filename="../PluginWindow.py" line="59"/>
         <source>Disable</source>
         <translation>Deaktivieren</translation>
     </message>
