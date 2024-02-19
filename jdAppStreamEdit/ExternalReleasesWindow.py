@@ -77,7 +77,7 @@ class ExternalReleasesWindow(QMainWindow, Ui_ExternalReleasesWindow):
             title = QCoreApplication.translate("ExternalReleasesWindow", "Untitled") + " - jdAppStreamEdit External Releases Editor"
         elif self._env.settings.get("windowTitleType") == "filename":
             title = os.path.basename(self._current_path) + " - jdAppStreamEdit External Releases Editor"
-        elif self._env.settings.get("windowTitleType") == "filename":
+        elif self._env.settings.get("windowTitleType") == "path":
             title = self._current_path + " - jdAppStreamEdit External Releases Editor"
         else:
             title = QCoreApplication.translate("ExternalReleasesWindow", "Error")

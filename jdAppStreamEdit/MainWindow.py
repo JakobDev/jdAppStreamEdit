@@ -226,7 +226,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             title = QCoreApplication.translate("MainWindow", "Untitled") + " - jdAppStreamEdit"
         elif self._env.settings.get("windowTitleType") == "filename":
             title = os.path.basename(self._current_path) + " - jdAppStreamEdit"
-        elif self._env.settings.get("windowTitleType") == "filename":
+        elif self._env.settings.get("windowTitleType") == "path":
             title = self._current_path + " - jdAppStreamEdit"
         else:
             title = QCoreApplication.translate("MainWindow", "Error")
