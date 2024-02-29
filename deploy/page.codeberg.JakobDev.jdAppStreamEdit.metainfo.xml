@@ -1,13 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
-<component type="desktop">
-  <!--Created with jdAppStreamEdit 7.1-->
+<component type="desktop-application">
+  <!--Created with jdAppStreamEdit 9.0-->
   <id>page.codeberg.JakobDev.jdAppStreamEdit</id>
   <name>jdAppStreamEdit</name>
   <summary>A graphical Program to create and edit AppStream files</summary>
-  <developer_name>JakobDev</developer_name>
-  <launchable type="desktop-id">page.codeberg.JakobDev.jdAppStreamEdit.desktop</launchable>
+  <developer id="page.codeberg.jakobdev">
+    <name>JakobDev</name>
+  </developer>
   <metadata_license>CC0-1.0</metadata_license>
-  <project_license>GPL-3.0</project_license>
+  <project_license>GPL-3.0-only</project_license>
   <description>
     <p>jdAppStreamEdit (previously known as jdAppdataEdit) allows you to easily create and edit AppStream (.appdata.xml or .metainfo.xml) files for your Application.</p>
     <p>Features:</p>
@@ -53,6 +54,16 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="9.0" date="2024-02-29" type="stable">
+      <description>
+        <ul>
+          <li>Allow importing the changelog</li>
+          <li>Add support for developer tag</li>
+          <li>Allow multiple launchable</li>
+          <li>Improve license handling (Alexander Wilms)</li>
+        </ul>
+      </description>
+    </release>
     <release version="8.0" date="2023-12-22" type="stable">
       <description>
         <ul>
@@ -223,6 +234,7 @@
     <control>keyboard</control>
   </recommends>
   <content_rating type="oars-1.1"/>
+  <launchable type="desktop-id">page.codeberg.JakobDev.jdAppStreamEdit.desktop</launchable>
   <provides>
     <binary>jdappstreamedit</binary>
     <binary>jdappstreamedit-external-releases-editor</binary>

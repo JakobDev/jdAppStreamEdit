@@ -1,4 +1,4 @@
-from .Functions import clear_table_widget, stretch_table_widget_colums_size, list_widget_contains_item, is_url_reachable, get_logical_table_row_list, select_combo_box_data, is_flatpak, get_shared_temp_dir, is_url_valid, get_save_settings, assert_func, get_sender_table_row
+from .Functions import clear_table_widget, stretch_table_widget_colums_size, list_widget_contains_item, is_url_reachable, get_logical_table_row_list, is_flatpak, get_shared_temp_dir, is_url_valid, get_save_settings, assert_func, get_sender_table_row
 from PyQt6.QtWidgets import QApplication, QCheckBox, QComboBox, QLineEdit, QListWidget, QMainWindow, QMessageBox, QDateEdit, QInputDialog, QPlainTextEdit, QPushButton, QTableWidget, QTableWidgetItem, QRadioButton, QFileDialog
 from PyQt6.QtGui import QAction, QDragEnterEvent, QDropEvent, QCloseEvent
 from .ComposeDirectoryWindow import ComposeDirectoryWindow
@@ -105,16 +105,16 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self._update_new_template_file_menu()
         self._update_recent_files_menu()
 
-        self.component_type_box.addItem(QCoreApplication.translate("MainWindow", "Desktop"), "desktop")
-        self.component_type_box.addItem(QCoreApplication.translate("MainWindow", "Console"), "console-application")
-        self.component_type_box.addItem(QCoreApplication.translate("MainWindow", "Web Application"), "web-application")
-        self.component_type_box.addItem(QCoreApplication.translate("MainWindow", "Service"), "service")
-        self.component_type_box.addItem(QCoreApplication.translate("MainWindow", "Addon"), "addon")
-        self.component_type_box.addItem(QCoreApplication.translate("MainWindow", "Font"), "font")
-        self.component_type_box.addItem(QCoreApplication.translate("MainWindow", "Icon Theme"), "icon-theme")
-        self.component_type_box.addItem(QCoreApplication.translate("MainWindow", "Codecs"), "codec")
-        self.component_type_box.addItem(QCoreApplication.translate("MainWindow", "Input Method"), "inputmethod")
-        self.component_type_box.addItem(QCoreApplication.translate("MainWindow", "Firmware"), "firmware")
+        self.component_type_box.addItem(QCoreApplication.translate("MainWindow", "Desktop"), ["desktop-application", "desktop"])
+        self.component_type_box.addItem(QCoreApplication.translate("MainWindow", "Console"), ["console-application"])
+        self.component_type_box.addItem(QCoreApplication.translate("MainWindow", "Web Application"), ["web-application"])
+        self.component_type_box.addItem(QCoreApplication.translate("MainWindow", "Service"), ["service"])
+        self.component_type_box.addItem(QCoreApplication.translate("MainWindow", "Addon"), ["addon"])
+        self.component_type_box.addItem(QCoreApplication.translate("MainWindow", "Font"), ["font"])
+        self.component_type_box.addItem(QCoreApplication.translate("MainWindow", "Icon Theme"), ["icon-theme"])
+        self.component_type_box.addItem(QCoreApplication.translate("MainWindow", "Codecs"), ["codec"])
+        self.component_type_box.addItem(QCoreApplication.translate("MainWindow", "Input Method"), ["inputmethod"])
+        self.component_type_box.addItem(QCoreApplication.translate("MainWindow", "Firmware"), ["firmware"])
 
         for key, value in env.metadata_license_list.items():
             self.metadata_license_box.addItem(f"{value} ({key})", key)
@@ -842,7 +842,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         self.reset_data()
 
-        select_combo_box_data(self.component_type_box, root.xpath("/component")[0].get("type"))
+        component_type = root.xpath("/component")[0].get("type")
+        for i in range(self.component_type_box.count()):
+            if component_type in self.component_type_box.itemData(i):
+                self.component_type_box.setCurrentIndex(i)
+                break
 
         if (date_eol := root.getroot().get("date_eol")) is not None:
             self.end_of_life_date_edit.setDate(QDate.fromString(date_eol, Qt.DateFormat.ISODate))
@@ -1041,7 +1045,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def get_xml_text(self) -> str:
         root = etree.Element("component")
-        root.set("type", self.component_type_box.currentData())
+        root.set("type", self.component_type_box.currentData()[0])
 
         if self.end_of_life_check_box.isChecked():
             root.set("date_eol", self.end_of_life_date_edit.date().toString(Qt.DateFormat.ISODate))
