@@ -7,7 +7,7 @@
         <location filename="../ui/AboutWindow.ui" line="0"/>
         <location filename="../ui/AboutWindow.ui" line="0"/>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>Informazioni</translation>
     </message>
     <message>
         <location filename="../ui/AboutWindow.ui" line="0"/>
