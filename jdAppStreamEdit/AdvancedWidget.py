@@ -1,9 +1,13 @@
-from .Functions import stretch_table_widget_colums_size, select_combo_box_data, get_logical_table_row_list, clear_table_widget, list_widget_contains_item, get_sender_table_row
-from PyQt6.QtWidgets import QWidget, QComboBox, QTableWidgetItem, QInputDialog, QMessageBox, QPushButton
+from .Functions import stretch_table_widget_colums_size, select_combo_box_data, get_logical_table_row_list, clear_table_widget, list_widget_contains_item, get_sender_table_row, set_layout_enabled
+from PyQt6.QtWidgets import QWidget, QComboBox, QTableWidgetItem, QInputDialog, QMessageBox, QPushButton, QColorDialog
 from .ui_compiled.AdvancedWidget import Ui_AdvancedWidget
 from typing import Optional, TYPE_CHECKING
 from PyQt6.QtCore import QCoreApplication
+from PyQt6.QtGui import QColor
 from lxml import etree
+import traceback
+import sys
+import re
 
 
 if TYPE_CHECKING:
@@ -44,6 +48,10 @@ class AdvancedWidget(QWidget, Ui_AdvancedWidget):
 
         self.tags_table.verticalHeader().sectionMoved.connect(main_window.set_file_edited)
         self.tags_add_button.clicked.connect(lambda: self._add_tags_row())
+
+        self.branding_colors_check_box.stateChanged.connect(self._branding_colors_check_box_changed)
+        self.light_branding_color_button.clicked.connect(self._light_branding_color_button_clicked)
+        self.dark_branding_color_button.clicked.connect(self._dark_branding_color_button_clicked)
 
         self.custom_table.verticalHeader().sectionMoved.connect(main_window.set_file_edited)
         self.custom_add_button.clicked.connect(lambda: self._add_custom_row())
@@ -189,6 +197,36 @@ class AdvancedWidget(QWidget, Ui_AdvancedWidget):
         self.tags_table.removeRow(row)
         self._main_window.set_file_edited()
 
+    # Branding
+
+    def _update_branding_colors_layout_enabled(self) -> None:
+        set_layout_enabled(self.branding_colors_layout, self.branding_colors_check_box.isChecked())
+
+    def _branding_colors_check_box_changed(self) -> None:
+        self._update_branding_colors_layout_enabled()
+        self._main_window.set_file_edited()
+
+    def _get_branding_color_style_sheet(self, color: QColor) -> str:
+        return f"background-color: {color.name()}; border: 1px solid black;"
+
+    def _light_branding_color_button_clicked(self) -> None:
+        color = QColorDialog.getColor(parent=self)
+
+        if not color.isValid():
+            return
+
+        self.light_branding_color_button.setStyleSheet(self._get_branding_color_style_sheet(color))
+        self._main_window.set_file_edited()
+
+    def _dark_branding_color_button_clicked(self) -> None:
+        color = QColorDialog.getColor(parent=self)
+
+        if not color.isValid():
+            return
+
+        self.dark_branding_color_button.setStyleSheet(self._get_branding_color_style_sheet(color))
+        self._main_window.set_file_edited()
+
     # Custom
 
     def _add_custom_row(self, key: Optional[str] = None, value: Optional[str] = None) -> None:
@@ -223,9 +261,13 @@ class AdvancedWidget(QWidget, Ui_AdvancedWidget):
         self.suggests_list.clear()
         self.replaces_list.clear()
         clear_table_widget(self.tags_table)
+        self.branding_colors_check_box.setChecked(False)
+        self.light_branding_color_button.setStyleSheet(self._get_branding_color_style_sheet(QColor("white")))
+        self.dark_branding_color_button.setStyleSheet(self._get_branding_color_style_sheet(QColor("black")))
         clear_table_widget(self.custom_table)
 
-        self._update_suggests_edit_remove_button
+        self._update_suggests_edit_remove_button()
+        self._update_branding_colors_layout_enabled()
 
     def load_data(self, root_tag: etree._Element) -> None:
         for i in root_tag.findall("translation"):
@@ -246,10 +288,33 @@ class AdvancedWidget(QWidget, Ui_AdvancedWidget):
             for i in tags_tag.findall("tag"):
                 self._add_tags_row(namespace=i.get("namespace"), value=i.text)
 
+        if (branding_tag := root_tag.find("branding")) is not None:
+            self.branding_colors_check_box.setChecked(True)
+            for color_tag in branding_tag.findall("color"):
+                if color_tag.get("scheme_preference") == "light":
+                    self.light_branding_color_button.setStyleSheet(self._get_branding_color_style_sheet(QColor(color_tag.text)))
+                elif color_tag.get("scheme_preference") == "dark":
+                    self.dark_branding_color_button.setStyleSheet(self._get_branding_color_style_sheet(QColor(color_tag.text)))
+
         custom_tag = root_tag.find("custom")
         if custom_tag is not None:
             for i in custom_tag.findall("value"):
                 self._add_custom_row(key=i.get("key"), value=i.text)
+
+    def _get_branding_tag(self) -> etree.Element:
+        branding_tag = etree.Element("branding")
+
+        light_color_tag = etree.SubElement(branding_tag, "color")
+        light_color_tag.set("type", "primary")
+        light_color_tag.set("scheme_preference", "light")
+        light_color_tag.text = re.search("#([0-9]|[a-f]){6}", self.light_branding_color_button.styleSheet()).group()
+
+        dark_color_tag = etree.SubElement(branding_tag, "color")
+        dark_color_tag.set("type", "primary")
+        dark_color_tag.set("scheme_preference", "dark")
+        dark_color_tag.text = re.search("#([0-9]|[a-f]){6}", self.dark_branding_color_button.styleSheet()).group()
+
+        return branding_tag
 
     def save_data(self, root_tag: etree.Element) -> None:
         for i in get_logical_table_row_list(self.translation_table):
@@ -275,6 +340,12 @@ class AdvancedWidget(QWidget, Ui_AdvancedWidget):
                 tag_tag = etree.SubElement(tags_tag, "tag")
                 tag_tag.set("namespace", self.tags_table.item(i, 0).text())
                 tag_tag.text = self.tags_table.item(i, 1).text().strip()
+
+        if self.branding_colors_check_box.isChecked():
+            try:
+                root_tag.append(self._get_branding_tag())
+            except Exception:
+                print(traceback.format_exc(), file=sys.stderr)
 
         if self.custom_table.rowCount() > 0:
             custom_tag = etree.SubElement(root_tag, "custom")

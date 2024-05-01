@@ -213,6 +213,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.setAcceptDrops(True)
 
         self.main_tab_widget.setCurrentIndex(0)
+
+        self.reset_data()
+        self._edited = False
         self.update_window_title()
 
     def set_file_edited(self) -> None:
