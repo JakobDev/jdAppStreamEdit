@@ -7,37 +7,37 @@
         <location filename="../ui/AboutWindow.ui" line="0"/>
         <location filename="../ui/AboutWindow.ui" line="0"/>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>О приложении</translation>
     </message>
     <message>
         <location filename="../ui/AboutWindow.ui" line="0"/>
         <source>A graphical Program to create and edit AppStream files</source>
-        <translation type="unfinished"></translation>
+        <translation>Приложение для создания и редактирования файлов AppStream</translation>
     </message>
     <message>
         <location filename="../ui/AboutWindow.ui" line="0"/>
         <source>This Program is licensed under GPL 3</source>
-        <translation type="unfinished"></translation>
+        <translation>Это приложение распространяется по лицензии GPL 3</translation>
     </message>
     <message>
         <location filename="../ui/AboutWindow.ui" line="0"/>
         <source>Translators</source>
-        <translation type="unfinished"></translation>
+        <translation>Переводчики</translation>
     </message>
     <message>
         <location filename="../ui/AboutWindow.ui" line="0"/>
         <source>The following people translated jdAppStreamEdit:</source>
-        <translation type="unfinished"></translation>
+        <translation>Эти люди помогли с переводом jdAppStreamEdit:</translation>
     </message>
     <message>
         <location filename="../ui/AboutWindow.ui" line="0"/>
         <source>Changelog</source>
-        <translation type="unfinished"></translation>
+        <translation>Журнал изменений</translation>
     </message>
     <message>
         <location filename="../ui/AboutWindow.ui" line="0"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Закрыть</translation>
     </message>
 </context>
 <context>
@@ -52,17 +52,17 @@
         <location filename="../AdvancedWidget.py" line="189"/>
         <location filename="../AdvancedWidget.py" line="80"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Удалить</translation>
     </message>
     <message>
         <location filename="../AdvancedWidget.py" line="94"/>
         <source>New Suggestion</source>
-        <translation type="unfinished"></translation>
+        <translation>Новое предложение</translation>
     </message>
     <message>
         <location filename="../AdvancedWidget.py" line="94"/>
         <source>Please enter a new ID</source>
-        <translation type="unfinished"></translation>
+        <translation>Введите новый идентификатор</translation>
     </message>
     <message>
         <location filename="../AdvancedWidget.py" line="153"/>
@@ -70,7 +70,7 @@
         <location filename="../AdvancedWidget.py" line="112"/>
         <location filename="../AdvancedWidget.py" line="98"/>
         <source>ID in List</source>
-        <translation type="unfinished"></translation>
+        <translation>ИД в списке</translation>
     </message>
     <message>
         <location filename="../AdvancedWidget.py" line="153"/>
@@ -78,53 +78,53 @@
         <location filename="../AdvancedWidget.py" line="112"/>
         <location filename="../AdvancedWidget.py" line="98"/>
         <source>This ID is already in the List</source>
-        <translation type="unfinished"></translation>
+        <translation>Этот ИД уже есть в списке</translation>
     </message>
     <message>
         <location filename="../AdvancedWidget.py" line="108"/>
         <source>Edit Suggestion</source>
-        <translation type="unfinished"></translation>
+        <translation>Редактировать прелдожение</translation>
     </message>
     <message>
         <location filename="../AdvancedWidget.py" line="149"/>
         <location filename="../AdvancedWidget.py" line="108"/>
         <source>Please edit the ID</source>
-        <translation type="unfinished"></translation>
+        <translation>Изменённый ИД</translation>
     </message>
     <message>
         <location filename="../AdvancedWidget.py" line="135"/>
         <source>New Replacement</source>
-        <translation type="unfinished"></translation>
+        <translation>Новая замена</translation>
     </message>
     <message>
         <location filename="../AdvancedWidget.py" line="135"/>
         <source>Please enter a ID</source>
-        <translation type="unfinished"></translation>
+        <translation>Введите ИД</translation>
     </message>
     <message>
         <location filename="../AdvancedWidget.py" line="149"/>
         <source>Edit Replacement</source>
-        <translation type="unfinished"></translation>
+        <translation>Изменить замену</translation>
     </message>
     <message>
         <location filename="../ui/AdvancedWidget.ui" line="0"/>
         <source>Translation</source>
-        <translation type="unfinished"></translation>
+        <translation>Перевод</translation>
     </message>
     <message>
         <location filename="../ui/AdvancedWidget.ui" line="0"/>
         <source>You can manage the translations here. For more information take a look at the documentation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Здесь можно управлять переводами. Чтобы узнать подробности, ознакомьтесь с документацией.</translation>
     </message>
     <message>
         <location filename="../ui/AdvancedWidget.ui" line="0"/>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Вид</translation>
     </message>
     <message>
         <location filename="../ui/AdvancedWidget.ui" line="0"/>
         <source>Domain</source>
-        <translation type="unfinished"></translation>
+        <translation>Домен</translation>
     </message>
     <message>
         <location filename="../ui/AdvancedWidget.ui" line="0"/>
@@ -133,91 +133,91 @@
         <location filename="../ui/AdvancedWidget.ui" line="0"/>
         <location filename="../ui/AdvancedWidget.ui" line="0"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавить</translation>
     </message>
     <message>
         <location filename="../ui/AdvancedWidget.ui" line="0"/>
         <source>Suggests</source>
-        <translation type="unfinished"></translation>
+        <translation>Предложения</translation>
     </message>
     <message>
         <location filename="../ui/AdvancedWidget.ui" line="0"/>
         <source>If your Sofware suggests other Software, you can add the IDs here</source>
-        <translation type="unfinished"></translation>
+        <translation>Если ваше приложение предлагает другие приложения, можете добавить сюда их идентификаторы</translation>
     </message>
     <message>
         <location filename="../ui/AdvancedWidget.ui" line="0"/>
         <location filename="../ui/AdvancedWidget.ui" line="0"/>
         <source>Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Изменить</translation>
     </message>
     <message>
         <location filename="../ui/AdvancedWidget.ui" line="0"/>
         <source>Replaces</source>
-        <translation type="unfinished"></translation>
+        <translation>Замены</translation>
     </message>
     <message>
         <location filename="../ui/AdvancedWidget.ui" line="0"/>
         <source>If the ID of your Software has changed, you add the old IDs here</source>
-        <translation type="unfinished"></translation>
+        <translation>Если идентификатор вашего приложения изменился, можете добавить сюда старые идентификаторы</translation>
     </message>
     <message>
         <location filename="../ui/AdvancedWidget.ui" line="0"/>
         <source>Tags</source>
-        <translation type="unfinished"></translation>
+        <translation>Теги</translation>
     </message>
     <message>
         <location filename="../ui/AdvancedWidget.ui" line="0"/>
         <source>You can edit the tags here. For more information take a look at the documentation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Здесь можно указать теги. Чтобы узнать подробности, ознакомьтесь с документацией.</translation>
     </message>
     <message>
         <location filename="../ui/AdvancedWidget.ui" line="0"/>
         <source>Namespace</source>
-        <translation type="unfinished"></translation>
+        <translation>Пространство имён</translation>
     </message>
     <message>
         <location filename="../ui/AdvancedWidget.ui" line="0"/>
         <location filename="../ui/AdvancedWidget.ui" line="0"/>
         <source>Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Значение</translation>
     </message>
     <message>
         <location filename="../ui/AdvancedWidget.ui" line="0"/>
         <source>Branding</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Бренд</translation>
     </message>
     <message>
         <location filename="../ui/AdvancedWidget.ui" line="0"/>
         <source>Set branding colors</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Задать брендовые цвета</translation>
     </message>
     <message>
         <location filename="../ui/AdvancedWidget.ui" line="0"/>
         <source>Light:</source>
         <extracomment>Theme</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Светлая:</translation>
     </message>
     <message>
         <location filename="../ui/AdvancedWidget.ui" line="0"/>
         <source>Dark:</source>
         <extracomment>Theme</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Тёмная:</translation>
     </message>
     <message>
         <location filename="../ui/AdvancedWidget.ui" line="0"/>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Другая</translation>
     </message>
     <message>
         <location filename="../ui/AdvancedWidget.ui" line="0"/>
         <source>You can add custom values here. For more information take a look at the documentation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Здесь можно задать другие значения. Чтобы узнать подробности, ознакомьтесь с документацией.</translation>
     </message>
     <message>
         <location filename="../ui/AdvancedWidget.ui" line="0"/>
         <source>Key</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Название</translation>
     </message>
 </context>
 <context>
@@ -225,39 +225,39 @@
     <message>
         <location filename="../ArtifactWindow.py" line="29"/>
         <source>Unknown</source>
-        <translation type="unfinished"></translation>
+        <translation>Неизвестно</translation>
     </message>
     <message>
         <location filename="../ArtifactWindow.py" line="40"/>
         <source>No URL</source>
-        <translation type="unfinished"></translation>
+        <translation>Нет ссылки</translation>
     </message>
     <message>
         <location filename="../ArtifactWindow.py" line="40"/>
         <source>Please enter a URL</source>
-        <translation type="unfinished"></translation>
+        <translation>Введите ссылку</translation>
     </message>
     <message>
         <location filename="../ArtifactWindow.py" line="72"/>
         <location filename="../ArtifactWindow.py" line="69"/>
         <location filename="../ArtifactWindow.py" line="43"/>
         <source>Invalid URL</source>
-        <translation type="unfinished"></translation>
+        <translation>Неправильная ссылка</translation>
     </message>
     <message>
         <location filename="../ArtifactWindow.py" line="43"/>
         <source>Please enter a valid URL</source>
-        <translation type="unfinished"></translation>
+        <translation>Введите правильную ссылку</translation>
     </message>
     <message>
         <location filename="../ArtifactWindow.py" line="51"/>
         <source>No checksums</source>
-        <translation type="unfinished"></translation>
+        <translation>Нет контрольных сумм</translation>
     </message>
     <message>
         <location filename="../ArtifactWindow.py" line="51"/>
         <source>You need at least one checksum</source>
-        <translation type="unfinished"></translation>
+        <translation>Требуется хотя бы одна контрольная сумма</translation>
     </message>
     <message>
         <location filename="../ArtifactWindow.py" line="72"/>
@@ -268,7 +268,7 @@
     <message>
         <location filename="../ArtifactWindow.py" line="75"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка</translation>
     </message>
     <message>
         <location filename="../ArtifactWindow.py" line="75"/>
@@ -288,7 +288,7 @@
     <message>
         <location filename="../ui/ArtifactWindow.ui" line="0"/>
         <source>URL:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ссылка:</translation>
     </message>
     <message>
         <location filename="../ui/ArtifactWindow.ui" line="0"/>
@@ -323,7 +323,7 @@
     <message>
         <location filename="../ui/ArtifactWindow.ui" line="0"/>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Размер</translation>
     </message>
     <message>
         <location filename="../ui/ArtifactWindow.ui" line="0"/>
@@ -344,7 +344,7 @@
     <message>
         <location filename="../ui/ArtifactWindow.ui" line="0"/>
         <source>Filename:</source>
-        <translation type="unfinished"></translation>
+        <translation>Имя файла:</translation>
     </message>
     <message>
         <location filename="../ui/ArtifactWindow.ui" line="0"/>
@@ -354,12 +354,12 @@
     <message>
         <location filename="../ui/ArtifactWindow.ui" line="0"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation>Ок</translation>
     </message>
     <message>
         <location filename="../ui/ArtifactWindow.ui" line="0"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Отмена</translation>
     </message>
 </context>
 <context>
@@ -395,7 +395,7 @@
     <message>
         <location filename="../ComposeDirectoryWindow.py" line="56"/>
         <source>Success</source>
-        <translation type="unfinished"></translation>
+        <translation>Успех</translation>
     </message>
     <message>
         <location filename="../ComposeDirectoryWindow.py" line="56"/>
@@ -405,7 +405,7 @@
     <message>
         <location filename="../ComposeDirectoryWindow.py" line="59"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка</translation>
     </message>
     <message>
         <location filename="../ComposeDirectoryWindow.py" line="60"/>
@@ -459,7 +459,7 @@
     <message>
         <location filename="../DescriptionWidget.py" line="68"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавить</translation>
     </message>
     <message>
         <location filename="../DescriptionWidget.py" line="69"/>
@@ -552,7 +552,7 @@
         <location filename="../ExternalReleasesWindow.py" line="237"/>
         <location filename="../ExternalReleasesWindow.py" line="83"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка</translation>
     </message>
     <message>
         <location filename="../ExternalReleasesWindow.py" line="94"/>
@@ -806,7 +806,7 @@
     <message>
         <location filename="../ImportChangelogWindow.py" line="40"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка</translation>
     </message>
     <message>
         <location filename="../ImportChangelogWindow.py" line="41"/>
@@ -841,7 +841,7 @@
     <message>
         <location filename="../ui/ImportChangelogWindow.ui" line="0"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation>Ок</translation>
     </message>
     <message>
         <location filename="../ui/ImportChangelogWindow.ui" line="0"/>
@@ -966,7 +966,7 @@
         <location filename="../MainWindow.py" line="751"/>
         <location filename="../MainWindow.py" line="235"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка</translation>
     </message>
     <message>
         <location filename="../MainWindow.py" line="246"/>
@@ -1386,7 +1386,7 @@
         <location filename="../ui/MainWindow.ui" line="0"/>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавить</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
@@ -1411,7 +1411,7 @@
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>URL:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ссылка:</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
@@ -1806,7 +1806,7 @@
         <location filename="../ManageTemplatesWindow.py" line="97"/>
         <location filename="../ManageTemplatesWindow.py" line="80"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка</translation>
     </message>
     <message>
         <location filename="../ManageTemplatesWindow.py" line="80"/>
@@ -2594,7 +2594,7 @@
     <message>
         <location filename="../ui/PluginWindow.ui" line="0"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation>Ок</translation>
     </message>
 </context>
 <context>
@@ -2784,7 +2784,7 @@
         <location filename="../ui/RelationsWidget.ui" line="0"/>
         <location filename="../ui/RelationsWidget.ui" line="0"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавить</translation>
     </message>
     <message>
         <location filename="../ui/RelationsWidget.ui" line="0"/>
@@ -2831,7 +2831,7 @@
         <location filename="../ReleaseImporter.py" line="153"/>
         <location filename="../ReleaseImporter.py" line="46"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка</translation>
     </message>
     <message>
         <location filename="../ReleaseImporter.py" line="46"/>
@@ -2989,7 +2989,7 @@
         <location filename="../ReleasesWidget.py" line="202"/>
         <location filename="../ReleasesWidget.py" line="150"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка</translation>
     </message>
     <message>
         <location filename="../ReleasesWidget.py" line="203"/>
@@ -3040,7 +3040,7 @@
     <message>
         <location filename="../ui/ReleasesWidget.ui" line="0"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавить</translation>
     </message>
     <message>
         <location filename="../ui/ReleasesWidget.ui" line="0"/>
@@ -3105,7 +3105,7 @@
     <message>
         <location filename="../ui/ReleasesWindow.ui" line="0"/>
         <source>URL:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ссылка:</translation>
     </message>
     <message>
         <location filename="../ui/ReleasesWindow.ui" line="0"/>
@@ -3140,12 +3140,12 @@
     <message>
         <location filename="../ui/ReleasesWindow.ui" line="0"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавить</translation>
     </message>
     <message>
         <location filename="../ui/ReleasesWindow.ui" line="0"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation>Ок</translation>
     </message>
     <message>
         <location filename="../ui/ReleasesWindow.ui" line="0"/>
@@ -3244,7 +3244,7 @@
         <location filename="../ui/ScreenshotWindow.ui" line="0"/>
         <location filename="../ui/ScreenshotWindow.ui" line="0"/>
         <source>URL:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ссылка:</translation>
     </message>
     <message>
         <location filename="../ui/ScreenshotWindow.ui" line="0"/>
@@ -3333,7 +3333,7 @@
     <message>
         <location filename="../ui/ScreenshotWindow.ui" line="0"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавить</translation>
     </message>
     <message>
         <location filename="../ui/ScreenshotWindow.ui" line="0"/>
@@ -3348,7 +3348,7 @@
     <message>
         <location filename="../ui/ScreenshotWindow.ui" line="0"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation>Ок</translation>
     </message>
     <message>
         <location filename="../ui/ScreenshotWindow.ui" line="0"/>
@@ -3473,7 +3473,7 @@
     <message>
         <location filename="../ui/SettingsWindow.ui" line="0"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation>Ок</translation>
     </message>
     <message>
         <location filename="../ui/SettingsWindow.ui" line="0"/>
@@ -3510,7 +3510,7 @@
         <location filename="../ui/ThumbnailWindow.ui" line="0"/>
         <location filename="../ui/ThumbnailWindow.ui" line="0"/>
         <source>URL:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ссылка:</translation>
     </message>
     <message>
         <location filename="../ui/ThumbnailWindow.ui" line="0"/>
@@ -3573,7 +3573,7 @@
     <message>
         <location filename="../ui/ThumbnailWindow.ui" line="0"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation>Ок</translation>
     </message>
     <message>
         <location filename="../ui/ThumbnailWindow.ui" line="0"/>
@@ -3642,12 +3642,12 @@
     <message>
         <location filename="../ui/TranslateWindow.ui" line="0"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавить</translation>
     </message>
     <message>
         <location filename="../ui/TranslateWindow.ui" line="0"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation>Ок</translation>
     </message>
     <message>
         <location filename="../ui/TranslateWindow.ui" line="0"/>
@@ -3710,7 +3710,7 @@
     <message>
         <location filename="../ui/ValidateWindow.ui" line="0"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation>Ок</translation>
     </message>
 </context>
 <context>
@@ -3718,7 +3718,7 @@
     <message>
         <location filename="../ViewCatalogWindow.py" line="63"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка</translation>
     </message>
     <message>
         <location filename="../ViewCatalogWindow.py" line="64"/>
