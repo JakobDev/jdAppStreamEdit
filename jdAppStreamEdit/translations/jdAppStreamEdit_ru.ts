@@ -263,7 +263,7 @@
         <location filename="../ArtifactWindow.py" line="72"/>
         <location filename="../ArtifactWindow.py" line="69"/>
         <source>Can&apos;t get the File from the URL</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Не удалось получить файл по ссылке</translation>
     </message>
     <message>
         <location filename="../ArtifactWindow.py" line="75"/>
@@ -273,7 +273,7 @@
     <message>
         <location filename="../ArtifactWindow.py" line="75"/>
         <source>A Error happened while calculatig the checksum</source>
-        <translation type="unfinished"></translation>
+        <translation>Произошла ошибка при подсчёте контрольной суммы</translation>
     </message>
     <message>
         <location filename="../ArtifactWindow.py" line="171"/>
@@ -624,7 +624,7 @@
     <message>
         <location filename="../ExternalReleasesWindow.py" line="190"/>
         <source>Please enter a URL</source>
-        <translation type="unfinished"></translation>
+        <translation>Введите ссылку</translation>
     </message>
     <message>
         <location filename="../ExternalReleasesWindow.py" line="234"/>
@@ -725,7 +725,7 @@
     <message>
         <location filename="../ui/ExternalReleasesWindow.ui" line="0"/>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Сохранить</translation>
     </message>
     <message>
         <location filename="../ui/ExternalReleasesWindow.ui" line="0"/>
@@ -1069,7 +1069,7 @@
     <message>
         <location filename="../MainWindow.py" line="420"/>
         <source>Please enter a URL</source>
-        <translation type="unfinished"></translation>
+        <translation>Введите ссылку</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
@@ -1669,7 +1669,7 @@
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Сохранить</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
@@ -1836,22 +1836,22 @@
     <message>
         <location filename="../ui/ManageTemplatesWindow.ui" line="0"/>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Сохранить</translation>
     </message>
     <message>
         <location filename="../ui/ManageTemplatesWindow.ui" line="0"/>
         <source>Rename</source>
-        <translation type="unfinished"></translation>
+        <translation>Переименовать</translation>
     </message>
     <message>
         <location filename="../ui/ManageTemplatesWindow.ui" line="0"/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Удалить</translation>
     </message>
     <message>
         <location filename="../ui/ManageTemplatesWindow.ui" line="0"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Закрыть</translation>
     </message>
 </context>
 <context>
@@ -1886,17 +1886,17 @@
     <message>
         <location filename="../OarsWidget.py" line="38"/>
         <source>Mild: Cartoon characters in unsafe situations</source>
-        <translation type="unfinished"></translation>
+        <translation>Слабый: персонажи мультфильмов в небезопасных ситуациях</translation>
     </message>
     <message>
         <location filename="../OarsWidget.py" line="39"/>
         <source>Moderate: Cartoon characters in aggressive conflict</source>
-        <translation type="unfinished"></translation>
+        <translation>Умеренный: персонажи мультфильмов в остром конфликте</translation>
     </message>
     <message>
         <location filename="../OarsWidget.py" line="40"/>
         <source>Intense: Cartoon characters showing graphic violence</source>
-        <translation type="unfinished"></translation>
+        <translation>Серьёзный: персонажи мультфильмов проявляют наглядную жестокость</translation>
     </message>
     <message>
         <location filename="../OarsWidget.py" line="43"/>
@@ -3158,12 +3158,12 @@
     <message>
         <location filename="../ScreenshotWindow.py" line="58"/>
         <source>No URL</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Отсутствует ссылка</translation>
     </message>
     <message>
         <location filename="../ScreenshotWindow.py" line="58"/>
         <source>Please enter a URL</source>
-        <translation type="unfinished"></translation>
+        <translation>Введите ссылку</translation>
     </message>
     <message>
         <location filename="../ScreenshotWindow.py" line="61"/>
@@ -3178,12 +3178,12 @@
     <message>
         <location filename="../ScreenshotWindow.py" line="72"/>
         <source>Can&apos;t get Image</source>
-        <translation type="unfinished"></translation>
+        <translation>Не удалось получить изображение</translation>
     </message>
     <message>
         <location filename="../ScreenshotWindow.py" line="72"/>
         <source>It looks like the given URL does not work</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Похоже, введённая ссылка не работает</translation>
     </message>
     <message>
         <location filename="../ScreenshotWindow.py" line="79"/>
@@ -3223,12 +3223,12 @@
     <message>
         <location filename="../ScreenshotWindow.py" line="297"/>
         <source>Add Screenshot</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавить снимок</translation>
     </message>
     <message>
         <location filename="../ScreenshotWindow.py" line="327"/>
         <source>Edit Screenshot</source>
-        <translation type="unfinished"></translation>
+        <translation>Ред. снимок</translation>
     </message>
     <message>
         <location filename="../ScreenshotWindow.py" line="330"/>
@@ -3238,7 +3238,7 @@
     <message>
         <location filename="../ui/ScreenshotWindow.ui" line="0"/>
         <source>Source</source>
-        <translation type="unfinished"></translation>
+        <translation>Исходный</translation>
     </message>
     <message>
         <location filename="../ui/ScreenshotWindow.ui" line="0"/>
@@ -3268,13 +3268,13 @@
         <location filename="../ui/ScreenshotWindow.ui" line="0"/>
         <location filename="../ui/ScreenshotWindow.ui" line="0"/>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ширина:</translation>
     </message>
     <message>
         <location filename="../ui/ScreenshotWindow.ui" line="0"/>
         <location filename="../ui/ScreenshotWindow.ui" line="0"/>
         <source>Height:</source>
-        <translation type="unfinished"></translation>
+        <translation>Высота:</translation>
     </message>
     <message>
         <location filename="../ui/ScreenshotWindow.ui" line="0"/>
@@ -3288,17 +3288,17 @@
         <location filename="../ui/ScreenshotWindow.ui" line="0"/>
         <source>Scale factor:</source>
         <extracomment>The scale factor of the Image</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Коэфф. масштабирования:</translation>
     </message>
     <message>
         <location filename="../ui/ScreenshotWindow.ui" line="0"/>
         <source>Caption:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Описание:</translation>
     </message>
     <message>
         <location filename="../ui/ScreenshotWindow.ui" line="0"/>
         <source>A short description of the Image</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Краткое описание содержимого изображения</translation>
     </message>
     <message>
         <location filename="../ui/ScreenshotWindow.ui" line="0"/>
@@ -3308,27 +3308,27 @@
     <message>
         <location filename="../ui/ScreenshotWindow.ui" line="0"/>
         <source>Preview</source>
-        <translation type="unfinished"></translation>
+        <translation>Предпросмотр</translation>
     </message>
     <message>
         <location filename="../ui/ScreenshotWindow.ui" line="0"/>
         <source>Translations</source>
-        <translation type="unfinished"></translation>
+        <translation>Переводы</translation>
     </message>
     <message>
         <location filename="../ui/ScreenshotWindow.ui" line="0"/>
         <source>If you have translated versions of your Screenshot, you can add them here</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Добавьте сюда переведённые версии снимков, если они имеются</translation>
     </message>
     <message>
         <location filename="../ui/ScreenshotWindow.ui" line="0"/>
         <source>Remove Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Удалить перевод</translation>
     </message>
     <message>
         <location filename="../ui/ScreenshotWindow.ui" line="0"/>
         <source>Thumbnails</source>
-        <translation type="unfinished"></translation>
+        <translation>Миниатюры</translation>
     </message>
     <message>
         <location filename="../ui/ScreenshotWindow.ui" line="0"/>
@@ -3421,7 +3421,7 @@
     <message>
         <location filename="../ui/SettingsWindow.ui" line="0"/>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Сохранить</translation>
     </message>
     <message>
         <location filename="../ui/SettingsWindow.ui" line="0"/>
@@ -3496,7 +3496,7 @@
     <message>
         <location filename="../ui/SysinfoWindow.ui" line="0"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Закрыть</translation>
     </message>
 </context>
 <context>
@@ -3504,7 +3504,7 @@
     <message>
         <location filename="../ui/ThumbnailWindow.ui" line="0"/>
         <source>Source</source>
-        <translation type="unfinished"></translation>
+        <translation>Исходное</translation>
     </message>
     <message>
         <location filename="../ui/ThumbnailWindow.ui" line="0"/>
@@ -3522,19 +3522,19 @@
         <location filename="../ui/ThumbnailWindow.ui" line="0"/>
         <location filename="../ui/ThumbnailWindow.ui" line="0"/>
         <source>Width and Height</source>
-        <translation type="unfinished"></translation>
+        <translation>Размер</translation>
     </message>
     <message>
         <location filename="../ui/ThumbnailWindow.ui" line="0"/>
         <location filename="../ui/ThumbnailWindow.ui" line="0"/>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ширина:</translation>
     </message>
     <message>
         <location filename="../ui/ThumbnailWindow.ui" line="0"/>
         <location filename="../ui/ThumbnailWindow.ui" line="0"/>
         <source>Height:</source>
-        <translation type="unfinished"></translation>
+        <translation>Высота:</translation>
     </message>
     <message>
         <location filename="../ui/ThumbnailWindow.ui" line="0"/>
@@ -3553,7 +3553,7 @@
     <message>
         <location filename="../ui/ThumbnailWindow.ui" line="0"/>
         <source>Translations</source>
-        <translation type="unfinished"></translation>
+        <translation>Переводы</translation>
     </message>
     <message>
         <location filename="../ui/ThumbnailWindow.ui" line="0"/>
@@ -3563,12 +3563,12 @@
     <message>
         <location filename="../ui/ThumbnailWindow.ui" line="0"/>
         <source>Add Language</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Добавить перевод</translation>
     </message>
     <message>
         <location filename="../ui/ThumbnailWindow.ui" line="0"/>
         <source>Remove Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Удалить перевод</translation>
     </message>
     <message>
         <location filename="../ui/ThumbnailWindow.ui" line="0"/>
@@ -3578,7 +3578,7 @@
     <message>
         <location filename="../ui/ThumbnailWindow.ui" line="0"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Отмена</translation>
     </message>
 </context>
 <context>
@@ -3773,7 +3773,7 @@
     <message>
         <location filename="../ui/ViewCatalogWindow.ui" line="0"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Закрыть</translation>
     </message>
 </context>
 <context>
@@ -3796,7 +3796,7 @@
     <message>
         <location filename="../ui/ViewXMLWindow.ui" line="0"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Закрыть</translation>
     </message>
 </context>
 </TS>
