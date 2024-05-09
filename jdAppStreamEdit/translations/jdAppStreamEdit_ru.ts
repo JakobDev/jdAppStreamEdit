@@ -629,17 +629,17 @@
     <message>
         <location filename="../ExternalReleasesWindow.py" line="234"/>
         <source>File not found</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл не найден</translation>
     </message>
     <message>
         <location filename="../ExternalReleasesWindow.py" line="234"/>
         <source>{{path}} does not exists</source>
-        <translation type="unfinished"></translation>
+        <translation>{{path}} не существует</translation>
     </message>
     <message>
         <location filename="../ExternalReleasesWindow.py" line="237"/>
         <source>An error occurred while trying to open {{path}}</source>
-        <translation type="unfinished"></translation>
+        <translation>Произошла ошибка при открытии {{path}}</translation>
     </message>
     <message>
         <location filename="../ExternalReleasesWindow.py" line="249"/>
@@ -654,7 +654,7 @@
     <message>
         <location filename="../ExternalReleasesWindow.py" line="255"/>
         <source>Could not connect</source>
-        <translation type="unfinished"></translation>
+        <translation>Не удалось подключиться</translation>
     </message>
     <message>
         <location filename="../ExternalReleasesWindow.py" line="255"/>
@@ -1122,7 +1122,7 @@
     <message>
         <location filename="../MainWindow.py" line="573"/>
         <source>Add a Categorie</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавить категорию</translation>
     </message>
     <message>
         <location filename="../MainWindow.py" line="573"/>
@@ -1142,24 +1142,24 @@
     <message>
         <location filename="../MainWindow.py" line="665"/>
         <source>New Keyword</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавить ключевое слово</translation>
     </message>
     <message>
         <location filename="../MainWindow.py" line="665"/>
         <source>Please enter a new Keyword</source>
-        <translation type="unfinished"></translation>
+        <translation>Введите новое ключевое слово</translation>
     </message>
     <message>
         <location filename="../MainWindow.py" line="685"/>
         <location filename="../MainWindow.py" line="669"/>
         <source>Keyword in List</source>
-        <translation type="unfinished"></translation>
+        <translation>Ключевое слово уже в списке</translation>
     </message>
     <message>
         <location filename="../MainWindow.py" line="685"/>
         <location filename="../MainWindow.py" line="669"/>
         <source>This Keyword is already in the List</source>
-        <translation type="unfinished"></translation>
+        <translation>Введённое ключевое слово уже есть в списке</translation>
     </message>
     <message>
         <location filename="../MainWindow.py" line="679"/>
@@ -1174,17 +1174,17 @@
     <message>
         <location filename="../MainWindow.py" line="748"/>
         <source>File not found</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл не найден</translation>
     </message>
     <message>
         <location filename="../MainWindow.py" line="748"/>
         <source>{{path}} does not exists</source>
-        <translation type="unfinished"></translation>
+        <translation>{{path}} не существует</translation>
     </message>
     <message>
         <location filename="../MainWindow.py" line="751"/>
         <source>An error occurred while trying to open {{path}}</source>
-        <translation type="unfinished"></translation>
+        <translation>Произошла ошибка при открытии {{path}}</translation>
     </message>
     <message>
         <location filename="../MainWindow.py" line="766"/>
@@ -1194,7 +1194,7 @@
     <message>
         <location filename="../MainWindow.py" line="772"/>
         <source>Could not connect</source>
-        <translation type="unfinished"></translation>
+        <translation>Не удалось подключиться</translation>
     </message>
     <message>
         <location filename="../MainWindow.py" line="772"/>
