@@ -119,7 +119,7 @@
     <message>
         <location filename="../ui/AdvancedWidget.ui" line="0"/>
         <source>Type</source>
-        <translation>Вид</translation>
+        <translation>Тип</translation>
     </message>
     <message>
         <location filename="../ui/AdvancedWidget.ui" line="0"/>
@@ -293,7 +293,7 @@
     <message>
         <location filename="../ui/ArtifactWindow.ui" line="0"/>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Тип</translation>
     </message>
     <message>
         <location filename="../ui/ArtifactWindow.ui" line="0"/>
@@ -512,7 +512,7 @@
     <message>
         <location filename="../ui/DescriptionWidget.ui" line="0"/>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Тип</translation>
     </message>
     <message>
         <location filename="../ui/DescriptionWidget.ui" line="0"/>
@@ -770,7 +770,7 @@
     <message>
         <location filename="../ui/ExternalReleasesWindow.ui" line="0"/>
         <source>Report Bug</source>
-        <translation type="unfinished"></translation>
+        <translation>Сообщить об ошибке</translation>
     </message>
     <message>
         <location filename="../ui/ExternalReleasesWindow.ui" line="0"/>
@@ -780,12 +780,12 @@
     <message>
         <location filename="../ui/ExternalReleasesWindow.ui" line="0"/>
         <source>Donate</source>
-        <translation type="unfinished"></translation>
+        <translation>Пожертвовать</translation>
     </message>
     <message>
         <location filename="../ui/ExternalReleasesWindow.ui" line="0"/>
         <source>Plugins</source>
-        <translation type="unfinished"></translation>
+        <translation>Модули</translation>
     </message>
 </context>
 <context>
@@ -1597,7 +1597,7 @@
         <location filename="../ui/MainWindow.ui" line="0"/>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Тип</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
@@ -1744,17 +1744,17 @@
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>Report Bug</source>
-        <translation type="unfinished"></translation>
+        <translation>Сообщить об ошибке</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>Donate</source>
-        <translation type="unfinished"></translation>
+        <translation>Пожертвовать</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>Plugins</source>
-        <translation type="unfinished"></translation>
+        <translation>Модули</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
@@ -1764,7 +1764,7 @@
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>View Catalog</source>
-        <translation type="unfinished"></translation>
+        <translation>Просмотр каталога</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
@@ -1778,29 +1778,29 @@
         <location filename="../ManageTemplatesWindow.py" line="65"/>
         <location filename="../ManageTemplatesWindow.py" line="49"/>
         <source>Enter name</source>
-        <translation type="unfinished"></translation>
+        <translation>Введите название</translation>
     </message>
     <message>
         <location filename="../ManageTemplatesWindow.py" line="49"/>
         <source>This will save your current document as template. Please enter a name.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Текущий документ будет сохранён как шаблон. Дайте ему имя.</translation>
     </message>
     <message>
         <location filename="../ManageTemplatesWindow.py" line="71"/>
         <location filename="../ManageTemplatesWindow.py" line="55"/>
         <source>Name exists</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Использованное название</translation>
     </message>
     <message>
         <location filename="../ManageTemplatesWindow.py" line="71"/>
         <location filename="../ManageTemplatesWindow.py" line="55"/>
         <source>There is already a template with this name</source>
-        <translation type="unfinished"></translation>
+        <translation>Шаблон с таким названием уже существует</translation>
     </message>
     <message>
         <location filename="../ManageTemplatesWindow.py" line="65"/>
         <source>Please enter the new name</source>
-        <translation type="unfinished"></translation>
+        <translation>Введите новое название</translation>
     </message>
     <message>
         <location filename="../ManageTemplatesWindow.py" line="97"/>
@@ -1811,22 +1811,22 @@
     <message>
         <location filename="../ManageTemplatesWindow.py" line="80"/>
         <source>A error occurred while renaming</source>
-        <translation type="unfinished"></translation>
+        <translation>Не удалось переименовать из-за ошибки</translation>
     </message>
     <message>
         <location filename="../ManageTemplatesWindow.py" line="90"/>
         <source>Delete {{name}}</source>
-        <translation type="unfinished"></translation>
+        <translation>Удалить {{name}}</translation>
     </message>
     <message>
         <location filename="../ManageTemplatesWindow.py" line="90"/>
         <source>Are you sure you want to delete {{name}}?</source>
-        <translation type="unfinished"></translation>
+        <translation>Вы точно хотите удалить {{name}}?</translation>
     </message>
     <message>
         <location filename="../ManageTemplatesWindow.py" line="97"/>
         <source>A error occurred while deleting</source>
-        <translation type="unfinished"></translation>
+        <translation>Не удалось удалить из-за ошибки</translation>
     </message>
     <message>
         <location filename="../ui/ManageTemplatesWindow.ui" line="0"/>
@@ -2569,7 +2569,7 @@
     <message>
         <location filename="../ui/PluginWindow.ui" line="0"/>
         <source>Plugins</source>
-        <translation type="unfinished"></translation>
+        <translation>Модули</translation>
     </message>
     <message>
         <location filename="../ui/PluginWindow.ui" line="0"/>
@@ -2778,7 +2778,7 @@
         <location filename="../ui/RelationsWidget.ui" line="0"/>
         <location filename="../ui/RelationsWidget.ui" line="0"/>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Тип</translation>
     </message>
     <message>
         <location filename="../ui/RelationsWidget.ui" line="0"/>
@@ -3035,7 +3035,7 @@
     <message>
         <location filename="../ui/ReleasesWidget.ui" line="0"/>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Тип</translation>
     </message>
     <message>
         <location filename="../ui/ReleasesWidget.ui" line="0"/>
@@ -3748,7 +3748,7 @@
     <message>
         <location filename="../ui/ViewCatalogWindow.ui" line="0"/>
         <source>View Catalog</source>
-        <translation type="unfinished"></translation>
+        <translation>Просмотр каталога</translation>
     </message>
     <message>
         <location filename="../ui/ViewCatalogWindow.ui" line="0"/>
