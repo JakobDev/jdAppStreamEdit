@@ -1,0 +1,88 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-31 15:03+0200\n"
+"PO-Revision-Date: 2024-05-11 14:18+0000\n"
+"Last-Translator: 0ko <0ko@users.noreply.translate.codeberg.org>\n"
+"Language-Team: Russian <https://translate.codeberg.org/projects/"
+"jdAppStreamEdit/UnixMetadata/ru/>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 5.5.2\n"
+
+msgid "A graphical Program to create and edit AppStream files"
+msgstr "Графическое приложение для создания и редактирования файлов AppStream"
+
+msgid ""
+"jdAppStreamEdit (previously known as jdAppdataEdit) allows you to easily "
+"create and edit AppStream (.appdata.xml or .metainfo.xml) files for your "
+"Application."
+msgstr ""
+"jdAppStreamEdit (ранее именуемое jdAppdataEdit) позволяет легко создавать и "
+"редактировать файлы AppStream ваших приложений (.appdata.xml, либо .metainfo."
+"xml)."
+
+msgid "Features:"
+msgstr "Возможности:"
+
+msgid "Easy to use"
+msgstr "Лёгкое в использовании"
+
+msgid "Full support for the Open Age Rating System (OARS)"
+msgstr "Полная поддержка Открытой системы возрастного рейтинга (OARS)"
+
+msgid "The AppStream files are fully translatable"
+msgstr "Файлы AppStream полностью локализуемы"
+
+msgid ""
+"Releases can be imported from GitHub, GitLab, Gitea, Git Repos and NEWS files"
+msgstr ""
+"Импорт выпусков из GitHub, GitLab, Gitea, Git-репозиториев и файлов NEWS"
+
+msgid "You can view a preview in Gnome Software"
+msgstr "Предпросмотр в ПО Gnome"
+
+msgid "You can use a existing .desktop file as template"
+msgstr "Можно использовать имеющиеся файлы .desktop в качестве шаблонов"
+
+msgid "Supports External Releases"
+msgstr "Поддержка внешних выпусков"
+
+msgid "Plugins"
+msgstr "Модули"
+
+msgid "The General Tab"
+msgstr "Главная влкадка"
+
+msgid "The Description Tab"
+msgstr "Вкладка описания"
+
+msgid "The Screenshots Tab"
+msgstr "Вкладка снимков экрана"
+
+msgid "The Releases Tab"
+msgstr "Вкладка выпусков"
+
+msgid "The Links Tab"
+msgstr "Вкладка ссылок"
+
+msgid "The Control Tab"
+msgstr "Вкладка управления"
+
+msgid "The OARS Tab"
+msgstr "Вкладка OARS"
+
+msgid "A graphical Program to create and edit AppStream Releases files"
+msgstr ""
+"Графическое приложение для создания и редактирования файлов выпусков "
+"AppStream"
