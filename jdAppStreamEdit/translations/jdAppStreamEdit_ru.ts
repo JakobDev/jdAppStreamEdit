@@ -730,12 +730,12 @@
     <message>
         <location filename="../ui/ExternalReleasesWindow.ui" line="0"/>
         <source>Save As...</source>
-        <translation type="unfinished"></translation>
+        <translation>Сохранить как...</translation>
     </message>
     <message>
         <location filename="../ui/ExternalReleasesWindow.ui" line="0"/>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Выйти</translation>
     </message>
     <message>
         <location filename="../ui/ExternalReleasesWindow.ui" line="0"/>
@@ -1234,7 +1234,7 @@
     <message>
         <location filename="../MainWindow.py" line="1185"/>
         <source>No ID</source>
-        <translation type="unfinished"></translation>
+        <translation>Нет ИД</translation>
     </message>
     <message>
         <location filename="../MainWindow.py" line="1185"/>
@@ -1264,22 +1264,22 @@
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>ID:</source>
-        <translation type="unfinished"></translation>
+        <translation>ИД:</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>The unique ID of the software</source>
-        <translation type="unfinished"></translation>
+        <translation>Уникальный идентификатор этого ПО</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Название:</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>A human-readable name for your software</source>
-        <translation type="unfinished"></translation>
+        <translation>Понятное и читабельное название вашего ПО</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
@@ -1292,7 +1292,7 @@
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>Summary:</source>
-        <translation type="unfinished"></translation>
+        <translation>Сводка:</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
@@ -1302,32 +1302,32 @@
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>Developer ID:</source>
-        <translation type="unfinished"></translation>
+        <translation>ИД разработчика:</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>A unique ID to identify the respective developer</source>
-        <translation type="unfinished"></translation>
+        <translation>Уникальный идентификатор соответствующего разработчика</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>Developer Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Имя разработчика:</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>The name of the developer</source>
-        <translation type="unfinished"></translation>
+        <translation>Имя разработчика ПО</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>Metadata License:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Лицензия метаданных:</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>Project License:</source>
-        <translation type="unfinished"></translation>
+        <translation>Лицензия проекта:</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
@@ -1362,12 +1362,12 @@
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>Описание</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>Screenshots</source>
-        <translation type="unfinished"></translation>
+        <translation>Снимки экрана</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
@@ -1421,7 +1421,7 @@
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>Homepage:</source>
-        <translation type="unfinished"></translation>
+        <translation>Домашняя страница:</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
@@ -1491,12 +1491,12 @@
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>Sourcecode:</source>
-        <translation type="unfinished"></translation>
+        <translation>Исходный код:</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>URLs of this type should point to a webpage on which the user can browse the sourcecode</source>
-        <translation type="unfinished"></translation>
+        <translation>Ссылки на веб-страницы, где можно ознакомиться с исходным кодом или получить его копию</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
@@ -1531,12 +1531,12 @@
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>Mouse:</source>
-        <translation type="unfinished"></translation>
+        <translation>Мышь:</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>Keyboard:</source>
-        <translation type="unfinished"></translation>
+        <translation>Клавиатура:</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
@@ -1551,7 +1551,7 @@
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>Touchscreen:</source>
-        <translation type="unfinished"></translation>
+        <translation>Сенсорный экран:</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
@@ -1603,7 +1603,7 @@
         <location filename="../ui/MainWindow.ui" line="0"/>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Значение</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
@@ -1633,7 +1633,7 @@
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>File</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
@@ -1674,7 +1674,7 @@
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>Save As...</source>
-        <translation type="unfinished"></translation>
+        <translation>Сохранить как...</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
@@ -1689,7 +1689,7 @@
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Выйти</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
@@ -3670,7 +3670,7 @@
     <message>
         <location filename="../ValidateWindow.py" line="58"/>
         <source>No ID</source>
-        <translation type="unfinished"></translation>
+        <translation>Нет ИД</translation>
     </message>
     <message>
         <location filename="../ValidateWindow.py" line="58"/>
@@ -3738,7 +3738,7 @@
     <message>
         <location filename="../ViewCatalogWindow.py" line="82"/>
         <source>No ID</source>
-        <translation type="unfinished"></translation>
+        <translation>Нет ИД</translation>
     </message>
     <message>
         <location filename="../ViewCatalogWindow.py" line="82"/>
