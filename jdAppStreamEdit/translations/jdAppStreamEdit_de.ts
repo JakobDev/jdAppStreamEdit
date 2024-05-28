@@ -866,6 +866,11 @@
         <source>Dutch</source>
         <translation>Niederländisch</translation>
     </message>
+    <message>
+        <location filename="../Languages.py" line="9"/>
+        <source>Russian</source>
+        <translation>Russisch</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
