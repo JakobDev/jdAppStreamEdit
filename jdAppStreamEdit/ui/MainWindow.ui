@@ -33,7 +33,7 @@
     <item>
      <widget class="QTabWidget" name="main_tab_widget">
       <property name="currentIndex">
-       <number>9</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -48,7 +48,14 @@
          </widget>
         </item>
         <item row="0" column="1">
-         <widget class="QComboBox" name="component_type_box"/>
+         <widget class="QComboBox" name="component_type_box">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+         </widget>
         </item>
         <item row="1" column="0">
          <widget class="QLabel" name="label">
@@ -173,7 +180,14 @@
          </widget>
         </item>
         <item row="6" column="1">
-         <widget class="QComboBox" name="metadata_license_box"/>
+         <widget class="QComboBox" name="metadata_license_box">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+         </widget>
         </item>
         <item row="7" column="0">
          <widget class="QLabel" name="label_4">
@@ -184,6 +198,12 @@
         </item>
         <item row="7" column="1">
          <widget class="QComboBox" name="project_license_box">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="editable">
            <bool>false</bool>
           </property>
@@ -263,7 +283,7 @@
         <item>
          <widget class="QTableWidget" name="screenshot_table">
           <property name="selectionBehavior">
-           <enum>QAbstractItemView::SelectRows</enum>
+           <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
           </property>
           <property name="rowCount">
            <number>0</number>
@@ -331,7 +351,7 @@
            <string notr="true">Releases Widget Placeholder</string>
           </property>
           <property name="alignment">
-           <set>Qt::AlignCenter</set>
+           <set>Qt::AlignmentFlag::AlignCenter</set>
           </property>
          </widget>
         </item>
@@ -509,7 +529,7 @@
         <item>
          <spacer name="verticalSpacer">
           <property name="orientation">
-           <enum>Qt::Vertical</enum>
+           <enum>Qt::Orientation::Vertical</enum>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
@@ -529,7 +549,7 @@
         <item>
          <widget class="QListWidget" name="categorie_list">
           <property name="dragDropMode">
-           <enum>QAbstractItemView::InternalMove</enum>
+           <enum>QAbstractItemView::DragDropMode::InternalMove</enum>
           </property>
          </widget>
         </item>
@@ -735,7 +755,7 @@
         <item>
          <spacer name="verticalSpacer_2">
           <property name="orientation">
-           <enum>Qt::Vertical</enum>
+           <enum>Qt::Orientation::Vertical</enum>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
@@ -799,7 +819,7 @@
            <string>Indicates possible methods to launch the software described in this component</string>
           </property>
           <property name="alignment">
-           <set>Qt::AlignCenter</set>
+           <set>Qt::AlignmentFlag::AlignCenter</set>
           </property>
           <property name="wordWrap">
            <bool>true</bool>
@@ -809,10 +829,10 @@
         <item>
          <widget class="QTableWidget" name="launchable_table">
           <property name="dragDropMode">
-           <enum>QAbstractItemView::InternalMove</enum>
+           <enum>QAbstractItemView::DragDropMode::InternalMove</enum>
           </property>
           <property name="selectionBehavior">
-           <enum>QAbstractItemView::SelectRows</enum>
+           <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
           </property>
           <column>
            <property name="text">
@@ -851,14 +871,14 @@
            <string>This is for advanced users. For more information take a look at the Appstream documentation.</string>
           </property>
           <property name="alignment">
-           <set>Qt::AlignCenter</set>
+           <set>Qt::AlignmentFlag::AlignCenter</set>
           </property>
          </widget>
         </item>
         <item>
          <widget class="QTableWidget" name="provides_table">
           <property name="selectionBehavior">
-           <enum>QAbstractItemView::SelectRows</enum>
+           <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
           </property>
           <column>
            <property name="text">
@@ -897,14 +917,14 @@
            <string>You can manage the Keywords for the Software here</string>
           </property>
           <property name="alignment">
-           <set>Qt::AlignCenter</set>
+           <set>Qt::AlignmentFlag::AlignCenter</set>
           </property>
          </widget>
         </item>
         <item>
          <widget class="QListWidget" name="keyword_list">
           <property name="dragDropMode">
-           <enum>QAbstractItemView::InternalMove</enum>
+           <enum>QAbstractItemView::DragDropMode::InternalMove</enum>
           </property>
          </widget>
         </item>
@@ -967,22 +987,22 @@
      <x>0</x>
      <y>0</y>
      <width>944</width>
-     <height>21</height>
+     <height>30</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
     <property name="title">
-     <string>File</string>
+     <string>Fi&amp;le</string>
     </property>
     <widget class="QMenu" name="recent_files_menu">
      <property name="title">
-      <string>Open recent</string>
+      <string>Open &amp;recent</string>
      </property>
      <addaction name="actionPlaceholder"/>
     </widget>
     <widget class="QMenu" name="new_template_file_menu">
      <property name="title">
-      <string>New (from Template)</string>
+      <string>Ne&amp;w (from Template)</string>
      </property>
      <addaction name="actionPlaceholder_2"/>
     </widget>
@@ -1016,7 +1036,7 @@
    </widget>
    <widget class="QMenu" name="menuSettings">
     <property name="title">
-     <string>Settings</string>
+     <string>Setti&amp;ngs</string>
     </property>
     <addaction name="settings_action"/>
     <addaction name="manage_templates_action"/>
@@ -1024,7 +1044,7 @@
    </widget>
    <widget class="QMenu" name="menuTools">
     <property name="title">
-     <string>Tools</string>
+     <string>&amp;Tools</string>
     </property>
     <addaction name="validate_action"/>
     <addaction name="view_xml_action"/>
@@ -1040,7 +1060,7 @@
   </widget>
   <action name="open_action">
    <property name="text">
-    <string>Open</string>
+    <string>&amp;Open</string>
    </property>
    <property name="shortcut">
     <string notr="true">Ctrl+O</string>
@@ -1048,7 +1068,7 @@
   </action>
   <action name="save_action">
    <property name="text">
-    <string>Save</string>
+    <string>&amp;Save</string>
    </property>
    <property name="shortcut">
     <string notr="true">Ctrl+S</string>
@@ -1056,22 +1076,22 @@
   </action>
   <action name="save_as_action">
    <property name="text">
-    <string>Save As...</string>
+    <string>Save &amp;As...</string>
    </property>
   </action>
   <action name="about_action">
    <property name="text">
-    <string>About</string>
+    <string>A&amp;bout</string>
    </property>
   </action>
   <action name="about_qt_action">
    <property name="text">
-    <string>About Qt</string>
+    <string>About &amp;Qt</string>
    </property>
   </action>
   <action name="exit_action">
    <property name="text">
-    <string>Exit</string>
+    <string>&amp;Exit</string>
    </property>
    <property name="shortcut">
     <string notr="true">Ctrl+Q</string>
@@ -1079,7 +1099,7 @@
   </action>
   <action name="new_action">
    <property name="text">
-    <string>New</string>
+    <string>&amp;New</string>
    </property>
    <property name="shortcut">
     <string notr="true">Ctrl+N</string>
@@ -1087,97 +1107,97 @@
   </action>
   <action name="settings_action">
    <property name="text">
-    <string>Settings</string>
+    <string>&amp;Settings</string>
    </property>
   </action>
   <action name="validate_action">
    <property name="text">
-    <string>Validate</string>
+    <string>&amp;Validate</string>
    </property>
   </action>
   <action name="actionPlaceholder">
    <property name="text">
-    <string notr="true">Placeholder</string>
+    <string notr="true">&amp;Placeholder</string>
    </property>
   </action>
   <action name="documentation_action">
    <property name="text">
-    <string>AppStream documentation</string>
+    <string>&amp;AppStream documentation</string>
    </property>
   </action>
   <action name="view_xml_action">
    <property name="text">
-    <string>View XML</string>
+    <string>View &amp;XML</string>
    </property>
   </action>
   <action name="preview_gnome_software">
    <property name="text">
-    <string>Preview in Gnome Software</string>
+    <string>&amp;Preview in Gnome Software</string>
    </property>
   </action>
   <action name="welcome_dialog_action">
    <property name="text">
-    <string>Show welcome dialog</string>
+    <string>&amp;Show welcome dialog</string>
    </property>
   </action>
   <action name="open_url_action">
    <property name="text">
-    <string>Open from URL</string>
+    <string>Open from &amp;URL</string>
    </property>
   </action>
   <action name="new_desktop_file_action">
    <property name="text">
-    <string>New (from .desktop file)</string>
+    <string>New (&amp;from .desktop file)</string>
    </property>
   </action>
   <action name="manage_templates_action">
    <property name="text">
-    <string>Manage templates</string>
+    <string>&amp;Manage templates</string>
    </property>
   </action>
   <action name="actionPlaceholder_2">
    <property name="text">
-    <string notr="true">Placeholder</string>
+    <string notr="true">&amp;Placeholder</string>
    </property>
   </action>
   <action name="view_source_action">
    <property name="text">
-    <string>View Source</string>
+    <string>&amp;View Source</string>
    </property>
   </action>
   <action name="report_bug_action">
    <property name="text">
-    <string>Report Bug</string>
+    <string>&amp;Report Bug</string>
    </property>
   </action>
   <action name="translate_action">
    <property name="text">
-    <string>Translate</string>
+    <string>&amp;Translate</string>
    </property>
   </action>
   <action name="donate_action">
    <property name="text">
-    <string>Donate</string>
+    <string>&amp;Donate</string>
    </property>
   </action>
   <action name="plugins_action">
    <property name="text">
-    <string>Plugins</string>
+    <string>&amp;Plugins</string>
    </property>
   </action>
   <action name="compose_directory_action">
    <property name="text">
-    <string>Compose existing Directory</string>
+    <string>&amp;Compose existing Directory</string>
    </property>
   </action>
   <action name="view_catalog_action">
    <property name="text">
-    <string>View Catalog</string>
+    <string>V&amp;iew Catalog</string>
    </property>
   </action>
   <action name="sysinfo_action">
    <property name="text">
-    <string>Sysinfo</string>
+    <string>&amp;Sysinfo</string>
    </property>
   </action>
  </widget>

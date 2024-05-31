@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>374</width>
-    <height>527</height>
+    <height>558</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -33,6 +33,12 @@
          <layout class="QHBoxLayout" name="horizontalLayout_4">
           <item>
            <widget class="QComboBox" name="language_box">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="maximumSize">
              <size>
               <width>200</width>
@@ -58,7 +64,14 @@
          </widget>
         </item>
         <item row="1" column="1">
-         <widget class="QSpinBox" name="recent_files_spin_box"/>
+         <widget class="QSpinBox" name="recent_files_spin_box">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+         </widget>
         </item>
         <item row="2" column="0">
          <widget class="QLabel" name="label_4">
@@ -68,7 +81,14 @@
          </widget>
         </item>
         <item row="2" column="1">
-         <widget class="QComboBox" name="window_title_box"/>
+         <widget class="QComboBox" name="window_title_box">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>
@@ -112,7 +132,14 @@
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="whitespace_spin_box"/>
+         <widget class="QSpinBox" name="whitespace_spin_box">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>
@@ -149,14 +176,14 @@
       <item>
        <widget class="QRadioButton" name="name_language_translate_rad">
         <property name="text">
-         <string extracomment="The name of the language">Name</string>
+         <string extracomment="The name of the language">&amp;Name</string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QRadioButton" name="code_language_translate_rad">
         <property name="text">
-         <string extracomment="The alpha-2 code of the language">Code</string>
+         <string extracomment="The alpha-2 code of the language">&amp;Code</string>
         </property>
        </widget>
       </item>
@@ -166,7 +193,7 @@
    <item>
     <spacer name="verticalSpacer">
      <property name="orientation">
-      <enum>Qt::Vertical</enum>
+      <enum>Qt::Orientation::Vertical</enum>
      </property>
      <property name="sizeHint" stdset="0">
       <size>
@@ -188,7 +215,7 @@
      <item>
       <spacer name="horizontalSpacer">
        <property name="orientation">
-        <enum>Qt::Horizontal</enum>
+        <enum>Qt::Orientation::Horizontal</enum>
        </property>
        <property name="sizeHint" stdset="0">
         <size>
