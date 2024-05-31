@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <component type="desktop-application">
-  <!--Created with jdAppStreamEdit 9.0-->
+  <!--Created with jdAppStreamEdit 9.1-->
   <id>page.codeberg.JakobDev.jdAppStreamEdit</id>
   <name>jdAppStreamEdit</name>
   <summary>A graphical Program to create and edit AppStream files</summary>
@@ -26,34 +26,42 @@
   <screenshots>
     <screenshot type="default">
       <caption>The General Tab</caption>
-      <image type="source">https://codeberg.org/JakobDev/jdAppStreamEdit/raw/tag/6.0/screenshots/GeneralTab.png</image>
+      <image type="source">https://codeberg.org/JakobDev/jdAppStreamEdit/raw/commit/2c4cd8aac959491f38bd7844c0bf95fe1fa39450/screenshots/GeneralTab.png</image>
     </screenshot>
     <screenshot>
       <caption>The Description Tab</caption>
-      <image type="source">https://codeberg.org/JakobDev/jdAppStreamEdit/raw/tag/6.0/screenshots/DescriptionTab.png</image>
+      <image type="source">https://codeberg.org/JakobDev/jdAppStreamEdit/raw/commit/2c4cd8aac959491f38bd7844c0bf95fe1fa39450/screenshots/DescriptionTab.png</image>
     </screenshot>
     <screenshot>
       <caption>The Screenshots Tab</caption>
-      <image type="source">https://codeberg.org/JakobDev/jdAppStreamEdit/raw/tag/6.0/screenshots/ScreenshotsTab.png</image>
+      <image type="source">https://codeberg.org/JakobDev/jdAppStreamEdit/raw/commit/2c4cd8aac959491f38bd7844c0bf95fe1fa39450/screenshots/ScreenshotsTab.png</image>
     </screenshot>
     <screenshot>
       <caption>The Releases Tab</caption>
-      <image type="source">https://codeberg.org/JakobDev/jdAppStreamEdit/raw/tag/6.0/screenshots/ReleasesTab.png</image>
+      <image type="source">https://codeberg.org/JakobDev/jdAppStreamEdit/raw/commit/2c4cd8aac959491f38bd7844c0bf95fe1fa39450/screenshots/ReleasesTab.png</image>
     </screenshot>
     <screenshot>
       <caption>The Links Tab</caption>
-      <image type="source">https://codeberg.org/JakobDev/jdAppStreamEdit/raw/tag/6.0/screenshots/LinksTab.png</image>
+      <image type="source">https://codeberg.org/JakobDev/jdAppStreamEdit/raw/commit/2c4cd8aac959491f38bd7844c0bf95fe1fa39450/screenshots/LinksTab.png</image>
     </screenshot>
     <screenshot>
       <caption>The Control Tab</caption>
-      <image type="source">https://codeberg.org/JakobDev/jdAppStreamEdit/raw/tag/6.0/screenshots/ControlTab.png</image>
+      <image type="source">https://codeberg.org/JakobDev/jdAppStreamEdit/raw/commit/2c4cd8aac959491f38bd7844c0bf95fe1fa39450/screenshots/ControlTab.png</image>
     </screenshot>
     <screenshot>
       <caption>The OARS Tab</caption>
-      <image type="source">https://codeberg.org/JakobDev/jdAppStreamEdit/raw/tag/6.0/screenshots/OarsTab.png</image>
+      <image type="source">https://codeberg.org/JakobDev/jdAppStreamEdit/raw/commit/2c4cd8aac959491f38bd7844c0bf95fe1fa39450/screenshots/OarsTab.png</image>
     </screenshot>
   </screenshots>
   <releases>
+    <release version="9.1" date="2024-05-31" type="stable">
+      <description>
+        <ul>
+          <li>Added support for branding colors</li>
+          <li>Added Russian translation (0ko)</li>
+        </ul>
+      </description>
+    </release>
     <release version="9.0" date="2024-02-29" type="stable">
       <description>
         <ul>
