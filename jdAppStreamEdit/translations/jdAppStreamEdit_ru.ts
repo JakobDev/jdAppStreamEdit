@@ -720,7 +720,7 @@
     <message>
         <location filename="../ui/ExternalReleasesWindow.ui" line="0"/>
         <source>Open from URL</source>
-        <translation type="unfinished"></translation>
+        <translation>Открыть из ссылки</translation>
     </message>
     <message>
         <location filename="../ui/ExternalReleasesWindow.ui" line="0"/>
@@ -750,12 +750,12 @@
     <message>
         <location filename="../ui/ExternalReleasesWindow.ui" line="0"/>
         <source>About Qt</source>
-        <translation type="unfinished"></translation>
+        <translation>О Qt</translation>
     </message>
     <message>
         <location filename="../ui/ExternalReleasesWindow.ui" line="0"/>
         <source>Show welcome dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Показывать приветственный экран</translation>
     </message>
     <message>
         <location filename="../ui/ExternalReleasesWindow.ui" line="0"/>
@@ -1724,12 +1724,12 @@
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>Show welcome dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Показывать приветственный экран</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>Open from URL</source>
-        <translation type="unfinished"></translation>
+        <translation>Открыть из ссылки</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
@@ -1906,127 +1906,127 @@
     <message>
         <location filename="../OarsWidget.py" line="43"/>
         <source>Mild: Fantasy characters in unsafe situations</source>
-        <translation type="unfinished"></translation>
+        <translation>Слабый: персонажи фэнтези в небезопасных ситуациях</translation>
     </message>
     <message>
         <location filename="../OarsWidget.py" line="44"/>
         <source>Moderate: Fantasy characters in aggressive conflict</source>
-        <translation type="unfinished"></translation>
+        <translation>Умеренный: персонажи фэнтези в остром конфликте</translation>
     </message>
     <message>
         <location filename="../OarsWidget.py" line="45"/>
         <source>Intense: Fantasy characters with graphic violence</source>
-        <translation type="unfinished"></translation>
+        <translation>Серьёзный: персонажи фэнтези проявляют наглядную жестокость</translation>
     </message>
     <message>
         <location filename="../OarsWidget.py" line="48"/>
         <source>Mild: Realistic characters in unsafe situations</source>
-        <translation type="unfinished"></translation>
+        <translation>Слабый: реалистичные персонажи в небезопасных ситуациях</translation>
     </message>
     <message>
         <location filename="../OarsWidget.py" line="49"/>
         <source>Moderate: Realistic characters in depictions of aggressive conflict</source>
-        <translation type="unfinished"></translation>
+        <translation>Умеренный: реалистичные персонажи, изображающие острый конфликт</translation>
     </message>
     <message>
         <location filename="../OarsWidget.py" line="50"/>
         <source>Intense: Realistic characters with graphic violence</source>
-        <translation type="unfinished"></translation>
+        <translation>Серьёзный: реалистичные персонажи и наглядная жестокость</translation>
     </message>
     <message>
         <location filename="../OarsWidget.py" line="53"/>
         <source>Mild: Unrealistic bloodshed</source>
-        <translation type="unfinished"></translation>
+        <translation>Слабый: нереалистичное кровопролитие</translation>
     </message>
     <message>
         <location filename="../OarsWidget.py" line="54"/>
         <source>Moderate: Realistic bloodshed</source>
-        <translation type="unfinished"></translation>
+        <translation>Средний: реалистичное кровопролитие</translation>
     </message>
     <message>
         <location filename="../OarsWidget.py" line="55"/>
         <source>Intense: Depictions of bloodshed and the mutilation of body parts</source>
-        <translation type="unfinished"></translation>
+        <translation>Серьёзный: изображение кровопролития и увечье частей тела</translation>
     </message>
     <message>
         <location filename="../OarsWidget.py" line="58"/>
         <source>Intense: Rape or other violent sexual behavior</source>
-        <translation type="unfinished"></translation>
+        <translation>Серьёзный: изнасилование или другое насильственное сексуальное поведение</translation>
     </message>
     <message>
         <location filename="../OarsWidget.py" line="63"/>
         <source>Mild: Visible dead human remains</source>
-        <translation type="unfinished"></translation>
+        <translation>Слабый: видимые человеческие останки</translation>
     </message>
     <message>
         <location filename="../OarsWidget.py" line="64"/>
         <source>Moderate: Dead human remains that are exposed to the elements</source>
-        <translation type="unfinished"></translation>
+        <translation>Умеренный: человеческие останки, подвергающиеся воздействию</translation>
     </message>
     <message>
         <location filename="../OarsWidget.py" line="65"/>
         <source>Intense: Graphic depictions of desecration of human bodies, for example being eaten by wild animals</source>
-        <translation type="unfinished"></translation>
+        <translation>Серьёзный: изображение поедания останков человеческих тел, например дикими зверями</translation>
     </message>
     <message>
         <location filename="../OarsWidget.py" line="68"/>
         <source>Mild: Depictions or references to historical slavery</source>
-        <translation type="unfinished"></translation>
+        <translation>Слабый: изображения или упоминания исторического человеческого рабства</translation>
     </message>
     <message>
         <location filename="../OarsWidget.py" line="69"/>
         <source>Moderate: Depictions of modern-day slavery</source>
-        <translation type="unfinished"></translation>
+        <translation>Умеренный: изображение человеческого рабства в современном мире</translation>
     </message>
     <message>
         <location filename="../OarsWidget.py" line="70"/>
         <source>Intense: Graphic depictions of modern-day slavery</source>
-        <translation type="unfinished"></translation>
+        <translation>Серьёзный: графическое изображение современного человеческого рабства</translation>
     </message>
     <message>
         <location filename="../OarsWidget.py" line="75"/>
         <source>Mild: References to alcoholic beverages</source>
-        <translation type="unfinished"></translation>
+        <translation>Слабый: упоминания алкогольных напитков</translation>
     </message>
     <message>
         <location filename="../OarsWidget.py" line="76"/>
         <source>Moderate: Use of alcoholic beverages</source>
-        <translation type="unfinished"></translation>
+        <translation>Умеренный: употребление алкогольных напитков</translation>
     </message>
     <message>
         <location filename="../OarsWidget.py" line="79"/>
         <source>Mild: References to illicit drugs</source>
-        <translation type="unfinished"></translation>
+        <translation>Слабый: упоминания наркотиков</translation>
     </message>
     <message>
         <location filename="../OarsWidget.py" line="80"/>
         <source>Moderate: Use of illicit drugs</source>
-        <translation type="unfinished"></translation>
+        <translation>Умеренный: незаконное использование наркотиков</translation>
     </message>
     <message>
         <location filename="../OarsWidget.py" line="83"/>
         <source>Mild: References to tobacco products</source>
-        <translation type="unfinished"></translation>
+        <translation>Слабый: упоминания курения</translation>
     </message>
     <message>
         <location filename="../OarsWidget.py" line="84"/>
         <source>Moderate: Use of tobacco products</source>
-        <translation type="unfinished"></translation>
+        <translation>Умеренный: изображение курения</translation>
     </message>
     <message>
         <location filename="../OarsWidget.py" line="89"/>
         <source>Mild: Brief artistic nudity</source>
-        <translation type="unfinished"></translation>
+        <translation>Слабый: незначительная художественная обнажённость</translation>
     </message>
     <message>
         <location filename="../OarsWidget.py" line="90"/>
         <source>Moderate: Prolonged nudity</source>
-        <translation type="unfinished"></translation>
+        <translation>Умеренный: длительное обнажение</translation>
     </message>
     <message>
         <location filename="../OarsWidget.py" line="91"/>
         <source>Intense: Explicit nudity showing nipples or sexual organs</source>
-        <translation type="unfinished"></translation>
+        <translation>Серьёзный: явная демонстрация сосков и гениталий</translation>
     </message>
     <message>
         <location filename="../OarsWidget.py" line="94"/>
