@@ -1,4 +1,4 @@
-from .Functions import clear_table_widget, stretch_table_widget_colums_size, list_widget_contains_item, is_url_reachable, get_logical_table_row_list, is_flatpak, get_shared_temp_dir, is_url_valid, get_save_settings, assert_func, get_sender_table_row
+from .Functions import clear_table_widget, stretch_table_widget_colums_size, list_widget_contains_item, is_url_reachable, get_logical_table_row_list, is_flatpak, get_shared_temp_dir, is_url_valid, get_save_settings, assert_func, get_sender_table_row, get_real_path
 from PyQt6.QtWidgets import QApplication, QCheckBox, QComboBox, QLineEdit, QListWidget, QMainWindow, QMessageBox, QDateEdit, QInputDialog, QPlainTextEdit, QPushButton, QTableWidget, QTableWidgetItem, QRadioButton, QFileDialog
 from PyQt6.QtGui import QAction, QDragEnterEvent, QDropEvent, QCloseEvent
 from .ComposeDirectoryWindow import ComposeDirectoryWindow
@@ -230,7 +230,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         elif self._env.settings.get("windowTitleType") == "filename":
             title = os.path.basename(self._current_path) + " - jdAppStreamEdit"
         elif self._env.settings.get("windowTitleType") == "path":
-            title = self._current_path + " - jdAppStreamEdit"
+            title = get_real_path(self._current_path) + " - jdAppStreamEdit"
         else:
             title = QCoreApplication.translate("MainWindow", "Error")
 
@@ -263,7 +263,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             return
 
         for i in self._env.recent_files:
-            file_action = QAction(i, self)
+            file_action = QAction(get_real_path(i), self)
             file_action.setData(i)
             file_action.triggered.connect(self._open_recent_file)
             self.recent_files_menu.addAction(file_action)
@@ -745,10 +745,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             with open(path, "rb") as f:
                 text = f.read()
         except FileNotFoundError:
-            QMessageBox.critical(self, QCoreApplication.translate("MainWindow", "File not found"), QCoreApplication.translate("MainWindow", "{{path}} does not exists").replace("{{path}}", path))
+            QMessageBox.critical(self, QCoreApplication.translate("MainWindow", "File not found"), QCoreApplication.translate("MainWindow", "{{path}} does not exists").replace("{{path}}", get_real_path(path)))
             return
         except Exception:
-            QMessageBox.critical(self, QCoreApplication.translate("MainWindow", "Error"), QCoreApplication.translate("MainWindow", "An error occurred while trying to open {{path}}").replace("{{path}}", path))
+            QMessageBox.critical(self, QCoreApplication.translate("MainWindow", "Error"), QCoreApplication.translate("MainWindow", "An error occurred while trying to open {{path}}").replace("{{path}}", get_real_path(path)))
             return
 
         if self.load_xml(text):

@@ -1,7 +1,7 @@
 from PyQt6.QtWidgets import QMainWindow, QMessageBox, QCheckBox, QFileDialog, QInputDialog, QApplication
 from .ui_compiled.ExternalReleasesWindow import Ui_ExternalReleasesWindow
 from PyQt6.QtGui import QAction, QDragEnterEvent, QDropEvent, QCloseEvent
-from .Functions import is_url_valid, get_save_settings
+from .Functions import is_url_valid, get_save_settings, get_real_path
 from .SettingsWindow import SettingsWindow
 from .ReleasesWidget import ReleasesWidget
 from typing import Optional, TYPE_CHECKING
@@ -78,7 +78,7 @@ class ExternalReleasesWindow(QMainWindow, Ui_ExternalReleasesWindow):
         elif self._env.settings.get("windowTitleType") == "filename":
             title = os.path.basename(self._current_path) + " - jdAppStreamEdit External Releases Editor"
         elif self._env.settings.get("windowTitleType") == "path":
-            title = self._current_path + " - jdAppStreamEdit External Releases Editor"
+            title = get_real_path(self._current_path) + " - jdAppStreamEdit External Releases Editor"
         else:
             title = QCoreApplication.translate("ExternalReleasesWindow", "Error")
 
@@ -97,7 +97,7 @@ class ExternalReleasesWindow(QMainWindow, Ui_ExternalReleasesWindow):
             return
 
         for i in self._env.recent_files_external_releases:
-            file_action = QAction(i, self)
+            file_action = QAction(get_real_path(i), self)
             file_action.setData(i)
             file_action.triggered.connect(self._open_recent_file)
             self.recent_files_menu.addAction(file_action)
@@ -231,10 +231,10 @@ class ExternalReleasesWindow(QMainWindow, Ui_ExternalReleasesWindow):
             with open(path, "rb") as f:
                 text = f.read()
         except FileNotFoundError:
-            QMessageBox.critical(self, QCoreApplication.translate("ExternalReleasesWindow", "File not found"), QCoreApplication.translate("ExternalReleasesWindow", "{{path}} does not exists").replace("{{path}}", path))
+            QMessageBox.critical(self, QCoreApplication.translate("ExternalReleasesWindow", "File not found"), QCoreApplication.translate("ExternalReleasesWindow", "{{path}} does not exists").replace("{{path}}", get_real_path(path)))
             return
         except Exception:
-            QMessageBox.critical(self, QCoreApplication.translate("ExternalReleasesWindow", "Error"), QCoreApplication.translate("ExternalReleasesWindow", "An error occurred while trying to open {{path}}").replace("{{path}}", path))
+            QMessageBox.critical(self, QCoreApplication.translate("ExternalReleasesWindow", "Error"), QCoreApplication.translate("ExternalReleasesWindow", "An error occurred while trying to open {{path}}").replace("{{path}}", get_real_path(path)))
             return
 
         if self.load_xml(text):

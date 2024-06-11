@@ -1,16 +1,19 @@
 from PyQt6.QtWidgets import QWidget, QTableWidget, QHeaderView, QListWidget, QComboBox, QLayout, QMessageBox
+from PyQt6.QtDBus import QDBusConnection, QDBusMessage, QDBusArgument
 from typing import Optional, List, Any, TYPE_CHECKING
-from PyQt6.QtCore import QCoreApplication
+from PyQt6.QtCore import QCoreApplication, QMetaType
 from PyQt6.QtCore import QObject
 from lxml import etree
 import urllib.parse
 import collections
+import functools
 import requests
 import tempfile
 import hashlib
 import shutil
 import sys
 import os
+import re
 
 
 try:
@@ -115,6 +118,7 @@ def is_string_number(text: str) -> bool:
         return False
 
 
+@functools.cache
 def is_flatpak() -> bool:
     return os.path.isfile("/.flatpak-info")
 
@@ -194,3 +198,37 @@ def check_appstreamcli(parent: Optional[QWidget]) -> bool:
     else:
         QMessageBox.critical(parent, QCoreApplication.translate("Functions", "appstreamcli not found"), QCoreApplication.translate("Functions", "appstreamcli was not found. Make sure it is installed and in PATH."))
         return False
+
+
+@functools.cache
+def get_dbus_session_bus() -> QDBusConnection:
+    "Returns the cached D-Bus session connection"
+    return QDBusConnection.sessionBus()
+
+
+@functools.cache
+def get_real_path(path: str) -> str:
+    "Gets the real path for a file from within the Flatpak Sandbox"
+    if not is_flatpak():
+        return path
+
+    doc_match = re.match(r"^\/run\/user\/\d+\/doc\/\w+", path)
+
+    if doc_match is None:
+        return path
+
+    doc_id = doc_match.group().split("/")[-1]
+
+    arg = QDBusArgument()
+    arg.beginArray(QMetaType(QMetaType.Type.QString.value))
+    arg.add(doc_id)
+    arg.endArray()
+
+    msg = QDBusMessage.createMethodCall("org.freedesktop.portal.Documents", "/org/freedesktop/portal/documents", "org.freedesktop.portal.Documents", "GetHostPaths")
+    msg.setArguments([arg])
+    result = get_dbus_session_bus().call(msg)
+
+    try:
+        return result.arguments()[0][doc_id].data().decode("utf-8")
+    except Exception:
+        return path
