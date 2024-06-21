@@ -308,17 +308,17 @@
     <message>
         <location filename="../ui/ArtifactWindow.ui" line="0"/>
         <source>Platform:</source>
-        <translation type="unfinished"></translation>
+        <translation>Платформа:</translation>
     </message>
     <message>
         <location filename="../ui/ArtifactWindow.ui" line="0"/>
         <source>Checksums</source>
-        <translation type="unfinished"></translation>
+        <translation>Контрольные суммы</translation>
     </message>
     <message>
         <location filename="../ui/ArtifactWindow.ui" line="0"/>
         <source>Calculate Checksums</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Вычислить контрольные суммы</translation>
     </message>
     <message>
         <location filename="../ui/ArtifactWindow.ui" line="0"/>
@@ -328,18 +328,18 @@
     <message>
         <location filename="../ui/ArtifactWindow.ui" line="0"/>
         <source>Installed:</source>
-        <translation type="unfinished"></translation>
+        <translation>Установлено:</translation>
     </message>
     <message>
         <location filename="../ui/ArtifactWindow.ui" line="0"/>
         <location filename="../ui/ArtifactWindow.ui" line="0"/>
         <source>Bytes</source>
-        <translation type="unfinished"></translation>
+        <translation>Байт</translation>
     </message>
     <message>
         <location filename="../ui/ArtifactWindow.ui" line="0"/>
         <source>Download:</source>
-        <translation type="unfinished"></translation>
+        <translation>Скачать:</translation>
     </message>
     <message>
         <location filename="../ui/ArtifactWindow.ui" line="0"/>
@@ -349,7 +349,7 @@
     <message>
         <location filename="../ui/ArtifactWindow.ui" line="0"/>
         <source>You can specify a optional Filename, under which the File should be saved here</source>
-        <translation type="unfinished"></translation>
+        <translation>Можно опционально указать имя файла, используемое при сохранении файла</translation>
     </message>
     <message>
         <location filename="../ui/ArtifactWindow.ui" line="0"/>
@@ -367,7 +367,7 @@
     <message>
         <location filename="../ChangelogImporter.py" line="31"/>
         <source>Plain Text</source>
-        <translation type="unfinished"></translation>
+        <translation>Обычный текст</translation>
     </message>
 </context>
 <context>
@@ -375,22 +375,22 @@
     <message>
         <location filename="../ComposeDirectoryWindow.py" line="46"/>
         <source>No path</source>
-        <translation type="unfinished"></translation>
+        <translation>Нет пути</translation>
     </message>
     <message>
         <location filename="../ComposeDirectoryWindow.py" line="46"/>
         <source>You need to specify a path</source>
-        <translation type="unfinished"></translation>
+        <translation>Укажите путь</translation>
     </message>
     <message>
         <location filename="../ComposeDirectoryWindow.py" line="50"/>
         <source>Not a directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Не каталог</translation>
     </message>
     <message>
         <location filename="../ComposeDirectoryWindow.py" line="50"/>
         <source>{{path}} is not a directory</source>
-        <translation type="unfinished"></translation>
+        <translation>{{path}} не является каталогом</translation>
     </message>
     <message>
         <location filename="../ComposeDirectoryWindow.py" line="56"/>
@@ -472,7 +472,7 @@
         <location filename="../DescriptionWidget.py" line="200"/>
         <location filename="../DescriptionWidget.py" line="70"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Удалить</translation>
     </message>
     <message>
         <location filename="../DescriptionWidget.py" line="124"/>
@@ -614,7 +614,7 @@
         <location filename="../ExternalReleasesWindow.py" line="206"/>
         <location filename="../ExternalReleasesWindow.py" line="170"/>
         <source>All Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Все файлы</translation>
     </message>
     <message>
         <location filename="../ExternalReleasesWindow.py" line="190"/>
@@ -811,7 +811,7 @@
     <message>
         <location filename="../ImportChangelogWindow.py" line="41"/>
         <source>An Error happened during Import</source>
-        <translation type="unfinished"></translation>
+        <translation>При импорте произошла ошибка</translation>
     </message>
     <message>
         <location filename="../ImportChangelogWindow.py" line="49"/>
@@ -831,7 +831,7 @@
     <message>
         <location filename="../ui/ImportChangelogWindow.ui" line="0"/>
         <source>Text:</source>
-        <translation type="unfinished"></translation>
+        <translation>Текст:</translation>
     </message>
     <message>
         <location filename="../ui/ImportChangelogWindow.ui" line="0"/>
@@ -846,7 +846,7 @@
     <message>
         <location filename="../ui/ImportChangelogWindow.ui" line="0"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Отмена</translation>
     </message>
 </context>
 <context>
@@ -854,17 +854,17 @@
     <message>
         <location filename="../Languages.py" line="6"/>
         <source>English</source>
-        <translation type="unfinished"></translation>
+        <translation>Английский</translation>
     </message>
     <message>
         <location filename="../Languages.py" line="7"/>
         <source>German</source>
-        <translation type="unfinished"></translation>
+        <translation>Немецкий</translation>
     </message>
     <message>
         <location filename="../Languages.py" line="8"/>
         <source>Dutch</source>
-        <translation type="unfinished"></translation>
+        <translation>Нидерландский</translation>
     </message>
     <message>
         <location filename="../Languages.py" line="9"/>
@@ -878,13 +878,13 @@
         <location filename="../MainWindow.py" line="459"/>
         <location filename="../ExternalReleasesWindow.py" line="224"/>
         <source>No Plugins installed</source>
-        <translation type="unfinished"></translation>
+        <translation>Нет расширений</translation>
     </message>
     <message>
         <location filename="../MainWindow.py" line="459"/>
         <location filename="../ExternalReleasesWindow.py" line="224"/>
         <source>You have no Plugins installed</source>
-        <translation type="unfinished"></translation>
+        <translation>У вас нет установленных расширений</translation>
     </message>
     <message>
         <location filename="../MainWindow.py" line="83"/>
@@ -894,12 +894,12 @@
     <message>
         <location filename="../MainWindow.py" line="84"/>
         <source>Required</source>
-        <translation type="unfinished"></translation>
+        <translation>Требуется</translation>
     </message>
     <message>
         <location filename="../MainWindow.py" line="85"/>
         <source>Recommend</source>
-        <translation type="unfinished"></translation>
+        <translation>Рекомендуется</translation>
     </message>
     <message>
         <location filename="../MainWindow.py" line="86"/>
@@ -909,52 +909,52 @@
     <message>
         <location filename="../MainWindow.py" line="108"/>
         <source>Desktop</source>
-        <translation type="unfinished"></translation>
+        <translation>Приложение рабочего стола</translation>
     </message>
     <message>
         <location filename="../MainWindow.py" line="109"/>
         <source>Console</source>
-        <translation type="unfinished"></translation>
+        <translation>Консольное приложение</translation>
     </message>
     <message>
         <location filename="../MainWindow.py" line="110"/>
         <source>Web Application</source>
-        <translation type="unfinished"></translation>
+        <translation>Веб-приложение</translation>
     </message>
     <message>
         <location filename="../MainWindow.py" line="111"/>
         <source>Service</source>
-        <translation type="unfinished"></translation>
+        <translation>Служба</translation>
     </message>
     <message>
         <location filename="../MainWindow.py" line="112"/>
         <source>Addon</source>
-        <translation type="unfinished"></translation>
+        <translation>Дополнение</translation>
     </message>
     <message>
         <location filename="../MainWindow.py" line="113"/>
         <source>Font</source>
-        <translation type="unfinished"></translation>
+        <translation>Набор шрифтов</translation>
     </message>
     <message>
         <location filename="../MainWindow.py" line="114"/>
         <source>Icon Theme</source>
-        <translation type="unfinished"></translation>
+        <translation>Набор иконок</translation>
     </message>
     <message>
         <location filename="../MainWindow.py" line="115"/>
         <source>Codecs</source>
-        <translation type="unfinished"></translation>
+        <translation>Кодеки</translation>
     </message>
     <message>
         <location filename="../MainWindow.py" line="116"/>
         <source>Input Method</source>
-        <translation type="unfinished"></translation>
+        <translation>Метод ввода</translation>
     </message>
     <message>
         <location filename="../MainWindow.py" line="117"/>
         <source>Firmware</source>
-        <translation type="unfinished"></translation>
+        <translation>ПО для оборудования</translation>
     </message>
     <message>
         <location filename="../MainWindow.py" line="129"/>
@@ -976,7 +976,7 @@
     <message>
         <location filename="../MainWindow.py" line="246"/>
         <source>No templates found</source>
-        <translation type="unfinished"></translation>
+        <translation>Шаблоны не найдены</translation>
     </message>
     <message>
         <location filename="../MainWindow.py" line="260"/>
@@ -1048,7 +1048,7 @@
         <location filename="../MainWindow.py" line="398"/>
         <location filename="../MainWindow.py" line="340"/>
         <source>All Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Все файлы</translation>
     </message>
     <message>
         <location filename="../MainWindow.py" line="348"/>
@@ -1093,7 +1093,7 @@
         <location filename="../MainWindow.py" line="612"/>
         <location filename="../MainWindow.py" line="492"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Удалить</translation>
     </message>
     <message>
         <location filename="../MainWindow.py" line="766"/>
@@ -1105,24 +1105,24 @@
     <message>
         <location filename="../MainWindow.py" line="500"/>
         <source>The URL {{url}} does not work</source>
-        <translation type="unfinished"></translation>
+        <translation>Ссылка {{url}} недоступна</translation>
     </message>
     <message>
         <location filename="../MainWindow.py" line="562"/>
         <location filename="../MainWindow.py" line="502"/>
         <source>Everything OK</source>
-        <translation type="unfinished"></translation>
+        <translation>Всё ок</translation>
     </message>
     <message>
         <location filename="../MainWindow.py" line="562"/>
         <location filename="../MainWindow.py" line="502"/>
         <source>All URLs are working</source>
-        <translation type="unfinished"></translation>
+        <translation>Все ссылки доступны</translation>
     </message>
     <message>
         <location filename="../MainWindow.py" line="560"/>
         <source>The URL {url} does not work</source>
-        <translation type="unfinished"></translation>
+        <translation>Ссылка {url} недоступна</translation>
     </message>
     <message>
         <location filename="../MainWindow.py" line="573"/>
@@ -1137,12 +1137,12 @@
     <message>
         <location filename="../MainWindow.py" line="577"/>
         <source>Categorie already added</source>
-        <translation type="unfinished"></translation>
+        <translation>Эта категория уже добавлена</translation>
     </message>
     <message>
         <location filename="../MainWindow.py" line="577"/>
         <source>You can&apos;t add the same Categorie twice</source>
-        <translation type="unfinished"></translation>
+        <translation>Категории не могут повторяться</translation>
     </message>
     <message>
         <location filename="../MainWindow.py" line="665"/>
@@ -1174,7 +1174,7 @@
     <message>
         <location filename="../MainWindow.py" line="679"/>
         <source>Please edit the Keyword</source>
-        <translation type="unfinished"></translation>
+        <translation>Введите ключевое слово</translation>
     </message>
     <message>
         <location filename="../MainWindow.py" line="748"/>
@@ -2634,13 +2634,13 @@
         <location filename="../RelationsWidget.py" line="136"/>
         <location filename="../RelationsWidget.py" line="103"/>
         <source>Recommend</source>
-        <translation type="unfinished"></translation>
+        <translation>Рекомендуется</translation>
     </message>
     <message>
         <location filename="../RelationsWidget.py" line="137"/>
         <location filename="../RelationsWidget.py" line="104"/>
         <source>Required</source>
-        <translation type="unfinished"></translation>
+        <translation>Требуется</translation>
     </message>
     <message>
         <location filename="../ui/RelationsWidget.ui" line="0"/>
@@ -2648,7 +2648,7 @@
         <location filename="../RelationsWidget.py" line="148"/>
         <location filename="../RelationsWidget.py" line="115"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Удалить</translation>
     </message>
     <message>
         <location filename="../ui/RelationsWidget.ui" line="0"/>
@@ -2968,7 +2968,7 @@
         <location filename="../ui/ReleasesWidget.ui" line="0"/>
         <location filename="../ReleasesWidget.py" line="85"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Удалить</translation>
     </message>
     <message>
         <location filename="../ReleasesWidget.py" line="107"/>
@@ -3000,7 +3000,7 @@
         <location filename="../ReleasesWidget.py" line="203"/>
         <location filename="../ReleasesWidget.py" line="151"/>
         <source>An Error happened during Import</source>
-        <translation type="unfinished"></translation>
+        <translation>При импорте произошла ошибка</translation>
     </message>
     <message>
         <location filename="../ReleasesWidget.py" line="166"/>
@@ -3348,7 +3348,7 @@
     <message>
         <location filename="../ui/ScreenshotWindow.ui" line="0"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Удалить</translation>
     </message>
     <message>
         <location filename="../ui/ScreenshotWindow.ui" line="0"/>
@@ -3597,7 +3597,7 @@
         <location filename="../ui/TranslateWindow.ui" line="0"/>
         <location filename="../TranslateWindow.py" line="58"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Стереть</translation>
     </message>
     <message>
         <location filename="../TranslateWindow.py" line="72"/>
