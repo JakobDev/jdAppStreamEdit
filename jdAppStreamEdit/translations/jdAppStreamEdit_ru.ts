@@ -608,7 +608,7 @@
         <location filename="../ExternalReleasesWindow.py" line="206"/>
         <location filename="../ExternalReleasesWindow.py" line="170"/>
         <source>AppStream Releases</source>
-        <translation type="unfinished"></translation>
+        <translation>Выпуски AppStream</translation>
     </message>
     <message>
         <location filename="../ExternalReleasesWindow.py" line="206"/>
@@ -2841,69 +2841,69 @@
     <message>
         <location filename="../ReleaseImporter.py" line="46"/>
         <source>Something went wrong while getting releases for {{url}}</source>
-        <translation type="unfinished"></translation>
+        <translation>Что-то пошло не так при получении выпусков из {{url}}</translation>
     </message>
     <message>
         <location filename="../ReleaseImporter.py" line="52"/>
         <source>Nothing found</source>
-        <translation type="unfinished"></translation>
+        <translation>Ничего не найдено</translation>
     </message>
     <message>
         <location filename="../ReleaseImporter.py" line="52"/>
         <source>It looks like this Repo doesn&apos;t  have any releases</source>
-        <translation type="unfinished"></translation>
+        <translation>Похоже, в этом репозитории нет выпусков</translation>
     </message>
     <message>
         <location filename="../ReleaseImporter.py" line="69"/>
         <source>From GitHub</source>
-        <translation type="unfinished"></translation>
+        <translation>Из GitHub</translation>
     </message>
     <message>
         <location filename="../ReleaseImporter.py" line="75"/>
         <source>Please Enter the URL to the GitLab Repo</source>
-        <translation type="unfinished"></translation>
+        <translation>Введите ссылку на репозиторий GitLab</translation>
     </message>
     <message>
         <location filename="../ReleaseImporter.py" line="120"/>
         <location filename="../ReleaseImporter.py" line="84"/>
         <source>Could not get Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Не удалось получить сведения</translation>
     </message>
     <message>
         <location filename="../ReleaseImporter.py" line="120"/>
         <location filename="../ReleaseImporter.py" line="84"/>
         <source>Could not get release Data for that Repo. Make sure you have the right URL.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не удалось получить выпуски репозитория. Убедитесь в правильности ссылки и доступности репозитория.</translation>
     </message>
     <message>
         <location filename="../ReleaseImporter.py" line="103"/>
         <source>From GitLab</source>
-        <translation type="unfinished"></translation>
+        <translation>Из GitLab</translation>
     </message>
     <message>
         <location filename="../ReleaseImporter.py" line="109"/>
         <source>Please Enter the URL to the Gitea Repo</source>
-        <translation type="unfinished"></translation>
+        <translation>Введите ссылку на репозиторий Gitea</translation>
     </message>
     <message>
         <location filename="../ReleaseImporter.py" line="131"/>
         <source>From Gitea</source>
-        <translation type="unfinished"></translation>
+        <translation>Из Gitea</translation>
     </message>
     <message>
         <location filename="../ReleaseImporter.py" line="140"/>
         <source>git not found</source>
-        <translation type="unfinished"></translation>
+        <translation>git не найден</translation>
     </message>
     <message>
         <location filename="../ReleaseImporter.py" line="140"/>
         <source>git was not found. Make sure it is installed and in PATH.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не удалось найти git. Убедитесь, что он установлен и доступен в PATH.</translation>
     </message>
     <message>
         <location filename="../ReleaseImporter.py" line="143"/>
         <source>Please Enter the URL to the Git Repo. It is the URL you would use with git clone.</source>
-        <translation type="unfinished"></translation>
+        <translation>Введите ссылку на Git-репозиторий. Ту же, что используется при git clone.</translation>
     </message>
     <message>
         <location filename="../ReleaseImporter.py" line="153"/>
@@ -2913,32 +2913,32 @@
     <message>
         <location filename="../ReleaseImporter.py" line="166"/>
         <source>From Git Repo</source>
-        <translation type="unfinished"></translation>
+        <translation>Из Git-репозитория</translation>
     </message>
     <message>
         <location filename="../ReleaseImporter.py" line="175"/>
         <source>appstreamcli not found</source>
-        <translation type="unfinished"></translation>
+        <translation>appstreamcli не найдена</translation>
     </message>
     <message>
         <location filename="../ReleaseImporter.py" line="175"/>
         <source>appstreamcli was not found. Make sure it is installed and in PATH.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не удалось найти appstreamcli. Убедитесь, что она установлена и доступна в PATH.</translation>
     </message>
     <message>
         <location filename="../ReleaseImporter.py" line="186"/>
         <source>Import of NEWS file failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Импорт из файла NEWS не удался</translation>
     </message>
     <message>
         <location filename="../ReleaseImporter.py" line="186"/>
         <source>An error occurred while importing the NEWS file. Make sure it has the correct format.</source>
-        <translation type="unfinished"></translation>
+        <translation>При импорте из файла NEWS произошла ошибка. Убедитесь, что путь и формат верны.</translation>
     </message>
     <message>
         <location filename="../ReleaseImporter.py" line="203"/>
         <source>From NEWS file</source>
-        <translation type="unfinished"></translation>
+        <translation>Из файла NEWS</translation>
     </message>
 </context>
 <context>
@@ -2946,17 +2946,17 @@
     <message>
         <location filename="../ReleasesWidget.py" line="74"/>
         <source>Stable</source>
-        <translation type="unfinished"></translation>
+        <translation>Стабильный</translation>
     </message>
     <message>
         <location filename="../ReleasesWidget.py" line="75"/>
         <source>Development</source>
-        <translation type="unfinished"></translation>
+        <translation>В разработке</translation>
     </message>
     <message>
         <location filename="../ReleasesWidget.py" line="76"/>
         <source>Snapshot</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Снапшот</translation>
     </message>
     <message>
         <location filename="../ui/ReleasesWidget.ui" line="0"/>
@@ -3020,7 +3020,7 @@
     <message>
         <location filename="../ReleasesWidget.py" line="176"/>
         <source>Overwrite everything</source>
-        <translation type="unfinished"></translation>
+        <translation>Перезаписать всё</translation>
     </message>
     <message>
         <location filename="../ReleasesWidget.py" line="176"/>
@@ -3030,12 +3030,12 @@
     <message>
         <location filename="../ui/ReleasesWidget.ui" line="0"/>
         <source>Version</source>
-        <translation type="unfinished"></translation>
+        <translation>Версия</translation>
     </message>
     <message>
         <location filename="../ui/ReleasesWidget.ui" line="0"/>
         <source>Date</source>
-        <translation type="unfinished"></translation>
+        <translation>Дата</translation>
     </message>
     <message>
         <location filename="../ui/ReleasesWidget.ui" line="0"/>
@@ -3050,12 +3050,12 @@
     <message>
         <location filename="../ui/ReleasesWidget.ui" line="0"/>
         <source>Sort</source>
-        <translation type="unfinished"></translation>
+        <translation>Упорядочивание</translation>
     </message>
     <message>
         <location filename="../ui/ReleasesWidget.ui" line="0"/>
         <source>Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Импорт</translation>
     </message>
 </context>
 <context>
@@ -3100,7 +3100,7 @@
     <message>
         <location filename="../ReleasesWindow.py" line="140"/>
         <source>Edit release {{release}}</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Изменить выпуск {{release}}</translation>
     </message>
     <message>
         <location filename="../ui/ReleasesWindow.ui" line="0"/>
@@ -3456,24 +3456,24 @@
     <message>
         <location filename="../ui/SettingsWindow.ui" line="0"/>
         <source>Sort languages by</source>
-        <translation type="unfinished"></translation>
+        <translation>Сортировать языки по</translation>
     </message>
     <message>
         <location filename="../ui/SettingsWindow.ui" line="0"/>
         <source>Name</source>
         <extracomment>The name of the language</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Имени</translation>
     </message>
     <message>
         <location filename="../ui/SettingsWindow.ui" line="0"/>
         <source>Code</source>
         <extracomment>The alpha-2 code of the language</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Короткому коду</translation>
     </message>
     <message>
         <location filename="../ui/SettingsWindow.ui" line="0"/>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Сбросить</translation>
     </message>
     <message>
         <location filename="../ui/SettingsWindow.ui" line="0"/>
@@ -3483,7 +3483,7 @@
     <message>
         <location filename="../ui/SettingsWindow.ui" line="0"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Отмена</translation>
     </message>
 </context>
 <context>
@@ -3521,7 +3521,7 @@
         <location filename="../ui/ThumbnailWindow.ui" line="0"/>
         <location filename="../ui/ThumbnailWindow.ui" line="0"/>
         <source>The direct URL to the Image</source>
-        <translation type="unfinished"></translation>
+        <translation>Прямая ссылка на изображение</translation>
     </message>
     <message>
         <location filename="../ui/ThumbnailWindow.ui" line="0"/>
@@ -3546,14 +3546,14 @@
         <location filename="../ui/ThumbnailWindow.ui" line="0"/>
         <source>Set scale factor</source>
         <extracomment>Set the scale factor of the Image</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Задать масштаб</translation>
     </message>
     <message>
         <location filename="../ui/ThumbnailWindow.ui" line="0"/>
         <location filename="../ui/ThumbnailWindow.ui" line="0"/>
         <source>Scale factor:</source>
         <extracomment>The scale factor of the Image</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Коэффициент масштаба:</translation>
     </message>
     <message>
         <location filename="../ui/ThumbnailWindow.ui" line="0"/>
@@ -3563,7 +3563,7 @@
     <message>
         <location filename="../ui/ThumbnailWindow.ui" line="0"/>
         <source>If you have translated versions of your Screenshot, you can add them here</source>
-        <translation type="unfinished"></translation>
+        <translation>Сюда можно добавить локализованные версии снимков экрана</translation>
     </message>
     <message>
         <location filename="../ui/ThumbnailWindow.ui" line="0"/>
@@ -3591,7 +3591,7 @@
     <message>
         <location filename="../TranslateWindow.py" line="37"/>
         <source>Select Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Выбрать язык</translation>
     </message>
     <message>
         <location filename="../ui/TranslateWindow.ui" line="0"/>
@@ -3637,12 +3637,12 @@
     <message>
         <location filename="../ui/TranslateWindow.ui" line="0"/>
         <source>Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Язык</translation>
     </message>
     <message>
         <location filename="../ui/TranslateWindow.ui" line="0"/>
         <source>Translation</source>
-        <translation type="unfinished"></translation>
+        <translation>Перевод</translation>
     </message>
     <message>
         <location filename="../ui/TranslateWindow.ui" line="0"/>
@@ -3690,12 +3690,12 @@
     <message>
         <location filename="../ui/ValidateWindow.ui" line="0"/>
         <source>Mode:</source>
-        <translation type="unfinished"></translation>
+        <translation>Режим:</translation>
     </message>
     <message>
         <location filename="../ui/ValidateWindow.ui" line="0"/>
         <source>Appstreamcli</source>
-        <translation type="unfinished"></translation>
+        <translation>Appstreamcli</translation>
     </message>
     <message>
         <location filename="../ui/ValidateWindow.ui" line="0"/>
