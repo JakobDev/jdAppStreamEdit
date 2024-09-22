@@ -497,7 +497,7 @@
     <message>
         <location filename="../DescriptionWidget.py" line="194"/>
         <source>Paragraph</source>
-        <translation type="unfinished"></translation>
+        <translation>Параграф</translation>
     </message>
     <message>
         <location filename="../DescriptionWidget.py" line="214"/>
@@ -517,27 +517,27 @@
     <message>
         <location filename="../ui/DescriptionWidget.ui" line="0"/>
         <source>Content</source>
-        <translation type="unfinished"></translation>
+        <translation>Содержимое</translation>
     </message>
     <message>
         <location filename="../ui/DescriptionWidget.ui" line="0"/>
         <source>This Textbox shows a Preview of the Description</source>
-        <translation type="unfinished"></translation>
+        <translation>Здесь будет отображено описание</translation>
     </message>
     <message>
         <location filename="../ui/DescriptionWidget.ui" line="0"/>
         <source>Add Paragraph</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавить параграф</translation>
     </message>
     <message>
         <location filename="../ui/DescriptionWidget.ui" line="0"/>
         <source>Add Ordered List</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавить упорядоченный список</translation>
     </message>
     <message>
         <location filename="../ui/DescriptionWidget.ui" line="0"/>
         <source>Add Unordered List</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавить неупорядоченный список</translation>
     </message>
 </context>
 <context>
@@ -619,12 +619,12 @@
     <message>
         <location filename="../ExternalReleasesWindow.py" line="190"/>
         <source>Enter URL</source>
-        <translation type="unfinished"></translation>
+        <translation>Введите ссылку</translation>
     </message>
     <message>
         <location filename="../ExternalReleasesWindow.py" line="190"/>
         <source>Please enter a URL</source>
-        <translation>Введите ссылку</translation>
+        <translation>Пожалуйста, введите ссылку</translation>
     </message>
     <message>
         <location filename="../ExternalReleasesWindow.py" line="234"/>
@@ -659,17 +659,17 @@
     <message>
         <location filename="../ExternalReleasesWindow.py" line="255"/>
         <source>Could not connect to {{url}}</source>
-        <translation type="unfinished"></translation>
+        <translation>Не удалось подключиться к {{url}}</translation>
     </message>
     <message>
         <location filename="../ExternalReleasesWindow.py" line="258"/>
         <source>An error occurred while trying to connect to {{url}}</source>
-        <translation type="unfinished"></translation>
+        <translation>Произошла ошибка при попытке подключиться к {{url}}</translation>
     </message>
     <message>
         <location filename="../ExternalReleasesWindow.py" line="269"/>
         <source>XML parsing failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Не удалось считать XML</translation>
     </message>
     <message>
         <location filename="../ExternalReleasesWindow.py" line="275"/>
@@ -679,43 +679,43 @@
     <message>
         <location filename="../ExternalReleasesWindow.py" line="275"/>
         <source>This XML file has no releases tag</source>
-        <translation type="unfinished"></translation>
+        <translation>В этом XML-файле нет тега выпусков</translation>
     </message>
     <message>
         <location filename="../ui/ExternalReleasesWindow.ui" line="0"/>
         <source>File</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл</translation>
     </message>
     <message>
         <location filename="../ui/ExternalReleasesWindow.ui" line="0"/>
         <source>Open recent</source>
-        <translation type="unfinished"></translation>
+        <translation>Открыть недавний</translation>
     </message>
     <message>
         <location filename="../ui/ExternalReleasesWindow.ui" line="0"/>
         <location filename="../ui/ExternalReleasesWindow.ui" line="0"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройки</translation>
     </message>
     <message>
         <location filename="../ui/ExternalReleasesWindow.ui" line="0"/>
         <source>Tools</source>
-        <translation type="unfinished"></translation>
+        <translation>Инструменты</translation>
     </message>
     <message>
         <location filename="../ui/ExternalReleasesWindow.ui" line="0"/>
         <source>?</source>
-        <translation type="unfinished"></translation>
+        <translation>?</translation>
     </message>
     <message>
         <location filename="../ui/ExternalReleasesWindow.ui" line="0"/>
         <source>New</source>
-        <translation type="unfinished"></translation>
+        <translation>Новый</translation>
     </message>
     <message>
         <location filename="../ui/ExternalReleasesWindow.ui" line="0"/>
         <source>Open</source>
-        <translation type="unfinished"></translation>
+        <translation>Открыть</translation>
     </message>
     <message>
         <location filename="../ui/ExternalReleasesWindow.ui" line="0"/>
@@ -904,7 +904,7 @@
     <message>
         <location filename="../MainWindow.py" line="86"/>
         <source>Supported</source>
-        <translation type="unfinished"></translation>
+        <translation>Поддерживается</translation>
     </message>
     <message>
         <location filename="../MainWindow.py" line="108"/>
@@ -959,7 +959,7 @@
     <message>
         <location filename="../MainWindow.py" line="129"/>
         <source>Unknown</source>
-        <translation type="unfinished"></translation>
+        <translation>Неизвестно</translation>
     </message>
     <message>
         <location filename="../MainWindow.py" line="229"/>
@@ -1001,7 +1001,7 @@
     <message>
         <location filename="../MainWindow.py" line="301"/>
         <source>Welcome to jdAppStreamEdit!</source>
-        <translation type="unfinished"></translation>
+        <translation>Приветствуем в jdAppStreamEdit!</translation>
     </message>
     <message>
         <location filename="../MainWindow.py" line="302"/>
@@ -1053,18 +1053,18 @@
     <message>
         <location filename="../MainWindow.py" line="348"/>
         <source>Could not read file</source>
-        <translation type="unfinished"></translation>
+        <translation>Не удалось открыть файл</translation>
     </message>
     <message>
         <location filename="../MainWindow.py" line="348"/>
         <source>Could not read {{path}}. Make sure it is a valid desktop entry and you have the Permission to read it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не удалось открыть файл {{path}}. Убедитесь, что выбран верный элемент рабочего стола и у вас есть разрешение на чтение.</translation>
     </message>
     <message>
         <location filename="../MainWindow.py" line="436"/>
         <location filename="../MainWindow.py" line="398"/>
         <source>AppStream Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Файлы AppStream</translation>
     </message>
     <message>
         <location filename="../MainWindow.py" line="420"/>
@@ -1132,7 +1132,7 @@
     <message>
         <location filename="../MainWindow.py" line="573"/>
         <source>Please select a Categorie from the list below</source>
-        <translation type="unfinished"></translation>
+        <translation>Выберите категорию из списка ниже</translation>
     </message>
     <message>
         <location filename="../MainWindow.py" line="577"/>
@@ -1204,7 +1204,7 @@
     <message>
         <location filename="../MainWindow.py" line="772"/>
         <source>Could not connect to {{url}}</source>
-        <translation type="unfinished"></translation>
+        <translation>Не удалось подключиться к {{url}}</translation>
     </message>
     <message>
         <location filename="../MainWindow.py" line="775"/>
@@ -1214,7 +1214,7 @@
     <message>
         <location filename="../MainWindow.py" line="836"/>
         <source>XML parsing failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Не удалось считать XML</translation>
     </message>
     <message>
         <location filename="../MainWindow.py" line="840"/>
@@ -1259,12 +1259,12 @@
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>Общие</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>Type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Тип:</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
@@ -1302,7 +1302,7 @@
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>A short summary of your software</source>
-        <translation type="unfinished"></translation>
+        <translation>Краткое описание вашей программы</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
@@ -1342,7 +1342,7 @@
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>You can provide a email address for contacting you here</source>
-        <translation type="unfinished"></translation>
+        <translation>Здесь можно указать адрес эл. почты для связи</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
@@ -1396,7 +1396,7 @@
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>Check Image URLs</source>
-        <translation type="unfinished"></translation>
+        <translation>Проверить ссылки изображений</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
@@ -1421,7 +1421,7 @@
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>Links</source>
-        <translation type="unfinished"></translation>
+        <translation>Ссылки</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
@@ -1456,7 +1456,7 @@
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>Help:</source>
-        <translation type="unfinished"></translation>
+        <translation>Помощь:</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
@@ -1466,7 +1466,7 @@
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>Donation:</source>
-        <translation type="unfinished"></translation>
+        <translation>Пожертвования:</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
@@ -1476,7 +1476,7 @@
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>Translate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Перевод:</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
@@ -1486,7 +1486,7 @@
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>Contact:</source>
-        <translation type="unfinished"></translation>
+        <translation>Связь:</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
@@ -1546,12 +1546,12 @@
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>Command Line:</source>
-        <translation type="unfinished"></translation>
+        <translation>Командная строка:</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>Graphics Tablet:</source>
-        <translation type="unfinished"></translation>
+        <translation>Графический планшет:</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
@@ -1576,7 +1576,7 @@
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>Computer vision:</source>
-        <translation type="unfinished"></translation>
+        <translation>Компьютерное зрение:</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
@@ -1623,7 +1623,7 @@
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>Keywords</source>
-        <translation type="unfinished"></translation>
+        <translation>Ключевые слова</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
@@ -1633,7 +1633,7 @@
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>Advanced</source>
-        <translation type="unfinished"></translation>
+        <translation>Расширенные</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
@@ -1669,7 +1669,7 @@
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
         <source>Open</source>
-        <translation type="unfinished"></translation>
+        <translation>Открыть</translation>
     </message>
     <message>
         <location filename="../ui/MainWindow.ui" line="0"/>
@@ -2270,7 +2270,7 @@
     <message>
         <location filename="../ui/OarsWidget.ui" line="0"/>
         <source>Human Slavery</source>
-        <translation type="unfinished"></translation>
+        <translation>Человеческое рабство</translation>
     </message>
     <message>
         <location filename="../ui/OarsWidget.ui" line="0"/>
@@ -2280,12 +2280,12 @@
     <message>
         <location filename="../ui/OarsWidget.ui" line="0"/>
         <source>Drugs</source>
-        <translation type="unfinished"></translation>
+        <translation>Наркотики</translation>
     </message>
     <message>
         <location filename="../ui/OarsWidget.ui" line="0"/>
         <source>Alcohol</source>
-        <translation type="unfinished"></translation>
+        <translation>Алкоголь</translation>
     </message>
     <message>
         <location filename="../ui/OarsWidget.ui" line="0"/>
@@ -2310,12 +2310,12 @@
     <message>
         <location filename="../ui/OarsWidget.ui" line="0"/>
         <source>Tobacco</source>
-        <translation type="unfinished"></translation>
+        <translation>Табачные изделия</translation>
     </message>
     <message>
         <location filename="../ui/OarsWidget.ui" line="0"/>
         <source>Defined as any nicotine-rich product.</source>
-        <translation type="unfinished"></translation>
+        <translation>Любые изделия, содержащие никотин.</translation>
     </message>
     <message>
         <location filename="../ui/OarsWidget.ui" line="0"/>
@@ -2380,7 +2380,7 @@
     <message>
         <location filename="../ui/OarsWidget.ui" line="0"/>
         <source>Humor</source>
-        <translation type="unfinished"></translation>
+        <translation>Юмор</translation>
     </message>
     <message>
         <location filename="../ui/OarsWidget.ui" line="0"/>
@@ -2653,12 +2653,12 @@
     <message>
         <location filename="../ui/RelationsWidget.ui" line="0"/>
         <source>Screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Экран</translation>
     </message>
     <message>
         <location filename="../ui/RelationsWidget.ui" line="0"/>
         <source>Required maximum size</source>
-        <translation type="unfinished"></translation>
+        <translation>Требование к максимальному разрешению</translation>
     </message>
     <message>
         <location filename="../ui/RelationsWidget.ui" line="0"/>
@@ -2686,7 +2686,7 @@
     <message>
         <location filename="../ui/RelationsWidget.ui" line="0"/>
         <source>Recommend minimum size</source>
-        <translation type="unfinished"></translation>
+        <translation>Требование к минимальному разрешению</translation>
     </message>
     <message>
         <location filename="../ui/RelationsWidget.ui" line="0"/>
@@ -2722,7 +2722,7 @@
         <location filename="../ui/RelationsWidget.ui" line="0"/>
         <location filename="../ui/RelationsWidget.ui" line="0"/>
         <source>MiB</source>
-        <translation type="unfinished"></translation>
+        <translation>МиБ</translation>
     </message>
     <message>
         <location filename="../ui/RelationsWidget.ui" line="0"/>
@@ -2732,12 +2732,12 @@
     <message>
         <location filename="../ui/RelationsWidget.ui" line="0"/>
         <source>Internet</source>
-        <translation type="unfinished"></translation>
+        <translation>Интернет</translation>
     </message>
     <message>
         <location filename="../ui/RelationsWidget.ui" line="0"/>
         <source>You can define here, if the Software needs Internet access. For more information take a look at the documentation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Укажите, требуется ли приложению для работы доступ в интернет. Ознакомьтесь с документацией для получения более подробной информации.</translation>
     </message>
     <message>
         <location filename="../ui/RelationsWidget.ui" line="0"/>
@@ -2766,7 +2766,7 @@
         <location filename="../ui/RelationsWidget.ui" line="0"/>
         <location filename="../ui/RelationsWidget.ui" line="0"/>
         <source>Mbit/s</source>
-        <translation type="unfinished"></translation>
+        <translation>Мбит/с</translation>
     </message>
     <message>
         <location filename="../ui/RelationsWidget.ui" line="0"/>
@@ -2973,22 +2973,22 @@
     <message>
         <location filename="../ReleasesWidget.py" line="107"/>
         <source>packaging not found</source>
-        <translation type="unfinished"></translation>
+        <translation>packaging не найден</translation>
     </message>
     <message>
         <location filename="../ReleasesWidget.py" line="107"/>
         <source>This function needs the packaging python module to work</source>
-        <translation type="unfinished"></translation>
+        <translation>Для работы этой функции требуется модуль packaging в python</translation>
     </message>
     <message>
         <location filename="../ReleasesWidget.py" line="122"/>
         <source>Could not parse version</source>
-        <translation type="unfinished"></translation>
+        <translation>Не удалось считать версию</translation>
     </message>
     <message>
         <location filename="../ReleasesWidget.py" line="122"/>
         <source>Could not parse version {{version}}</source>
-        <translation type="unfinished"></translation>
+        <translation>Не удалось считать версию {{version}}</translation>
     </message>
     <message>
         <location filename="../ReleasesWidget.py" line="202"/>
@@ -3010,12 +3010,12 @@
     <message>
         <location filename="../ReleasesWidget.py" line="171"/>
         <source>Import Changelog</source>
-        <translation type="unfinished"></translation>
+        <translation>Импортировать журнал изменений</translation>
     </message>
     <message>
         <location filename="../ReleasesWidget.py" line="171"/>
         <source>jdAppStreamEdit can import the changelog if it adheres to a specific format. If this is the case, please choose the appropriate format.</source>
-        <translation type="unfinished"></translation>
+        <translation>jdAppStreamEdit может импортировать имеющийся журнал изменений, если он соответствует специальному формату. Чтобы продолжить, выберите формат.</translation>
     </message>
     <message>
         <location filename="../ReleasesWidget.py" line="176"/>
@@ -3025,7 +3025,7 @@
     <message>
         <location filename="../ReleasesWidget.py" line="176"/>
         <source>If you proceed, all your chnages in the release tab will be overwritten. Continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>Все изменения, внесённые во вкладке Выпусков, будут перезаписаны. Продолжить?</translation>
     </message>
     <message>
         <location filename="../ui/ReleasesWidget.ui" line="0"/>
@@ -3217,7 +3217,7 @@
         <location filename="../ThumbnailWindow.py" line="110"/>
         <location filename="../ScreenshotWindow.py" line="155"/>
         <source>Language exists</source>
-        <translation type="unfinished"></translation>
+        <translation>Язык существует</translation>
     </message>
     <message>
         <location filename="../ThumbnailWindow.py" line="110"/>
@@ -3267,7 +3267,7 @@
         <location filename="../ui/ScreenshotWindow.ui" line="0"/>
         <location filename="../ui/ScreenshotWindow.ui" line="0"/>
         <source>Width and Height</source>
-        <translation type="unfinished"></translation>
+        <translation>Высота и ширина</translation>
     </message>
     <message>
         <location filename="../ui/ScreenshotWindow.ui" line="0"/>
@@ -3358,7 +3358,7 @@
     <message>
         <location filename="../ui/ScreenshotWindow.ui" line="0"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Отмена</translation>
     </message>
 </context>
 <context>
@@ -3381,37 +3381,37 @@
     <message>
         <location filename="../SettingsWindow.py" line="42"/>
         <source>Path</source>
-        <translation type="unfinished"></translation>
+        <translation>Путь</translation>
     </message>
     <message>
         <location filename="../ui/SettingsWindow.ui" line="0"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройки</translation>
     </message>
     <message>
         <location filename="../ui/SettingsWindow.ui" line="0"/>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>Общие</translation>
     </message>
     <message>
         <location filename="../ui/SettingsWindow.ui" line="0"/>
         <source>Language:</source>
-        <translation type="unfinished"></translation>
+        <translation>Язык:</translation>
     </message>
     <message>
         <location filename="../ui/SettingsWindow.ui" line="0"/>
         <source>(needs restart)</source>
-        <translation type="unfinished"></translation>
+        <translation>(требуется перезапуск)</translation>
     </message>
     <message>
         <location filename="../ui/SettingsWindow.ui" line="0"/>
         <source>Length of recent files list:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ограничение размера списка недавних файлов:</translation>
     </message>
     <message>
         <location filename="../ui/SettingsWindow.ui" line="0"/>
         <source>Window title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Заголовок окна:</translation>
     </message>
     <message>
         <location filename="../ui/SettingsWindow.ui" line="0"/>
@@ -3441,7 +3441,7 @@
     <message>
         <location filename="../ui/SettingsWindow.ui" line="0"/>
         <source>Use tabs instead of spaces</source>
-        <translation type="unfinished"></translation>
+        <translation>Использовать табуляцию вместо пробелов</translation>
     </message>
     <message>
         <location filename="../ui/SettingsWindow.ui" line="0"/>
@@ -3602,7 +3602,7 @@
     <message>
         <location filename="../TranslateWindow.py" line="72"/>
         <source>No Language selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Языки не выбраны</translation>
     </message>
     <message>
         <location filename="../TranslateWindow.py" line="72"/>
@@ -3622,12 +3622,12 @@
     <message>
         <location filename="../TranslateWindow.py" line="82"/>
         <source>No Text</source>
-        <translation type="unfinished"></translation>
+        <translation>Нет текста</translation>
     </message>
     <message>
         <location filename="../TranslateWindow.py" line="82"/>
         <source>The Translation for {name} has no Text</source>
-        <translation type="unfinished"></translation>
+        <translation>В переводе для {name} отсутствует текст</translation>
     </message>
     <message>
         <location filename="../ui/TranslateWindow.ui" line="0"/>
@@ -3657,7 +3657,7 @@
     <message>
         <location filename="../ui/TranslateWindow.ui" line="0"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Отмена</translation>
     </message>
 </context>
 <context>
