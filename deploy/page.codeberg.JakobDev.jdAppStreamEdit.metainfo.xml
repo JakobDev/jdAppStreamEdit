@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <component type="desktop-application">
-  <!--Created with jdAppStreamEdit 9.1-->
+  <!--Created with jdAppStreamEdit 9.2-->
   <id>page.codeberg.JakobDev.jdAppStreamEdit</id>
   <name>jdAppStreamEdit</name>
   <summary>A graphical Program to create and edit AppStream files</summary>
@@ -54,6 +54,14 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="9.2" date="2024-10-27" type="stable">
+      <description>
+        <ul>
+          <li>The Menubar is now correctly translated</li>
+          <li>Fix crash</li>
+        </ul>
+      </description>
+    </release>
     <release version="9.1" date="2024-05-31" type="stable">
       <description>
         <ul>
