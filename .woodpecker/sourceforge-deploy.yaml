@@ -13,7 +13,7 @@ steps:
             - full-python-build --name jdAppStreamEdit --version $VERSION --copy-windows-exe ExternalReleasesEditor.exe
             - write-changelog-readme --name jdAppStreamEdit --version $VERSION --output-file Output/README.md
             - sourceforge-upload --upload-dir ./Output/ --project jdappstreamedit --version $VERSION --app-name jdAppStreamEdit --codeberg-release
-        secrets: [SOURCEFORGE_USERNAME, SOURCEFORGE_PASSWORD, SOURCEFORGE_API_KEY]
+        secrets: [SOURCEFORGE_USERNAME, SOURCEFORGE_PASSWORD, SOURCEFORGE_API_KEY, CODEBERG_API_TOKEN]
 
 when:
     event: tag
