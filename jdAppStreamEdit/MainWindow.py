@@ -791,6 +791,19 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 "images": []
             }
 
+            if len(i.getchildren()) == 0:
+                new_dict["images"].append({
+                    "url": i.text,
+                    "type": "source",
+                    "language": None,
+                    "width": None,
+                    "height": None,
+                    "scale_factor": None
+                })
+                new_dict["source_url"] = i.text
+                self.screenshot_list.append(new_dict)
+                continue
+
             for image_tag in i.findall("image"):
                 image: ScreenshotDictImage = {
                     "url": image_tag.text,
